@@ -1,26 +1,29 @@
 import { Box, HStack, Image, Show, Text, } from '@chakra-ui/react'
 import logo from '../assets/bitwise_logo.png'
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <HStack bg='grey' justifyContent='space-between' padding='10px' className='nav'>
-        <Image src={logo} boxSize='60px' />
+        <Link to="/">
+          <Image src={logo} boxSize='50px' m='5px' />
+        </Link>
 
         <HStack>
           <Show above='lg'>
-            <Box px={4}>
-                Home
-            </Box>
-            <Box px={4}>
-                Login
-            </Box>
-            <Box px={4}>
-                Sign Up
-            </Box>
+          <Box px={4}>
+            <NavLink to="/" >Home</NavLink>
+          </Box>
+          <Box px={4}>
+            <NavLink to="/login/" >Login</NavLink>
+          </Box>
+          <Box px={4}>
+            <NavLink to="/register/" >Sign Up</NavLink>
+          </Box>
           </Show>
-          <Text>colour switch</Text>
+          <Text>Colour Theme</Text>
           <Show below='lg'>
-            hamberger
+            Hamberger
           </Show>
         </HStack>
     </HStack>
