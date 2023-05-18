@@ -21,7 +21,7 @@ function App() {
       <Show above='lg'>
         <GridItem bg='navy' area='aside'> Profile Menu</GridItem>
       </Show>
-      <GridItem area='main' p={5}>
+      <GridItem area='main' >
 
         <Routes>
           <Route exact path="/" element={<HomePage />} />

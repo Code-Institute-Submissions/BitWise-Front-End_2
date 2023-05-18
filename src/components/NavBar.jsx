@@ -3,7 +3,7 @@ import logo from '../assets/bitwise_logo.png'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import ColorThemeSwitch from './ColorThemeSwitch';
 import HamburgerMenu from './Hamburger';
-import axios from "axios";
+import handleSignOut from '../services/logout';
 
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 
@@ -11,21 +11,7 @@ const NavBar = () => {
 
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-
   const navigate = useNavigate();
-
-  const handleSignOut = () => {
-    axios
-      .post("dj-rest-auth/logout/")
-      .then((response) => {
-        setCurrentUser(null);
-        navigate("/")
-
-      })
-    .catch ((err) => {
-      console.log(err);
-    })
-  };
 
   const loggedInLinks = (
     <>
@@ -34,10 +20,11 @@ const NavBar = () => {
       </Box>
 
       <Box px={4}>
-        <Link
-          onClick={handleSignOut} >
-            Logout
-        </Link>
+      <Link
+        onClick={() => {
+          handleSignOut(setCurrentUser, navigate)}
+        }>Logout
+      </Link>
       </Box>
     </>
   )
@@ -53,11 +40,6 @@ const NavBar = () => {
       </Box>
     </>
   )
-
-
-
-
-
 
   return (
     <HStack bg='grey' justifyContent='space-between' padding='10px' className='nav'>
