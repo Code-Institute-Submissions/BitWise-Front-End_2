@@ -32,7 +32,6 @@ const HamburgerMenu = () => {
         <NavLink to="/login/" ><MenuItem>Login</MenuItem></NavLink>
       </>
     )
-
     
   return (
     <Menu>

@@ -1,4 +1,4 @@
-import { Outlet, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Grid, GridItem, Show } from '@chakra-ui/react';
 import './api/axiosDefaults';
 
