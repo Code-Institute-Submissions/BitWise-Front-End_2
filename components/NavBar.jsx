@@ -2,6 +2,7 @@ import { Box, HStack, Image, Show, Text, } from '@chakra-ui/react'
 import logo from '../assets/bitwise_logo.png'
 import { Link, NavLink } from 'react-router-dom';
 import ColorThemeSwitch from './ColorThemeSwitch';
+import HamburgerMenu from './Hamburger';
 
 const NavBar = () => {
   return (
@@ -22,9 +23,9 @@ const NavBar = () => {
             <NavLink to="/register/" >Sign Up</NavLink>
           </Box>
           </Show>
-          <Text><ColorThemeSwitch /></Text>
+          <ColorThemeSwitch />
           <Show below='lg'>
-            Hamberger
+            <HamburgerMenu />
           </Show>
         </HStack>
     </HStack>
