@@ -3,7 +3,7 @@ import logo from '../assets/bitwise_logo.png'
 
 const NavBar = () => {
   return (
-    <HStack justifyContent='space-between' padding='10px' className='nav'>
+    <HStack bg='grey' justifyContent='space-between' padding='10px' className='nav'>
         <Image src={logo} boxSize='60px' />
 
         <HStack>
