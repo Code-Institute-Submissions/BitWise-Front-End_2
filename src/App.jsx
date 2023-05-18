@@ -1,4 +1,5 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
+import NavBar from "../components/NavBar";
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`
         }}>
-          <GridItem area='nav' bg="red">Add Navbar</GridItem>
+          <GridItem area='nav' height='80px' bg="red"><NavBar /></GridItem>
 
           <Show above='lg'>
             <GridItem area='aside' bg="green">Sign Up Profile Menu</GridItem>
