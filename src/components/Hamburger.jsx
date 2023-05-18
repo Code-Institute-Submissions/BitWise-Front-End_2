@@ -20,7 +20,7 @@ const HamburgerMenu = () => {
             <MenuList w="100vw" mt='2' className='nav'>
                 <NavLink to="/"><MenuItem>Home</MenuItem></NavLink>
                 <NavLink to="/login/"><MenuItem>Login</MenuItem></NavLink>
-                <NavLink to="/signup/"><MenuItem>Sign Up</MenuItem></NavLink>
+                <NavLink to="/register/"><MenuItem>Sign Up</MenuItem></NavLink>
             </MenuList>
             </>
         )}
