@@ -5,8 +5,11 @@ import { Flex, Box, FormControl, FormLabel, Input,
         Heading, Alert, AlertIcon
       } from '@chakra-ui/react';
 import axios from 'axios';
+import { useSetCurrentUser } from '../contexts/CurrentUserContext';
 
 const LoginPage = () => {
+
+  const setCurrentUser = useSetCurrentUser()
 
   const [loginData, setLoginData] = useState({
     username: "",
@@ -32,8 +35,8 @@ const LoginPage = () => {
       .post("dj-rest-auth/login/", loginData)
       .then((response) => {
         // Handle the successful response
-        console.log(response.data);
-        navigate('/')
+        setCurrentUser(response.data.user);
+        navigate('/');
       })
       .catch((err) => {
         // Handle the error

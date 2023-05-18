@@ -1,8 +1,13 @@
 import React from 'react'
+import { useCurrentUser } from '../contexts/CurrentUserContext'
 
 const HomePage = () => {
+
+  const currentUser = useCurrentUser()
+
   return (
-    <div>HomePage</div>
+    <div>{currentUser?.username}</div>
+    
   )
 }
 
