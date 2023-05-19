@@ -9,6 +9,7 @@ import RegisterPage from './pages/RegisterPage';
 import ErrorPage from './pages/ErrorPage';
 import FeedPage from './pages/FeedPage';
 import ArticleCreateForm from './pages/articles/ArticleCreateForm';
+import ArticlePage from './pages/articles/ArticlePage';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/register/" element={<RegisterPage />} />
           <Route exact path="/feed/" element={<FeedPage />} />
           <Route exact path="/article/create/" element={<ArticleCreateForm />} />
+          <Route exact path="/article/:id/" element={<ArticlePage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
