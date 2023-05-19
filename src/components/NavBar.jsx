@@ -1,13 +1,18 @@
-import { Box, HStack, Image, Show, Text, } from '@chakra-ui/react'
+import { Box, HStack, Image, Show, Stack, Text, } from '@chakra-ui/react'
 import logo from '../assets/bitwise_logo.png'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import ColorThemeSwitch from './ColorThemeSwitch';
 import HamburgerMenu from './Hamburger';
 import handleSignOut from '../services/logout';
 
+import { useColorModeValue } from '@chakra-ui/react';
+
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
+
+  const bgColor = useColorModeValue('#805AD5', '#4A5568');
+
 
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
@@ -42,10 +47,15 @@ const NavBar = () => {
   )
 
   return (
-    <HStack bg='grey' justifyContent='space-between' padding='10px' className='nav'>
-        <Link to="/">
-          <Image src={logo} boxSize='50px' m='5px' />
-        </Link>
+    <HStack color={'white'} bg={bgColor} justifyContent='space-between' padding='10px' className='nav'>
+        <HStack>
+          <Link to="/">
+            <Image src={logo} boxSize='50px'  m='5px' />
+          </Link>
+          <Box px={4}>
+            <NavLink to="/article/create/" >Add Article</NavLink>
+          </Box>
+        </HStack>
 
         <HStack>
           <Show above='lg'>
@@ -58,7 +68,7 @@ const NavBar = () => {
           </Show>
           <ColorThemeSwitch />
           <Show below='lg'>
-            <HamburgerMenu />
+            <HamburgerMenu/>
           </Show>
         </HStack>
     </HStack>

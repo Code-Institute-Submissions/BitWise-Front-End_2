@@ -1,4 +1,4 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import { Button, Menu, MenuButton, MenuItem, MenuList, useColorMode } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { NavLink, Link } from 'react-router-dom'
@@ -7,11 +7,16 @@ import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContex
 import { useNavigate } from 'react-router-dom'
 import handleSignOut from '../services/logout';
 
+import { useColorModeValue } from '@chakra-ui/react'
+
 const HamburgerMenu = () => {
 
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
     const navigate = useNavigate();
+
+    const custFontColor = useColorModeValue('black', 'white');
+    const custBgColor = useColorModeValue('#F7FAFC', '#B794F4');
   
     const loggedInLinks = (
       <>
@@ -38,6 +43,8 @@ const HamburgerMenu = () => {
         {({ isOpen }) => (
             <>
             <MenuButton
+                color={custFontColor}
+                bg={custBgColor}
                 isActive={isOpen}
                 as={Button}
                 fontSize='1.7rem'
@@ -45,7 +52,7 @@ const HamburgerMenu = () => {
             >
                 {isOpen ? <AiOutlineClose /> : <GiHamburgerMenu />}
             </MenuButton>
-            <MenuList w="100vw" mt='2' className='nav'>
+            <MenuList color={custFontColor} w="100vw" mt='2' className='nav'>
                 <NavLink to="/"><MenuItem>Home</MenuItem></NavLink>
                 {currentUser ? loggedInLinks : loggedOutLinks}
             </MenuList>

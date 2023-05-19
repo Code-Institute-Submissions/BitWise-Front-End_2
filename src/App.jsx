@@ -21,10 +21,13 @@ function App() {
         position="fixed"
         top={0}
         w='100vw'
+        zIndex={5}
         area='nav'><NavBar /></GridItem>
 
       <Show above='lg'>
-        <GridItem 
+        <GridItem
+          zIndex={0}
+        
           pt='100px'
           height='100vh'
           bg='navy' area='aside'> Profile Menu</GridItem>
