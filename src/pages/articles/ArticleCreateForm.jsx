@@ -11,6 +11,8 @@ import {
     Textarea,
     HStack,
     Select,
+    Alert,
+    AlertIcon
   } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -66,68 +68,115 @@ const ArticleCreateForm = () => {
             <Heading  fontSize={'2xl'}>Post an Article</Heading>
 
             <form onSubmit={handleSubmit}>
-              <FormControl id="title">
-                <FormLabel>Title</FormLabel>
-                <Input
+              <Stack spacing={4}>
+                <FormControl id="title">
+                  <FormLabel>Title</FormLabel>
+                  <Input
+                      bg={'blackAlpha.50'}
+                      type="text"
+                      name='title'
+                      value={title}
+                      onChange={handleChange} />
+                </FormControl>
+
+                { errors.article_title?.map((message, idx) => 
+                    <Alert 
+                      borderRadius={5}
+                      key={idx}
+                      status='warning'>
+                      <AlertIcon />
+                      {message}
+                    </Alert>
+                )}
+
+
+                <FormControl id="content">
+                  <FormLabel>Content</FormLabel>
+                  <Textarea bg={'blackAlpha.50'} 
+                    rows={10}
+                    type="text-area"
+                    name='content'
+                    value={content}
+                    onChange={handleChange} />
+                </FormControl>
+
+                { errors.article_content?.map((message, idx) => 
+                    <Alert 
+                      borderRadius={5}
+                      key={idx}
+                      status='warning'>
+                      <AlertIcon />
+                      {message}
+                    </Alert>
+                )}
+
+                <FormControl id="language">
+                  <FormLabel>Language</FormLabel>
+                  <Select
+                    bg={'blackAlpha.50'}
+                    placeholder='Select option'
+                    name='language'
+                    onChange={handleChange}>
+                      {languageOptions.map(option => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                  </Select>
+                </FormControl>
+
+                { errors.primary_language?.map((message, idx) => 
+                    <Alert 
+                      borderRadius={5}
+                      key={idx}
+                      status='warning'>
+                      <AlertIcon />
+                      {message}
+                    </Alert>
+                )}
+
+                
+
+                <FormControl id="github_link">
+                  <FormLabel>GitHub Link</FormLabel>
+                  <Input
                     bg={'blackAlpha.50'}
                     type="text"
-                    name='title'
-                    value={title}
+                    name='github_link'
+                    value={github_link}
                     onChange={handleChange} />
-              </FormControl>
-              <FormControl id="content">
-                <FormLabel>Content</FormLabel>
-                <Textarea bg={'blackAlpha.50'} 
-                  rows={10}
-                  type="text-area"
-                  name='content'
-                  value={content}
-                  onChange={handleChange} />
-              </FormControl>
+                </FormControl>
 
-              <FormControl id="language">
-                <FormLabel>Language</FormLabel>
-                <Select
-                  bg={'blackAlpha.50'}
-                  placeholder='Select option'
-                  name='language'
-                  onChange={handleChange}>
-                    {languageOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                </Select>
-              </FormControl>
+                { errors.github_link?.map((message, idx) => 
+                    <Alert 
+                      borderRadius={5}
+                      key={idx}
+                      status='warning'>
+                      <AlertIcon />
+                      {message}
+                    </Alert>
+                )}
 
-              <FormControl id="github_link">
-                <FormLabel>GitHub Link</FormLabel>
-                <Input
-                  bg={'blackAlpha.50'}
-                  type="text"
-                  name='github_link'
-                  value={github_link}
-                  onChange={handleChange} />
-              </FormControl>
+                <HStack 
+                  pt={5}
+                  justifyContent='space-around'>
+                  <Button
+                      type='submit'
+                      w='40%'
+                      colorScheme={'purple'} 
+                      variant={'solid'}>
+                    Submit Article
+                  </Button>
 
-              <HStack 
-                pt={5}
-                justifyContent='space-around'>
-                <Button
-                    type='submit'
-                    w='40%'
-                    colorScheme={'purple'} 
-                    variant={'solid'}>
-                  Submit Article
-                </Button>
-
-                <Button
-                    w='40%'
-                    colorScheme={'red'} 
-                    variant={'solid'}>
-                  Cancel
-                </Button>
-              </HStack>
+                  <Button
+                      w='40%'
+                      colorScheme={'red'} 
+                      variant={'solid'}
+                      onClick={() => navigate(-1)}>
+                    Cancel
+                  </Button>
+                </HStack>
+              </Stack>
             </form>
           </Stack>
         </Flex>
