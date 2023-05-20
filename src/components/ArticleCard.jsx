@@ -52,7 +52,7 @@ const ArticleCard = (props) => {
 
   const currentUser = useCurrentUser();
 
-  const custIconColor = useColorModeValue("#805AD5", "#D6BCFA");
+  const custColor = useColorModeValue("#805AD5", "#D6BCFA");
 
   const handleLike = async () => {
     try {
@@ -139,6 +139,19 @@ const ArticleCard = (props) => {
         <Box maxW="lg" whiteSpace="pre-line">
           <Text>{article_content}</Text>
         </Box>
+
+        {github_link && (
+          <Box>
+            <Heading mt={5} size="sm">
+              GitHub Link:
+            </Heading>
+            <a href={github_link} target="_blank">
+              <Text color={custColor} as="u">
+                {github_link}
+              </Text>
+            </a>
+          </Box>
+        )}
       </CardBody>
 
       <CardFooter justify="space-between" flexWrap="wrap">
@@ -160,7 +173,7 @@ const ArticleCard = (props) => {
           <Button
             flex="1"
             variant="ghost"
-            leftIcon={<AiFillLike color={custIconColor} />}
+            leftIcon={<AiFillLike color={custColor} />}
             onClick={handleUnlike}
           >
             <Show above="sm">Likes </Show>

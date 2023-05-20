@@ -21,7 +21,7 @@ const NavBar = () => {
 
   const loggedInLinks = (
     <>
-      <Box px={4}>
+      <Box px={6}>
         <NavLink to="/feed/">Feed</NavLink>
       </Box>
 
@@ -66,7 +66,7 @@ const NavBar = () => {
         </Box>
       </HStack>
 
-      <HStack>
+      <HStack pr={"10px"}>
         <Show above="lg">
           <Box px={4}>
             <NavLink to="/">Home</NavLink>
