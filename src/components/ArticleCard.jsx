@@ -29,6 +29,8 @@ import { SiPython } from "react-icons/si";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { axiosRes } from "../api/axiosDefaults";
 
+import { useState, useEffect } from "react";
+
 const ArticleCard = (props) => {
   const {
     is_owner,
@@ -42,16 +44,32 @@ const ArticleCard = (props) => {
     like_id,
     primary_language,
     profile_image,
-    profile_id,
     articlePage,
     likes_count,
     comments_count,
     setArticles,
   } = props;
 
-  const currentUser = useCurrentUser();
-
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
+
+  const currentUser = useCurrentUser();
+  const [truncatedContent, setTruncatedContent] = useState("");
+
+  const truncateContent = (content) => {
+    const words = content.split(" ");
+    if (words.length > 5) {
+      const truncatedWords = words.slice(0, 25);
+      return truncatedWords.join(" ") + "...";
+    }
+    return content;
+  };
+
+  useEffect(() => {
+    if (!articlePage) {
+      const truncatedContent = truncateContent(article_content);
+      setTruncatedContent(truncatedContent);
+    }
+  }, [articlePage, article_content]);
 
   const handleLike = async () => {
     try {
@@ -136,7 +154,7 @@ const ArticleCard = (props) => {
         )}
 
         <Box maxW="lg" whiteSpace="pre-line">
-          <Text>{article_content}</Text>
+          <Text>{articlePage ? article_content : truncatedContent}</Text>
         </Box>
 
         {github_link && (
