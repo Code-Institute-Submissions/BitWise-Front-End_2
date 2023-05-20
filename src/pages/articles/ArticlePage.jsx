@@ -26,7 +26,11 @@ const ArticlePage = () => {
 
   return (
     <Flex p={8} flex={1} align={"center"} justify={"center"}>
-      <ArticleCard {...article.results[0]} setArticles={setArticle} />
+      <ArticleCard
+        {...article.results[0]}
+        setArticles={setArticle}
+        articlePage
+      />
     </Flex>
   );
 };

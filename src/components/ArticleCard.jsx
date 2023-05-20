@@ -13,12 +13,22 @@ import {
   Button,
   Show,
   HStack,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverHeader,
+  PopoverBody,
 } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
+import { AiFillLike } from "react-icons/ai";
 import { SiPython } from "react-icons/si";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { axiosRes } from "../api/axiosDefaults";
 
 const ArticleCard = (props) => {
   const {
@@ -34,10 +44,35 @@ const ArticleCard = (props) => {
     primary_language,
     profile_image,
     profile_id,
+    articlePage,
+    likes_count,
+    comments_count,
+    setArticles,
   } = props;
 
   const currentUser = useCurrentUser();
-  const paragraphs = article_content ? article_content.split("\r\n") : [];
+
+  const custIconColor = useColorModeValue("#805AD5", "#D6BCFA");
+
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("likes/", { article: id });
+      setArticles((prevArticles) => ({
+        ...prevArticles,
+        results: prevArticles.results.map((article) => {
+          return article.id === id
+            ? {
+                ...article,
+                likes_count: article.likes_count + 1,
+                like_id: data.id,
+              }
+            : article;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Card maxW="lg">
@@ -48,42 +83,102 @@ const ArticleCard = (props) => {
               <Avatar name={owner} bg={"purple.500"} src={profile_image} />
             </Link>
             <Box>
-              <Heading size="sm">{article_title}</Heading>
-              <Text>{owner}</Text>
+              <Heading size="sm">{owner}</Heading>
+              <Text>
+                {created_at}
+                {updated_at && `(Updated: ${updated_at})`}
+              </Text>
             </Box>
           </Flex>
 
-          <IconButton
-            variant="ghost"
-            colorScheme="gray"
-            aria-label="See menu"
-            icon={<BsThreeDotsVertical />}
-          />
+          {is_owner && articlePage && (
+            <IconButton
+              variant="ghost"
+              colorScheme="gray"
+              aria-label="See menu"
+              icon={<BsThreeDotsVertical />}
+            />
+          )}
         </Flex>
       </CardHeader>
 
       <CardBody pt={0}>
+        <Heading mb={5} size="lg">
+          {article_title}
+        </Heading>
+
         {primary_language && (
           <HStack pb={4}>
-            <SiPython fontSize={"30"} />
-            <Heading>{primary_language || "No Language Recorded"}</Heading>
+            <SiPython fontSize={"20"} />
+            <Heading size="sm">
+              {primary_language || "No Language Recorded"}
+            </Heading>
           </HStack>
         )}
 
-        {paragraphs.map((paragraph, index) => (
-          <Text key={index} mb={4}>
-            {paragraph}
-          </Text>
-        ))}
+        <Box maxW="lg" whiteSpace="pre-line">
+          <Text>{article_content}</Text>
+        </Box>
       </CardBody>
 
       <CardFooter justify="space-between" flexWrap="wrap">
-        <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
-          <Show above="sm">Like</Show>
-        </Button>
-        <Button flex="1" variant="ghost" leftIcon={<BiChat />}>
-          <Show above="sm">Comment</Show>
-        </Button>
+        {is_owner ? (
+          <Popover placement="top">
+            <PopoverTrigger>
+              <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
+                <Show above="sm">Likes </Show>
+                {likes_count}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverCloseButton />
+              <PopoverHeader>Sorry...</PopoverHeader>
+              <PopoverBody>You can't like your own post!</PopoverBody>
+            </PopoverContent>
+          </Popover>
+        ) : like_id ? (
+          <Button
+            flex="1"
+            variant="ghost"
+            leftIcon={<AiFillLike color={custIconColor} />}
+            onClick={() => {}}
+          >
+            <Show above="sm">Likes </Show>
+            {likes_count}
+          </Button>
+        ) : currentUser ? (
+          <Button
+            flex="1"
+            variant="ghost"
+            leftIcon={<BiLike />}
+            onClick={handleLike}
+          >
+            <Show above="sm">Likes </Show>
+            {likes_count}
+          </Button>
+        ) : (
+          <Popover placement="top">
+            <PopoverTrigger>
+              <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
+                <Show above="sm">Likes </Show>
+                {likes_count}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverCloseButton />
+              <PopoverHeader>Sorry...</PopoverHeader>
+              <PopoverBody>You must be logged in to like posts!</PopoverBody>
+            </PopoverContent>
+          </Popover>
+        )}
+
+        <Link to={`/article/${id}`}>
+          <Button flex="1" variant="ghost" leftIcon={<BiChat />}>
+            <Show above="sm">Comments </Show>
+            {comments_count}
+          </Button>
+        </Link>
+
         <Button flex="1" variant="ghost" leftIcon={<BiUserPlus />}>
           <Show above="sm">Follow</Show>
         </Button>
