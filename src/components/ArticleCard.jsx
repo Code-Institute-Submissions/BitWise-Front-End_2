@@ -74,6 +74,26 @@ const ArticleCard = (props) => {
     }
   };
 
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`likes/${like_id}`);
+      setArticles((prevArticles) => ({
+        ...prevArticles,
+        results: prevArticles.results.map((article) => {
+          return article.id === id
+            ? {
+                ...article,
+                likes_count: article.likes_count - 1,
+                like_id: null,
+              }
+            : article;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card maxW="lg">
       <CardHeader>
@@ -141,7 +161,7 @@ const ArticleCard = (props) => {
             flex="1"
             variant="ghost"
             leftIcon={<AiFillLike color={custIconColor} />}
-            onClick={() => {}}
+            onClick={handleUnlike}
           >
             <Show above="sm">Likes </Show>
             {likes_count}
