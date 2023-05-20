@@ -16,7 +16,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverArrow,
   PopoverCloseButton,
   PopoverHeader,
   PopoverBody,
@@ -111,7 +110,7 @@ const ArticleCard = (props) => {
             </Box>
           </Flex>
 
-          {is_owner && articlePage && (
+          {is_owner && (
             <IconButton
               variant="ghost"
               colorScheme="gray"
