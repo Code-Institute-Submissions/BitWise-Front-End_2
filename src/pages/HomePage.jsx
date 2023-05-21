@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { Spinner, Box, Text } from "@chakra-ui/react";
+import { Spinner, Box, Text, SimpleGrid } from "@chakra-ui/react";
 import useArticles from "../../hooks/useAricles";
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
   );
 
   return (
-    <Box>
+    <SimpleGrid>
       {loaded ? (
         articles.results.length ? (
           articles.results.map((article) => (
@@ -26,7 +26,7 @@ const HomePage = () => {
       ) : (
         <Spinner />
       )}
-    </Box>
+    </SimpleGrid>
   );
 };
 
