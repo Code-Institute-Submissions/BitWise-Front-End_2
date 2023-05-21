@@ -1,33 +1,13 @@
-import React, { useEffect } from "react";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { Box, Text } from "@chakra-ui/react";
-
-import ArticleCard from "../components/ArticleCard";
 import { useState } from "react";
-import { axiosReq } from "../api/axiosDefaults";
-
-import { Spinner } from "@chakra-ui/react";
+import ArticleCard from "../components/ArticleCard";
+import { Spinner, Box, Text } from "@chakra-ui/react";
+import useArticles from "../../hooks/useAricles";
 
 const HomePage = () => {
-  const currentUser = useCurrentUser();
-
-  const [articles, setArticles] = useState({ results: [] });
   const [filter, setFilter] = useState("");
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const getArticles = async () => {
-      try {
-        const { data } = await axiosReq.get(`/articles/?${filter}`);
-        setArticles(data);
-        setLoaded(true);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getArticles();
-    setLoaded(false);
-  }, [filter]);
+  const { articles, setArticles, error, loaded } = useArticles(
+    `/articles/?${filter}`
+  );
 
   return (
     <Box>
@@ -41,7 +21,7 @@ const HomePage = () => {
             />
           ))
         ) : (
-          <Text>No Results</Text>
+          <Text>{error}</Text>
         )
       ) : (
         <Spinner />
