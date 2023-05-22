@@ -10,13 +10,13 @@ const OrderDropdown = () => {
   };
 
   return (
-    <Box m={5} w={180}>
+    <Box mx={5} w={180}>
       <form
         onSubmit={(event) => {
           event.preventDefault();
         }}
       >
-        <FormControl id="language">
+        <FormControl id="orderFilter">
           <Select
             placeholder="Date Posted"
             onChange={handleOrderChange}
