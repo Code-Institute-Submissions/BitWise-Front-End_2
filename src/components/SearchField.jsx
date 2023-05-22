@@ -6,7 +6,7 @@ import {
   InputGroup,
   InputLeftElement,
 } from "@chakra-ui/react";
-import { useSearchFilter, useSetSearchFilter } from "../contexts/SearchFilter";
+import { useSearchFilter, useSetSearchFilter } from "../contexts/FilterContext";
 import { SlMagnifier } from "react-icons/sl";
 
 const SearchField = () => {

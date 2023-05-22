@@ -6,16 +6,16 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
-import { SearchFilterProvider } from "./contexts/SearchFilter";
+import { FilterProvider } from "./contexts/FilterContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <BrowserRouter>
         <CurrentUserProvider>
-          <SearchFilterProvider>
+          <FilterProvider>
             <App />
-          </SearchFilterProvider>
+          </FilterProvider>
         </CurrentUserProvider>
       </BrowserRouter>
     </ChakraProvider>

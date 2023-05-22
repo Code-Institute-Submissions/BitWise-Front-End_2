@@ -1,19 +1,23 @@
-import ArticleCard from "../components/ArticleCard";
-import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
 import useArticles from "../hooks/useAricles";
-import { useSearchFilter } from "../contexts/SearchFilter";
 import SearchField from "../components/SearchField";
+import ArticleCard from "../components/ArticleCard";
+import OrderDropdown from "../components/OrderDropdown";
+import { useSearchFilter, useOrderFilter } from "../contexts/FilterContext";
+
+import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
 
 const HomePage = () => {
   const searchFilter = useSearchFilter();
+  const orderFilter = useOrderFilter();
 
   const { articles, setArticles, error, loaded } = useArticles(
-    `/articles/?search=${searchFilter}`
+    `/articles/?search=${searchFilter}&ordering=${orderFilter}`
   );
 
   return (
     <>
       <SearchField />
+      <OrderDropdown />
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
         {loaded ? (
           articles.results.length ? (
