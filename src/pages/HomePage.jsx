@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
-import useArticles from "../../hooks/useAricles";
+import useArticles from "../hooks/useAricles";
 
 const HomePage = () => {
   const [filter, setFilter] = useState("");

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { axiosReq } from "../src/api/axiosDefaults";
+import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 
 const useArticles = (endpoint) => {
