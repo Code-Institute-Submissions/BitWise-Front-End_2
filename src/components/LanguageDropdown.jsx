@@ -4,6 +4,7 @@ import {
 } from "../contexts/FilterContext";
 import { Select, Box, FormControl } from "@chakra-ui/react";
 import languageOptions from "../constants/languageOptions";
+import { useMediaQuery } from "react-responsive";
 
 const LanguageDropdown = () => {
   const languageFilter = useLanguageFilter();
@@ -13,8 +14,10 @@ const LanguageDropdown = () => {
     setLanguageFilter(event.target.value);
   };
 
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+
   return (
-    <Box mb={5} w={180}>
+    <Box mb={5} w={isSmallScreen ? 140 : 155}>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -22,7 +25,7 @@ const LanguageDropdown = () => {
       >
         <FormControl id="language">
           <Select
-            placeholder="All Languages"
+            placeholder={isSmallScreen ? "All" : "All Languages"}
             onChange={handleLanguageChange}
             value={languageFilter}
           >

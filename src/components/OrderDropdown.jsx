@@ -1,5 +1,6 @@
 import { useOrderFilter, useSetOrderFilter } from "../contexts/FilterContext";
 import { Select, Box, FormControl } from "@chakra-ui/react";
+import { useMediaQuery } from "react-responsive";
 
 const OrderDropdown = () => {
   const orderFilter = useOrderFilter();
@@ -9,8 +10,10 @@ const OrderDropdown = () => {
     setOrderFilter(event.target.value);
   };
 
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+
   return (
-    <Box mx={5} w={180}>
+    <Box mx={5} w={isSmallScreen ? 100 : 155}>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -18,12 +21,16 @@ const OrderDropdown = () => {
       >
         <FormControl id="orderFilter">
           <Select
-            placeholder="Date Posted"
+            placeholder={isSmallScreen ? "Posted" : "Date Posted"}
             onChange={handleOrderChange}
             value={orderFilter}
           >
-            <option value="-likes_count">Most Liked</option>
-            <option value="-comments_count">Most Comments</option>
+            <option value="-likes_count">
+              {isSmallScreen ? "Liked" : "Most Liked"}
+            </option>
+            <option value="-comments_count">
+              {isSmallScreen ? "Commented" : "Most Commented"}
+            </option>
           </Select>
         </FormControl>
       </form>
