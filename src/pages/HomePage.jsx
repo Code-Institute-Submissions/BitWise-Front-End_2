@@ -2,6 +2,7 @@ import useArticles from "../hooks/useAricles";
 import SearchField from "../components/SearchField";
 import ArticleCard from "../components/ArticleCard";
 import OrderDropdown from "../components/OrderDropdown";
+import InfiniteScroll from "react-infinite-scroll-component";
 import LanguageDropdown from "../components/LanguageDropdown";
 import {
   useSearchFilter,
@@ -10,6 +11,7 @@ import {
 } from "../contexts/FilterContext";
 
 import { Spinner, Text, SimpleGrid, HStack } from "@chakra-ui/react";
+import { fetchMoreData } from "../utils/utils";
 
 const HomePage = () => {
   const searchFilter = useSearchFilter();
@@ -27,23 +29,30 @@ const HomePage = () => {
         <OrderDropdown />
         <LanguageDropdown />
       </HStack>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
-        {loaded ? (
-          articles.results.length ? (
-            articles.results.map((article) => (
-              <ArticleCard
-                key={article.id}
-                {...article}
-                setArticles={setArticles}
-              />
-            ))
-          ) : (
-            <Text>{error}</Text>
-          )
+      {loaded ? (
+        articles.results.length ? (
+          <InfiniteScroll
+            dataLength={articles.results.length}
+            loader={<Spinner />}
+            hasMore={!!articles.next}
+            next={() => fetchMoreData(articles, setArticles)}
+          >
+            <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
+              {articles.results.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  {...article}
+                  setArticles={setArticles}
+                />
+              ))}
+            </SimpleGrid>
+          </InfiniteScroll>
         ) : (
-          <Spinner />
-        )}
-      </SimpleGrid>
+          <Text>{error}</Text>
+        )
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 };

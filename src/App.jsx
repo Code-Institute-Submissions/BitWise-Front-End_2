@@ -25,14 +25,7 @@ function App() {
         }}
       >
         <Show above="lg">
-          <GridItem
-            minW={250}
-            zIndex={0}
-            pt="100px"
-            height="100vh"
-            bg="#2D3748"
-            area="aside"
-          >
+          <GridItem minW={250} zIndex={0} pt="100px" bg="#2D3748" area="aside">
             {" "}
             Profile Menu
           </GridItem>
