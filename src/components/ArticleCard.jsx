@@ -25,9 +25,9 @@ import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
 import { AiFillLike } from "react-icons/ai";
-import { SiPython } from "react-icons/si";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { axiosRes } from "../api/axiosDefaults";
+import languageOptions from "../constants/languageOptions";
 
 import { useState, useEffect } from "react";
 
@@ -146,9 +146,38 @@ const ArticleCard = (props) => {
 
         {primary_language && (
           <HStack pb={4}>
-            <SiPython fontSize={"20"} />
+            {languageOptions.map((option) => {
+              if (
+                option.value === "CPlusPlus" &&
+                option.icon &&
+                primary_language === "C++"
+              ) {
+                const IconComponent = option.icon;
+                return <IconComponent key={option.value} fontSize={"20"} />;
+              }
+              if (
+                option.value === "CSharp" &&
+                option.icon &&
+                primary_language === "C#"
+              ) {
+                const IconComponent = option.icon;
+                return <IconComponent key={option.value} fontSize={"20"} />;
+              }
+              if (
+                option.value !== "CPlusPlus" &&
+                option.value !== "CSharp" &&
+                option.icon &&
+                option.value === primary_language
+              ) {
+                const IconComponent = option.icon;
+                return <IconComponent key={option.value} fontSize={"20"} />;
+              }
+              return null;
+            })}
             <Heading size="sm">
-              {primary_language || "No Language Recorded"}
+              {languageOptions.find(
+                (option) => option.value === primary_language
+              )?.label || "No Language Recorded"}
             </Heading>
           </HStack>
         )}

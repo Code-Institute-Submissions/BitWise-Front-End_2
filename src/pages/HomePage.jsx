@@ -48,7 +48,7 @@ const HomePage = () => {
             </SimpleGrid>
           </InfiniteScroll>
         ) : (
-          <Text>{error}</Text>
+          <Text>No results found!</Text>
         )
       ) : (
         <Spinner />
