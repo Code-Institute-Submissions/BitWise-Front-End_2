@@ -4,22 +4,32 @@ import ArticleCard from "../components/ArticleCard";
 import OrderDropdown from "../components/OrderDropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import LanguageDropdown from "../components/LanguageDropdown";
+import LikedSwitch from "../components/LikedSwitch";
 import {
   useSearchFilter,
   useOrderFilter,
   useLanguageFilter,
+  useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
 
-import { Spinner, Text, SimpleGrid, HStack } from "@chakra-ui/react";
+import { Spinner, Text, SimpleGrid, HStack, Show } from "@chakra-ui/react";
 import { fetchMoreData } from "../utils/utils";
 
 const HomePage = () => {
   const searchFilter = useSearchFilter();
   const orderFilter = useOrderFilter();
   const languageFilter = useLanguageFilter();
+  const likedByOwnerFilter = useLikedByOwnerFilter();
 
-  const { articles, setArticles, error, loaded } = useArticles(
-    `/articles/?search=${searchFilter}&ordering=${orderFilter}&primary_language=${languageFilter}`
+  const { articles, setArticles, loaded } = useArticles(
+    `/articles/?search=${searchFilter}
+               &ordering=${orderFilter}
+               ${
+                 likedByOwnerFilter
+                   ? `&likes__owner__profile=${likedByOwnerFilter}`
+                   : ""
+               }
+               &primary_language=${languageFilter}`
   );
 
   return (
@@ -28,7 +38,14 @@ const HomePage = () => {
       <HStack>
         <OrderDropdown />
         <LanguageDropdown />
+        <Show above="md">
+          <LikedSwitch />
+        </Show>
       </HStack>
+      <Show below="md">
+        <LikedSwitch />
+      </Show>
+
       {loaded ? (
         articles.results.length ? (
           <InfiniteScroll

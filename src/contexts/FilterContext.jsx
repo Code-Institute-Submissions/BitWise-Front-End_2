@@ -15,10 +15,18 @@ export const SetLanguageFilterContext = createContext();
 export const useLanguageFilter = () => useContext(LanguageFilterContext);
 export const useSetLanguageFilter = () => useContext(SetLanguageFilterContext);
 
+export const LikedByOwnerFilterContext = createContext();
+export const SetLikedByOwnerFilterContext = createContext();
+export const useLikedByOwnerFilter = () =>
+  useContext(LikedByOwnerFilterContext);
+export const useSetLikedByOwnerFilter = () =>
+  useContext(SetLikedByOwnerFilterContext);
+
 export const FilterProvider = ({ children }) => {
   const [searchFilter, setSearchFilter] = useState("");
   const [orderFilter, setOrderFilter] = useState("");
   const [languageFilter, setLanguageFilter] = useState("");
+  const [likedByUserFilter, setLikedByUserFilter] = useState("");
 
   return (
     <SearchFilterContext.Provider value={searchFilter}>
@@ -27,7 +35,13 @@ export const FilterProvider = ({ children }) => {
           <SetOrderFilterContext.Provider value={setOrderFilter}>
             <LanguageFilterContext.Provider value={languageFilter}>
               <SetLanguageFilterContext.Provider value={setLanguageFilter}>
-                {children}
+                <LikedByOwnerFilterContext.Provider value={likedByUserFilter}>
+                  <SetLikedByOwnerFilterContext.Provider
+                    value={setLikedByUserFilter}
+                  >
+                    {children}
+                  </SetLikedByOwnerFilterContext.Provider>
+                </LikedByOwnerFilterContext.Provider>
               </SetLanguageFilterContext.Provider>
             </LanguageFilterContext.Provider>
           </SetOrderFilterContext.Provider>
