@@ -1,8 +1,6 @@
 import useArticles from "../hooks/useAricles";
 import SearchField from "../components/SearchField";
-import ArticleCard from "../components/ArticleCard";
 import OrderDropdown from "../components/OrderDropdown";
-import InfiniteScroll from "react-infinite-scroll-component";
 import LanguageDropdown from "../components/LanguageDropdown";
 import LikedSwitch from "../components/LikedSwitch";
 import {
@@ -11,44 +9,40 @@ import {
   useLanguageFilter,
   useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
 
-import {
-  Spinner,
-  Text,
-  SimpleGrid,
-  HStack,
-  Show,
-  Heading,
-} from "@chakra-ui/react";
-import { fetchMoreData } from "../utils/utils";
+import { HStack, Show } from "@chakra-ui/react";
+import ArticleGrid from "../components/ArticleGrid";
+import LoggedIn from "../components/LoggedIn";
+import { useEffect } from "react";
 
-const HomePage = () => {
-  const currentUser = useCurrentUser();
+import { useResetFilters } from "../services/resetFilters";
+import { useLocation } from "react-router-dom";
+
+const HomePage = (props) => {
+  const { routeFilter = "", message } = props;
   const searchFilter = useSearchFilter();
   const orderFilter = useOrderFilter();
   const languageFilter = useLanguageFilter();
   const likedByOwnerFilter = useLikedByOwnerFilter();
 
+  const resetFilters = useResetFilters();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    resetFilters();
+  }, [pathname]);
+
   const { articles, setArticles, loaded } = useArticles(
-    `/articles/?search=${searchFilter}
-               &ordering=${orderFilter}
-               ${
-                 likedByOwnerFilter
-                   ? `&likes__owner__profile=${likedByOwnerFilter}`
-                   : ""
-               }
-               &primary_language=${languageFilter}`
+    `/articles/?${routeFilter}&search=${searchFilter}&ordering=${orderFilter}` +
+      `${
+        likedByOwnerFilter ? `&likes__owner__profile=${likedByOwnerFilter}` : ""
+      }` +
+      `&primary_language=${languageFilter}`
   );
 
   return (
     <>
-      {currentUser && (
-        <Heading size="md" pl={5} pt={5}>
-          Logged in as {currentUser.username}
-        </Heading>
-      )}
-
+      <LoggedIn />
       <SearchField />
       <HStack>
         <OrderDropdown />
@@ -60,31 +54,12 @@ const HomePage = () => {
       <Show below="md">
         <LikedSwitch />
       </Show>
-
-      {loaded ? (
-        articles.results.length ? (
-          <InfiniteScroll
-            dataLength={articles.results.length}
-            loader={<Spinner />}
-            hasMore={!!articles.next}
-            next={() => fetchMoreData(articles, setArticles)}
-          >
-            <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
-              {articles.results.map((article) => (
-                <ArticleCard
-                  key={article.id}
-                  {...article}
-                  setArticles={setArticles}
-                />
-              ))}
-            </SimpleGrid>
-          </InfiniteScroll>
-        ) : (
-          <Text>No results found!</Text>
-        )
-      ) : (
-        <Spinner />
-      )}
+      <ArticleGrid
+        articles={articles}
+        setArticles={setArticles}
+        loaded={loaded}
+        message={message}
+      />
     </>
   );
 };

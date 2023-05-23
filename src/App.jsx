@@ -7,11 +7,15 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
-import FeedPage from "./pages/FeedPage";
 import ArticleCreateForm from "./pages/articles/ArticleCreateForm";
 import ArticlePage from "./pages/articles/ArticlePage";
 
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+
 function App() {
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
+
   return (
     <>
       <Box position="fixed" top={0} w="100vw" zIndex={5} area="nav">
@@ -39,10 +43,27 @@ function App() {
         </Show>
         <GridItem pt="80px" area="main">
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route
+              exact
+              path="/"
+              element={
+                <HomePage message={"No Results Fount! Check filters."} />
+              }
+            />
+            <Route
+              exact
+              path="/feed/"
+              element={
+                <HomePage
+                  message={
+                    "No Results Found! Ensure you are following at least one profile and check your filters."
+                  }
+                  routeFilter={`owner__followed__owner__profile=${profile_id}`}
+                />
+              }
+            />
             <Route exact path="/login/" element={<LoginPage />} />
             <Route exact path="/register/" element={<RegisterPage />} />
-            <Route exact path="/feed/" element={<FeedPage />} />
             <Route
               exact
               path="/article/create/"
