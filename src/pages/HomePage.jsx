@@ -11,11 +11,20 @@ import {
   useLanguageFilter,
   useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
-import { Spinner, Text, SimpleGrid, HStack, Show } from "@chakra-ui/react";
+import {
+  Spinner,
+  Text,
+  SimpleGrid,
+  HStack,
+  Show,
+  Heading,
+} from "@chakra-ui/react";
 import { fetchMoreData } from "../utils/utils";
 
 const HomePage = () => {
+  const currentUser = useCurrentUser();
   const searchFilter = useSearchFilter();
   const orderFilter = useOrderFilter();
   const languageFilter = useLanguageFilter();
@@ -34,6 +43,12 @@ const HomePage = () => {
 
   return (
     <>
+      {currentUser && (
+        <Heading size="md" pl={5} pt={5}>
+          Logged in as {currentUser.username}
+        </Heading>
+      )}
+
       <SearchField />
       <HStack>
         <OrderDropdown />
