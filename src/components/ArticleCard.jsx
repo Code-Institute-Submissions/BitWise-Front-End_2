@@ -150,8 +150,8 @@ const ArticleCard = (props) => {
               if (language.value === primary_language) {
                 const IconComponent = language.icon;
                 return (
-                  <>
-                    <IconComponent key={language.value} fontSize={"20"} />
+                  <React.Fragment key={language.value}>
+                    <IconComponent fontSize={"20"} />
                     <Heading size="sm">
                       {language.value === "CPlusPlus"
                         ? "C++"
@@ -159,7 +159,7 @@ const ArticleCard = (props) => {
                         ? "C#"
                         : language.value}
                     </Heading>
-                  </>
+                  </React.Fragment>
                 );
               }
               return null;
