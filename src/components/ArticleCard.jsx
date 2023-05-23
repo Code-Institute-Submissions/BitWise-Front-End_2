@@ -146,39 +146,27 @@ const ArticleCard = (props) => {
 
         {primary_language && (
           <HStack pb={4}>
-            {languageOptions.map((option) => {
-              if (
-                option.value === "CPlusPlus" &&
-                option.icon &&
-                primary_language === "C++"
-              ) {
-                const IconComponent = option.icon;
-                return <IconComponent key={option.value} fontSize={"20"} />;
-              }
-              if (
-                option.value === "CSharp" &&
-                option.icon &&
-                primary_language === "C#"
-              ) {
-                const IconComponent = option.icon;
-                return <IconComponent key={option.value} fontSize={"20"} />;
-              }
-              if (
-                option.value !== "CPlusPlus" &&
-                option.value !== "CSharp" &&
-                option.icon &&
-                option.value === primary_language
-              ) {
-                const IconComponent = option.icon;
-                return <IconComponent key={option.value} fontSize={"20"} />;
+            {languageOptions.map((language) => {
+              if (language.value === primary_language) {
+                const IconComponent = language.icon;
+                return (
+                  <>
+                    <IconComponent key={language.value} fontSize={"20"} />
+                    <Heading size="sm">
+                      {language.value === "CPlusPlus"
+                        ? "C++"
+                        : language.value === "CSharp"
+                        ? "C#"
+                        : language.value}
+                    </Heading>
+                  </>
+                );
               }
               return null;
             })}
-            <Heading size="sm">
-              {languageOptions.find(
-                (option) => option.value === primary_language
-              )?.label || "No Language Recorded"}
-            </Heading>
+            {!languageOptions.some(
+              (language) => language.value === primary_language
+            ) && <Heading size="sm">No Language Recorded</Heading>}
           </HStack>
         )}
 
