@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 
 const useLikeArticle = (id, likeId, likesCount, setArticles) => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import languageOptions from "../constants/languageOptions";
-import { axiosRes } from "../api/axiosDefaults";
 import ArticleUpdateButton from "../components/CardUpdateButton";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import {
@@ -30,6 +29,7 @@ import { AiFillLike } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
 import useLikeArticle from "../hooks/useLikeArticle";
+import truncateContent from "../services/truncateContent";
 
 const ArticleCard = (props) => {
   const {
@@ -55,18 +55,9 @@ const ArticleCard = (props) => {
   const currentUser = useCurrentUser();
   const [truncatedContent, setTruncatedContent] = useState("");
 
-  const truncateContent = (content) => {
-    const words = content.split(" ");
-    if (words.length > 5) {
-      const truncatedWords = words.slice(0, 25);
-      return truncatedWords.join(" ") + "...";
-    }
-    return content;
-  };
-
   useEffect(() => {
     if (!articlePage) {
-      const truncatedContent = truncateContent(article_content);
+      const truncatedContent = truncateContent(article_content, 25);
       setTruncatedContent(truncatedContent);
     }
   }, [articlePage, article_content]);
