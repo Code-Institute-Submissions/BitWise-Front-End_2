@@ -14,24 +14,56 @@ import {
   Alert,
   AlertIcon,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import languageOptions from "../../constants/languageOptions";
 
-const ArticleCreateForm = () => {
+import { useParams } from "react-router-dom";
+
+const ArticleEditForm = () => {
+  const { id } = useParams();
   const [errors, setErrors] = useState({});
 
   const [articleData, setArticleData] = useState({
-    title: "",
-    content: "",
-    language: "",
+    article_title: "",
+    article_content: "",
+    primary_language: "",
     github_link: "",
   });
 
-  const { title, content, language, github_link } = articleData;
+  const { article_title, article_content, primary_language, github_link } =
+    articleData;
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/articles/${id}/`);
+        const {
+          article_title,
+          article_content,
+          primary_language,
+          github_link,
+          is_owner,
+        } = data;
+
+        is_owner
+          ? setArticleData({
+              article_title,
+              article_content,
+              primary_language,
+              github_link,
+            })
+          : navigate("/");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    handleMount();
+  }, [navigate, id]);
 
   const handleChange = (event) => {
     setArticleData({
@@ -44,14 +76,14 @@ const ArticleCreateForm = () => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("article_title", title);
-    formData.append("article_content", content);
-    formData.append("primary_language", language);
+    formData.append("article_title", article_title);
+    formData.append("article_content", article_content);
+    formData.append("primary_language", primary_language);
     formData.append("github_link", github_link);
 
     try {
-      const { data } = await axiosReq.post("/articles/", formData);
-      navigate(`/article/${data.id}`);
+      await axiosReq.put(`/articles/${id}/`, formData);
+      navigate(`/article/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -64,7 +96,7 @@ const ArticleCreateForm = () => {
     <Stack minH={"calc(100vh - 100px)"} direction={"row"}>
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"}>
-          <Heading fontSize={"2xl"}>Post an Article</Heading>
+          <Heading fontSize={"2xl"}>Edit Your Article</Heading>
 
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
@@ -73,8 +105,8 @@ const ArticleCreateForm = () => {
                 <Input
                   bg={"blackAlpha.50"}
                   type="text"
-                  name="title"
-                  value={title}
+                  name="article_title"
+                  value={article_title}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -92,8 +124,8 @@ const ArticleCreateForm = () => {
                   bg={"blackAlpha.50"}
                   rows={10}
                   type="text-area"
-                  name="content"
-                  value={content}
+                  name="article_content"
+                  value={article_content}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -109,8 +141,8 @@ const ArticleCreateForm = () => {
                 <FormLabel>Language</FormLabel>
                 <Select
                   bg={"blackAlpha.50"}
-                  placeholder="Select option"
-                  name="language"
+                  value={primary_language}
+                  name="primary_language"
                   onChange={handleChange}
                 >
                   {languageOptions.map((option) => (
@@ -186,4 +218,4 @@ const ArticleCreateForm = () => {
   );
 };
 
-export default ArticleCreateForm;
+export default ArticleEditForm;

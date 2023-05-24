@@ -14,7 +14,7 @@ const ArticleCardHeader = (props) => {
   const { id } = useParams();
 
   const handleEdit = () => {
-    navigate(`/artilces/edit/${pk}/`);
+    navigate(`/article/edit/${pk}/`);
   };
 
   const handleDelete = async () => {

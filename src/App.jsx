@@ -9,6 +9,7 @@ import RegisterPage from "./pages/auth/RegisterPage";
 import ErrorPage from "./pages/errors/ErrorPage";
 import ArticleCreateForm from "./pages/articles/ArticleCreateForm";
 import ArticlePage from "./pages/articles/ArticlePage";
+import ArticleEditForm from "./pages/articles/ArticleEditForm";
 
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
@@ -71,6 +72,11 @@ function App() {
               exact
               path="/article/create/"
               element={<ArticleCreateForm />}
+            />
+            <Route
+              exact
+              path="/article/edit/:id/"
+              element={<ArticleEditForm />}
             />
             <Route exact path="/article/:id/" element={<ArticlePage />} />
 
