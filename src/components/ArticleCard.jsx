@@ -29,6 +29,8 @@ import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
 import { AiFillLike } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
+import useLikeArticle from "../hooks/useLikeArticle";
+
 const ArticleCard = (props) => {
   const {
     is_owner,
@@ -49,7 +51,6 @@ const ArticleCard = (props) => {
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
-  const custColorText = useColorModeValue("white", "black");
 
   const currentUser = useCurrentUser();
   const [truncatedContent, setTruncatedContent] = useState("");
@@ -70,45 +71,12 @@ const ArticleCard = (props) => {
     }
   }, [articlePage, article_content]);
 
-  const handleLike = async () => {
-    try {
-      const { data } = await axiosRes.post("likes/", { article: id });
-      setArticles((prevArticles) => ({
-        ...prevArticles,
-        results: prevArticles.results.map((article) => {
-          return article.id === id
-            ? {
-                ...article,
-                likes_count: article.likes_count + 1,
-                like_id: data.id,
-              }
-            : article;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleUnlike = async () => {
-    try {
-      await axiosRes.delete(`likes/${like_id}`);
-      setArticles((prevArticles) => ({
-        ...prevArticles,
-        results: prevArticles.results.map((article) => {
-          return article.id === id
-            ? {
-                ...article,
-                likes_count: article.likes_count - 1,
-                like_id: null,
-              }
-            : article;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const { handleLike, handleUnlike } = useLikeArticle(
+    id,
+    like_id,
+    likes_count,
+    setArticles
+  );
 
   return (
     <Card>
