@@ -4,6 +4,7 @@ import ArticleCardHeader from "./ArticleCardHeader";
 import ArticleCardBody from "./ArticleCardBody";
 import ArticleCardFooter from "./ArticleCardFooter";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { useColorModeValue } from "@chakra-ui/react";
 
 const ArticleCard = (props) => {
   const {
@@ -25,9 +26,10 @@ const ArticleCard = (props) => {
   } = props;
 
   const currentUser = useCurrentUser();
+  const custColor = useColorModeValue("#FAF5FF", "#4A5568");
 
   return (
-    <Card>
+    <Card borderBottom={"2px solid grey"} borderRight={"2px solid grey"}>
       <CardHeader>
         <ArticleCardHeader
           is_owner={is_owner}
@@ -47,7 +49,12 @@ const ArticleCard = (props) => {
           github_link={github_link}
         />
       </CardBody>
-      <CardFooter justify="space-between" flexWrap="wrap">
+      <CardFooter
+        borderBottomRadius={10}
+        bg={custColor}
+        justify="space-between"
+        flexWrap="wrap"
+      >
         <ArticleCardFooter
           is_owner={is_owner}
           id={id}

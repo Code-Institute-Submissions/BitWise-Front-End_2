@@ -38,10 +38,8 @@ const ArticleCardHeader = (props) => {
         </Link>
         <Box>
           <Heading size="sm">{owner}</Heading>
-          <Text>
-            {created_at}
-            {updated_at && `(Updated: ${updated_at})`}
-          </Text>
+          <Text>{created_at}</Text>
+          <Text>{updated_at && `(Edited: ${updated_at})`}</Text>
         </Box>
       </Flex>
       {is_owner && (
