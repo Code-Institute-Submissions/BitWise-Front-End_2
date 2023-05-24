@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
-import ArticleUpdateButton from "../components/CardUpdateButton";
+import ArticleCardUpdateButton from "../components/ArticleCardUpdateButton";
 
 const ArticleCardHeader = (props) => {
   const { is_owner, owner, created_at, updated_at, profile_image } = props;
@@ -20,7 +20,7 @@ const ArticleCardHeader = (props) => {
           </Text>
         </Box>
       </Flex>
-      {is_owner && <ArticleUpdateButton />}
+      {is_owner && <ArticleCardUpdateButton />}
     </Flex>
   );
 };

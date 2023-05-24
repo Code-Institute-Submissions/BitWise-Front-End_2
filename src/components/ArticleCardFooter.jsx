@@ -4,7 +4,6 @@ import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
 import { AiFillLike } from "react-icons/ai";
 import {
   Button,
-  CardFooter,
   Show,
   Popover,
   PopoverTrigger,

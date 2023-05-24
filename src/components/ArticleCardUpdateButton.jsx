@@ -9,7 +9,7 @@ import {
 import { BiTrash, BiEdit } from "react-icons/bi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const CardUpdateButton = () => {
+const ArticleCardUpdateButton = () => {
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const custColorText = useColorModeValue("white", "black");
 
@@ -41,4 +41,4 @@ const CardUpdateButton = () => {
   );
 };
 
-export default CardUpdateButton;
+export default ArticleCardUpdateButton;
