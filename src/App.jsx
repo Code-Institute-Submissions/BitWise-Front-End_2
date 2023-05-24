@@ -3,10 +3,10 @@ import { Grid, GridItem, Show, Box } from "@chakra-ui/react";
 import "./api/axiosDefaults";
 
 import NavBar from "./components/NavBar";
-import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
-import RegisterPage from "./pages/RegisterPage";
-import ErrorPage from "./pages/ErrorPage";
+import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
+import ErrorPage from "./pages/errors/ErrorPage";
 import ArticleCreateForm from "./pages/articles/ArticleCreateForm";
 import ArticlePage from "./pages/articles/ArticlePage";
 
