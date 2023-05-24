@@ -27,11 +27,14 @@ function App() {
           base: `"main"`,
           lg: `"aside main"`,
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "250px 1fr",
+        }}
       >
         <Show above="lg">
           <GridItem
             minH={"100vh"}
-            minW={250}
             zIndex={0}
             pt="100px"
             bg="#2D3748"

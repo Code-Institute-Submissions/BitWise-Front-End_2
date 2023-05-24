@@ -3,9 +3,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
 import { fetchMoreData } from "../utils/utils";
+import ArticleCardSkeleton from "./ArticleCardSkeleton";
 
 const ArticleGrid = (props) => {
   const { articles, setArticles, loaded, message } = props;
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
     <>
@@ -31,7 +33,11 @@ const ArticleGrid = (props) => {
           <Text>{message}</Text>
         )
       ) : (
-        <Spinner />
+        <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
+          {skeletons.map((skeleton) => (
+            <ArticleCardSkeleton key={skeleton} />
+          ))}
+        </SimpleGrid>
       )}
     </>
   );
