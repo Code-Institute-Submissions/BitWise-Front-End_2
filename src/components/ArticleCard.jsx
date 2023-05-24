@@ -31,6 +31,7 @@ const ArticleCard = (props) => {
       <CardHeader>
         <ArticleCardHeader
           is_owner={is_owner}
+          pk={id}
           owner={owner}
           created_at={created_at}
           updated_at={updated_at}

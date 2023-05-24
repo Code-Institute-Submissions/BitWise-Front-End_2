@@ -9,7 +9,9 @@ import {
 import { BiTrash, BiEdit } from "react-icons/bi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const ArticleCardUpdateButton = () => {
+const ArticleCardUpdateButton = (props) => {
+  const { handleEdit, handleDelete } = props;
+
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const custColorText = useColorModeValue("white", "black");
 
@@ -28,11 +30,11 @@ const ArticleCardUpdateButton = () => {
           left: "auto",
         }}
       >
-        <MenuItem>
+        <MenuItem onClick={handleEdit} aria-label="edit">
           <BiEdit />
           <span>&nbsp;&nbsp;</span>Edit Article
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleDelete} aria-label="delete">
           <BiTrash />
           <span>&nbsp;&nbsp;</span>Delete Article
         </MenuItem>

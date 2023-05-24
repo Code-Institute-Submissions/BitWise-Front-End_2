@@ -2,9 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import ArticleCardUpdateButton from "../components/ArticleCardUpdateButton";
+import { useNavigate } from "react-router-dom";
+import { axiosRes } from "../api/axiosDefaults";
+
+import { useParams } from "react-router-dom";
 
 const ArticleCardHeader = (props) => {
-  const { is_owner, owner, created_at, updated_at, profile_image } = props;
+  const { is_owner, pk, owner, created_at, updated_at, profile_image } = props;
+
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  const handleEdit = () => {
+    navigate(`/artilces/edit/${pk}/`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/articles/${pk}/`);
+      if (id) {
+        navigate(-1);
+      } else {
+        navigate(0);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Flex spacing="4">
@@ -20,7 +44,12 @@ const ArticleCardHeader = (props) => {
           </Text>
         </Box>
       </Flex>
-      {is_owner && <ArticleCardUpdateButton />}
+      {is_owner && (
+        <ArticleCardUpdateButton
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+        />
+      )}
     </Flex>
   );
 };
