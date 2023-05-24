@@ -15,7 +15,7 @@ import ArticleGrid from "../components/ArticleGrid";
 import LoggedIn from "../components/LoggedIn";
 import { useEffect } from "react";
 
-import { useResetFilters } from "../services/resetFilters";
+import { useResetFilters } from "../hooks/useResetFilters";
 import { useLocation } from "react-router-dom";
 
 const HomePage = (props) => {

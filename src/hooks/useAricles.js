@@ -24,6 +24,7 @@ const useArticles = (endpoint) => {
       }
     };
 
+    setLoaded(false);
     getArticles();
 
     return () => controller.abort();

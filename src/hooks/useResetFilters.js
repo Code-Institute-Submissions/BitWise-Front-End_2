@@ -12,9 +12,9 @@ export function useResetFilters() {
   const setLikedByOwnerFilter = useSetLikedByOwnerFilter();
 
   return () => {
-    setSearchFilter(""); // Reset search filter
-    setOrderFilter(""); // Reset order filter
-    setLanguageFilter(""); // Reset language filter
-    setLikedByOwnerFilter(""); // Reset liked by owner filter
+    setSearchFilter("");
+    setOrderFilter("");
+    setLanguageFilter("");
+    setLikedByOwnerFilter("");
   };
 }
