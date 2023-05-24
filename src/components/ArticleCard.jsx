@@ -1,4 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import languageOptions from "../constants/languageOptions";
+import { axiosRes } from "../api/axiosDefaults";
+import ArticleUpdateButton from "../components/CardUpdateButton";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 import {
   Card,
   CardHeader,
@@ -7,7 +12,6 @@ import {
   Text,
   Avatar,
   Box,
-  IconButton,
   CardBody,
   CardFooter,
   Button,
@@ -21,14 +25,8 @@ import {
   PopoverBody,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
 import { AiFillLike } from "react-icons/ai";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { axiosRes } from "../api/axiosDefaults";
-import languageOptions from "../constants/languageOptions";
-
 import { useState, useEffect } from "react";
 
 const ArticleCard = (props) => {
@@ -51,6 +49,7 @@ const ArticleCard = (props) => {
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
+  const custColorText = useColorModeValue("white", "black");
 
   const currentUser = useCurrentUser();
   const [truncatedContent, setTruncatedContent] = useState("");
@@ -128,14 +127,7 @@ const ArticleCard = (props) => {
             </Box>
           </Flex>
 
-          {is_owner && (
-            <IconButton
-              variant="ghost"
-              colorScheme="gray"
-              aria-label="See menu"
-              icon={<BsThreeDotsVertical />}
-            />
-          )}
+          {is_owner && <ArticleUpdateButton />}
         </Flex>
       </CardHeader>
 
