@@ -5,7 +5,7 @@ import ArticleCard from "../../components/ArticleCard";
 import { useParams } from "react-router-dom";
 import CommentCreate from "../../components/CommentCreate";
 import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
-import useArticle from "../../hooks/UseArticle";
+import useArticle from "../../hooks/useArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../../components/Comment";
 
