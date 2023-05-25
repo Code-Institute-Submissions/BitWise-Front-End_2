@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
 
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreate from "../../components/CommentCreate";
 import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
 import useArticle from "../../hooks/UseArticle";
 
 const ArticlePage = () => {
   const { id } = useParams();
-
   const { article, setArticle, error, loaded } = useArticle(`/articles/${id}`);
 
   return (
@@ -37,7 +34,7 @@ const ArticlePage = () => {
       )}
 
       <Flex p={8} align={"center"} justify={"center"}>
-        <CommentCreate />
+        <CommentCreate {...article.results[0]} />
       </Flex>
     </>
   );
