@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Stack, Divider } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Stack, Card } from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
 
@@ -7,16 +7,15 @@ import CommentCreate from "../../components/CommentCreate";
 import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
 import useArticle from "../../hooks/UseArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { useState } from "react";
+import Comment from "../../components/Comment";
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const { article, setArticle, error, loaded } = useArticle(`/articles/${id}`);
+  const { article, setArticle, comments, setComments, error, loaded } =
+    useArticle(`/articles/${id}`, `/comments/?article=${id}`);
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const profile_id = currentUser?.profile_id;
-
-  const [comments, setComments] = useState({ results: [] });
 
   return (
     <>
@@ -66,6 +65,13 @@ const ArticlePage = () => {
               setComments={setComments}
               currentUser={currentUser}
             />
+          )}
+          {comments.results.length ? (
+            comments.results.map((comment) => (
+              <Comment key={comment.id} comment={comment} />
+            ))
+          ) : (
+            <Text>No comments</Text>
           )}
         </Stack>
       </Flex>

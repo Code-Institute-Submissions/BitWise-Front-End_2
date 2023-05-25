@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 
-const useArticle = (endpoint) => {
+const useArticle = (endpoint1, endpoint2) => {
   const [article, setArticle] = useState({ results: [] });
+  const [comments, setComments] = useState({ results: [] });
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
 
@@ -12,12 +13,16 @@ const useArticle = (endpoint) => {
 
     const getArticle = async () => {
       try {
-        const [{ data: article }] = await Promise.all([
-          axiosReq.get(endpoint, {
+        const [{ data: article }, { data: comments }] = await Promise.all([
+          axiosReq.get(endpoint1, {
+            signal: controller.signal,
+          }),
+          axiosReq.get(endpoint2, {
             signal: controller.signal,
           }),
         ]);
         setArticle({ results: [article] });
+        setComments(comments);
         setLoaded(true);
       } catch (err) {
         if (err instanceof CanceledError) return;
@@ -32,7 +37,7 @@ const useArticle = (endpoint) => {
     return () => controller.abort();
   }, []);
 
-  return { article, setArticle, error, loaded };
+  return { article, setArticle, comments, setComments, error, loaded };
 };
 
 export default useArticle;
