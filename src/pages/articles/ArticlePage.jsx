@@ -7,36 +7,17 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreate from "../../components/CommentCreate";
 import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
+import useArticle from "../../hooks/UseArticle";
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const [article, setArticle] = useState({ results: [] });
-  const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState("");
 
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const [{ data: article }] = await Promise.all([
-          axiosReq.get(`/articles/${id}`),
-        ]);
-        setArticle({ results: [article] });
-        setLoaded(true);
-        console.log(article);
-      } catch (err) {
-        setError(err.message);
-        setLoaded(true);
-      }
-    };
-
-    setLoaded(false);
-    handleMount();
-  }, []);
+  const { article, setArticle, error, loaded } = useArticle(`/articles/${id}`);
 
   return (
     <>
       {loaded ? (
-        article ? (
+        article.results.length ? (
           <Flex p={8} align={"center"} justify={"center"}>
             <ArticleCard
               {...article.results[0]}
@@ -45,7 +26,7 @@ const ArticlePage = () => {
             />
           </Flex>
         ) : (
-          <Text>{"No Article Found"}</Text>
+          <Text>No Results Found</Text>
         )
       ) : (
         <Flex p={8} align={"center"} justify={"center"}>
