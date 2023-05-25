@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Switch,
-  Box,
-  FormControl,
-  FormLabel,
-  Flex,
-  Text,
-} from "@chakra-ui/react";
+import { Switch, Box, FormControl, FormLabel, Flex } from "@chakra-ui/react";
 import {
   useLikedByOwnerFilter,
   useSetLikedByOwnerFilter,
@@ -20,7 +13,7 @@ const LikedSwitch = () => {
   const currentUser = useCurrentUser();
 
   const handleSwitchChange = (event) => {
-    const value = event.target.checked ? currentUser.pk : "";
+    const value = event.target.checked ? currentUser.profile_id : "";
     setLikedByUserSwitch(value);
   };
 
@@ -42,7 +35,7 @@ const LikedSwitch = () => {
               <Switch
                 colorScheme="purple"
                 onChange={handleSwitchChange}
-                isChecked={likedByUserSwitch === currentUser?.pk}
+                isChecked={likedByUserSwitch === currentUser?.profile_id}
               />
             </Flex>
           </FormControl>

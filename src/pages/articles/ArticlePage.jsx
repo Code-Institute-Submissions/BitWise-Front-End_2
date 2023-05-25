@@ -47,13 +47,7 @@ const ArticlePage = () => {
           </Flex>
 
           <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
-            {comments.results.length ? (
-              <Heading size="md">Join the discussion!</Heading>
-            ) : currentUser ? (
-              <Heading size="md">Be the first to comment!</Heading>
-            ) : (
-              <Heading size="md">Login to comment</Heading>
-            )}
+            {currentUser ? null : <Heading size="md">Login to comment</Heading>}
           </Flex>
 
           {currentUser && (
@@ -71,7 +65,7 @@ const ArticlePage = () => {
               <Comment key={comment.id} comment={comment} />
             ))
           ) : (
-            <Text>No comments</Text>
+            <Heading size="md">Be the first to comment!</Heading>
           )}
         </Stack>
       </Flex>
