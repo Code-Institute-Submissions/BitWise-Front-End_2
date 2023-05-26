@@ -7,10 +7,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BiTrash, BiEdit } from "react-icons/bi";
-import { BsThreeDotsVertical } from "react-icons/bs";
 
-const ArticleCardUpdateButton = (props) => {
-  const { handleEdit, handleDelete } = props;
+const UpdateDeleteButton = (props) => {
+  const { handleEdit, handleDelete, icon, target } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const custColorText = useColorModeValue("white", "black");
@@ -21,7 +20,7 @@ const ArticleCardUpdateButton = (props) => {
         as={Button}
         _expanded={{ bg: custColor, color: custColorText }}
       >
-        <BsThreeDotsVertical aria-label="See menu" />
+        {icon}
       </MenuButton>
       <MenuList
         style={{
@@ -32,15 +31,15 @@ const ArticleCardUpdateButton = (props) => {
       >
         <MenuItem onClick={handleEdit} aria-label="edit">
           <BiEdit />
-          <span>&nbsp;&nbsp;</span>Edit Article
+          <span>&nbsp;&nbsp;</span>Edit {target}
         </MenuItem>
         <MenuItem onClick={handleDelete} aria-label="delete">
           <BiTrash />
-          <span>&nbsp;&nbsp;</span>Delete Article
+          <span>&nbsp;&nbsp;</span>Delete {target}
         </MenuItem>
       </MenuList>
     </Menu>
   );
 };
 
-export default ArticleCardUpdateButton;
+export default UpdateDeleteButton;

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
-import ArticleCardUpdateButton from "../components/ArticleCardUpdateButton";
+import UpdateDeleteButton from "./UpdateDeleteButton";
 import { useNavigate } from "react-router-dom";
 import { axiosRes } from "../api/axiosDefaults";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { useParams } from "react-router-dom";
 
@@ -43,7 +44,9 @@ const ArticleCardHeader = (props) => {
         </Box>
       </Flex>
       {is_owner && (
-        <ArticleCardUpdateButton
+        <UpdateDeleteButton
+          icon={<BsThreeDotsVertical />}
+          target={"Article"}
           handleEdit={handleEdit}
           handleDelete={handleDelete}
         />
