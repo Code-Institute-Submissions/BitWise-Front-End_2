@@ -58,12 +58,14 @@ const Comment = (props) => {
               <Text fontWeight="bold">{owner}</Text>
               <Text fontSize="sm">{created_at}</Text>
             </Box>
-            <UpdateDeleteButton
-              icon={<BiMessageEdit />}
-              target={"Comment"}
-              handleEdit={() => {}}
-              handleDelete={handleDelete}
-            />
+            {is_owner && (
+              <UpdateDeleteButton
+                icon={<BiMessageEdit />}
+                target={"Comment"}
+                handleEdit={() => {}}
+                handleDelete={handleDelete}
+              />
+            )}
           </HStack>
         </Flex>
         <Text p={5}>{body}</Text>
