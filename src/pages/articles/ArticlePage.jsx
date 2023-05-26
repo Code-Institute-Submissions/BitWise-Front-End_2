@@ -9,12 +9,12 @@ import useArticle from "../../hooks/useArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../../components/Comment";
 import { useColorModeValue } from "@chakra-ui/react";
-import { BiUnderline } from "react-icons/bi";
 
 const ArticlePage = () => {
   const { id } = useParams();
   const { article, setArticle, comments, setComments, error, loaded } =
     useArticle(`/articles/${id}`, `/comments/?article=${id}`);
+
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const profile_id = currentUser?.profile_id;
@@ -78,7 +78,12 @@ const ArticlePage = () => {
 
           {comments.results.length
             ? comments.results.map((comment) => (
-                <Comment key={comment.id} comment={comment} />
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setArticle={setArticle}
+                  setComments={setComments}
+                />
               ))
             : null}
         </Stack>
