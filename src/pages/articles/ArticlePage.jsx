@@ -1,13 +1,15 @@
-import { Box, Flex, Heading, Text, Stack, Card } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Stack } from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CommentCreate from "../../components/CommentCreate";
 import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
 import useArticle from "../../hooks/useArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../../components/Comment";
+import { useColorModeValue } from "@chakra-ui/react";
+import { BiUnderline } from "react-icons/bi";
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -16,6 +18,7 @@ const ArticlePage = () => {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const profile_id = currentUser?.profile_id;
+  const custLinkColor = useColorModeValue("#805AD5", "#D6BCFA");
 
   return (
     <>
@@ -47,7 +50,19 @@ const ArticlePage = () => {
           </Flex>
 
           <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
-            {currentUser ? null : <Heading size="md">Login to comment</Heading>}
+            {currentUser ? (
+              comments.results.length ? (
+                <Heading size="md">Join the conversation!</Heading>
+              ) : (
+                <Heading size="md">Be the first to comment!</Heading>
+              )
+            ) : (
+              <Link to="/login/">
+                <Heading as="u" color={custLinkColor} size="md">
+                  Login to comment!
+                </Heading>
+              </Link>
+            )}
           </Flex>
 
           {currentUser && (
@@ -60,13 +75,12 @@ const ArticlePage = () => {
               currentUser={currentUser}
             />
           )}
-          {comments.results.length ? (
-            comments.results.map((comment) => (
-              <Comment key={comment.id} comment={comment} />
-            ))
-          ) : (
-            <Heading size="md">Be the first to comment!</Heading>
-          )}
+
+          {comments.results.length
+            ? comments.results.map((comment) => (
+                <Comment key={comment.id} comment={comment} />
+              ))
+            : null}
         </Stack>
       </Flex>
     </>

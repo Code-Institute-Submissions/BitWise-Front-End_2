@@ -17,6 +17,7 @@ import { useEffect } from "react";
 
 import { useResetFilters } from "../hooks/useResetFilters";
 import { useLocation } from "react-router-dom";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const HomePage = (props) => {
   const { routeFilter = "", message } = props;
@@ -24,6 +25,7 @@ const HomePage = (props) => {
   const orderFilter = useOrderFilter();
   const languageFilter = useLanguageFilter();
   const likedByOwnerFilter = useLikedByOwnerFilter();
+  const currentUser = useCurrentUser();
 
   const resetFilters = useResetFilters();
   const { pathname } = useLocation();
@@ -47,13 +49,17 @@ const HomePage = (props) => {
       <HStack>
         <OrderDropdown />
         <LanguageDropdown />
-        <Show above="md">
+        {currentUser && (
+          <Show above="md">
+            <LikedSwitch />
+          </Show>
+        )}
+      </HStack>
+      {currentUser && (
+        <Show below="md">
           <LikedSwitch />
         </Show>
-      </HStack>
-      <Show below="md">
-        <LikedSwitch />
-      </Show>
+      )}
       <ArticleGrid
         articles={articles}
         setArticles={setArticles}
