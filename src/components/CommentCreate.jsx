@@ -6,6 +6,8 @@ import {
   Stack,
   Button,
   Flex,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import { useState } from "react";
@@ -15,6 +17,7 @@ import { RiMailSendLine } from "react-icons/ri";
 const CommentCreate = (props) => {
   const { article, setArticle, setComments } = props;
   const [body, setBody] = useState("");
+  const [errors, setErrors] = useState({});
 
   const custColor = useColorModeValue("#FAF5FF", "#4A5568");
   const custCommentBg = useColorModeValue("#805AD5", "#2D3748");
@@ -44,7 +47,7 @@ const CommentCreate = (props) => {
       }));
       setBody("");
     } catch (err) {
-      console.log(err);
+      setErrors(err.response?.data);
     }
   };
 
@@ -60,6 +63,12 @@ const CommentCreate = (props) => {
                 value={body}
                 onChange={handleChange}
               />
+              {errors.body?.map((message, idx) => (
+                <Alert mt={2} borderRadius={5} key={idx} status="warning">
+                  <AlertIcon />
+                  {message}
+                </Alert>
+              ))}
               <Flex mt={2} justifyContent={"end"}>
                 <Button type="submit">
                   <RiMailSendLine />
