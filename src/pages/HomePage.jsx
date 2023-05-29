@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { IconButton } from "@chakra-ui/react";
+import { FaArrowUp } from "react-icons/fa";
 import useArticles from "../hooks/useAricles";
 import SearchField from "../components/SearchField";
 import OrderDropdown from "../components/OrderDropdown";
@@ -9,15 +13,13 @@ import {
   useLanguageFilter,
   useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
-
 import { HStack, Show } from "@chakra-ui/react";
 import ArticleGrid from "./articles/ArticleGrid";
 import LoggedIn from "../components/LoggedIn";
-import { useEffect } from "react";
-
 import { useResetFilters } from "../hooks/useResetFilters";
-import { useLocation } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+
+import { useColorModeValue } from "@chakra-ui/react";
 
 const HomePage = (props) => {
   const { routeFilter = "", message } = props;
@@ -30,6 +32,9 @@ const HomePage = (props) => {
   const resetFilters = useResetFilters();
   const { pathname } = useLocation();
 
+  const custBgColor = useColorModeValue("#805AD5", "#B794F4");
+  const custHoverColor = useColorModeValue("#B794F4", "#805AD5");
+
   useEffect(() => {
     resetFilters();
   }, [pathname]);
@@ -41,6 +46,28 @@ const HomePage = (props) => {
       }` +
       `&primary_language=${languageFilter}`
   );
+
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    setShowScrollToTop(scrollTop > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -66,6 +93,21 @@ const HomePage = (props) => {
         loaded={loaded}
         message={message}
       />
+      {showScrollToTop && (
+        <IconButton
+          icon={<FaArrowUp />}
+          aria-label="Scroll to top"
+          position="fixed"
+          bottom="4"
+          right="4"
+          bg={custBgColor}
+          _hover={{
+            bg: custHoverColor,
+          }}
+          color="white"
+          onClick={scrollToTop}
+        />
+      )}
     </>
   );
 };
