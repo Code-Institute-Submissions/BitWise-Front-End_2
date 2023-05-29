@@ -38,6 +38,7 @@ const ArticleCard = (props) => {
           created_at={created_at}
           updated_at={updated_at}
           profile_image={profile_image}
+          setArticles={setArticles}
         />
       </CardHeader>
       <CardBody>

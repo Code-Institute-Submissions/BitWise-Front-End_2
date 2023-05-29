@@ -9,7 +9,15 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 
 const ArticleCardHeader = (props) => {
-  const { is_owner, pk, owner, created_at, updated_at, profile_image } = props;
+  const {
+    is_owner,
+    pk,
+    owner,
+    created_at,
+    updated_at,
+    profile_image,
+    setArticles,
+  } = props;
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -24,7 +32,10 @@ const ArticleCardHeader = (props) => {
       if (id) {
         navigate(-1);
       } else {
-        navigate(0);
+        setArticles((prevArticles) => ({
+          ...prevArticles,
+          results: prevArticles.results.filter((article) => article.id !== pk),
+        }));
       }
     } catch (err) {
       console.log(err);
