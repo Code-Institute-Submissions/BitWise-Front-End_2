@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import UpdateDeleteButton from "./UpdateDeleteButton";
-import { useNavigate } from "react-router-dom";
-import { axiosRes } from "../api/axiosDefaults";
 import { BsThreeDotsVertical } from "react-icons/bs";
-
 import { useParams } from "react-router-dom";
+import useDeleteArticle from "../hooks/useDeleteArticle";
+import { useNavigate } from "react-router-dom";
 
 const ArticleCardHeader = (props) => {
   const {
@@ -20,27 +19,12 @@ const ArticleCardHeader = (props) => {
   } = props;
 
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const handleEdit = () => {
     navigate(`/article/edit/${pk}/`);
   };
 
-  const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/articles/${pk}/`);
-      if (id) {
-        navigate(-1);
-      } else {
-        setArticles((prevArticles) => ({
-          ...prevArticles,
-          results: prevArticles.results.filter((article) => article.id !== pk),
-        }));
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const { handleDelete, error } = useDeleteArticle(pk, setArticles);
 
   return (
     <Flex spacing="4">
