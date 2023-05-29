@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
+import { MdMarkChatRead } from "react-icons/md";
+MdMarkChatRead;
 import { AiFillLike } from "react-icons/ai";
 import {
   Button,
@@ -11,6 +13,7 @@ import {
   PopoverCloseButton,
   PopoverHeader,
   PopoverBody,
+  Text,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import useLikeArticle from "../hooks/useLikeArticle";
@@ -24,6 +27,7 @@ const ArticleCardFooter = (props) => {
     comments_count,
     setArticles,
     currentUser,
+    current_user_comments_count,
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
@@ -88,7 +92,17 @@ const ArticleCardFooter = (props) => {
       )}
 
       <Link to={`/article/${id}`}>
-        <Button flex="1" variant="ghost" leftIcon={<BiChat />}>
+        <Button
+          flex="1"
+          variant="ghost"
+          leftIcon={
+            current_user_comments_count > 0 ? (
+              <MdMarkChatRead color={custColor} />
+            ) : (
+              <BiChat />
+            )
+          }
+        >
           <Show above="sm">Comments </Show>
           {comments_count}
         </Button>

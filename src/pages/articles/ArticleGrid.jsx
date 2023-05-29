@@ -1,9 +1,9 @@
-import ArticleCard from "../components/ArticleCard";
+import ArticleCard from "../../components/ArticleCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
-import { fetchMoreData } from "../utils/utils";
-import ArticleCardSkeleton from "./ArticleCardSkeleton";
+import { fetchMoreData } from "../../utils/utils";
+import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
 
 const ArticleGrid = (props) => {
   const { articles, setArticles, loaded, message } = props;

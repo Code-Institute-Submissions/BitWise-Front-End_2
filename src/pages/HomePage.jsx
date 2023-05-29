@@ -11,7 +11,7 @@ import {
 } from "../contexts/FilterContext";
 
 import { HStack, Show } from "@chakra-ui/react";
-import ArticleGrid from "../components/ArticleGrid";
+import ArticleGrid from "./articles/ArticleGrid";
 import LoggedIn from "../components/LoggedIn";
 import { useEffect } from "react";
 

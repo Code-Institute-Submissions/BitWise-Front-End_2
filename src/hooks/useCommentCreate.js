@@ -25,6 +25,8 @@ const useCommentCreate = (article, setArticle, setComments) => {
           {
             ...prevArticle.results[0],
             comments_count: prevArticle.results[0].comments_count + 1,
+            current_user_comments_count:
+              prevArticle.results[0].current_user_comments_count + 1,
           },
         ],
       }));

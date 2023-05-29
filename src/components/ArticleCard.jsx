@@ -21,6 +21,7 @@ const ArticleCard = (props) => {
     profile_image,
     articlePage,
     likes_count,
+    current_user_comments_count,
     comments_count,
     setArticles,
   } = props;
@@ -62,6 +63,7 @@ const ArticleCard = (props) => {
           like_id={like_id}
           likes_count={likes_count}
           comments_count={comments_count}
+          current_user_comments_count={current_user_comments_count}
           setArticles={setArticles}
           currentUser={currentUser}
         />
