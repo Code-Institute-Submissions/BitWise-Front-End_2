@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Stack, Spinner } from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
 
@@ -9,6 +9,8 @@ import useArticle from "../../hooks/useArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../../components/Comment";
 import { useColorModeValue } from "@chakra-ui/react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -76,16 +78,23 @@ const ArticlePage = () => {
             />
           )}
 
-          {comments.results.length
-            ? comments.results.map((comment) => (
+          {comments.results.length ? (
+            <InfiniteScroll
+              dataLength={comments.results.length}
+              loader={<Spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            >
+              {comments.results.map((comment) => (
                 <Comment
                   key={comment.id}
                   {...comment}
                   setArticle={setArticle}
                   setComments={setComments}
                 />
-              ))
-            : null}
+              ))}
+            </InfiniteScroll>
+          ) : null}
         </Stack>
       </Flex>
     </>
