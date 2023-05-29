@@ -10,46 +10,20 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
-import { useState } from "react";
-import { axiosRes } from "../api/axiosDefaults";
+import useCommentCreate from "../hooks/useCommentCreate";
 import { RiMailSendLine } from "react-icons/ri";
 
 const CommentCreate = (props) => {
   const { article, setArticle, setComments } = props;
-  const [body, setBody] = useState("");
-  const [errors, setErrors] = useState({});
 
   const custColor = useColorModeValue("#FAF5FF", "#4A5568");
   const custCommentBg = useColorModeValue("#805AD5", "#2D3748");
 
-  const handleChange = (event) => {
-    setBody(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const { data } = await axiosRes.post("/comments/", {
-        article,
-        body,
-      });
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: [data, ...prevComments.results],
-      }));
-      setArticle((prevArticle) => ({
-        results: [
-          {
-            ...prevArticle.results[0],
-            comments_count: prevArticle.results[0].comments_count + 1,
-          },
-        ],
-      }));
-      setBody("");
-    } catch (err) {
-      setErrors(err.response?.data);
-    }
-  };
+  const { body, errors, handleChange, handleSubmit } = useCommentCreate(
+    article,
+    setArticle,
+    setComments
+  );
 
   return (
     <Box w="100%">
