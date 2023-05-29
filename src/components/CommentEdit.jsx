@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Stack,
@@ -11,41 +11,17 @@ import {
 } from "@chakra-ui/react";
 import { FiSend } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
-import { axiosRes } from "../api/axiosDefaults";
+import useCommentEdit from "../hooks/useCommentEdit";
 
 const CommentEdit = (props) => {
   const { id, body, setShowEditComment, setComments } = props;
 
-  const [commentBody, setCommentBody] = useState(body);
-  const [errors, setErrors] = useState("");
-
-  const handleChange = (event) => {
-    setCommentBody(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      await axiosRes.put(`/comments/${id}/`, {
-        body: commentBody.trim(),
-      });
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: prevComments.results.map((comment) => {
-          return comment.id === id
-            ? {
-                ...comment,
-                body: commentBody.trim(),
-              }
-            : comment;
-        }),
-      }));
-      setShowEditComment(false);
-    } catch (err) {
-      setErrors(err.response?.data);
-    }
-  };
+  const { commentBody, handleChange, handleSubmit, errors } = useCommentEdit(
+    id,
+    body,
+    setComments,
+    setShowEditComment
+  );
 
   return (
     <Box p={5}>
