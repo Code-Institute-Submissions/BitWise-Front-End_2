@@ -23,6 +23,8 @@ const useCommentEdit = (id, body, setComments, setShowEditComment) => {
             ? {
                 ...comment,
                 body: commentBody.trim(),
+                updated_at_edited: "edited",
+                updated_at: "now",
               }
             : comment;
         }),

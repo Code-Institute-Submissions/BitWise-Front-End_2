@@ -40,7 +40,11 @@ const Comment = (props) => {
           >
             <Box>
               <Text fontWeight="bold">{owner}</Text>
-              <Text fontSize="sm">{created_at}</Text>
+              {updated_at_edited ? (
+                <Text fontSize="sm">edited~{updated_at}</Text>
+              ) : (
+                <Text fontSize="sm">{created_at}</Text>
+              )}
             </Box>
             {is_owner && (
               <UpdateDeleteButton
