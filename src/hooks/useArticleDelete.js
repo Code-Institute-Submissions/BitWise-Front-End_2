@@ -3,7 +3,7 @@ import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 import { useParams } from "react-router-dom";
 
-const useDeleteArticle = (pk, setArticles) => {
+const useArticleDelete = (pk, setArticles) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -27,4 +27,4 @@ const useDeleteArticle = (pk, setArticles) => {
   return { handleDelete, error };
 };
 
-export default useDeleteArticle;
+export default useArticleDelete;

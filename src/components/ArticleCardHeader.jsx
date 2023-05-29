@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import UpdateDeleteButton from "./UpdateDeleteButton";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { useParams } from "react-router-dom";
-import useDeleteArticle from "../hooks/useDeleteArticle";
+import useArticleDelete from "../hooks/useArticleDelete";
 import { useNavigate } from "react-router-dom";
 
 const ArticleCardHeader = (props) => {
@@ -24,7 +23,7 @@ const ArticleCardHeader = (props) => {
     navigate(`/article/edit/${pk}/`);
   };
 
-  const { handleDelete, error } = useDeleteArticle(pk, setArticles);
+  const { handleDelete, error } = useArticleDelete(pk, setArticles);
 
   return (
     <Flex spacing="4">

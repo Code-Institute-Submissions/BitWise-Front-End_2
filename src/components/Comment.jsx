@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useColorModeValue } from "@chakra-ui/react";
 import { BiMessageEdit } from "react-icons/bi";
 import UpdateDeleteButton from "./UpdateDeleteButton";
-import { axiosRes } from "../api/axiosDefaults";
+import useCommentDelete from "../hooks/useCommentDelete";
 
 const Comment = (props) => {
   const {
@@ -21,26 +21,7 @@ const Comment = (props) => {
   } = props;
   const custColor = useColorModeValue("#FAF5FF", "#4A5568");
 
-  const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/comments/${id}/`);
-      setArticle((prevArticle) => ({
-        results: [
-          {
-            ...prevArticle.results[0],
-            comments_count: prevArticle.results[0].comments_count - 1,
-          },
-        ],
-      }));
-
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: prevComments.results.filter((comment) => comment.id !== id),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const { handleDelete, error } = useCommentDelete(id, setArticle, setComments);
 
   return (
     <>
