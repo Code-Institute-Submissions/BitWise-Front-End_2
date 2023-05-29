@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Card, Text, Avatar, Flex, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useColorModeValue } from "@chakra-ui/react";
 import { BiMessageEdit } from "react-icons/bi";
 import UpdateDeleteButton from "./UpdateDeleteButton";
 import useCommentDelete from "../hooks/useCommentDelete";
+import CommentsEdit from "./CommentEdit";
 
 const Comment = (props) => {
   const {
@@ -22,6 +23,8 @@ const Comment = (props) => {
   const custColor = useColorModeValue("#FAF5FF", "#4A5568");
 
   const { handleDelete, error } = useCommentDelete(id, setArticle, setComments);
+
+  const [showEditComment, setShowEditComment] = useState(false);
 
   return (
     <>
@@ -43,13 +46,22 @@ const Comment = (props) => {
               <UpdateDeleteButton
                 icon={<BiMessageEdit />}
                 target={"Comment"}
-                handleEdit={() => {}}
+                handleEdit={() => setShowEditComment(true)}
                 handleDelete={handleDelete}
               />
             )}
           </HStack>
         </Flex>
-        <Text p={5}>{body}</Text>
+        {showEditComment ? (
+          <CommentsEdit
+            id={id}
+            body={body}
+            setShowEditComment={setShowEditComment}
+            setComments={setComments}
+          />
+        ) : (
+          <Text p={5}>{body}</Text>
+        )}
       </Card>
       <Box p="1" /> {/*margin on card not working, not sure why*/}
     </>
