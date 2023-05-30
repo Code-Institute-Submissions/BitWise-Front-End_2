@@ -23,7 +23,7 @@ const ArticlePage = () => {
   const custLinkColor = useColorModeValue("#805AD5", "#D6BCFA");
 
   return (
-    <>
+    <Box pb={20}>
       {loaded ? (
         article.results.length ? (
           <Flex p={8} align={"center"} justify={"center"}>
@@ -99,7 +99,7 @@ const ArticlePage = () => {
           ) : null}
         </Stack>
       </Flex>
-    </>
+    </Box>
   );
 };
 
