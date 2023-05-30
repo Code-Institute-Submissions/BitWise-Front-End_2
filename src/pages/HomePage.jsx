@@ -42,7 +42,6 @@ const HomePage = (props) => {
 
   return (
     <>
-      <LoggedIn />
       <SearchField />
       <HStack>
         <OrderDropdown />

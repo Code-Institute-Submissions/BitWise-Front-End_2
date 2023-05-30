@@ -13,7 +13,6 @@ import {
   PopoverCloseButton,
   PopoverHeader,
   PopoverBody,
-  Text,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import useLikeArticle from "../hooks/useLikeArticle";

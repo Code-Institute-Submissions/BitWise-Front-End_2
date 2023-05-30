@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Grid, GridItem, Show, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Show, Box, Card } from "@chakra-ui/react";
 import "./api/axiosDefaults";
 
 import NavBar from "./components/NavBar";
@@ -13,6 +13,7 @@ import ArticleEditForm from "./pages/articles/ArticleEditForm";
 
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import ProfilesFollowedLg from "./components/ProfilesFollowedLg";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -35,15 +36,10 @@ function App() {
         }}
       >
         <Show above="lg">
-          <GridItem
-            minH={"100vh"}
-            zIndex={0}
-            pt="100px"
-            bg="#2D3748"
-            area="aside"
-          >
-            {" "}
-            Profile Menu
+          <GridItem minH={"100vh"} zIndex={0} pt="70px" area="aside">
+            <Card pt={30} px={5} h="100%">
+              <ProfilesFollowedLg />
+            </Card>
           </GridItem>
         </Show>
         <GridItem pt="80px" area="main">
