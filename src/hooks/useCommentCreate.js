@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 
 const useCommentCreate = (article, setArticle, setComments) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    setErrors({});
+  }, [body]);
 
   const handleChange = (event) => {
     setBody(event.target.value);

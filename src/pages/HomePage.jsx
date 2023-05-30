@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useArticles from "../hooks/useAricles";
 import SearchField from "../components/SearchField";
