@@ -17,7 +17,7 @@ import {
 } from "react-icons/si";
 
 const languageOptions = [
-  { value: "JavaScript", label: "JS", icon: SiJavascript },
+  { value: "JS", label: "JavaScript", icon: SiJavascript },
   { value: "Python", label: "Python", icon: SiPython },
   { value: "Java", label: "Java", icon: SiJava },
   { value: "CPlusPlus", label: "C++", icon: SiCplusplus },
