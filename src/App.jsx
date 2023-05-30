@@ -13,7 +13,7 @@ import ArticleEditForm from "./pages/articles/ArticleEditForm";
 
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import ProfilesFollowedLg from "./components/ProfilesFollowedLg";
+import SideGrid from "./components/SideGrid";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -38,7 +38,7 @@ function App() {
         <Show above="lg">
           <GridItem minH={"100vh"} zIndex={0} pt="70px" area="aside">
             <Card pt={30} px={5} h="100%">
-              <ProfilesFollowedLg />
+              <SideGrid />
             </Card>
           </GridItem>
         </Show>

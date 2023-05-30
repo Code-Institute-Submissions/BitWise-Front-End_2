@@ -8,6 +8,7 @@ import {
   Flex,
   Button,
   Heading,
+  Spinner,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import useProfiles from "../hooks/useProfiles";
@@ -15,8 +16,9 @@ import { SlMagnifier } from "react-icons/sl";
 import { BiUserPlus, BiUserMinus } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
 import LoggedIn from "./LoggedIn";
+import { Link } from "react-router-dom";
 
-const ProfilesFollowedLg = () => {
+const SideGrid = () => {
   const [searchProfile, setSearchProfile] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const iconCustColor = useColorModeValue("white", "black");
@@ -56,6 +58,8 @@ const ProfilesFollowedLg = () => {
         Popular Profiles:
       </Heading>
 
+      {!loaded && <Spinner />}
+
       {profiles.results.slice(0, 10).map((profile) => (
         <Flex
           pt={3}
@@ -71,18 +75,27 @@ const ProfilesFollowedLg = () => {
             )}
           </Box>
           {profile.following_id ? (
-            <Button bg={custColor}>
+            <Button onClick={() => {}} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />
             </Button>
           ) : (
-            <Button>
+            <Button onClick={() => {}}>
               <BiUserPlus fontSize="100%" />
             </Button>
           )}
         </Flex>
       ))}
+      {loaded && (
+        <Box pt={10}>
+          <Link>
+            <Heading as="u" color={custColor} size="sm">
+              View More...
+            </Heading>
+          </Link>
+        </Box>
+      )}
     </>
   );
 };
 
-export default ProfilesFollowedLg;
+export default SideGrid;
