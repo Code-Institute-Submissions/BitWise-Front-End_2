@@ -12,6 +12,7 @@ import ArticlePage from "./pages/articles/ArticlePage";
 import ArticleEditForm from "./pages/articles/ArticleEditForm";
 
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -84,6 +85,7 @@ function App() {
           </Routes>
         </GridItem>
       </Grid>
+      <ScrollToTopButton />
     </>
   );
 }
