@@ -27,18 +27,20 @@ const ArticlePage = () => {
       {loaded ? (
         article.results.length ? (
           <Flex p={8} align={"center"} justify={"center"}>
-            <ArticleCard
-              {...article.results[0]}
-              setArticles={setArticle}
-              articlePage
-            />
+            <Box w={{ base: "100%", md: "600px" }}>
+              <ArticleCard
+                {...article.results[0]}
+                setArticles={setArticle}
+                articlePage
+              />
+            </Box>
           </Flex>
         ) : (
           <Text>No Results Found</Text>
         )
       ) : (
         <Flex p={8} align={"center"} justify={"center"}>
-          <Box w={{ base: "100%", md: "500px" }}>
+          <Box w={{ base: "100%", md: "600px" }}>
             <ArticleCardSkeleton />
           </Box>
         </Flex>
