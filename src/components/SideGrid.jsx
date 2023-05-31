@@ -71,7 +71,7 @@ const SideGrid = () => {
 
       {!loaded && <Spinner />}
 
-      {sideBarProfiles.results.slice(0, 4).map((profile) => (
+      {sideBarProfiles.results.slice(0, 10).map((profile) => (
         <Flex
           pt={3}
           key={profile.id}
