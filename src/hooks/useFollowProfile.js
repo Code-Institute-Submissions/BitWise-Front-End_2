@@ -13,6 +13,14 @@ const useFollowProfile = () => {
 
       setProfileData((prevState) => ({
         ...prevState,
+
+        searchPageProfiles: {
+          ...prevState.searchPageProfiles,
+          results: prevState.searchPageProfiles.results.map((profile) =>
+            followAddUpdate(profile, selectedProfile, data.id)
+          ),
+        },
+
         sideBarProfiles: {
           ...prevState.sideBarProfiles,
           results: prevState.sideBarProfiles.results.map((profile) =>
@@ -31,6 +39,14 @@ const useFollowProfile = () => {
 
       setProfileData((prevState) => ({
         ...prevState,
+
+        searchPageProfiles: {
+          ...prevState.searchPageProfiles,
+          results: prevState.searchPageProfiles.results.map((profile) =>
+            followDeleteUpdate(profile, selectedProfile)
+          ),
+        },
+
         sideBarProfiles: {
           ...prevState.sideBarProfiles,
           results: prevState.sideBarProfiles.results.map((profile) =>

@@ -10,6 +10,7 @@ import ErrorPage from "./pages/errors/ErrorPage";
 import ArticleCreateForm from "./pages/articles/ArticleCreateForm";
 import ArticlePage from "./pages/articles/ArticlePage";
 import ArticleEditForm from "./pages/articles/ArticleEditForm";
+import ProfilesListPage from "./pages/profiles/ProfilesListPage";
 
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -76,6 +77,7 @@ function App() {
               element={<ArticleEditForm />}
             />
             <Route exact path="/article/:id/" element={<ArticlePage />} />
+            <Route exact path="/profiles/" element={<ProfilesListPage />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>

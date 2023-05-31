@@ -17,7 +17,7 @@ import {
   PopoverBody,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import useSideProfiles from "../hooks/useProfiles";
+import useSideProfiles from "../hooks/useSideProfiles";
 import { SlMagnifier } from "react-icons/sl";
 import { BiUserPlus, BiUserMinus, BiUserCheck } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
@@ -125,7 +125,7 @@ const SideGrid = () => {
       ))}
       {loaded && (
         <Box pt={10}>
-          <Link>
+          <Link to="/profiles/">
             <Heading as="u" color={custColor} size="sm">
               View More...
             </Heading>
