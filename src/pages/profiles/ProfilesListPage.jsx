@@ -8,22 +8,43 @@ import {
   Input,
   SimpleGrid,
   Spinner,
+  Select,
+  HStack,
+  Flex,
+  FormLabel,
+  Switch,
 } from "@chakra-ui/react";
 import useListProfiles from "../../hooks/useListProfiles";
 import { SlMagnifier } from "react-icons/sl";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ProfileCard from "../../components/ProfileCard";
+import { useMediaQuery } from "@chakra-ui/react";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-const ProfilesListPage = () => {
+const ProfilesListPage = (props) => {
+  const { message } = props;
   const [searchProfiles, setSearchProfiles] = useState("");
   const [orderProfiles, setOrderProfiles] = useState("");
   const [restricedProfiles, setRestrictedProfiles] = useState("");
 
   const { searchPageProfiles, setProfileData, loaded } = useListProfiles(
-    `/profiles/?search=${searchProfiles}`
+    `/profiles/?search=${searchProfiles}&ordering=${orderProfiles}&owner__followed__owner__profile=${restricedProfiles}`
   );
 
   const placeholder = searchProfiles ? searchProfiles : "Search profiles ...";
+
+  const handleProfilesOrderChange = (event) => {
+    setOrderProfiles(event.target.value);
+  };
+
+  const handleProfilesRestrictedChange = (event) => {
+    const value = event.target.checked ? currentUser.profile_id : "";
+    setRestrictedProfiles(value);
+  };
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+
+  const currentUser = useCurrentUser();
 
   return (
     <Box p={5}>
@@ -47,6 +68,54 @@ const ProfilesListPage = () => {
           </InputGroup>
         </FormControl>
       </form>
+
+      <HStack mx={5} mt={5}>
+        <Box w="155">
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+            }}
+          >
+            <FormControl id="orderProfilesFilter">
+              <Select
+                placeholder="Date Joined"
+                onChange={handleProfilesOrderChange}
+                value={orderProfiles}
+              >
+                <option value="-article_count">
+                  {isSmallScreen ? "Articles" : "Most Articles"}
+                </option>
+                <option value="-followed_count">
+                  {isSmallScreen ? "Followers" : "Most Followers"}
+                </option>
+                <option value="-languages_count">
+                  {isSmallScreen ? "Languages" : "Most Languages"}
+                </option>
+              </Select>
+            </FormControl>
+          </form>
+        </Box>
+        <Box>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+            }}
+          >
+            <FormControl>
+              <Flex alignItems="center" flexWrap="wrap" ml={2}>
+                <FormLabel my="0" htmlFor="restrictedProfilesFilter">
+                  {restricedProfiles ? "Following" : "All"}
+                </FormLabel>
+                <Switch
+                  colorScheme="purple"
+                  onChange={handleProfilesRestrictedChange}
+                  isChecked={restricedProfiles === currentUser?.profile_id}
+                />
+              </Flex>
+            </FormControl>
+          </form>
+        </Box>
+      </HStack>
 
       {loaded ? (
         searchPageProfiles.results.length ? (

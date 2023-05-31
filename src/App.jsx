@@ -77,7 +77,15 @@ function App() {
               element={<ArticleEditForm />}
             />
             <Route exact path="/article/:id/" element={<ArticlePage />} />
-            <Route exact path="/profiles/" element={<ProfilesListPage />} />
+            <Route
+              exact
+              path="/profiles/"
+              element={
+                <ProfilesListPage
+                  message={"No Results Found! Check filters."}
+                />
+              }
+            />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>

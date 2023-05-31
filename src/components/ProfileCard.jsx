@@ -47,16 +47,16 @@ const ProfileCard = (props) => {
     <Card overflow="hidden">
       <CardHeader>
         <HStack justifyContent="space-between">
-          <HStack>
-            <Link to={`/profiles/`}>
+          <Link to={`/profile/${id}`}>
+            <HStack>
               <Avatar name={profile_name} bg={"purple.500"} src={image} />
-            </Link>
-            {profile_name.length > 8 ? (
-              <Heading size="sm">{profile_name.slice(0, 8)}...</Heading>
-            ) : (
-              <Heading size="sm">{profile_name}</Heading>
-            )}
-          </HStack>
+              {profile_name.length > 7 ? (
+                <Heading size="sm">{profile_name.slice(0, 7)}...</Heading>
+              ) : (
+                <Heading size="sm">{profile_name}</Heading>
+              )}
+            </HStack>
+          </Link>
           {id === currentUser?.profile_id ? (
             <Popover placement="top">
               <PopoverTrigger>
@@ -95,42 +95,44 @@ const ProfileCard = (props) => {
         </HStack>
       </CardHeader>
 
-      <CardBody>
-        {bio ? (
-          <>
-            <Heading size="sm"> Bio:</Heading>
-            {bio.length > 100 ? (
-              <Text>{bio.slice(0, 100)}...</Text>
-            ) : (
-              <Text>{bio}</Text>
-            )}
-          </>
-        ) : (
-          <Heading size="sm"> No Bio for {profile_name} </Heading>
-        )}
-      </CardBody>
+      <Link to={`/profile/${id}`}>
+        <CardBody h="140px">
+          {bio ? (
+            <>
+              <Heading size="sm"> Bio:</Heading>
+              {bio.length > 80 ? (
+                <Text>{bio.slice(0, 80)}...</Text>
+              ) : (
+                <Text>{bio}</Text>
+              )}
+            </>
+          ) : (
+            <Heading size="sm"> No Bio for {profile_name} </Heading>
+          )}
+        </CardBody>
 
-      <CardFooter justifyContent="space-evenly" bg={custFooterColor}>
-        <Flex flexWrap="wrap" justifyContent="center">
+        <CardFooter justifyContent="space-evenly" bg={custFooterColor}>
           <Flex flexWrap="wrap" justifyContent="center">
-            <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
-              Following: {following_count}
-            </Card>
-            <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
-              Followers: {followed_count}
-            </Card>
-          </Flex>
+            <Flex flexWrap="wrap" justifyContent="center">
+              <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
+                Following: {following_count}
+              </Card>
+              <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
+                Followers: {followed_count}
+              </Card>
+            </Flex>
 
-          <Flex flexWrap="wrap" justifyContent="center">
-            <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
-              Articles: {article_count}
-            </Card>
-            <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
-              Languages: {languages_count}
-            </Card>
+            <Flex flexWrap="wrap" justifyContent="center">
+              <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
+                Articles: {article_count}
+              </Card>
+              <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
+                Languages: {languages_count}
+              </Card>
+            </Flex>
           </Flex>
-        </Flex>
-      </CardFooter>
+        </CardFooter>
+      </Link>
     </Card>
   );
 };
