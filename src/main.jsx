@@ -7,15 +7,18 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { FilterProvider } from "./contexts/FilterContext";
+import { ProfileDataProvider } from "./contexts/ProfilesDataContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <BrowserRouter>
         <CurrentUserProvider>
-          <FilterProvider>
-            <App />
-          </FilterProvider>
+          <ProfileDataProvider>
+            <FilterProvider>
+              <App />
+            </FilterProvider>
+          </ProfileDataProvider>
         </CurrentUserProvider>
       </BrowserRouter>
     </ChakraProvider>

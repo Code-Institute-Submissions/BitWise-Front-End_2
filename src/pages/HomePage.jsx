@@ -11,7 +11,7 @@ import {
   useLanguageFilter,
   useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
-import { HStack, Show } from "@chakra-ui/react";
+import { HStack, Show, Text } from "@chakra-ui/react";
 import ArticleGrid from "../components/ArticleGrid";
 import LoggedIn from "../components/LoggedIn";
 import { useResetFilters } from "../hooks/useResetFilters";

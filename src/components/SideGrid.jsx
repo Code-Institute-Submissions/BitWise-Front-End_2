@@ -11,20 +11,23 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import useProfiles from "../hooks/useProfiles";
+import useSideProfiles from "../hooks/useProfiles";
 import { SlMagnifier } from "react-icons/sl";
 import { BiUserPlus, BiUserMinus } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
 import LoggedIn from "./LoggedIn";
 import { Link } from "react-router-dom";
+import useFollowProfile from "../hooks/useFollowProfile";
 
 const SideGrid = () => {
   const [searchProfile, setSearchProfile] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const iconCustColor = useColorModeValue("white", "black");
 
+  const { handleFollow, handleUnFollow } = useFollowProfile();
+
   const placeholder = searchProfile ? searchProfile : "Search profiles ...";
-  const { profiles, setProfiles, loaded } = useProfiles(
+  const { sideBarProfiles, loaded } = useSideProfiles(
     `/profiles/?search=${searchProfile}`
   );
 
@@ -60,7 +63,7 @@ const SideGrid = () => {
 
       {!loaded && <Spinner />}
 
-      {profiles.results.slice(0, 10).map((profile) => (
+      {sideBarProfiles.results.slice(0, 10).map((profile) => (
         <Flex
           pt={3}
           key={profile.id}
@@ -75,11 +78,11 @@ const SideGrid = () => {
             )}
           </Box>
           {profile.following_id ? (
-            <Button onClick={() => {}} bg={custColor}>
+            <Button onClick={() => handleUnFollow(profile)} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />
             </Button>
           ) : (
-            <Button onClick={() => {}}>
+            <Button onClick={() => handleFollow(profile)}>
               <BiUserPlus fontSize="100%" />
             </Button>
           )}

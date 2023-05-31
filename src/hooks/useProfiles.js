@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useProfileData,
+  useSetProfileData,
+} from "../contexts/ProfilesDataContext";
 
-const useProfiles = (endpoint) => {
-  const [profiles, setProfiles] = useState({ results: [] });
+const useSideProfiles = (endpoint) => {
+  const { sideBarProfiles } = useProfileData();
+  const setProfileData = useSetProfileData();
+
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
   const currentUser = useCurrentUser();
@@ -17,7 +23,10 @@ const useProfiles = (endpoint) => {
         const { data } = await axiosReq.get(endpoint, {
           signal: controller.signal,
         });
-        setProfiles(data);
+        setProfileData((prevState) => ({
+          ...prevState,
+          sideBarProfiles: data,
+        }));
         setLoaded(true);
       } catch (err) {
         if (err instanceof CanceledError) return;
@@ -32,7 +41,7 @@ const useProfiles = (endpoint) => {
     return () => controller.abort();
   }, [currentUser, endpoint]);
 
-  return { profiles, setProfiles, error, loaded };
+  return { sideBarProfiles, setProfileData, error, loaded };
 };
 
-export default useProfiles;
+export default useSideProfiles;
