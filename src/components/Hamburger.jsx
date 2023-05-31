@@ -64,6 +64,9 @@ const HamburgerMenu = () => {
             <NavLink to="/">
               <MenuItem>Home</MenuItem>
             </NavLink>
+            <NavLink to="/profiles/">
+              <MenuItem>Profiles</MenuItem>
+            </NavLink>
             {currentUser ? loggedInLinks : loggedOutLinks}
           </MenuList>
         </>
