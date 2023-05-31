@@ -31,7 +31,9 @@ const ProfilesListPage = (props) => {
     `/profiles/?search=${searchProfiles}&ordering=${orderProfiles}&owner__followed__owner__profile=${restricedProfiles}`
   );
 
-  const placeholder = searchProfiles ? searchProfiles : "Search profiles ...";
+  const placeholder = searchProfiles
+    ? searchProfiles
+    : "Search profile name ...";
 
   const handleProfilesOrderChange = (event) => {
     setOrderProfiles(event.target.value);
@@ -95,26 +97,28 @@ const ProfilesListPage = (props) => {
             </FormControl>
           </form>
         </Box>
-        <Box>
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-            }}
-          >
-            <FormControl>
-              <Flex alignItems="center" flexWrap="wrap" ml={2}>
-                <FormLabel my="0" htmlFor="restrictedProfilesFilter">
-                  {restricedProfiles ? "Following" : "All"}
-                </FormLabel>
-                <Switch
-                  colorScheme="purple"
-                  onChange={handleProfilesRestrictedChange}
-                  isChecked={restricedProfiles === currentUser?.profile_id}
-                />
-              </Flex>
-            </FormControl>
-          </form>
-        </Box>
+        {currentUser && (
+          <Box>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
+              <FormControl>
+                <Flex alignItems="center" flexWrap="wrap" ml={2}>
+                  <FormLabel my="0" htmlFor="restrictedProfilesFilter">
+                    {restricedProfiles ? "Following" : "All"}
+                  </FormLabel>
+                  <Switch
+                    colorScheme="purple"
+                    onChange={handleProfilesRestrictedChange}
+                    isChecked={restricedProfiles === currentUser?.profile_id}
+                  />
+                </Flex>
+              </FormControl>
+            </form>
+          </Box>
+        )}
       </HStack>
 
       {loaded ? (

@@ -4,6 +4,7 @@ import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
 import { MdMarkChatRead } from "react-icons/md";
 MdMarkChatRead;
 import { AiFillLike } from "react-icons/ai";
+import { FaUserMinus } from "react-icons/fa";
 import {
   Button,
   Show,
@@ -27,6 +28,7 @@ const ArticleCardFooter = (props) => {
     setArticles,
     currentUser,
     current_user_comments_count,
+    is_following,
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
@@ -107,9 +109,19 @@ const ArticleCardFooter = (props) => {
         </Button>
       </Link>
 
-      <Button flex="1" variant="ghost" leftIcon={<BiUserPlus />}>
-        <Show above="sm">Follow</Show>
-      </Button>
+      {is_following ? (
+        <Button
+          flex="1"
+          variant="ghost"
+          leftIcon={<FaUserMinus color={custColor} />}
+        >
+          <Show above="sm">Unfollow</Show>
+        </Button>
+      ) : (
+        <Button flex="1" variant="ghost" leftIcon={<BiUserPlus />}>
+          <Show above="sm">Follow</Show>
+        </Button>
+      )}
     </>
   );
 };

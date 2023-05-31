@@ -24,6 +24,7 @@ const ArticleCard = (props) => {
     current_user_comments_count,
     comments_count,
     setArticles,
+    is_following,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -66,6 +67,7 @@ const ArticleCard = (props) => {
           current_user_comments_count={current_user_comments_count}
           setArticles={setArticles}
           currentUser={currentUser}
+          is_following={is_following}
         />
       </CardFooter>
     </Card>

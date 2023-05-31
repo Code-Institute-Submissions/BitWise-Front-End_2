@@ -1,15 +1,24 @@
 import { useSetProfileData } from "../contexts/ProfilesDataContext";
 import { axiosRes } from "../api/axiosDefaults";
 import { followAddUpdate, followDeleteUpdate } from "../services/followUpdate";
+import {
+  useSetArticleFollow,
+  useArticleFollow,
+} from "../contexts/ArticleFollowUpdate";
 
 const useFollowProfile = () => {
   const setProfileData = useSetProfileData();
+
+  const setArticleFollow = useSetArticleFollow();
+  const articleFollow = useArticleFollow();
 
   const handleFollow = async (selectedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
         followed: selectedProfile.id,
       });
+
+      setArticleFollow(!articleFollow);
 
       setProfileData((prevState) => ({
         ...prevState,
@@ -36,6 +45,8 @@ const useFollowProfile = () => {
   const handleUnFollow = async (selectedProfile) => {
     try {
       await axiosRes.delete(`/followers/${selectedProfile.following_id}/`);
+
+      setArticleFollow(!articleFollow);
 
       setProfileData((prevState) => ({
         ...prevState,

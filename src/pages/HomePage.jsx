@@ -13,7 +13,6 @@ import {
 } from "../contexts/FilterContext";
 import { HStack, Show, Text } from "@chakra-ui/react";
 import ArticleGrid from "../components/ArticleGrid";
-import LoggedIn from "../components/LoggedIn";
 import { useResetFilters } from "../hooks/useResetFilters";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 
