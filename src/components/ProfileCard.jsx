@@ -14,6 +14,7 @@ import {
   Text,
   Flex,
   CardBody,
+  Avatar,
 } from "@chakra-ui/react";
 import React from "react";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -21,7 +22,7 @@ import { BiUserPlus, BiUserMinus, BiUserCheck } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
 
 import useFollowProfile from "../hooks/useFollowProfile";
-import truncateContent from "../services/truncateContent";
+import { Link } from "react-router-dom";
 
 const ProfileCard = (props) => {
   const {
@@ -30,7 +31,7 @@ const ProfileCard = (props) => {
     following_id,
     followed_count,
     following_count,
-    language_count,
+    image,
     bio,
   } = props;
   const currentUser = useCurrentUser();
@@ -44,7 +45,16 @@ const ProfileCard = (props) => {
     <Card overflow="hidden">
       <CardHeader>
         <HStack justifyContent="space-between">
-          <Heading size="sm">{profile_name}</Heading>
+          <HStack>
+            <Link to={`/profiles/`}>
+              <Avatar name={profile_name} bg={"purple.500"} src={image} />
+            </Link>
+            {profile_name.length > 8 ? (
+              <Heading size="sm">{profile_name.slice(0, 8)}...</Heading>
+            ) : (
+              <Heading size="sm">{profile_name}</Heading>
+            )}
+          </HStack>
           {id === currentUser?.profile_id ? (
             <Popover placement="top">
               <PopoverTrigger>
@@ -82,24 +92,22 @@ const ProfileCard = (props) => {
           )}
         </HStack>
       </CardHeader>
-      <CardBody>
-        {bio && (
-          <>
-            <Heading size="sm"> Bio:</Heading>
-            {bio.length > 100 ? (
-              <Text>{bio.slice(0, 100)}...</Text>
-            ) : (
-              <Text>{bio}</Text>
-            )}
-          </>
-        )}
-      </CardBody>
+      {bio && (
+        <CardBody>
+          <Heading size="sm"> Bio:</Heading>
+          {bio.length > 100 ? (
+            <Text>{bio.slice(0, 100)}...</Text>
+          ) : (
+            <Text>{bio}</Text>
+          )}
+        </CardBody>
+      )}
       <CardFooter justifyContent="space-evenly" bg={custFooterColor}>
         <Flex flexWrap="wrap" justifyContent="center">
-          <Card m={2} p={2} minW="140px" alignItems="center">
+          <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
             Following: {following_count}
           </Card>
-          <Card m={2} p={2} minW="140px" alignItems="center">
+          <Card fontSize="sm" m={1} p={1} minW="100px" alignItems="center">
             Followers: {followed_count}
           </Card>
         </Flex>
