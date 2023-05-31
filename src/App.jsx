@@ -15,6 +15,7 @@ import ProfilesListPage from "./pages/profiles/ProfilesListPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import SideGrid from "./components/SideGrid";
+import ProfilePage from "./pages/profiles/ProfilePage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -86,6 +87,7 @@ function App() {
                 />
               }
             />
+            <Route exact path="/profile/:id" element={<ProfilePage />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>

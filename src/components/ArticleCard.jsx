@@ -6,6 +6,7 @@ import ArticleCardFooter from "./ArticleCardFooter";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { useColorModeValue } from "@chakra-ui/react";
 
+import { Link } from "react-router-dom";
 const ArticleCard = (props) => {
   const {
     is_owner,
@@ -25,6 +26,7 @@ const ArticleCard = (props) => {
     comments_count,
     setArticles,
     is_following,
+    profile_id,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -43,7 +45,7 @@ const ArticleCard = (props) => {
           setArticles={setArticles}
         />
       </CardHeader>
-      <CardBody>
+      <CardBody as={Link} to={`/article/${id}`}>
         <ArticleCardBody
           article_content={article_content}
           primary_language={primary_language}
@@ -68,6 +70,7 @@ const ArticleCard = (props) => {
           setArticles={setArticles}
           currentUser={currentUser}
           is_following={is_following}
+          profile_id={profile_id}
         />
       </CardFooter>
     </Card>

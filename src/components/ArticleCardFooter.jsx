@@ -29,6 +29,7 @@ const ArticleCardFooter = (props) => {
     currentUser,
     current_user_comments_count,
     is_following,
+    profile_id,
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
@@ -111,6 +112,8 @@ const ArticleCardFooter = (props) => {
 
       {is_following ? (
         <Button
+          as={Link}
+          to={`/profile/${profile_id}`}
           flex="1"
           variant="ghost"
           leftIcon={<FaUserMinus color={custColor} />}
@@ -118,7 +121,13 @@ const ArticleCardFooter = (props) => {
           <Show above="sm">Unfollow</Show>
         </Button>
       ) : (
-        <Button flex="1" variant="ghost" leftIcon={<BiUserPlus />}>
+        <Button
+          as={Link}
+          to={`/profile/${profile_id}`}
+          flex="1"
+          variant="ghost"
+          leftIcon={<BiUserPlus />}
+        >
           <Show above="sm">Follow</Show>
         </Button>
       )}
