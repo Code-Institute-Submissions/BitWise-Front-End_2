@@ -6,7 +6,6 @@ import {
   InputGroup,
   InputLeftElement,
   Input,
-  Flex,
   SimpleGrid,
   Spinner,
 } from "@chakra-ui/react";
@@ -33,7 +32,7 @@ const ProfilesListPage = () => {
           event.preventDefault();
         }}
       >
-        <FormControl id="searchProfiles">
+        <FormControl px={5} id="searchProfiles">
           <InputGroup>
             <InputLeftElement pointerEvents="none">
               <SlMagnifier />
