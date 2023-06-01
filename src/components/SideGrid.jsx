@@ -78,13 +78,15 @@ const SideGrid = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Box>
-            {profile.profile_name.length > 8 ? (
-              <Text>{profile.profile_name.slice(0, 12)}...</Text>
-            ) : (
-              <Text>{profile.profile_name}</Text>
-            )}
-          </Box>
+          <Link to={`/profile/${profile.id}`}>
+            <Box>
+              {profile.profile_name.length > 8 ? (
+                <Text>{profile.profile_name.slice(0, 12)}...</Text>
+              ) : (
+                <Text>{profile.profile_name}</Text>
+              )}
+            </Box>
+          </Link>
 
           {profile.id === currentUser?.profile_id ? (
             <Popover placement="top">
