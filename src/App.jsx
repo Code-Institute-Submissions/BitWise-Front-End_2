@@ -16,6 +16,7 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import SideGrid from "./components/SideGrid";
 import ProfilePage from "./pages/profiles/ProfilePage";
+import LoggedIn from "./components/LoggedIn";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -45,6 +46,11 @@ function App() {
           </GridItem>
         </Show>
         <GridItem pt="80px" area="main">
+          <Show below="lg">
+            <Box pt="5" pl="5">
+              <LoggedIn />
+            </Box>
+          </Show>
           <Routes>
             <Route
               exact
