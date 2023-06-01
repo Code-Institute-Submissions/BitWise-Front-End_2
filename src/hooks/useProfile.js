@@ -9,7 +9,6 @@ import {
 const useProfile = (id) => {
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
-  const [profileArticles, setProfileArticles] = useState({ results: [] });
 
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
@@ -18,20 +17,13 @@ const useProfile = (id) => {
     const controller = new AbortController();
     const getProfile = async () => {
       try {
-        const [{ data: pageProfile }, { data: profileArticles }] =
-          await Promise.all([
-            axiosReq.get(`/profiles/${id}/`, {
-              signal: controller.signal,
-            }),
-            axiosReq.get(`/articles/?owner__profile=${id}`, {
-              signal: controller.signal,
-            }),
-          ]);
+        const { data: pageProfile } = await axiosReq.get(`/profiles/${id}/`, {
+          signal: controller.signal,
+        });
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
-        setProfileArticles(profileArticles);
         setLoaded(true);
       } catch (err) {
         if (err instanceof CanceledError) return;
@@ -48,9 +40,6 @@ const useProfile = (id) => {
 
   return {
     pageProfile,
-    setProfileData,
-    profileArticles,
-    setProfileArticles,
     error,
     loaded,
   };
