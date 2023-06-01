@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
 import {
   useProfileData,
   useSetProfileData,
@@ -10,15 +9,12 @@ import {
 const useProfile = (id) => {
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
-
   const [profileArticles, setProfileArticles] = useState({ results: [] });
 
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const controller = new AbortController();
-
     const getProfile = async () => {
       try {
         const [{ data: pageProfile }, { data: profileArticles }] =

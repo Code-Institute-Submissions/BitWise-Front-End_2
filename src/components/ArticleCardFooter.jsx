@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BiLike, BiChat, BiUserPlus } from "react-icons/bi";
+import { BiLike, BiChat, BiUserPlus, BiUserCircle } from "react-icons/bi";
 import { MdMarkChatRead } from "react-icons/md";
 MdMarkChatRead;
 import { AiFillLike } from "react-icons/ai";
 import { FaUserMinus } from "react-icons/fa";
 import {
   Button,
+  Text,
   Show,
   Popover,
   PopoverTrigger,
@@ -47,8 +48,10 @@ const ArticleCardFooter = (props) => {
         <Popover placement="top">
           <PopoverTrigger>
             <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
-              <Show above="sm">Likes </Show>
-              {likes_count}
+              <Show above="sm">
+                <Text fontSize="sm">Likes</Text>
+              </Show>
+              <Text fontSize="sm">&nbsp;{likes_count}</Text>
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -64,8 +67,10 @@ const ArticleCardFooter = (props) => {
           leftIcon={<AiFillLike color={custColor} />}
           onClick={handleUnlike}
         >
-          <Show above="sm">Likes </Show>
-          {likes_count}
+          <Show above="sm">
+            <Text fontSize="sm">Likes</Text>
+          </Show>
+          <Text fontSize="sm">&nbsp;{likes_count}</Text>
         </Button>
       ) : currentUser ? (
         <Button
@@ -74,15 +79,19 @@ const ArticleCardFooter = (props) => {
           leftIcon={<BiLike />}
           onClick={handleLike}
         >
-          <Show above="sm">Likes </Show>
-          {likes_count}
+          <Show above="sm">
+            <Text fontSize="sm">Likes</Text>
+          </Show>
+          <Text fontSize="sm">&nbsp;{likes_count}</Text>
         </Button>
       ) : (
         <Popover placement="top">
           <PopoverTrigger>
             <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
-              <Show above="sm">Likes </Show>
-              {likes_count}
+              <Show above="sm">
+                <Text fontSize="sm">Likes</Text>
+              </Show>
+              <Text fontSize="sm">&nbsp;{likes_count}</Text>
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -105,12 +114,24 @@ const ArticleCardFooter = (props) => {
             )
           }
         >
-          <Show above="sm">Comments </Show>
-          {comments_count}
+          <Show above="sm">
+            <Text fontSize="sm">Comments</Text>
+          </Show>
+          <Text fontSize="sm">&nbsp;{comments_count}</Text>
         </Button>
       </Link>
 
-      {is_following ? (
+      {is_owner ? (
+        <Button
+          as={Link}
+          to={`/profile/${profile_id}`}
+          flex="1"
+          variant="ghost"
+          leftIcon={<BiUserCircle color={custColor} />}
+        >
+          <Text fontSize="sm">Owner</Text>
+        </Button>
+      ) : is_following ? (
         <Button
           as={Link}
           to={`/profile/${profile_id}`}
@@ -118,7 +139,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<FaUserMinus color={custColor} />}
         >
-          <Show above="sm">Unfollow</Show>
+          <Text fontSize="sm">Following</Text>
         </Button>
       ) : (
         <Button
@@ -128,7 +149,9 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<BiUserPlus />}
         >
-          <Show above="sm">Follow</Show>
+          <Show above="sm">
+            <Text fontSize="sm">Follow</Text>
+          </Show>
         </Button>
       )}
     </>
