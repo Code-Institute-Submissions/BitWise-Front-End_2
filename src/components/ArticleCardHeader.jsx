@@ -13,6 +13,7 @@ const ArticleCardHeader = (props) => {
     owner,
     created_at,
     updated_at,
+    profile_id,
     profile_image,
     setArticles,
   } = props;
@@ -28,7 +29,7 @@ const ArticleCardHeader = (props) => {
   return (
     <Flex spacing="4">
       <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-        <Link to={`/profiles/`}>
+        <Link to={`/profile/${profile_id}`}>
           <Avatar name={owner} bg={"purple.500"} src={profile_image} />
         </Link>
         <Box>

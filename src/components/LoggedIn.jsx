@@ -1,5 +1,6 @@
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { HStack, Heading, Link, Avatar } from "@chakra-ui/react";
+import { HStack, Heading, Avatar } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const LoggedIn = () => {
   const currentUser = useCurrentUser();
@@ -7,7 +8,7 @@ const LoggedIn = () => {
     <>
       {currentUser && (
         <HStack justifyContent="flex-start">
-          <Link to={`/profiles/`}>
+          <Link to={`/profile/${currentUser.profile_id}`}>
             <Avatar
               size="md"
               name={currentUser.profile_name}
