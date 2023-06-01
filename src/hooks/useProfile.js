@@ -15,6 +15,7 @@ const useProfile = (id) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const controller = new AbortController();
     const getProfile = async () => {
       try {
         const [{ data: pageProfile }, { data: profileArticles }] =
