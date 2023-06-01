@@ -49,7 +49,14 @@ const useProfile = (id) => {
     return () => controller.abort();
   }, [id, setProfileData]);
 
-  return { pageProfile, setProfileData, profileArticles, error, loaded };
+  return {
+    pageProfile,
+    setProfileData,
+    profileArticles,
+    setProfileArticles,
+    error,
+    loaded,
+  };
 };
 
 export default useProfile;
