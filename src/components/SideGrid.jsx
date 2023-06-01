@@ -69,7 +69,12 @@ const SideGrid = () => {
         Popular Profiles:
       </Heading>
 
-      {!loaded && <Spinner />}
+      {!loaded && (
+        <Flex py={2}>
+          <Text pr={2}>Updating...</Text>
+          <Spinner />
+        </Flex>
+      )}
 
       {sideBarProfiles.results.slice(0, 10).map((profile) => (
         <Flex

@@ -4,7 +4,7 @@ import ArticleCard from "../../components/ArticleCard";
 
 import { Link, useParams } from "react-router-dom";
 import CommentCreate from "../../components/CommentCreate";
-import ArticleCardSkeleton from "../../components/ArticleCardSkeleton";
+import CardSkeleton from "../../components/CardSkeleton";
 import useArticle from "../../hooks/useArticle";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../../components/Comment";
@@ -41,7 +41,7 @@ const ArticlePage = () => {
       ) : (
         <Flex p={8} align={"center"} justify={"center"}>
           <Box w={{ base: "100%", md: "600px" }}>
-            <ArticleCardSkeleton />
+            <CardSkeleton height={300} />
           </Box>
         </Flex>
       )}

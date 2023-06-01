@@ -20,12 +20,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ProfileCard from "../../components/ProfileCard";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import CardSkeleton from "../../components/CardSkeleton";
 
 const ProfilesListPage = (props) => {
   const { message } = props;
   const [searchProfiles, setSearchProfiles] = useState("");
   const [orderProfiles, setOrderProfiles] = useState("");
   const [restricedProfiles, setRestrictedProfiles] = useState("");
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
   const { searchPageProfiles, setProfileData, loaded } = useListProfiles(
     `/profiles/?search=${searchProfiles}&ordering=${orderProfiles}&owner__followed__owner__profile=${restricedProfiles}`
@@ -143,7 +145,11 @@ const ProfilesListPage = (props) => {
           <Text>{message}</Text>
         )
       ) : (
-        <Spinner />
+        <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
+          {skeletons.map((skeleton) => (
+            <CardSkeleton height={250} key={skeleton} />
+          ))}
+        </SimpleGrid>
       )}
     </Box>
   );
