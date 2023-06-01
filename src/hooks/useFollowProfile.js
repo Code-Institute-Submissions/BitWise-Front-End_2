@@ -36,6 +36,12 @@ const useFollowProfile = () => {
             followAddUpdate(profile, selectedProfile, data.id)
           ),
         },
+
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) =>
+            followAddUpdate(profile, selectedProfile, data.id)
+          ),
+        },
       }));
     } catch (err) {
       console.log(err);
@@ -61,6 +67,12 @@ const useFollowProfile = () => {
         sideBarProfiles: {
           ...prevState.sideBarProfiles,
           results: prevState.sideBarProfiles.results.map((profile) =>
+            followDeleteUpdate(profile, selectedProfile)
+          ),
+        },
+
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) =>
             followDeleteUpdate(profile, selectedProfile)
           ),
         },
