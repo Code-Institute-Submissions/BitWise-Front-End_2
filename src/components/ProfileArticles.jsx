@@ -5,9 +5,9 @@ import useProfileArticles from "../hooks/useProfileArticles";
 import CardSkeleton from "./CardSkeleton";
 
 const ProfileArticles = (props) => {
-  const { id } = props;
+  const { endpoint } = props;
   const { profileArticles, setProfileArticles, loaded, error } =
-    useProfileArticles(id);
+    useProfileArticles(endpoint);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (

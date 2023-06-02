@@ -3,7 +3,7 @@ import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 import { useArticleFollow } from "../contexts/ArticleFollowUpdate";
 
-const useProfileArticles = (id) => {
+const useProfileArticles = (endpoint) => {
   const [profileArticles, setProfileArticles] = useState({ results: [] });
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
@@ -13,12 +13,9 @@ const useProfileArticles = (id) => {
     const controller = new AbortController();
     const getProfileArticles = async () => {
       try {
-        const { data: profileArticles } = await axiosReq.get(
-          `/articles/?owner__profile=${id}`,
-          {
-            signal: controller.signal,
-          }
-        );
+        const { data: profileArticles } = await axiosReq.get(endpoint, {
+          signal: controller.signal,
+        });
         setProfileArticles(profileArticles);
         setLoaded(true);
       } catch (err) {
@@ -32,7 +29,7 @@ const useProfileArticles = (id) => {
     getProfileArticles();
 
     return () => controller.abort();
-  }, [id, articleFollow]);
+  }, [endpoint, articleFollow]);
 
   return { profileArticles, setProfileArticles, loaded, error };
 };
