@@ -11,7 +11,7 @@ const LoggedIn = () => {
           <Link to={`/profile/${currentUser.profile_id}`}>
             <Avatar
               size="md"
-              name={currentUser.profile_name}
+              name={currentUser.username}
               bg={"purple.500"}
               src={currentUser.profile_image}
             />

@@ -98,10 +98,10 @@ const SideGrid = () => {
         >
           <Link to={`/profile/${profile.id}`}>
             <Box>
-              {profile.profile_name.length > 8 ? (
-                <Text>{profile.profile_name.slice(0, 12)}...</Text>
+              {profile.owner.length > 8 ? (
+                <Text>{profile.owner.slice(0, 12)}...</Text>
               ) : (
-                <Text>{profile.profile_name}</Text>
+                <Text>{profile.owner}</Text>
               )}
             </Box>
           </Link>

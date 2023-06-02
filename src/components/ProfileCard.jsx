@@ -30,7 +30,7 @@ import UpdateDeleteButton from "./UpdateDeleteButton";
 const ProfileCard = (props) => {
   const {
     id,
-    profile_name,
+    owner,
     following_id,
     followed_count,
     following_count,
@@ -61,11 +61,11 @@ const ProfileCard = (props) => {
         <HStack justifyContent="space-between">
           <Link to={`/profile/${id}`}>
             <HStack>
-              <Avatar name={profile_name} bg={"purple.500"} src={image} />
-              {profile_name.length > 7 ? (
-                <Heading size="sm">{profile_name.slice(0, 7)}...</Heading>
+              <Avatar name={owner} bg={"purple.500"} src={image} />
+              {owner.length > 7 ? (
+                <Heading size="sm">{owner.slice(0, 7)}...</Heading>
               ) : (
-                <Heading size="sm">{profile_name}</Heading>
+                <Heading size="sm">{owner}</Heading>
               )}
             </HStack>
           </Link>
@@ -114,7 +114,7 @@ const ProfileCard = (props) => {
               )}
             </>
           ) : (
-            <Heading size="sm"> No Bio for {profile_name} </Heading>
+            <Heading size="sm"> No Bio for {owner} </Heading>
           )}
         </CardBody>
 
