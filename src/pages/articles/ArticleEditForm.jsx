@@ -72,6 +72,7 @@ const ArticleEditForm = () => {
                 <FormLabel>Language</FormLabel>
                 <Select
                   bg={"blackAlpha.50"}
+                  placeholder="Select option"
                   value={primary_language}
                   name="primary_language"
                   onChange={handleChange}
