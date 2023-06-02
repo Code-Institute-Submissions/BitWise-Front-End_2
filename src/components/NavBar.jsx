@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import ColorThemeSwitch from "./ColorThemeSwitch";
 import HamburgerMenu from "./Hamburger";
 import handleSignOut from "../services/logout";
+import { MdPostAdd } from "react-icons/md";
+import { AiOutlineHome } from "react-icons/ai";
 
 import { useColorModeValue } from "@chakra-ui/react";
 
@@ -61,9 +63,15 @@ const NavBar = () => {
         <Link to="/">
           <Image src={logo} boxSize="50px" m="5px" />
         </Link>
-        <Box px={4}>
-          <NavLink to="/article/create/">Add Article</NavLink>
-        </Box>
+
+        {currentUser && (
+          <Box px={4}>
+            <NavLink to="/article/create/">
+              <MdPostAdd fontSize="250%" />
+              Add Article
+            </NavLink>
+          </Box>
+        )}
       </HStack>
 
       <HStack pr={"10px"}>
