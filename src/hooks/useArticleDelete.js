@@ -11,13 +11,18 @@ const useArticleDelete = (pk, setArticles) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/articles/${pk}/`);
-      if (id) {
-        navigate(-1);
-      } else {
+
+      if (
+        window.location.pathname === "" ||
+        window.location.pathname === "/" ||
+        window.location.pathname.startsWith("/profile/")
+      ) {
         setArticles((prevArticles) => ({
           ...prevArticles,
           results: prevArticles.results.filter((article) => article.id !== pk),
         }));
+      } else {
+        navigate("/");
       }
     } catch (err) {
       setError(err);

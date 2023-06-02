@@ -16,12 +16,14 @@ import {
 } from "@chakra-ui/react";
 import languageOptions from "../../constants/languageOptions";
 import useArticleEdit from "../../hooks/useArticleEdit";
+import { useNavigate } from "react-router-dom";
 
 const ArticleEditForm = () => {
   const { articleData, errors, handleChange, handleSubmit } = useArticleEdit();
 
   const { article_title, article_content, primary_language, github_link } =
     articleData;
+  const navigate = useNavigate();
 
   return (
     <Stack minH={"calc(100vh - 100px)"} direction={"row"}>
