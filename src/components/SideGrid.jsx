@@ -28,6 +28,7 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { useNavigate } from "react-router-dom";
+import UpdateDeleteButton from "./UpdateDeleteButton";
 
 const SideGrid = () => {
   const [searchProfile, setSearchProfile] = useState("");
@@ -42,6 +43,14 @@ const SideGrid = () => {
   const { sideBarProfiles, loaded } = useSideProfiles(
     `/profiles/?search=${searchProfile}`
   );
+
+  const handleEdit = (profileId) => {
+    navigate(`/profile/edit/${profileId}/`);
+  };
+
+  const handlePasswordUpdate = (profileId) => {
+    navigate(`/profile/password/${profileId}/`);
+  };
 
   return (
     <>
@@ -98,13 +107,13 @@ const SideGrid = () => {
           </Link>
 
           {profile.id === currentUser?.profile_id ? (
-            <Button
-              onClick={() => {
-                navigate(`/profile/edit/${profile.id}/`);
-              }}
-            >
-              <BsThreeDotsVertical fontSize="100%" />
-            </Button>
+            <UpdateDeleteButton
+              icon={<BsThreeDotsVertical />}
+              target={"Profile"}
+              handleEdit={() => handleEdit(profile.id)}
+              handlePasswordUpdate={() => handlePasswordUpdate(profile.id)}
+              profileUpdate
+            />
           ) : profile.following_id ? (
             <Button onClick={() => handleUnFollow(profile)} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />

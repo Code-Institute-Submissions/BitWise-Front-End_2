@@ -25,6 +25,8 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import useFollowProfile from "../hooks/useFollowProfile";
 import { Link, useNavigate } from "react-router-dom";
 
+import UpdateDeleteButton from "./UpdateDeleteButton";
+
 const ProfileCard = (props) => {
   const {
     id,
@@ -45,6 +47,14 @@ const ProfileCard = (props) => {
   const { handleFollow, handleUnFollow } = useFollowProfile();
   const navigate = useNavigate();
 
+  const handleEdit = (profileId) => {
+    navigate(`/profile/edit/${profileId}/`);
+  };
+
+  const handlePasswordUpdate = (profileId) => {
+    navigate(`/profile/password/${profileId}/`);
+  };
+
   return (
     <Card overflow="hidden">
       <CardHeader>
@@ -60,13 +70,13 @@ const ProfileCard = (props) => {
             </HStack>
           </Link>
           {id === currentUser?.profile_id ? (
-            <Button
-              onClick={() => {
-                navigate(`/profile/edit/${id}/`);
-              }}
-            >
-              <BsThreeDotsVertical fontSize="100%" />
-            </Button>
+            <UpdateDeleteButton
+              icon={<BsThreeDotsVertical />}
+              target={"Profile"}
+              handleEdit={() => handleEdit(id)}
+              handlePasswordUpdate={() => handlePasswordUpdate(id)}
+              profileUpdate
+            />
           ) : following_id ? (
             <Button onClick={() => handleUnFollow(props)} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />

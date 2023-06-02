@@ -7,9 +7,17 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BiTrash, BiEdit } from "react-icons/bi";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 const UpdateDeleteButton = (props) => {
-  const { handleEdit, handleDelete, icon, target } = props;
+  const {
+    handleEdit,
+    handleDelete,
+    handlePasswordUpdate,
+    icon,
+    target,
+    profileUpdate,
+  } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const custColorText = useColorModeValue("white", "black");
@@ -33,10 +41,17 @@ const UpdateDeleteButton = (props) => {
           <BiEdit />
           <span>&nbsp;&nbsp;</span>Edit {target}
         </MenuItem>
-        <MenuItem onClick={handleDelete} aria-label="delete">
-          <BiTrash />
-          <span>&nbsp;&nbsp;</span>Delete {target}
-        </MenuItem>
+        {profileUpdate ? (
+          <MenuItem onClick={handlePasswordUpdate} aria-label="update password">
+            <RiLockPasswordLine />
+            <span>&nbsp;&nbsp;</span>Update Password
+          </MenuItem>
+        ) : (
+          <MenuItem onClick={handleDelete} aria-label="delete">
+            <BiTrash />
+            <span>&nbsp;&nbsp;</span>Delete {target}
+          </MenuItem>
+        )}
       </MenuList>
     </Menu>
   );
