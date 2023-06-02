@@ -15,6 +15,7 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import useArticleCreate from "../../hooks/useArticleCreate";
+import { useNavigate } from "react-router-dom";
 
 const ArticleCreateForm = () => {
   const {
@@ -26,6 +27,7 @@ const ArticleCreateForm = () => {
     handleSubmit,
     languageOptions,
   } = useArticleCreate();
+  const navigate = useNavigate();
 
   return (
     <Stack minH={"calc(100vh - 100px)"} direction={"row"}>

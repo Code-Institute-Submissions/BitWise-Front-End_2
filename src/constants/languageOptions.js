@@ -15,8 +15,14 @@ import {
   SiHtml5,
   SiCss3,
 } from "react-icons/si";
+import { MdNotInterested } from "react-icons/md";
 
 const languageOptions = [
+  {
+    value: "No Specific Language",
+    label: "No Specific Language",
+    icon: MdNotInterested,
+  },
   { value: "JS", label: "JavaScript", icon: SiJavascript },
   { value: "Python", label: "Python", icon: SiPython },
   { value: "Java", label: "Java", icon: SiJava },
