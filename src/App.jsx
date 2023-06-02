@@ -17,6 +17,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import SideGrid from "./components/SideGrid";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import LoggedIn from "./components/LoggedIn";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -94,6 +95,11 @@ function App() {
               }
             />
             <Route exact path="/profile/:id" element={<ProfilePage />} />
+            <Route
+              exact
+              path="/profile/edit/:id"
+              element={<ProfileEditForm />}
+            />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>

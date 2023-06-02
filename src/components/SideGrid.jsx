@@ -19,18 +19,22 @@ import {
 import React, { useState } from "react";
 import useSideProfiles from "../hooks/useSideProfiles";
 import { SlMagnifier } from "react-icons/sl";
-import { BiUserPlus, BiUserMinus, BiUserCheck } from "react-icons/bi";
+import { BiUserPlus, BiUserMinus } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
 import LoggedIn from "./LoggedIn";
 import { Link } from "react-router-dom";
 import useFollowProfile from "../hooks/useFollowProfile";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { BsThreeDotsVertical } from "react-icons/bs";
+
+import { useNavigate } from "react-router-dom";
 
 const SideGrid = () => {
   const [searchProfile, setSearchProfile] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
   const iconCustColor = useColorModeValue("white", "black");
   const currentUser = useCurrentUser();
+  const navigate = useNavigate();
 
   const { handleFollow, handleUnFollow } = useFollowProfile();
 
@@ -94,18 +98,13 @@ const SideGrid = () => {
           </Link>
 
           {profile.id === currentUser?.profile_id ? (
-            <Popover placement="top">
-              <PopoverTrigger>
-                <Button border="1px solid" borderColor={custColor}>
-                  <BiUserCheck color={custColor} fontSize="100%" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent w="220px" marginLeft="-170px">
-                <PopoverCloseButton />
-                <PopoverHeader>Sorry...</PopoverHeader>
-                <PopoverBody>Can't follow self</PopoverBody>
-              </PopoverContent>
-            </Popover>
+            <Button
+              onClick={() => {
+                navigate(`/profile/edit/${profile.id}/`);
+              }}
+            >
+              <BsThreeDotsVertical fontSize="100%" />
+            </Button>
           ) : profile.following_id ? (
             <Button onClick={() => handleUnFollow(profile)} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />

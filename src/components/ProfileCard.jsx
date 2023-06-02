@@ -18,11 +18,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { BiUserPlus, BiUserMinus, BiUserCheck } from "react-icons/bi";
+import { BiUserPlus, BiUserMinus } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 import useFollowProfile from "../hooks/useFollowProfile";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProfileCard = (props) => {
   const {
@@ -42,6 +43,7 @@ const ProfileCard = (props) => {
   const custFooterColor = useColorModeValue("#FAF5FF", "#4A5568");
 
   const { handleFollow, handleUnFollow } = useFollowProfile();
+  const navigate = useNavigate();
 
   return (
     <Card overflow="hidden">
@@ -58,18 +60,13 @@ const ProfileCard = (props) => {
             </HStack>
           </Link>
           {id === currentUser?.profile_id ? (
-            <Popover placement="top">
-              <PopoverTrigger>
-                <Button border="1px solid" borderColor={custColor}>
-                  <BiUserCheck color={custColor} fontSize="100%" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent w="220px" marginLeft="-170px">
-                <PopoverCloseButton />
-                <PopoverHeader>Sorry...</PopoverHeader>
-                <PopoverBody>Can't follow self</PopoverBody>
-              </PopoverContent>
-            </Popover>
+            <Button
+              onClick={() => {
+                navigate(`/profile/edit/${id}/`);
+              }}
+            >
+              <BsThreeDotsVertical fontSize="100%" />
+            </Button>
           ) : following_id ? (
             <Button onClick={() => handleUnFollow(props)} bg={custColor}>
               <BiUserMinus color={iconCustColor} fontSize="100%" />
