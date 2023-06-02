@@ -38,6 +38,7 @@ const ProfileCard = (props) => {
     bio,
     article_count,
     languages_count,
+    main,
   } = props;
   const currentUser = useCurrentUser();
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
@@ -107,7 +108,7 @@ const ProfileCard = (props) => {
           {bio ? (
             <>
               <Heading size="sm"> Bio:</Heading>
-              {bio.length > 80 ? (
+              {(bio.length > 80) & !main ? (
                 <Text>{bio.slice(0, 80)}...</Text>
               ) : (
                 <Text>{bio}</Text>

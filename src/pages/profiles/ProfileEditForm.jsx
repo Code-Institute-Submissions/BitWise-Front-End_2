@@ -9,6 +9,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 import {
   Button,
+  Box,
   Flex,
   FormControl,
   FormLabel,
@@ -19,7 +20,6 @@ import {
   Show,
   Textarea,
   HStack,
-  Select,
   Alert,
   AlertIcon,
 } from "@chakra-ui/react";
@@ -92,10 +92,6 @@ const ProfileEditForm = () => {
 
     try {
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
-      // setProfileData((profileData) => ({
-      //   ...profileData,
-      //   image: data.image,
-      // }));
       navigate(`/profile/${id}/`);
     } catch (err) {
       console.log(err);
@@ -113,15 +109,16 @@ const ProfileEditForm = () => {
             <Stack spacing={4}>
               <FormControl id="image" isInvalid={Boolean(error?.image)}>
                 {image && (
-                  <figure>
-                    <Image src={image} fluid />
-                  </figure>
+                  <Box my={5}>
+                    <Image w="100%" borderRadius="20" src={image} fluid />
+                  </Box>
                 )}
 
                 <FormLabel htmlFor="image-upload">Profile Image</FormLabel>
 
                 <Input
-                  bg={"blackAlpha.50"}
+                  h="100%"
+                  p={0}
                   type="file"
                   id="image-upload"
                   ref={imageFile}
@@ -137,7 +134,7 @@ const ProfileEditForm = () => {
                 />
               </FormControl>
 
-              {error.article_title?.map((message, idx) => (
+              {error?.image?.map((message, idx) => (
                 <Alert borderRadius={5} key={idx} status="warning">
                   <AlertIcon />
                   {message}
@@ -194,7 +191,7 @@ const ProfileEditForm = () => {
             alt={"Login Image"}
             objectFit={"cover"}
             src={
-              "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
+              "https://images.unsplash.com/photo-1573643808568-4a3c26f3a06b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
             }
           />
         </Flex>
