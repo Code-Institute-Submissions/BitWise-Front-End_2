@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import UpdateDeleteButton from "./UpdateDeleteButton";
@@ -25,6 +25,10 @@ const ArticleCardHeader = (props) => {
   };
 
   const { handleDelete, error } = useArticleDelete(pk, setArticles);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   return (
     <Flex spacing="4">

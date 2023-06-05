@@ -42,6 +42,10 @@ const ArticleCardFooter = (props) => {
     setArticles
   );
 
+  const handleProfileClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       {is_owner ? (
@@ -128,6 +132,7 @@ const ArticleCardFooter = (props) => {
           flex="1"
           variant="ghost"
           leftIcon={<BiUserCircle color={custColor} />}
+          onClick={handleProfileClick}
         >
           <Text fontSize="sm">Owner</Text>
         </Button>
@@ -138,8 +143,9 @@ const ArticleCardFooter = (props) => {
           flex="1"
           variant="ghost"
           leftIcon={<FaUserMinus color={custColor} />}
+          onClick={handleProfileClick}
         >
-          <Text fontSize="sm">Following</Text>
+          <Text fontSize="sm">Profile</Text>
         </Button>
       ) : (
         <Button
@@ -148,9 +154,10 @@ const ArticleCardFooter = (props) => {
           flex="1"
           variant="ghost"
           leftIcon={<BiUserPlus />}
+          onClick={handleProfileClick}
         >
           <Show above="sm">
-            <Text fontSize="sm">Follow</Text>
+            <Text fontSize="sm">Profile</Text>
           </Show>
         </Button>
       )}
