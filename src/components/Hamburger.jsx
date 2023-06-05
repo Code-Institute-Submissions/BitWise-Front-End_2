@@ -25,6 +25,9 @@ const HamburgerMenu = () => {
       <NavLink to="/feed/">
         <MenuItem>Feed</MenuItem>
       </NavLink>
+      <NavLink to={`/profile/${currentUser?.profile_id}`}>
+        <MenuItem>My Profile</MenuItem>
+      </NavLink>
       <Link
         onClick={() => {
           handleSignOut(setCurrentUser, navigate);
