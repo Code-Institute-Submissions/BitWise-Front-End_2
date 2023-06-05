@@ -19,8 +19,16 @@ import useProfileEdit from "../../hooks/useProfileEdit";
 import { useNavigate } from "react-router-dom";
 
 const ProfileEditForm = () => {
-  const { profileData, imageFile, error, loaded, handleChange, handleSubmit } =
-    useProfileEdit();
+  const {
+    username,
+    profileData,
+    imageFile,
+    error,
+    loaded,
+    handleChange,
+    handleUsernameChange,
+    handleSubmit,
+  } = useProfileEdit();
 
   const navigate = useNavigate();
 
@@ -34,6 +42,23 @@ const ProfileEditForm = () => {
 
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
+              <FormControl id="username">
+                <FormLabel>Username</FormLabel>
+                <Input
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={handleUsernameChange}
+                />
+              </FormControl>
+
+              {error.username?.map((message, idx) => (
+                <Alert key={idx} status="warning">
+                  <AlertIcon />
+                  {message}
+                </Alert>
+              ))}
+
               <FormControl id="image" isInvalid={Boolean(error?.image)}>
                 {image && (
                   <Box my={5}>

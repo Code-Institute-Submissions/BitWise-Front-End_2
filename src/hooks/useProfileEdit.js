@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { axiosReq } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 import {
   useCurrentUser,
@@ -19,6 +19,8 @@ const useProfileEdit = () => {
     bio: "",
     image: "",
   });
+
+  const [username, setUsername] = useState("");
 
   const { bio, image } = profileData;
 
@@ -39,6 +41,9 @@ const useProfileEdit = () => {
             bio,
             image,
           });
+
+          setUsername(currentUser.username);
+
           setLoaded(true);
         } catch (err) {
           if (err instanceof CanceledError) return;
@@ -63,6 +68,10 @@ const useProfileEdit = () => {
     });
   };
 
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -74,13 +83,17 @@ const useProfileEdit = () => {
     }
 
     try {
+      await axiosRes.put("/dj-rest-auth/user/", {
+        username,
+      });
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
-      navigate(`/profile/${id}/`);
 
       setCurrentUser((prevCurrentUser) => ({
         ...prevCurrentUser,
         profile_image: data.image,
+        username,
       }));
+      navigate(`/profile/${id}/`);
     } catch (err) {
       console.log(err);
       setError(err.response?.data);
@@ -88,11 +101,13 @@ const useProfileEdit = () => {
   };
 
   return {
+    username,
     profileData,
     imageFile,
     error,
     loaded,
     handleChange,
+    handleUsernameChange,
     handleSubmit,
   };
 };
