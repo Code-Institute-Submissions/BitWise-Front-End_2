@@ -83,16 +83,23 @@ const useProfileEdit = () => {
     }
 
     try {
-      await axiosRes.put("/dj-rest-auth/user/", {
-        username,
-      });
+      if (username !== currentUser.username) {
+        await axiosRes.put("/dj-rest-auth/user/", {
+          username,
+        });
+      }
+
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
 
       setCurrentUser((prevCurrentUser) => ({
         ...prevCurrentUser,
         profile_image: data.image,
-        username,
+        username:
+          username !== currentUser.username
+            ? username
+            : prevCurrentUser.username,
       }));
+
       navigate(`/profile/${id}/`);
     } catch (err) {
       console.log(err);
