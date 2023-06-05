@@ -15,9 +15,11 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const LoginPage = () => {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [loginData, setLoginData] = useState({
     username: "",
@@ -42,12 +44,10 @@ const LoginPage = () => {
     axios
       .post("dj-rest-auth/login/", loginData)
       .then((response) => {
-        // Handle the successful response
         setCurrentUser(response.data.user);
-        navigate("/");
+        navigate(-1);
       })
       .catch((err) => {
-        // Handle the error
         console.log(err);
         setErrors(err.response?.data);
       });

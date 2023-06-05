@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { CiPen } from "react-icons/ci";
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const RegisterPage = () => {
   const [signUpData, setSignUpData] = useState({
@@ -31,6 +32,7 @@ const RegisterPage = () => {
   const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
+  useRedirect("loggedIn");
 
   const handleChange = (event) => {
     setSignUpData({
@@ -44,12 +46,10 @@ const RegisterPage = () => {
     axios
       .post("dj-rest-auth/registration/", signUpData)
       .then((response) => {
-        // Handle the successful response
         console.log(response.data);
         navigate("/login/");
       })
       .catch((err) => {
-        // Handle the error
         console.log(err);
         setErrors(err.response?.data);
       });
