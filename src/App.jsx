@@ -18,7 +18,7 @@ import SideGrid from "./components/SideGrid";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import LoggedIn from "./components/LoggedIn";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import PasswordEditForm from "./components/PasswordEditForm";
+import ProfilePasswordEditForm from "./pages/profiles/ProfilePasswordEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -104,7 +104,7 @@ function App() {
             <Route
               exact
               path="/profile/password/:id"
-              element={<PasswordEditForm />}
+              element={<ProfilePasswordEditForm />}
             />
 
             <Route path="*" element={<ErrorPage />} />
