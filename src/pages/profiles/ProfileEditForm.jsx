@@ -93,6 +93,11 @@ const ProfileEditForm = () => {
     try {
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
       navigate(`/profile/${id}/`);
+
+      setCurrentUser((prevCurrentUser) => ({
+        ...prevCurrentUser,
+        profile_image: data.image,
+      }));
     } catch (err) {
       console.log(err);
       setError(err.response?.data);
