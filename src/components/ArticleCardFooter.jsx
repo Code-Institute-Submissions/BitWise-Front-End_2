@@ -156,9 +156,7 @@ const ArticleCardFooter = (props) => {
           leftIcon={<BiUserPlus />}
           onClick={handleProfileClick}
         >
-          <Show above="sm">
-            <Text fontSize="sm">Profile</Text>
-          </Show>
+          <Text fontSize="sm">Profile</Text>
         </Button>
       )}
     </>

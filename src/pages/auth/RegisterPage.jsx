@@ -64,7 +64,7 @@ const RegisterPage = () => {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign="center" px={10}>
-            Sign in to your account
+            Sign up for an account
           </Heading>
           <HStack align={"top"} justify={"center"}>
             <Hide below="sm">
