@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   FormControl,
   FormLabel,
-  Input,
   Stack,
   Button,
   Flex,
   Alert,
   AlertIcon,
   Select,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
 } from "@chakra-ui/react";
-import { useColorModeValue } from "@chakra-ui/react";
 import useLanguageCreate from "../hooks/useLanguageCreate";
 import { RiMailSendLine } from "react-icons/ri";
 import languageOptions from "../constants/languageOptions";
 
 const LanguageCreate = (props) => {
   const { profile, setLanguages } = props;
-
-  const custCommentBg = useColorModeValue("#FAF5FF", "#2D3748");
 
   const {
     language,
@@ -71,14 +76,44 @@ const LanguageCreate = (props) => {
               )}
             </FormControl>
 
-            <FormControl id="confidence">
+            <FormControl mt={5} id="confidence">
               <FormLabel>Confidence</FormLabel>
-              <Input
-                type="text"
-                name="confidence"
-                value={confidence}
-                onChange={handleChange}
-              />
+
+              <Flex>
+                <NumberInput
+                  maxW="100px"
+                  mr="2rem"
+                  value={confidence}
+                  onChange={(value) =>
+                    handleChange({ target: { name: "confidence", value } })
+                  }
+                >
+                  <NumberInputField />
+                  <NumberInputStepper>
+                    <NumberIncrementStepper />
+                    <NumberDecrementStepper />
+                  </NumberInputStepper>
+                </NumberInput>
+                <Slider
+                  flex="1"
+                  colorScheme="purple"
+                  focusThumbOnChange={false}
+                  name="confidence"
+                  value={confidence}
+                  onChange={(value) =>
+                    handleChange({ target: { name: "confidence", value } })
+                  }
+                >
+                  <SliderTrack>
+                    <SliderFilledTrack />
+                  </SliderTrack>
+                  <SliderThumb
+                    fontSize="sm"
+                    boxSize="32px"
+                    children={confidence}
+                  />
+                </Slider>
+              </Flex>
               {errors.confidence && (
                 <Alert mt={2} borderRadius={5} status="warning">
                   <AlertIcon />

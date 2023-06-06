@@ -20,10 +20,19 @@ const useLanguageCreate = (profile, setLanguages) => {
   }, [languageData]);
 
   const handleChange = (event) => {
-    setLanguageData({
-      ...languageData,
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
+
+    if (name === "confidence") {
+      setLanguageData({
+        ...languageData,
+        confidence: parseFloat(value),
+      });
+    } else {
+      setLanguageData({
+        ...languageData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async (event) => {
