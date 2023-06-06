@@ -49,6 +49,8 @@ const ProfilePage = () => {
     }` +
     `&primary_language=${languageFilter}`;
 
+  const endpointLanguages = `/languages/?owner__profile=${id}`;
+
   const resetFilters = useResetFilters();
   const { pathname } = useLocation();
 
@@ -89,7 +91,7 @@ const ProfilePage = () => {
             <ProfileArticles endpoint={endpoint} />
           </TabPanel>
           <TabPanel>
-            <LanguageList />
+            <LanguageList endpoint={endpointLanguages} />
           </TabPanel>
         </TabPanels>
       </Tabs>
