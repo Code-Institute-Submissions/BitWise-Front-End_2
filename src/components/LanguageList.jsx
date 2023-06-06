@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import useLanguages from "../hooks/useLanguages";
-import { Spinner, Text } from "@chakra-ui/react";
+import { Spinner, Text, Button } from "@chakra-ui/react";
 import LanguageCard from "./LanguageCard";
 import LanguageCreate from "./LanguageCreate";
+import { useParams } from "react-router-dom";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const LanguageList = (props) => {
   const { profile, endpoint } = props;
   const { languages, setLanguages, error, loaded } = useLanguages(endpoint);
+  const [addLanguage, setAddLanguage] = useState(false);
+  const { id } = useParams();
+  const currentUser = useCurrentUser();
 
   return (
     <>
-      <LanguageCreate profile={profile} setLanguages={setLanguages} />
+      {id == currentUser?.profile_id && (
+        <Button
+          w={155}
+          colorScheme={addLanguage ? "gray" : "purple"}
+          my={2}
+          onClick={() => setAddLanguage(!addLanguage)}
+        >
+          {addLanguage ? "Close" : "Add Language"}
+        </Button>
+      )}
+      {addLanguage && (
+        <LanguageCreate profile={profile} setLanguages={setLanguages} />
+      )}
 
       {loaded ? (
         languages.results.length ? (

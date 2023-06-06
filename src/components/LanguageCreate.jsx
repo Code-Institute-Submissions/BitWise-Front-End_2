@@ -9,16 +9,17 @@ import {
   Flex,
   Alert,
   AlertIcon,
+  Select,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import useLanguageCreate from "../hooks/useLanguageCreate";
 import { RiMailSendLine } from "react-icons/ri";
+import languageOptions from "../constants/languageOptions";
 
 const LanguageCreate = (props) => {
   const { profile, setLanguages } = props;
 
-  const custColor = useColorModeValue("#FAF5FF", "#4A5568");
-  const custCommentBg = useColorModeValue("#805AD5", "#2D3748");
+  const custCommentBg = useColorModeValue("#FAF5FF", "#2D3748");
 
   const {
     language,
@@ -33,15 +34,29 @@ const LanguageCreate = (props) => {
     <Box w="100%">
       <form onSubmit={handleSubmit}>
         <Stack pb={3} w="100%">
-          <Box borderRadius={5} p={2} bg={custCommentBg} w="100%">
+          <Box
+            borderRadius={5}
+            p={2}
+            border={"1px solid"}
+            borderRight={"2px solid "}
+            borderBottom={"2px solid"}
+            borderColor="purple.300"
+            w="100%"
+          >
             <FormControl id="language">
               <FormLabel>Language</FormLabel>
-              <Input
-                type="text"
+
+              <Select
+                placeholder="Select option"
                 name="language"
-                value={language}
                 onChange={handleChange}
-              />
+              >
+                {languageOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
               {errors.language && (
                 <Alert mt={2} borderRadius={5} status="warning">
                   <AlertIcon />
