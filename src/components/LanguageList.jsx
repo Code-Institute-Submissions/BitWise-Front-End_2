@@ -1,6 +1,7 @@
 import React from "react";
 import useLanguages from "../hooks/useLanguages";
 import { Spinner, Text } from "@chakra-ui/react";
+import LanguageCard from "./LanguageCard";
 
 const LanguageList = (props) => {
   const { endpoint } = props;
@@ -11,7 +12,7 @@ const LanguageList = (props) => {
       {loaded ? (
         languages.results.length ? (
           languages.results.map((language) => (
-            <Text key={language.id}>{language.language}</Text>
+            <LanguageCard key={language.id} {...language} />
           ))
         ) : (
           <Text>No Languages Recorded</Text>
