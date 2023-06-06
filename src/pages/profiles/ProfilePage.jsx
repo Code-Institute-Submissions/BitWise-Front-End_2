@@ -91,7 +91,7 @@ const ProfilePage = () => {
             <ProfileArticles endpoint={endpoint} />
           </TabPanel>
           <TabPanel>
-            <LanguageList endpoint={endpointLanguages} />
+            <LanguageList profile={profile} endpoint={endpointLanguages} />
           </TabPanel>
         </TabPanels>
       </Tabs>
