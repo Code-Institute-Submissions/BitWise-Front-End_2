@@ -30,6 +30,7 @@ import {
   HStack,
   Show,
 } from "@chakra-ui/react";
+import LanguageList from "../../components/LanguageList";
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -88,7 +89,7 @@ const ProfilePage = () => {
             <ProfileArticles endpoint={endpoint} />
           </TabPanel>
           <TabPanel>
-            <Text>Enter Language Component</Text>
+            <LanguageList />
           </TabPanel>
         </TabPanels>
       </Tabs>

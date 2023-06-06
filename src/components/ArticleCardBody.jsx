@@ -3,9 +3,11 @@ import { Heading, HStack, Text, Box } from "@chakra-ui/react";
 import languageOptions from "../constants/languageOptions";
 import truncateContent from "../services/truncateContent";
 import { useColorModeValue } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const ArticleCardBody = (props) => {
   const {
+    id,
     article_content,
     primary_language,
     article_title,
@@ -24,47 +26,50 @@ const ArticleCardBody = (props) => {
 
   return (
     <>
-      <Heading mb={5} size="lg">
-        {article_title}
-      </Heading>
-      {primary_language && (
-        <HStack pb={4}>
-          {languageOptions.map((language) => {
-            if (language.value === primary_language) {
-              const IconComponent = language.icon;
-              return (
-                <React.Fragment key={language.value}>
-                  <IconComponent fontSize={"20"} />
-                  <Heading size="sm">
-                    {language.value === "CPlusPlus"
-                      ? "C++"
-                      : language.value === "CSharp"
-                      ? "C#"
-                      : language.value}
-                  </Heading>
-                </React.Fragment>
-              );
-            }
-            return null;
-          })}
-          {!languageOptions.some(
-            (language) => language.value === primary_language
-          ) && <Heading size="sm">No Language Recorded</Heading>}
-        </HStack>
-      )}
-      <Box maxW="lg" whiteSpace="pre-line">
-        <Text>{articlePage ? article_content : truncatedContent}</Text>
-      </Box>
+      <Link to={`/article/${id}`}>
+        <Heading mb={5} size="lg">
+          {article_title}
+        </Heading>
+
+        {primary_language && (
+          <HStack pb={4}>
+            {languageOptions.map((language) => {
+              if (language.value === primary_language) {
+                const IconComponent = language.icon;
+                return (
+                  <React.Fragment key={language.value}>
+                    <IconComponent fontSize={"20"} />
+                    <Heading size="sm">
+                      {language.value === "CPlusPlus"
+                        ? "C++"
+                        : language.value === "CSharp"
+                        ? "C#"
+                        : language.value}
+                    </Heading>
+                  </React.Fragment>
+                );
+              }
+              return null;
+            })}
+            {!languageOptions.some(
+              (language) => language.value === primary_language
+            ) && <Heading size="sm">No Language Recorded</Heading>}
+          </HStack>
+        )}
+        <Box maxW="lg" whiteSpace="pre-line">
+          <Text>{articlePage ? article_content : truncatedContent}</Text>
+        </Box>
+      </Link>
       {github_link && (
         <Box>
           <Heading mt={5} size="sm">
             GitHub Link:
           </Heading>
-          <a href={github_link} target="_blank">
-            <Text color={custColor} as="u">
+          <Text color={custColor} as="u">
+            <a href={github_link} target="_blank" rel="noopener noreferrer">
               {github_link}
-            </Text>
-          </a>
+            </a>
+          </Text>
         </Box>
       )}
     </>

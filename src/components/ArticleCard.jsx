@@ -46,8 +46,9 @@ const ArticleCard = (props) => {
           setArticles={setArticles}
         />
       </CardHeader>
-      <CardBody as={Link} to={`/article/${id}`}>
+      <CardBody>
         <ArticleCardBody
+          id={id}
           article_content={article_content}
           primary_language={primary_language}
           articlePage={articlePage}
