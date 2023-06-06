@@ -9,6 +9,7 @@ import {
   Alert,
   AlertIcon,
   Select,
+  Input,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
@@ -96,7 +97,7 @@ const LanguageCreate = (props) => {
                 </NumberInput>
                 <Slider
                   flex="1"
-                  colorScheme="purple"
+                  colorScheme=""
                   focusThumbOnChange={false}
                   name="confidence"
                   value={confidence}
@@ -120,6 +121,16 @@ const LanguageCreate = (props) => {
                   {errors.confidence[0]}
                 </Alert>
               )}
+
+              <Input
+                mt={5}
+                placeholder="Select Date"
+                size="md"
+                type="date"
+                name="used_since"
+                value={used_since}
+                onChange={handleChange}
+              />
             </FormControl>
 
             <Flex mt={2} justifyContent={"end"}>
