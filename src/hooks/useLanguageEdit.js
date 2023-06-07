@@ -53,7 +53,7 @@ const useLanguageEdit = (
     formData.append("used_since", languageUsed_since);
 
     try {
-      const { data } = await axiosRes.put("/languages/" + id, formData);
+      const { data } = await axiosRes.patch("/languages/" + id, formData);
 
       setLanguages((prevLanguages) => ({
         ...prevLanguages,

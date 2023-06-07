@@ -61,7 +61,7 @@ const LanguageCard = (props) => {
                   ) : years_exp >= 1 ? (
                     <Text>{years_exp} year of experience</Text>
                   ) : (
-                    <Text>{years_exp} of experience</Text>
+                    <Text>Less than one year of experience</Text>
                   )
                 ) : null}
               </Box>
