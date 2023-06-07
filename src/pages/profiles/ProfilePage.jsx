@@ -59,12 +59,14 @@ const ProfilePage = () => {
   }, [pathname]);
 
   return (
-    <Box p={5}>
-      {loaded ? (
-        <ProfileCard {...profile} main />
-      ) : (
-        <CardSkeleton height={230} />
-      )}
+    <Box>
+      <Box p={5}>
+        {loaded ? (
+          <ProfileCard {...profile} main />
+        ) : (
+          <CardSkeleton height={230} />
+        )}
+      </Box>
       <Tabs variant="enclosed" colorScheme="purple" pt={5}>
         <TabList>
           <Tab>Articles</Tab>
