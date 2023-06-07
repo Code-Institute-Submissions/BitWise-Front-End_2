@@ -36,7 +36,11 @@ const LanguageList = (props) => {
       {loaded ? (
         languages.results.length ? (
           languages.results.map((language) => (
-            <LanguageCard key={language.id} {...language} />
+            <LanguageCard
+              setLanguages={setLanguages}
+              key={language.id}
+              {...language}
+            />
           ))
         ) : (
           <Text>No Languages Recorded</Text>

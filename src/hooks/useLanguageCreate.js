@@ -6,7 +6,7 @@ import { useSetProfileData } from "../contexts/ProfilesDataContext";
 const useLanguageCreate = (profile, setLanguages, setAddLanguage) => {
   const [languageData, setLanguageData] = useState({
     language: "",
-    confidence: 20,
+    confidence: 50,
     used_since: "",
   });
   const { language, confidence, used_since } = languageData;

@@ -67,7 +67,7 @@ const ProfilePage = () => {
           <CardSkeleton height={230} />
         )}
       </Box>
-      <Tabs variant="enclosed" colorScheme="purple" pt={5}>
+      <Tabs variant="enclosed" colorScheme="purple" p={5}>
         <TabList>
           <Tab>Articles</Tab>
           <Tab>Languages</Tab>
