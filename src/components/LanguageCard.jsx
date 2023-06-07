@@ -53,10 +53,12 @@ const LanguageCard = (props) => {
                   return null;
                 })}
                 {used_since ? (
-                  years_exp > 1 ? (
+                  years_exp >= 2 ? (
                     <Text>{years_exp} years of experience</Text>
-                  ) : (
+                  ) : years_exp >= 1 ? (
                     <Text>{years_exp} year of experience</Text>
+                  ) : (
+                    <Text>{years_exp} of experience</Text>
                   )
                 ) : null}
               </Box>
