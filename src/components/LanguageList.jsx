@@ -26,7 +26,11 @@ const LanguageList = (props) => {
         </Button>
       )}
       {addLanguage && (
-        <LanguageCreate profile={profile} setLanguages={setLanguages} />
+        <LanguageCreate
+          setAddLanguage={setAddLanguage}
+          profile={profile}
+          setLanguages={setLanguages}
+        />
       )}
 
       {loaded ? (

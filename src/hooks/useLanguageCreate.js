@@ -3,7 +3,7 @@ import { axiosReq } from "../api/axiosDefaults";
 
 import { useSetProfileData } from "../contexts/ProfilesDataContext";
 
-const useLanguageCreate = (profile, setLanguages) => {
+const useLanguageCreate = (profile, setLanguages, setAddLanguage) => {
   const [languageData, setLanguageData] = useState({
     language: "",
     confidence: 20,
@@ -70,6 +70,7 @@ const useLanguageCreate = (profile, setLanguages) => {
           },
         };
       });
+      setAddLanguage(false);
     } catch (err) {
       console.log(err.response?.data);
       if (err.response?.status !== 401) {

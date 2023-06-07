@@ -25,7 +25,7 @@ import { RiMailSendLine } from "react-icons/ri";
 import languageOptions from "../constants/languageOptions";
 
 const LanguageCreate = (props) => {
-  const { profile, setLanguages } = props;
+  const { profile, setLanguages, setAddLanguage } = props;
 
   const {
     language,
@@ -34,7 +34,7 @@ const LanguageCreate = (props) => {
     errors,
     handleChange,
     handleSubmit,
-  } = useLanguageCreate(profile, setLanguages);
+  } = useLanguageCreate(profile, setLanguages, setAddLanguage);
 
   return (
     <Box w="100%">
