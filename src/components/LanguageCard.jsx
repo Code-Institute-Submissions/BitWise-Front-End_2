@@ -13,6 +13,7 @@ import languageOptions from "../constants/languageOptions";
 import UpdateDeleteButton from "./UpdateDeleteButton";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import LanguageEdit from "./LanguageEdit";
+import useLanguageDelete from "../hooks/useLanguageDelete";
 
 const LanguageCard = (props) => {
   const {
@@ -26,6 +27,8 @@ const LanguageCard = (props) => {
   } = props;
 
   const [showEditLanguage, setShowEditLanguage] = useState(false);
+
+  const { handleDelete, error } = useLanguageDelete(id, setLanguages);
 
   return (
     <>
@@ -69,7 +72,7 @@ const LanguageCard = (props) => {
                     icon={<BsThreeDotsVertical />}
                     target={"Language"}
                     handleEdit={() => setShowEditLanguage(true)}
-                    handleDelete={() => {}}
+                    handleDelete={handleDelete}
                   />
                 )}
               </Box>
