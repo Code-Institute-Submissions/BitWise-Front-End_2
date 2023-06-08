@@ -19,7 +19,7 @@ const LanguageList = (props) => {
         <Button
           w={155}
           colorScheme={addLanguage ? "gray" : "purple"}
-          my={2}
+          mb={5}
           onClick={() => setAddLanguage(!addLanguage)}
         >
           {addLanguage ? "Close" : "Add Language"}

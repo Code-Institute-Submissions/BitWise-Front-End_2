@@ -22,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import useLanguageCreate from "../hooks/useLanguageCreate";
 import { RiMailSendLine } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 import languageOptions from "../constants/languageOptions";
 
 const LanguageCreate = (props) => {
@@ -134,6 +135,9 @@ const LanguageCreate = (props) => {
             </FormControl>
 
             <Flex mt={2} justifyContent={"end"}>
+              <Button mr={1} onClick={() => setAddLanguage(false)}>
+                <RxCross2 />
+              </Button>
               <Button type="submit">
                 <RiMailSendLine />
               </Button>
