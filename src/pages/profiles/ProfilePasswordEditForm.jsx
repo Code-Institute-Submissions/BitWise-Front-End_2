@@ -25,7 +25,7 @@ const ProfilePasswordEditForm = () => {
     <Stack minH={"calc(100vh - 100px)"} direction={"row"}>
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"}>
-          <Heading fontSize={"2xl"}>Edit Your Profile</Heading>
+          <Heading fontSize={"2xl"}>Update Your Password</Heading>
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="new_password1">
