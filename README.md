@@ -1,6 +1,6 @@
 # TRAVEL APPLICATION
 
-ADD RESPONSIVE IMAGE OF SITE
+![Readme Front Image](readme-assets/responsive-review/front-image.png)
 
 # Table Of Contents
 
@@ -9,9 +9,11 @@ ADD RESPONSIVE IMAGE OF SITE
   - [Project Introduction]()
 - [Responsive Review]()
   - [Am I Responsive?]()
-- [User Experience (UX)]()
+- [Project Planning]()
   - [Website Objectives]()
   - [User Stories]()
+  - [Features Planning]()
+- [User Experience (UX)]()
   - [Website Design]()
   - [Wireframes]()
   - [Features]()
@@ -58,145 +60,101 @@ Following discussions with the client this site will initially be tailored to wr
 
 ## Am I Responsive?
 
-Login is required to view the site contents on responsive websites therefore the pages have been detailed via screenshots below.
+To review the responsive deisgn Web Dev Tools were used as well as manual checks on a range of devices.
 
-   <details>
-      <summary style="font-weight:bold">Login</summary>
+In addition to this the site was run through the following [website](https://ui.dev/amiresponsive?url=https://bit-wise-front-end.vercel.app/).
 
----
+<details>
+    <summary style="font-weight:bold">Register</summary>
 
-- [All-Devices](readme-assets/responsive/login/login-all.png)<br>
+![Register](readme-assets/responsive-review/register.png)
 
----
+</details>
 
-   </details>
+<details>
+    <summary style="font-weight:bold">Login</summary>
 
-   <details>
-      <summary style="font-weight:bold">Home</summary>
+![Login](readme-assets/responsive-review/login.png)
 
----
+</details>
 
-- [Desktop 1](readme-assets/responsive/home/home-desktop-1.png)<br>
-- [Desktop 2](readme-assets/responsive/home/home-desktop-2.png)<br>
-- [Desktop 3](readme-assets/responsive/home/home-desktop-3.png)<br>
+<details>
+    <summary style="font-weight:bold">Home</summary>
 
----
+![Home](readme-assets/responsive-review/home.png)
 
-- [Ipad 1](readme-assets/responsive/home/home-ipad-1.png)<br>
-- [Ipad 2](readme-assets/responsive/home/home-ipad-2.png)<br>
-- [Ipad 3](readme-assets/responsive/home/home-ipad-3.png)<br>
+</details>
 
----
+<details>
+    <summary style="font-weight:bold">Feed</summary>
 
-- [Phone 1](readme-assets/responsive/home/home-phone-1.png)<br>
-- [Phone 2](readme-assets/responsive/home/home-phone-2.png)<br>
-- [Phone 3](readme-assets/responsive/home/home-phone-3.png)<br>
+![Feed](readme-assets/responsive-review/feed.png)
 
----
+</details>
 
-   </details>
+<details>
+    <summary style="font-weight:bold">Article</summary>
 
-   <details>
-      <summary style="font-weight:bold">Profile</summary>
+![Article](readme-assets/responsive-review/article.png)
 
----
+</details>
 
-- [Desktop](readme-assets/responsive/profile/profile-desktop.png)<br>
-- [Ipad](readme-assets/responsive/profile/profile-ipad.png)<br>
-- [Phone](readme-assets/responsive/profile/profile-phone.png)<br>
+<details>
+    <summary style="font-weight:bold">Add Article</summary>
 
----
+![Add Article](readme-assets/responsive-review/add-article.png)
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Site Updates</summary>
+<details>
+    <summary style="font-weight:bold">Profiles</summary>
 
----
+![Profiles](readme-assets/responsive-review/profiles.png)
 
-- [All-Devices](readme-assets/responsive/site-updates/site-updates-all.png)<br>
+</details>
 
----
+<details>
+    <summary style="font-weight:bold">Profile</summary>
 
-   </details>
-   
-   <details>
-      <summary style="font-weight:bold">Planner</summary>
+![Profile](readme-assets/responsive-review/profile.png)
 
----
+</details>
 
-- [Desktop](readme-assets/responsive/planner/map-desktop.png)<br>
-- [Ipad](readme-assets/responsive/planner/map-ipad.png)<br>
-- [Phone](readme-assets/responsive/planner/map-phone.png)<br>
+<details>
+    <summary style="font-weight:bold">Update Profile</summary>
 
----
+![Update Profile](readme-assets/responsive-review/profile-edit.png)
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Country Info</summary>
+<details>
+    <summary style="font-weight:bold">Password Update</summary>
 
----
+![Password Update](readme-assets/responsive-review/password-update.png)
 
-- [Desktop 1](readme-assets/responsive/country-info/country-desktop-1.png)<br>
-- [Desktop 2](readme-assets/responsive/country-info/country-desktop-2.png)<br>
-- [Ipad 1](readme-assets/responsive/country-info/country-ipad-1.png)<br>
-- [Ipad 2](readme-assets/responsive/country-info/country-ipad-2.png)<br>
-- [Phone 1](readme-assets/responsive/country-info/country-phone-1.png)<br>
-- [Phone 2](readme-assets/responsive/country-info/country-phone-2.png)<br>
+</details>
 
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Task List</summary>
-
----
-
-- [Desktop](readme-assets/responsive/task-list/task-list-desktop.png)<br>
-- [Ipad](readme-assets/responsive/task-list/task-list-ipad.png)<br>
-- [Phone](readme-assets/responsive/task-list/task-list-phone.png)<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Diary</summary>
-
----
-
-- [Desktop](readme-assets/responsive/diary/diary-desktop.png)<br>
-- [Ipad](readme-assets/responsive/diary/diary-ipad.png)<br>
-- [Phone](readme-assets/responsive/diary/diary-phone.png)<br>
-
----
-
-   </details>
-<br>
-
-# User Experience (UX)
+# Project Planning
 
 ## Website Objectives
 
-   <details>
-      <summary style="font-weight:bold">Client Goals</summary>
+<details>
+    <summary style="font-weight:bold">Client Goals</summary>
 
 The client wants a simple and engaging website that is easy to use and will result in users returning to the site.
 
 - Sleek yet simple UX design.
 - Easy to use functionality.
 - Responsive for any device size to encourage mobile use as well as desktop use.
-- Links to the client's social network accounts to enhance their online presence.
-- Provide a base site to later introduce future partnerships relating to travel and accommodation bookings.
+- Encourages the development of a friendly programming community helping each other through the sharing of knowledge.
+- Provide a base site to later introduce article recomendations, video sharing, streaming, transaction functionality for premium content.
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Visitor Goals</summary>
+<details>
+    <summary style="font-weight:bold">Visitor Goals</summary>
 
 The visitor should have a clear understanding of what the website purpose is and the site functions should encourage regular use.
 
@@ -204,186 +162,196 @@ The visitor should have a clear understanding of what the website purpose is and
 - Understand the purpose of the site.
 - Simple intuitive menu navigation.
 - Intuitive content and links.
-- Ability to view site updates, enhancements and news.
-- Opportunity to feedback on site updates to drive future improvments to tailor site to user expectations.
-- Easy to access information about countries.
-- Access to a diary to record travel experiences.
-- Access to a task-manager/to-lists to manage travel activities.
+- Ability to write and view programming articles.
+- Opportunity to feedback on articles via comments and likes.
+- Ability to filter articles to meet needs.
+- Able to follow profiles.
+- Ability to filter profiles to meet needs.
+- Can provide profile info including competancy and experiance in programming languages.
 - Readable and aesthetically pleasing on all devices.
 
 ---
 
-   </details>
+</details>
 
 ## User Stories
 
-All User Stories are detailed on my GitHub account as issues [here](https://github.com/Joe-Collins-1986/travel-app/issues?q=is%3Aissue+is%3Aclosed).<br>
+All User Stories are detailed on my GitHub account as issues [here](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues?q=is%3Aissue+is%3Aclosed).<br>
 
 These also breakdown:
 
 - Tasks required for each User Story completion.
 - Acceptance Criteria for each User Story.
-- Unit Testing for each User Story (where applicable)
+
+<details>
+    <summary style="font-weight:bold">Example</summary>
+
+![Example User Story](readme-assets/user-stories/github-user-story-example.png)
+
+</details>
 
 ### Summary of User Stories
 
-   <details>
-      <summary style="font-weight:bold">Account Management</summary>
-      
-   * As an Administrator I can login in and out of my superuser account so that I can manage the site.
-   * As an Administrator I can add or delete user accounts so that I can manage the site.
-   * As an Administrator I can update user account information so that I can assist users where required.
-   * As a user I can register an account so that I can log in with my password.
-   * As a user I can login in and out of my account so that I can use the site.
-   * As a user I can reset my password so that I can still use the site if I have forgotten it or if it needs changing due to a security breach.
-   * As a Site Owner I can host the site on a cloud platform so that it can be accessed by user be scaled up as appropriate.
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Site Updates</summary>
-
-- As an Administrator I can post site updates so that users can be informed about latest features/updates.
-- As a user I can check site updates so that I understand site changes and improvements.
-- As a user I can comment on site updates so that I can influence future site enhancements.
-- As a user I can update my comments on site updates so that I can correct or improve posts if necessary.
-- As a user I can delete my comments on site updates so that I can remove comments that are no longer relevant.
-- As an administrator I can update comments so that I can detail actions taken to resolve issues raised.
+<details>
+    <summary style="font-weight:bold">NavBar</summary>
+    
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/1): As a **user** I can **always view the Navbar regardless of which page I am on or where I am on that page** so that **I can navigate the site efficiently.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/2): As a **user** I can **switch the application between light and dark mode** so that **the aesthetics and readability better suit my needs**.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/3): As a **user** I can **only view the links in the Navbar that I have access to** so that **I understand immediately what options are available to me**.
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Country Navigation</summary>
-   
-   * As a user I can select countries from a map or dropdown so that I can access information about them.
-   * As a user I can mark a country to visited so that I can see at a glance where I have been.
-   * As a user I can access basic country info so that I can decide if it is somewhere I might be interested in visiting.
-   ---
-   </details>
+<details>
+    <summary style="font-weight:bold">Routing</summary>
 
-   <details>
-      <summary style="font-weight:bold">Profile</summary>
-   
-   * As a user I can see my profile information so that I can confirm if it is correct.
-   * As a user I can update my profile info so that it reflects any changes to my circumstances.
-   ---
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Travel Diary</summary>
-
-- As a user I can create a diary linked to a country I have visited so that I can record my experiences.
-- As a user I can update my diary posts so that I can fix mistakes or add info.
-- As a user I can delete diary posts so that I can remove unwanted information.
-- As a user I can view a list of all the tags added to my diary posts related to the country I am in so that I can search via the tags.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/4): As a **user** I can **navigate to various page components without a page refresh** so that **I have a better user experience**.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/5): As a **user** I will be taken **to an error page if the page component fails to render or does not exist** so that **I understand what went wrong**.
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">To-Do Lists</summary>
+<details>
+    <summary style="font-weight:bold">Authentication</summary>
 
-- As a user I can view all the to-do lists I have for a country so that i can plan and track my travel and holiday activities.
-- As a user I can add new to-do lists so that I can create specific task managers.
-- As a user I can delete to-do lists so that I can remove lists that are no longer required.
-- As a user I can update my to-do lists so that I can fix mistakes or add info.
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">To-Do Tasks</summary>
-
-- As a user I can view all items in a to-do list so that I can see what specific activities are required.
-- As a user I can add new to-do items to a list so that I can manage new tasks I consider.
-- As a user I can toggle to-do items to open or closed so that I can see which tasks are outstanding.
-- As a user I can delete to-do items so that I can remove tasks that are no longer required.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/6): As a **user** can **register an account** so that my **account details are stored, a profile is set up for me and I can login to the site**.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/7): As a **user** I can **login to my registered account** so that **I can use the sites full functionality**.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/8): As a **user** I can **logout of my account** so that **I can keep my account safe from others accessing it in my absence**.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/9): As a **user** I can **stay logged into my account for up to 24h** so that **I do not have to continuously have to log back in while using the site**.
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Restrictions</summary>
+<details>
+    <summary style="font-weight:bold">Articles</summary>
 
-- As a user I am restricted from specific site updates, map and countries without first logging in so that I can do not try to submit a comment or visited with no user to assign to the object and generate an error.
-- As a user I am restricted from accessing updates and deletion comments created by other users so that no one can update the comment but the author.
-- As a user I am sent to an instructive page when I am unable to access a web page for any reason so that I understand why I am unable to access the page requested.
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/10): As a **user** I can **create articles** so that **I can share my knowledge with others on the site.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/11): As a **user** I can **view all articles on the home page** so that **I can browse for content that might interest me.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/12): As a **user** I can **like other people posts** so that **I can show my approval.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/13): As a **user** I can **filter articles** so that **I can find the ones that meet my desired criteria.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/14): As a **user** I can **continuously scroll on the grid component** so that **I can see all available articles.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/15): As a **user** I can **edit my own articles** so that **I can update info or correct mistakes where required.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/16): As a **user** I can **delete my own articles** so that **I can remove articles I am no longer happy with.**
 
 ---
 
-   </details>
+</details>
+
+<details>
+    <summary style="font-weight:bold">Comments</summary>
+
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/17): As a **user** I can **create comments on an article** so that **I can share my thoughts on it.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/18): As a **user** I can **view comments that have been added to an article** so that **I can see what other people have posted.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/19): As a **user** I can **delete my own comments** so that **I can remove information I no longer wish to share with the site audience.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/20): As a **user** I can **edit my own comments** so that **I can fix mistakes I made in my original posts.**
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Profiles</summary>
+
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/21): As a **user** I can **view a list of article author profiles** so that **I can see who is making contributions.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/22): As a **user** I can **filter and order the list of profiles** so that **I can locate the ones most interesting to me.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/23): As a **user** I can **follow or unfollow profiles** so that **my feed page represents articles that interest me.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/24): As a **user** I can **edit my own profile data** so that **I can reflect new information.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/25): As a **user** I can **update my login password** so that **I can improve security if required.**
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Languages</summary>
+
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/26): As a **user** I can **view all the languages a profile author is experienced in** so that **I can follow people who are most relevant to my interests.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/27): As a **user** I can **add languages that I am experienced in to my profile** so that **I can encourage others to follow me if they are interested in languages I know.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/28): As a **user** I can **update languages that have added to my profile** so that **I can update my level of experience or correct mistakes.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/29): As a **user** I can **delete languages that have added to my profile** so that **I can remove info I am not happy with.**
+
+---
+
+</details>
+
+## Features Planning
+
+# User Experience (UX)
 
 ## Website Design
 
-  <details>
-      <summary style="font-weight:bold">Colour Scheme</summary>
+After discussions with the client and reviewing the available React styling libraries a decision was reached to adopt Charkra UI as the components lined up nicely with the aesthetic the client wished to achieve.
 
-   <br>
-   Client requested the site to be built from shades of grey with a bold blue for emphasising key elements. This consideration was made to not pull focus or negatively impact the readability of the site due to its information nature.<br>
+<details>
+    <summary style="font-weight:bold">Colour Scheme</summary>
+
+Client requested the site to be built from shades of grey with a bold purple for emphasising key elements. This consideration was made to not pull focus or negatively impact the readability of the site due to its information nature.
+
+In addition to this the client requested that there be a dark and light mode to better tailor to user preferences and give a codeing aesthetic.
+
+The achieve this look Chakra Theme was applied to allow a switch from light to dark mode. Then a purple theme was interwoven with the standard theme to hightlight key elements and add a dynamic exiciting look to the site.
+
+The themes utilise the same colors but reverse the shade on the dark mode switch.
 
 - Main colours:
-  - #064467 (Dark Blue)
-  - #cacaca (Light Grey)
-  - #484848 (Dark Grey)
-  - #e9e4e4 (Off White)
-  - #ffffff (White)
 
-In additon to the standard colour scheme delete buttons will be marked as red to indicate the risk assosiated with them:
+![Dark to Light Colour Palette](readme-assets/ux/colors/dark-mode-colors.png)
 
-- Delete colour:
-  - #e2110a (Red)
+- Highlighing purple:
 
-![Colour Palette](readme-assets/ux/travel-colour-scheme.png)
+![Purple Colour Palette](readme-assets/ux/colors/purple-mode-colors.png)
+
+In addition to this a red was applied wo certain buttons to indicate a level of risk:
+
+![Red Colour Palette](readme-assets/ux/colors/red-theme-colors.png)
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Typography</summary>
+<details>
+    <summary style="font-weight:bold">Typography</summary>
 
-   <br>
-   For the typography the client wanted an easy-to-read text which is fun and engaging.<br>
-
-- Title Font and Anchor Tags applied with backup options: 'Lora', serif;
-- Paragraph Font applied with backup options: 'Merriweather', serif;
+After extending the Chakra Theme to test various fonts and styles it was deemed appropriate to revert to the default typography which was easy to read and styled nicely against the Dark/Light theme.
 
 ---
 
-   </details>
+</details>
 
-   <details>
-      <summary style="font-weight:bold">Imagery</summary>
+<details>
+    <summary style="font-weight:bold">Imagery</summary>
 
-   <br>
-   The images and icons used for development of this website were taken from the below sources.<br>
+Imagery was kept intentionally sparce in this site being used in a limited capacity to offset forms.
 
-- Flags for counties taken from: https://www.iconfinder.com/flag-icons?price=free
-- Header images for each country as well as home and login background images and home planner images: https://unsplash.com/
-- Icons: https://fontawesome.com/
-- Favicon: https://pixabay.com/vectors/departures-airport-sign-airliner-153136/
+The images used where taken from unsplash:
 
----
+- [Add Article](https://unsplash.com/photos/npxXWgQ33ZQ)
+- [Update Profile](https://unsplash.com/photos/IcclLmLQuw8)
+- [Password Reset](https://unsplash.com/photos/3wPJxh-piRw)
 
-   </details>
+The icons for this project were taken from React-Icons:
 
-   <details>
-      <summary style="font-weight:bold">Logo</summary>
-
-   <br>
-   Client provided the Logo they wish to see on the site.
-   <br><br>
-
-![Logo](readme-assets/ux/logo.png)
+- [React-Icons](https://react-icons.github.io/react-icons/)
 
 ---
 
-   </details>
+</details>
+
+<details>
+    <summary style="font-weight:bold">Logo</summary>
+
+The client is currently working on developing a logo that suits their needs. Until the is achieved they have requested that a simple coding sybol of some sort be used as a placeholder for prototyping the site.
+
+After review the following icon was seleted from React-Icons
+
+[Logo](https://react-icons.github.io/react-icons/search?q=RiCodeBoxFill)
+
+---
+
+</details>
 
 ## Wireframes
 
@@ -1398,6 +1366,7 @@ When an administrator reviews the comment they will have the ability to respond 
 - AWS:
   - Hosting images and static files.
 - Gmail:
+
   - Linked to site to send password resets.
 
    <br>
