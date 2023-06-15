@@ -62,7 +62,7 @@ const NavBar = () => {
         <Link to="/">
           <Flex alignItems="center">
             <RiCodeBoxFill fontSize="300%" />
-            <Show above="lg">
+            <Show above="sm">
               <Text ml={2} fontWeight={700}>
                 BitWise
               </Text>
@@ -74,7 +74,7 @@ const NavBar = () => {
           <Box px={4}>
             <NavLink to="/article/create/">
               <MdPostAdd fontSize="250%" />
-              Add Article
+              <Show above="sm">Add Article</Show>
             </NavLink>
           </Box>
         )}
