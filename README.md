@@ -37,25 +37,22 @@ ADD RESPONSIVE IMAGE OF SITE
 
 # Travel Application Website Overview
 
-## Live Project [_(link to live project)_](https://traval-app.herokuapp.com/)
-
 ## [Live API](https://traval-app.herokuapp.com/)
 
-    ## [BitWise API](https://bitwise-code-blog.herokuapp.com/)
+## [BitWise API](https://bitwise-code-blog.herokuapp.com/)
 
-    ## [Backened Repo](https://github.com/Joe-Collins-1986/BitWise-DRF)
+## [Backened Repo](https://github.com/Joe-Collins-1986/BitWise-DRF)
 
 ## Project Introduction
 
-(**Note:** this is a fictitious client generated for the purpose of developing this project to test my HTML, CSS, Python, JavaScript and Django Framework essentials.)
+**Note:** For the purpose of this project a fictitious client has been generated to provide scope for:
 
-This website has been designed to provide users with an easy to use web application to aide in the planning and tracking of travel. The primary objectives of this project are to develop a diary for users to log their travel/holiday experiences whilst also allowing them to mark visited and wish list countries on a map. In addition to these key deliverables the client would also like to provide users with basic country info and an easy to to use travel task manager.
+- testing my Frontend development utilising HTML, CSS and JavaScript through the use of React.
+  (for more information on the API development for this site visit my [BitWise Backend Repo](https://github.com/Joe-Collins-1986/BitWise-DRF))
 
-Following discussions with the client this site will initially be tailored to Europe with the potential to expand the available countries following initial go live. There will also be future opertunities to provide a public blog for users to share their experiences with a wider audience however this is not in scope for the initial launch.
+This website has been designed to provide programmers of all experience levels a platform to share articles with each other relating to specific programming languages. Users will be able to follow each other as well as like and comment on each others articles. They will also be able to document their experiece levels in the various programming languages they know within their profile.
 
-The client requesting this website is using this as the first step in creating a one stop location for planning and booking holiday and transport needs. The initial goal is to generate user traffic and link in with potential future partners such as Booking.com, Secret Escapes, Kuoni Travel, Skyscanner to provide a booking platform on a commision based model.
-
-   <br>
+Following discussions with the client this site will initially be tailored to written articles with the potential to expand to video uploads, live streaming, and purchasable tutorials at a later date.
 
 # Responsive Review
 

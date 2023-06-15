@@ -1,11 +1,10 @@
-import { Box, HStack, Image, Show } from "@chakra-ui/react";
-import logo from "../assets/bitwise_logo.png";
+import { Box, Flex, HStack, Image, Show, Text } from "@chakra-ui/react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import ColorThemeSwitch from "./ColorThemeSwitch";
 import HamburgerMenu from "./Hamburger";
 import handleSignOut from "../services/logout";
 import { MdPostAdd } from "react-icons/md";
-import { AiOutlineHome } from "react-icons/ai";
+import { RiCodeBoxFill } from "react-icons/ri";
 
 import { useColorModeValue } from "@chakra-ui/react";
 
@@ -61,7 +60,12 @@ const NavBar = () => {
     >
       <HStack>
         <Link to="/">
-          <Image src={logo} boxSize="50px" m="5px" />
+          <Flex alignItems="center">
+            <RiCodeBoxFill fontSize="300%" />
+            <Text ml={2} fontWeight={700}>
+              BitWise
+            </Text>
+          </Flex>
         </Link>
 
         {currentUser && (
