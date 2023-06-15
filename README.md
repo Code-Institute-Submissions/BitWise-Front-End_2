@@ -10,9 +10,10 @@
 - [Responsive Review]()
   - [Am I Responsive?]()
 - [Project Planning]()
+  - [Project Scoping]()
   - [Website Objectives]()
   - [User Stories]()
-  - [Features Planning]()
+  - [Implementaton Planning]()
 - [User Experience (UX)]()
   - [Website Design]()
   - [Wireframes]()
@@ -136,11 +137,65 @@ In addition to this the site was run through the following [website](https://ui.
 
 # Project Planning
 
+## Project Scoping
+
+Some aspects of the planning of this site were relient on the API development and are addressed to some degree in some of the inital mindmapping documents.
+
+However, if you wish to see more of the API planning including the Entity Relationship Diagram please visit the Backend Redo [here](https://github.com/Joe-Collins-1986/BitWise-DRF)
+
+<details>
+    <summary style="font-weight:bold">Problem Statement</summary>
+
+<br>
+The client wishes to develop a social sharing platform targeted towards the programming community.
+
+The developer worked with the client and focus groups consisting of programmers with varying levels of experience to establish the following problem statement. This was then used to establish some basic considerations which could be taken forward into a mind mapping session.
+
+![Problem Statement](readme-assets/planning/problem-statement.png)
+<br>
+
+If you have a LucidChart account, you can also view this Problem Statement [here](https://lucid.app/lucidspark/ddcc77ae-81e5-48bb-a143-1d8d08517e84/edit?page=0_0&invitationId=inv_33957d7f-3414-4f5b-afb7-62686062836a#).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Mind Map</summary>
+
+<br>
+The below image provides an initial mind-map into the features which might be appropriate for the BitWise site to address the problem statement and achieve the user stories.
+
+![Mind Map](readme-assets/planning/mind-map.png)
+<br>
+
+If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/92bb6c34-c508-4ed3-81f9-8e426a018834/edit?viewport_loc=-424%2C-51%2C1937%2C2060%2C0_0&invitationId=inv_e1afcf88-79d6-418d-b020-bca52437b6bf).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Mind Map</summary>
+
+<br>
+The below image provides an initial mind-map into the features which might be appropriate for the BitWise site to address the problem statement and help establish user stories.
+
+![Mind Map](readme-assets/planning/mind-map.png)
+<br>
+
+If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/92bb6c34-c508-4ed3-81f9-8e426a018834/edit?viewport_loc=-424%2C-51%2C1937%2C2060%2C0_0&invitationId=inv_e1afcf88-79d6-418d-b020-bca52437b6bf).
+
+---
+
+</details>
+
 ## Website Objectives
 
 <details>
     <summary style="font-weight:bold">Client Goals</summary>
 
+<br>
 The client wants a simple and engaging website that is easy to use and will result in users returning to the site.
 
 - Sleek yet simple UX design.
@@ -156,6 +211,7 @@ The client wants a simple and engaging website that is easy to use and will resu
 <details>
     <summary style="font-weight:bold">Visitor Goals</summary>
 
+<br>
 The visitor should have a clear understanding of what the website purpose is and the site functions should encourage regular use.
 
 - Immediately engaged by the UX design.
@@ -195,6 +251,8 @@ These also breakdown:
 <details>
     <summary style="font-weight:bold">NavBar</summary>
     
+<br>
+
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/1): As a **user** I can **always view the Navbar regardless of which page I am on or where I am on that page** so that **I can navigate the site efficiently.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/2): As a **user** I can **switch the application between light and dark mode** so that **the aesthetics and readability better suit my needs**.
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/3): As a **user** I can **only view the links in the Navbar that I have access to** so that **I understand immediately what options are available to me**.
@@ -206,6 +264,8 @@ These also breakdown:
 <details>
     <summary style="font-weight:bold">Routing</summary>
 
+<br>
+
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/4): As a **user** I can **navigate to various page components without a page refresh** so that **I have a better user experience**.
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/5): As a **user** I will be taken **to an error page if the page component fails to render or does not exist** so that **I understand what went wrong**.
 
@@ -215,6 +275,8 @@ These also breakdown:
 
 <details>
     <summary style="font-weight:bold">Authentication</summary>
+
+<br>
 
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/6): As a **user** can **register an account** so that my **account details are stored, a profile is set up for me and I can login to the site**.
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/7): As a **user** I can **login to my registered account** so that **I can use the sites full functionality**.
@@ -227,6 +289,8 @@ These also breakdown:
 
 <details>
     <summary style="font-weight:bold">Articles</summary>
+
+<br>
 
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/10): As a **user** I can **create articles** so that **I can share my knowledge with others on the site.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/11): As a **user** I can **view all articles on the home page** so that **I can browse for content that might interest me.**
@@ -243,6 +307,8 @@ These also breakdown:
 <details>
     <summary style="font-weight:bold">Comments</summary>
 
+<br>
+
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/17): As a **user** I can **create comments on an article** so that **I can share my thoughts on it.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/18): As a **user** I can **view comments that have been added to an article** so that **I can see what other people have posted.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/19): As a **user** I can **delete my own comments** so that **I can remove information I no longer wish to share with the site audience.**
@@ -254,6 +320,8 @@ These also breakdown:
 
 <details>
     <summary style="font-weight:bold">Profiles</summary>
+
+<br>
 
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/21): As a **user** I can **view a list of article author profiles** so that **I can see who is making contributions.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/22): As a **user** I can **filter and order the list of profiles** so that **I can locate the ones most interesting to me.**
@@ -268,6 +336,8 @@ These also breakdown:
 <details>
     <summary style="font-weight:bold">Languages</summary>
 
+<br>
+
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/26): As a **user** I can **view all the languages a profile author is experienced in** so that **I can follow people who are most relevant to my interests.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/27): As a **user** I can **add languages that I am experienced in to my profile** so that **I can encourage others to follow me if they are interested in languages I know.**
 - [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/28): As a **user** I can **update languages that have added to my profile** so that **I can update my level of experience or correct mistakes.**
@@ -277,7 +347,13 @@ These also breakdown:
 
 </details>
 
-## Features Planning
+## Priority Matrix
+
+The below graphs map out the feasibility of the frontend features considered against the user value they provide to help establish the priority they have as part of the build.
+
+![Priority Matrix](readme-assets/planning/frontend-priority-matrix.png)
+
+If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2215%2C904%2C4713%2C2850%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
 
 # User Experience (UX)
 
@@ -288,6 +364,7 @@ After discussions with the client and reviewing the available React styling libr
 <details>
     <summary style="font-weight:bold">Colour Scheme</summary>
 
+<br>
 Client requested the site to be built from shades of grey with a bold purple for emphasising key elements. This consideration was made to not pull focus or negatively impact the readability of the site due to its information nature.
 
 In addition to this the client requested that there be a dark and light mode to better tailor to user preferences and give a codeing aesthetic.
@@ -315,6 +392,7 @@ In addition to this a red was applied wo certain buttons to indicate a level of 
 <details>
     <summary style="font-weight:bold">Typography</summary>
 
+<br>
 After extending the Chakra Theme to test various fonts and styles it was deemed appropriate to revert to the default typography which was easy to read and styled nicely against the Dark/Light theme.
 
 ---
@@ -324,6 +402,7 @@ After extending the Chakra Theme to test various fonts and styles it was deemed 
 <details>
     <summary style="font-weight:bold">Imagery</summary>
 
+<br>
 Imagery was kept intentionally sparce in this site being used in a limited capacity to offset forms.
 
 The images used where taken from unsplash:
@@ -343,6 +422,7 @@ The icons for this project were taken from React-Icons:
 <details>
     <summary style="font-weight:bold">Logo</summary>
 
+<br>
 The client is currently working on developing a logo that suits their needs. Until the is achieved they have requested that a simple coding sybol of some sort be used as a placeholder for prototyping the site.
 
 After review the following icon was seleted from React-Icons
