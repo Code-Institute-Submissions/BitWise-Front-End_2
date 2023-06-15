@@ -4,18 +4,21 @@
 
 # Table Of Contents
 
-- [Travel Application Website Overview]()
-  - [Live Project]()
-  - [Project Introduction]()
-- [Responsive Review]()
-  - [Am I Responsive?]()
-- [Project Planning]()
-  - [Project Scoping]()
-  - [Website Objectives]()
-  - [User Stories]()
-  - [Implementaton Planning]()
-- [User Experience (UX)]()
-  - [Website Design]()
+- [BitWise Website Overview](#bitwise-website-overview)
+  - [Live Project](#live-project)
+  - [BitWise API](#bitwise-api)
+  - [Backened Repo](#backend-repo)
+  - [Project Introduction](#project-introduction)
+- [Responsive Review](#responsive-review)
+  - [Am I Responsive?](#am-i-responsive)
+- [Project Planning](#project-planning)
+  - [Project Scoping](#project-scoping)
+  - [Website Objectives](#website-objectives)
+  - [User Stories](#user-stories)
+  - [Priority Matrix](#priority-matrix)
+  - [Agile Methodology](#agile-methodology)
+- [User Experience (UX)](#user-experience-ux)
+  - [Website Design](#website-design)
   - [Wireframes]()
   - [Features]()
 - [Further Development]()
@@ -38,9 +41,9 @@
 
 <br>
 
-# Travel Application Website Overview
+# BitWise Website Overview
 
-## [Live API](https://traval-app.herokuapp.com/)
+## [Live Project](https://bit-wise-front-end.vercel.app/)
 
 ## [BitWise API](https://bitwise-code-blog.herokuapp.com/)
 
@@ -351,9 +354,99 @@ These also breakdown:
 
 The below graphs map out the feasibility of the frontend features considered against the user value they provide to help establish the priority they have as part of the build.
 
+<details>
+    <summary style="font-weight:bold">Priority Matrix</summary>
+<br>
+
 ![Priority Matrix](readme-assets/planning/frontend-priority-matrix.png)
 
+---
+
+</details>
+
 If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2215%2C904%2C4713%2C2850%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
+
+## Agile Methodology
+
+An Agile methodology was applied to the development and implementation of this project.
+
+The project development was run in multiple iterations/sprints each targeting a number of User Stories.
+
+Each User Story was moved out of a backlog and assigned to the iteration with a priority label (Must Have, Should Have, Could Have).
+
+To manage the Agile iterations the Projects function within GitHub was used, pulling User Stories into a KanBan Board. (Links to each project iteration detailed in the iteration breakdown below.)
+
+**Note:** It should be noted that the priority label was in relation to it's prioriry within the iteration, not the project as a whole.
+
+<details>
+    <summary style="font-weight:bold">Iteration 1</summary>
+<br>
+
+For Iteration 1 the key focus was to develop.
+
+- General page layout.
+- Navigation
+- Routing
+- Authorisation
+
+For site of the project in GitHub detailing the completed User Stories in Iteration 1 please click [here](https://github.com/users/Joe-Collins-1986/projects/10).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Iteration 2</summary>
+<br>
+
+For Iteration 2 the key focus was to develop CRUD for Articles and set the ability to like them:
+
+- Add
+- View
+- Like
+- Update
+- Delete
+
+In addition to this some Comment user stories were also added in due to early completion of userstories within this iteration.
+
+For site of the project in GitHub detailing the completed User Stories in Iteration 2 please click [here](https://github.com/users/Joe-Collins-1986/projects/11).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Iteration 3</summary>
+<br>
+
+For Iteration 3 the key focus was to develop finish of the comments functionality and address viewing and editing Profiles:
+
+- Finishing comments with edit
+- Adding profile lists
+- Following profiles
+- Filtering profiles
+- Updating profiles
+
+For site of the project in GitHub detailing the completed User Stories in Iteration 3 please click [here](https://github.com/users/Joe-Collins-1986/projects/12).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Iteration 4</summary>
+<br>
+
+For Iteration 4 the key focus was to finalise Profile updates with password reset and build CRUD functionality for Languages:
+
+- Finish profile with password reset.
+- CRUD functionality for languages.
+
+For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/13).
+
+---
+
+</details>
 
 # User Experience (UX)
 
