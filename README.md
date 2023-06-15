@@ -21,12 +21,13 @@
   - [Website Design](#website-design)
   - [Wireframes]()
   - [Features]()
-- [Further Development]()
-- [Technologies Used]()
-  - [Languages Used]()
-  - [Frameworks Used]()
-  - [Libraries Used]()
-  - [Developer Tools]()
+- [Further Development](#further-development)
+  - [Tidy Up](#tidy-up)
+  - [Updates Relient On Backend](#updates-relient-on-backend)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Libraries Used](#libraries-used)
+  - [Developer Tools](#developer-tools)
 - [Testing]()
   - [Testing Document]()
   - [Further Testing]()
@@ -673,7 +674,7 @@ If you have a LucidChart account, you can also view this Mind-Map [here](https:/
 
 The below image provides an initial mind-map into the features which might be appropriate for the travel application based on the problem statement. This will aide in the development of User Stories.
 
-![Mind Map](readme-assets/features-planning/mind-map.png)
+![Mind Map](readme-assets/planning/mind-map.png)
 <br>
 If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/8cd26622-1780-4fc3-85fa-28ced47687a8/edit?viewport_loc=-1468%2C-60%2C4105%2C2018%2C0_0&invitationId=inv_ceff3ba6-bc74-4fe6-ba65-aafecb2c6d31).
 <br>
@@ -1471,13 +1472,22 @@ When an administrator reviews the comment they will have the ability to respond 
 
 # Further Development
 
-- Add a Public attribute to Diary Post Model to create a Public Blog - still linked to countries.
-- Add rating system to site updates.
-- Build notifications with a link for user when there is an admin response to their Site Update comments.
-- Increase map from Europe to World.
-- Link booking sites.
-- Enhance AWS security protocols to allow site to have a wallet for passports and boarding cards.
-- Option advertisement space on site for travel companies.
+## Tidy Up
+
+- Given more time I would ensure that were possibe hooks and components were consilidated for file reduction.
+- Introduce ReactQuery to:
+  - manage manage and cache data for better performance.
+  - simplify context.
+  - reform prop drilling that is currently present.
+- Add additional automated testing to front end.
+
+## Updates Relient On Backend
+
+- Add a recommended section to the Profile. Users to be able to recommend articles to other users which would appear in their profile next to languages. This would be achieved by creating a model linking the articles to profiles.
+- Add restriction option to the articles which the author could apply. This would restrict users who are not following the author from reading the articles.
+- Add video uploads as well as articles - storing to AWS.
+- Potential for live streaming - would require third party integration with a service such as Wowza, Vimeo, YouTube Live, etc.
+- Add a payment method so authors can make restricted content for purchase only.
 
    <br>
 
@@ -1488,59 +1498,32 @@ When an administrator reviews the comment they will have the ability to respond 
 - HTML
 - CSS
 - JavaScript
-- Python
-
-## Frameworks Used
-
-- Bootstrap:
-  - For quick front end design.
-- Django:
-  - Build site structure, routing, encryption, standard validation.
+- JSX
 
 ## Libraries Used
 
-- boto3:
-  - Used to integrate python3 site with AWS.
-- coverage:
-  - Used to aid in python unit testing by generating an html to identify issues.
-- pillow:
-  - Used to manipulate stored images.
-- django-crispy-forms:
-  - Used to format forms.
-- django-resized:
-  - Used to resize images stored in AWS account.
-- django-taggit:
-  - Used to create a tag object linked to diary posts.
-- jQuery:
-  - Javascript library for simplified JS useage.
+| Package                         | Description                                                         |
+| ------------------------------- | ------------------------------------------------------------------- |
+| chakra-ui/react                 | UI component library for React applications.                        |
+| axios                           | Promise-based HTTP client for making API requests in JavaScript.    |
+| react                           | JavaScript library for building user interfaces.                    |
+| react-dom                       | Entry point for rendering React components in the DOM.              |
+| react-icons                     | Library for including popular icon sets in React applications.      |
+| react-infinite-scroll-component | Component for creating infinite scrolling in React applications.    |
+| react-router-dom                | Routing library for React applications.                             |
+| vite                            | Fast development server and build tool for modern web applications. |
 
 ## Developer Tools
 
-- Google Fonts:
-  - Used to obtain appropriate fonts to use in website not held as standard.
-- Font Awesome:
-  - Used to obtain several icons used to improve the visuals of the website.
-- Git:
-  - Used for version control and to Push to GitHub.
-- GitHub:
-  - Used to store and share the code as well as publish to live website.
-- Figma:
-  - Used to plan out website format.
-- Web Developer:
-  - Used to analyse HTML, CSS and JavaScript output and correct where required.
-- tabletomarkdown.com:
-  - Used to to quickly convert data to Markdown Tables tables for TESTING.md document.
-- Heroku:
-  - Hosting deployed site.
-- SQLite3:
-  - Hosting development and testing databases.
-- ElephantSQL:
-  - Hosting PostgressSQL database for live site.
-- AWS:
-  - Hosting images and static files.
-- Gmail:
-
-  - Linked to site to send password resets.
+| Tool                | Description                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------- |
+| Git                 | Used for version control and to push code to GitHub.                                  |
+| GitHub              | Used to store, share, and publish code as well as host live websites.                 |
+| Figma               | Used to plan out the website format and design.                                       |
+| Web Developer       | Used to analyze HTML, CSS, JavaScript, and JSX output and make necessary corrections. |
+| tabletomarkdown.com | Used to quickly convert data to Markdown tables for the TESTING.md document.          |
+| Heroku              | Hosting platform for deploying API sites.                                             |
+| Vercel              | Hosting platform for deploying websites.                                              |
 
    <br>
 
