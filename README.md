@@ -52,10 +52,9 @@
 
 ## Project Introduction
 
-**Note:** For the purpose of this project a fictitious client has been generated to provide scope for:
+**Note:** For the purpose of this project a fictitious client has been generated to provide scope for testing my Frontend development utilising HTML, CSS, JavaScript and JSX through the use of React.
 
-- testing my Frontend development utilising HTML, CSS and JavaScript through the use of React.
-  (for more information on the API development for this site visit my [BitWise Backend Repo](https://github.com/Joe-Collins-1986/BitWise-DRF))
+For more information on the API development for this site visit my [BitWise Backend Repo](https://github.com/Joe-Collins-1986/BitWise-DRF)
 
 This website has been designed to provide programmers of all experience levels a platform to share articles with each other relating to specific programming languages. Users will be able to follow each other as well as like and comment on each others articles. They will also be able to document their experiece levels in the various programming languages they know within their profile.
 
