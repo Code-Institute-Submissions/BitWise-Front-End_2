@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Show, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Show, Text } from "@chakra-ui/react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import ColorThemeSwitch from "./ColorThemeSwitch";
 import HamburgerMenu from "./Hamburger";
@@ -62,9 +62,11 @@ const NavBar = () => {
         <Link to="/">
           <Flex alignItems="center">
             <RiCodeBoxFill fontSize="300%" />
-            <Text ml={2} fontWeight={700}>
-              BitWise
-            </Text>
+            <Show above="lg">
+              <Text ml={2} fontWeight={700}>
+                BitWise
+              </Text>
+            </Show>
           </Flex>
         </Link>
 
