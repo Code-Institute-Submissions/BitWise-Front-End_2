@@ -21,6 +21,7 @@ import ProfileCard from "../../components/ProfileCard";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CardSkeleton from "../../components/CardSkeleton";
+import NoResults from "../../components/NoResults";
 
 const ProfilesListPage = (props) => {
   const { message } = props;
@@ -142,7 +143,9 @@ const ProfilesListPage = (props) => {
             </SimpleGrid>
           </InfiniteScroll>
         ) : (
-          <Text>{message}</Text>
+          <Box m={5}>
+            <NoResults text={message} />
+          </Box>
         )
       ) : (
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>

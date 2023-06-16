@@ -60,7 +60,15 @@ function App() {
               exact
               path="/"
               element={
-                <HomePage message={"No Results Fount! Check filters."} />
+                <HomePage
+                  message={
+                    <>
+                      No Results Found!
+                      <br />
+                      Check filters!
+                    </>
+                  }
+                />
               }
             />
             <Route
@@ -69,7 +77,12 @@ function App() {
               element={
                 <HomePage
                   message={
-                    "No Results Found! Ensure you are following at least one profile and check your filters."
+                    <>
+                      No Results Found!
+                      <br />
+                      Ensure you are following at least one profile and check
+                      your filters.
+                    </>
                   }
                   routeFilter={`owner__followed__owner__profile=${profile_id}`}
                 />
@@ -93,7 +106,13 @@ function App() {
               path="/profiles/"
               element={
                 <ProfilesListPage
-                  message={"No Results Found! Check filters."}
+                  message={
+                    <>
+                      No Results Found!
+                      <br />
+                      No profiles found meeting this search criteria.
+                    </>
+                  }
                 />
               }
             />

@@ -1,9 +1,10 @@
 import ArticleCard from "./ArticleCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import { Spinner, Text, SimpleGrid } from "@chakra-ui/react";
+import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
 import { fetchMoreData } from "../utils/utils";
 import CardSkeleton from "./CardSkeleton";
+import NoResults from "./NoResults";
 
 const ArticleGrid = (props) => {
   const { articles, setArticles, loaded, message } = props;
@@ -30,7 +31,9 @@ const ArticleGrid = (props) => {
             </SimpleGrid>
           </InfiniteScroll>
         ) : (
-          <Text>{message}</Text>
+          <Box m={5}>
+            <NoResults text={message} />
+          </Box>
         )
       ) : (
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>

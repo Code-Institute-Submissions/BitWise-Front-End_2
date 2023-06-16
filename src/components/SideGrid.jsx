@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 import useFollowProfile from "../hooks/useFollowProfile";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import NoResults from "./NoResults";
 
 import { useNavigate } from "react-router-dom";
 import UpdateDeleteButton from "./UpdateDeleteButton";
@@ -151,7 +152,7 @@ const SideGrid = () => {
             )}
           </>
         ) : (
-          <Text>No Results</Text>
+          <NoResults text={"No Profiles Found!"} />
         )
       ) : (
         <Flex py={2}>

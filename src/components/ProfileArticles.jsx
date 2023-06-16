@@ -17,7 +17,13 @@ const ProfileArticles = (props) => {
           articles={profileArticles}
           setArticles={setProfileArticles}
           loaded={loaded}
-          message={"Articles not found for this profile."}
+          message={
+            <>
+              No Results Found!
+              <br />
+              No articles by this profile meeting the search criteria.
+            </>
+          }
         />
       ) : (
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>

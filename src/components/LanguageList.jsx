@@ -5,6 +5,7 @@ import LanguageCard from "./LanguageCard";
 import LanguageCreate from "./LanguageCreate";
 import { useParams } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import NoResults from "./NoResults";
 
 const LanguageList = (props) => {
   const { profile, endpoint } = props;
@@ -43,7 +44,7 @@ const LanguageList = (props) => {
             />
           ))
         ) : (
-          <Text>No Languages Recorded</Text>
+          <NoResults text={"No Languages Recorded by this profile!"} />
         )
       ) : (
         <Spinner />

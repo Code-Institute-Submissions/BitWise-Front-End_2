@@ -85,6 +85,9 @@ const NavBar = () => {
           <Box px={4}>
             <NavLink to="/">Home</NavLink>
           </Box>
+          <Box px={4}>
+            <NavLink to="/profiles/">Profiles</NavLink>
+          </Box>
 
           {currentUser ? loggedInLinks : loggedOutLinks}
         </Show>
