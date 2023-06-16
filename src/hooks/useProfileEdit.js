@@ -6,6 +6,7 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useProfileEdit = () => {
   const currentUser = useCurrentUser();
@@ -26,6 +27,8 @@ const useProfileEdit = () => {
 
   const [error, setError] = useState({});
   const [loaded, setLoaded] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -101,9 +104,12 @@ const useProfileEdit = () => {
       }));
 
       navigate(`/profile/${id}/`);
+      setSuccessToast("Profile Updated");
     } catch (err) {
-      console.log(err);
       setError(err.response?.data);
+      setFailToast(
+        `Unable to update profile (status: ${err.response?.status})`
+      );
     }
   };
 

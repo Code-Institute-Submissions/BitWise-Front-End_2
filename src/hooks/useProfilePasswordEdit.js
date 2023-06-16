@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 import { axiosRes } from "../api/axiosDefaults";
 
@@ -15,6 +16,8 @@ const useProfilePasswordEdit = () => {
   });
   const { new_password1, new_password2 } = userData;
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const handleChange = (event) => {
     setUserData({
@@ -38,9 +41,12 @@ const useProfilePasswordEdit = () => {
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       navigate(-1);
+      setSuccessToast("Password Updated");
     } catch (err) {
-      console.log(err);
       setErrors(err.response?.data);
+      setFailToast(
+        `Unable to update password (status: ${err.response?.status})`
+      );
     }
   };
 
