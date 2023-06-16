@@ -9,6 +9,7 @@ import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { FilterProvider } from "./contexts/FilterContext";
 import { ProfileDataProvider } from "./contexts/ProfilesDataContext";
 import { ArticleFollowProvider } from "./contexts/ArticleFollowUpdate";
+import { AlertToastProvider } from "./contexts/AlertToasts";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -18,7 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <ProfileDataProvider>
             <FilterProvider>
               <ArticleFollowProvider>
-                <App />
+                <AlertToastProvider>
+                  <App />
+                </AlertToastProvider>
               </ArticleFollowProvider>
             </FilterProvider>
           </ProfileDataProvider>

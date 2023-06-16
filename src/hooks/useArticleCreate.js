@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import languageOptions from "../constants/languageOptions";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useArticleCreate = () => {
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const [articleData, setArticleData] = useState({
     title: "",
@@ -36,10 +39,11 @@ const useArticleCreate = () => {
     try {
       const { data } = await axiosReq.post("/articles/", formData);
       navigate(`/article/${data.id}`);
+      setSuccessToast("Article Added");
     } catch (err) {
-      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
+        setFailToast(`Unable to add article (status: ${err.response?.status})`);
       }
     }
   };

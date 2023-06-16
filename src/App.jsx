@@ -20,16 +20,19 @@ import LoggedIn from "./components/LoggedIn";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ProfilePasswordEditForm from "./pages/profiles/ProfilePasswordEditForm";
 
+import ToastAlert from "./components/ToastAlert";
+
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
 
   return (
     <>
+      <ToastAlert />
+
       <Box position="fixed" top={0} w="100vw" zIndex={5} area="nav">
         <NavBar />
       </Box>
-
       <Grid
         templateAreas={{
           base: `"main"`,
