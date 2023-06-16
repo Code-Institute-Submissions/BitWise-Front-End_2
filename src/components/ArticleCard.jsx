@@ -73,6 +73,7 @@ const ArticleCard = (props) => {
           currentUser={currentUser}
           is_following={is_following}
           profile_id={profile_id}
+          article_title={article_title}
         />
       </CardFooter>
     </Card>

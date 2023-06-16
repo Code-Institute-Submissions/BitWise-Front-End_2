@@ -1,6 +1,10 @@
 import { axiosRes } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
-const useLikeArticle = (id, likeId, likesCount, setArticles) => {
+const useLikeArticle = (id, likeId, likesCount, setArticles, article_title) => {
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
+
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("likes/", { article: id });
@@ -16,8 +20,11 @@ const useLikeArticle = (id, likeId, likesCount, setArticles) => {
             : article;
         }),
       }));
+      setSuccessToast(`You liked the article titled: ${article_title}`);
     } catch (err) {
-      console.log(err);
+      setFailToast(
+        `Unable to like this article (status: ${err.response?.status})`
+      );
     }
   };
 
@@ -36,8 +43,11 @@ const useLikeArticle = (id, likeId, likesCount, setArticles) => {
             : article;
         }),
       }));
+      setSuccessToast(`You unliked the article titled: ${article_title}`);
     } catch (err) {
-      console.log(err);
+      setFailToast(
+        `Unable to unlike this article (status: ${err.response?.status})`
+      );
     }
   };
 

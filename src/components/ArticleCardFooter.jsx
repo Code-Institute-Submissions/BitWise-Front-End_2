@@ -31,6 +31,7 @@ const ArticleCardFooter = (props) => {
     current_user_comments_count,
     is_following,
     profile_id,
+    article_title,
   } = props;
 
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
@@ -39,7 +40,8 @@ const ArticleCardFooter = (props) => {
     id,
     like_id,
     likes_count,
-    setArticles
+    setArticles,
+    article_title
   );
 
   const handleProfileClick = () => {
