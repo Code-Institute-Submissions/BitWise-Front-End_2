@@ -5,9 +5,12 @@ import {
   useSetArticleFollow,
   useArticleFollow,
 } from "../contexts/ArticleFollowUpdate";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useFollowProfile = () => {
   const setProfileData = useSetProfileData();
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const setArticleFollow = useSetArticleFollow();
   const articleFollow = useArticleFollow();
@@ -43,8 +46,11 @@ const useFollowProfile = () => {
           ),
         },
       }));
+      setSuccessToast(`You are now following ${selectedProfile.owner}`);
     } catch (err) {
-      console.log(err);
+      setFailToast(
+        `Unable to follow this profile (status: ${err.response?.status})`
+      );
     }
   };
 
@@ -77,8 +83,11 @@ const useFollowProfile = () => {
           ),
         },
       }));
+      setSuccessToast(`You are no longer following ${selectedProfile.owner}`);
     } catch (err) {
-      console.log(err);
+      setFailToast(
+        `Unable to unfollow this profile (status: ${err.response?.status})`
+      );
     }
   };
 
