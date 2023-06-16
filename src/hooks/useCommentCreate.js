@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { axiosRes } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useCommentCreate = (article, setArticle, setComments) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   useEffect(() => {
     setErrors({});
@@ -35,8 +38,10 @@ const useCommentCreate = (article, setArticle, setComments) => {
         ],
       }));
       setBody("");
+      setSuccessToast("Comment Added");
     } catch (err) {
       setErrors(err.response?.data);
+      setFailToast(`Unable to add comment (status: ${err.response?.status})`);
     }
   };
 

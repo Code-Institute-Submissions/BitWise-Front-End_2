@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useCommentEdit = (id, body, setComments, setShowEditComment) => {
   const [commentBody, setCommentBody] = useState(body);
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
   const [errors, setErrors] = useState("");
 
   const handleChange = (event) => {
@@ -30,8 +33,12 @@ const useCommentEdit = (id, body, setComments, setShowEditComment) => {
         }),
       }));
       setShowEditComment(false);
+      setSuccessToast("Comment Updated");
     } catch (err) {
       setErrors(err.response?.data);
+      setFailToast(
+        `Unable to update comment (status: ${err.response?.status})`
+      );
     }
   };
 

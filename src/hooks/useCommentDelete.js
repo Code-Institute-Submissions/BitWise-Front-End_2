@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useCommentDelete = (id, setArticle, setComments) => {
   const [error, setError] = useState(null);
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const handleDelete = async () => {
     try {
@@ -17,13 +20,16 @@ const useCommentDelete = (id, setArticle, setComments) => {
           },
         ],
       }));
-
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
+      setSuccessToast("Comment Deleted");
     } catch (err) {
       setError(err);
+      setFailToast(
+        `Unable to delete comment (status: ${err.response?.status})`
+      );
     }
   };
 

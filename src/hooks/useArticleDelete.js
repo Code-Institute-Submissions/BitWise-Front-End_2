@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
-import { useParams } from "react-router-dom";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useArticleDelete = (pk, setArticles) => {
   const [error, setError] = useState(null);
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/articles/${pk}/`);
-
       if (
         window.location.pathname === "" ||
         window.location.pathname === "/" ||
@@ -24,8 +24,12 @@ const useArticleDelete = (pk, setArticles) => {
       } else {
         navigate("/");
       }
+      setSuccessToast("Article Deleted");
     } catch (err) {
       setError(err);
+      setFailToast(
+        `Unable to delete article (status: ${err.response?.status})`
+      );
     }
   };
 

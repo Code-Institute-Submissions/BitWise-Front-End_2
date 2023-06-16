@@ -17,10 +17,10 @@ const ToastAlert = () => {
   useEffect(() => {
     if (successToast !== "") {
       toast({
-        title: successToast,
-        description: "Successful Update",
+        title: "Success",
+        description: successToast,
         status: "success",
-        duration: 7000,
+        duration: 3000,
         isClosable: true,
       });
       setSuccessToast("");
@@ -33,7 +33,7 @@ const ToastAlert = () => {
         title: "Error",
         description: failToast,
         status: "error",
-        duration: 9000,
+        duration: 3000,
         isClosable: true,
       });
       setFailToast("");

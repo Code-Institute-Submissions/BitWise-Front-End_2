@@ -29,7 +29,6 @@ function App() {
   return (
     <>
       <ToastAlert />
-
       <Box position="fixed" top={0} w="100vw" zIndex={5} area="nav">
         <NavBar />
       </Box>

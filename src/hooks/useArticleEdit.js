@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useArticleEdit = () => {
   const { id } = useParams();
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
   const [articleData, setArticleData] = useState({
     article_title: "",
     article_content: "",
@@ -66,11 +69,15 @@ const useArticleEdit = () => {
     try {
       await axiosReq.put(`/articles/${id}/`, formData);
       navigate(`/article/${id}`);
+      setSuccessToast("Article Updated");
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
+      setFailToast(
+        `Unable to update article (status: ${err.response?.status})`
+      );
     }
   };
 
