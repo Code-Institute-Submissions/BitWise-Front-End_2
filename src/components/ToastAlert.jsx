@@ -22,6 +22,7 @@ const ToastAlert = () => {
         status: "success",
         duration: 3000,
         isClosable: true,
+        colorScheme: "purple",
       });
       setSuccessToast("");
     }

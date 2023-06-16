@@ -16,6 +16,10 @@ import {
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import {
+  useSetSuccessToast,
+  useSetFailToast,
+} from "../../contexts/AlertToasts";
 
 const LoginPage = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -29,6 +33,8 @@ const LoginPage = () => {
   const { username, password } = loginData;
 
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const navigate = useNavigate();
 
@@ -46,10 +52,12 @@ const LoginPage = () => {
       .then((response) => {
         setCurrentUser(response.data.user);
         navigate(-1);
+        setSuccessToast("Welcome to BitWise. You are now logged in!");
       })
       .catch((err) => {
         console.log(err);
         setErrors(err.response?.data);
+        setFailToast(`Unable to login (status: ${err.response?.status})`);
       });
   };
 

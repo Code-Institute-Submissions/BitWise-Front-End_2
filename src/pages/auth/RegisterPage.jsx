@@ -19,6 +19,10 @@ import {
 import { CiPen } from "react-icons/ci";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import {
+  useSetSuccessToast,
+  useSetFailToast,
+} from "../../contexts/AlertToasts";
 
 const RegisterPage = () => {
   const [signUpData, setSignUpData] = useState({
@@ -30,6 +34,8 @@ const RegisterPage = () => {
   const { username, password1, password2 } = signUpData;
 
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const navigate = useNavigate();
   useRedirect("loggedIn");
@@ -48,10 +54,14 @@ const RegisterPage = () => {
       .then((response) => {
         console.log(response.data);
         navigate("/login/");
+        setSuccessToast(
+          "Your profile has been set up. Login using your newly registered details!"
+        );
       })
       .catch((err) => {
         console.log(err);
         setErrors(err.response?.data);
+        setFailToast(`Unable to register (status: ${err.response?.status})`);
       });
   };
 
