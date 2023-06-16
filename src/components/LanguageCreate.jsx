@@ -122,9 +122,11 @@ const LanguageCreate = (props) => {
                   {errors.confidence[0]}
                 </Alert>
               )}
+            </FormControl>
 
+            <FormControl mt={5} id="date">
+              <FormLabel>Used Language Since</FormLabel>
               <Input
-                mt={5}
                 placeholder="Select Date"
                 size="md"
                 type="date"
