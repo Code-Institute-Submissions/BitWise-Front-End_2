@@ -21,7 +21,6 @@ import LikedSwitch from "../../components/LikedSwitch";
 
 import {
   Box,
-  Text,
   Tabs,
   TabList,
   TabPanels,
@@ -31,6 +30,7 @@ import {
   Show,
 } from "@chakra-ui/react";
 import LanguageList from "../../components/LanguageList";
+import ItemNotFound from "../../components/ItemNotFound";
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -62,41 +62,48 @@ const ProfilePage = () => {
     <Box>
       <Box p={5}>
         {loaded ? (
-          <ProfileCard {...profile} main />
+          profile ? (
+            <ProfileCard {...profile} main />
+          ) : (
+            <ItemNotFound item={"Profile"} />
+          )
         ) : (
           <CardSkeleton height={230} />
         )}
       </Box>
-      <Tabs variant="enclosed" colorScheme="purple" p={5}>
-        <TabList>
-          <Tab>Articles</Tab>
-          <Tab>Languages</Tab>
-        </TabList>
 
-        <TabPanels>
-          <TabPanel>
-            <SearchField />
-            <HStack>
-              <OrderDropdown />
-              <LanguageDropdown />
+      {profile && (
+        <Tabs variant="enclosed" colorScheme="purple" p={5}>
+          <TabList>
+            <Tab>Articles</Tab>
+            <Tab>Languages</Tab>
+          </TabList>
+
+          <TabPanels>
+            <TabPanel>
+              <SearchField />
+              <HStack>
+                <OrderDropdown />
+                <LanguageDropdown />
+                {currentUser && (
+                  <Show above="md">
+                    <LikedSwitch />
+                  </Show>
+                )}
+              </HStack>
               {currentUser && (
-                <Show above="md">
+                <Show below="md">
                   <LikedSwitch />
                 </Show>
               )}
-            </HStack>
-            {currentUser && (
-              <Show below="md">
-                <LikedSwitch />
-              </Show>
-            )}
-            <ProfileArticles endpoint={endpoint} />
-          </TabPanel>
-          <TabPanel>
-            <LanguageList profile={profile} endpoint={endpointLanguages} />
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+              <ProfileArticles endpoint={endpoint} />
+            </TabPanel>
+            <TabPanel>
+              <LanguageList profile={profile} endpoint={endpointLanguages} />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      )}
     </Box>
   );
 };

@@ -63,7 +63,7 @@ const ProfileCard = (props) => {
           <Link to={`/profile/${id}`}>
             <HStack>
               <Avatar name={owner} bg={"purple.500"} src={image} />
-              {owner.length > 7 ? (
+              {owner?.length > 7 ? (
                 <Heading size="sm">{owner.slice(0, 7)}...</Heading>
               ) : (
                 <Heading size="sm">{owner}</Heading>

@@ -11,6 +11,7 @@ import Comment from "../../components/Comment";
 import { useColorModeValue } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import ItemNotFound from "../../components/ItemNotFound";
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -36,7 +37,9 @@ const ArticlePage = () => {
             </Box>
           </Flex>
         ) : (
-          <Text>No Results Found</Text>
+          <Box m={10}>
+            <ItemNotFound item={"Article"} />
+          </Box>
         )
       ) : (
         <Flex p={8} align={"center"} justify={"center"}>
@@ -45,60 +48,63 @@ const ArticlePage = () => {
           </Box>
         </Flex>
       )}
-      <Flex align={"center"} justify={"center"}>
-        <Stack px={10} w="100%">
-          <Flex alignItems={"center"} justifyContent={"center"}>
-            <Heading pb={5} size="lg">
-              Comments
-            </Heading>
-          </Flex>
 
-          <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
-            {currentUser ? (
-              comments.results.length ? (
-                <Heading size="md">Join the conversation!</Heading>
+      {loaded && article.results.length > 0 && (
+        <Flex align={"center"} justify={"center"}>
+          <Stack px={10} w="100%">
+            <Flex alignItems={"center"} justifyContent={"center"}>
+              <Heading pb={5} size="lg">
+                Comments
+              </Heading>
+            </Flex>
+
+            <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
+              {currentUser ? (
+                comments.results.length ? (
+                  <Heading size="md">Join the conversation!</Heading>
+                ) : (
+                  <Heading size="md">Be the first to comment!</Heading>
+                )
               ) : (
-                <Heading size="md">Be the first to comment!</Heading>
-              )
-            ) : (
-              <Link to="/login/">
-                <Heading as="u" color={custLinkColor} size="md">
-                  Login to comment!
-                </Heading>
-              </Link>
+                <Link to="/login/">
+                  <Heading as="u" color={custLinkColor} size="md">
+                    Login to comment!
+                  </Heading>
+                </Link>
+              )}
+            </Flex>
+
+            {currentUser && (
+              <CommentCreate
+                profile_id={profile_id}
+                profile_image={profile_image}
+                article={id}
+                setArticle={setArticle}
+                setComments={setComments}
+                currentUser={currentUser}
+              />
             )}
-          </Flex>
 
-          {currentUser && (
-            <CommentCreate
-              profile_id={profile_id}
-              profile_image={profile_image}
-              article={id}
-              setArticle={setArticle}
-              setComments={setComments}
-              currentUser={currentUser}
-            />
-          )}
-
-          {comments.results.length ? (
-            <InfiniteScroll
-              dataLength={comments.results.length}
-              loader={<Spinner />}
-              hasMore={!!comments.next}
-              next={() => fetchMoreData(comments, setComments)}
-            >
-              {comments.results.map((comment) => (
-                <Comment
-                  key={comment.id}
-                  {...comment}
-                  setArticle={setArticle}
-                  setComments={setComments}
-                />
-              ))}
-            </InfiniteScroll>
-          ) : null}
-        </Stack>
-      </Flex>
+            {comments.results.length ? (
+              <InfiniteScroll
+                dataLength={comments.results.length}
+                loader={<Spinner />}
+                hasMore={!!comments.next}
+                next={() => fetchMoreData(comments, setComments)}
+              >
+                {comments.results.map((comment) => (
+                  <Comment
+                    key={comment.id}
+                    {...comment}
+                    setArticle={setArticle}
+                    setComments={setComments}
+                  />
+                ))}
+              </InfiniteScroll>
+            ) : null}
+          </Stack>
+        </Flex>
+      )}
     </Box>
   );
 };

@@ -37,7 +37,6 @@ const SideGrid = () => {
   const iconCustColor = useColorModeValue("white", "black");
   const currentUser = useCurrentUser();
   const navigate = useNavigate();
-  const [showMore, setShowMore] = useState(false); // State to track whether to show more results
 
   const { handleFollow, handleUnFollow } = useFollowProfile();
 
