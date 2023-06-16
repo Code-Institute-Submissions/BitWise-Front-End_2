@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 
 import { useSetProfileData } from "../contexts/ProfilesDataContext";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useLanguageCreate = (profile, setLanguages, setAddLanguage) => {
   const [languageData, setLanguageData] = useState({
@@ -14,6 +15,8 @@ const useLanguageCreate = (profile, setLanguages, setAddLanguage) => {
   const setProfile = useSetProfileData();
 
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   useEffect(() => {
     setErrors({});
@@ -71,8 +74,9 @@ const useLanguageCreate = (profile, setLanguages, setAddLanguage) => {
         };
       });
       setAddLanguage(false);
+      setSuccessToast(`You have added a new language: ${language}`);
     } catch (err) {
-      console.log(err.response?.data);
+      setFailToast(`Unable to add language (status: ${err.response?.status})`);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

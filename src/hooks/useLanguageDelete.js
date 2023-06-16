@@ -2,11 +2,14 @@ import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 
 import { useSetProfileData } from "../contexts/ProfilesDataContext";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useLanguageDelete = (id, setLanguages) => {
   const setProfile = useSetProfileData();
 
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const handleDelete = async (event) => {
     event.preventDefault();
@@ -34,8 +37,11 @@ const useLanguageDelete = (id, setLanguages) => {
           },
         };
       });
+      setSuccessToast("You have deleted a language");
     } catch (err) {
-      console.log(err.response?.data);
+      setFailToast(
+        `Unable to delete language (status: ${err.response?.status})`
+      );
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

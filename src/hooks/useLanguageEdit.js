@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
+import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
 
 const useLanguageEdit = (
   id,
@@ -17,6 +18,8 @@ const useLanguageEdit = (
   const { languageConfidence, languageUsed_since } = languageData;
 
   const [errors, setErrors] = useState({});
+  const setSuccessToast = useSetSuccessToast();
+  const setFailToast = useSetFailToast();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -69,8 +72,11 @@ const useLanguageEdit = (
         }),
       }));
       setShowEditLanguage(false);
+      setSuccessToast(`You have updated language: ${language}`);
     } catch (err) {
-      console.log(err.response?.data);
+      setFailToast(
+        `Unable to update language (status: ${err.response?.status})`
+      );
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
