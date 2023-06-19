@@ -104,7 +104,7 @@ const ProfileCard = (props) => {
       </CardHeader>
 
       <Link to={`/profile/${id}`}>
-        <CardBody h="140px">
+        <CardBody minH="140px" whiteSpace="pre-line">
           {bio ? (
             <>
               <Heading size="sm"> Bio:</Heading>
