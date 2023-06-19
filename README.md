@@ -599,7 +599,7 @@ Each section below will detail their specific function.
 
 The navbar has been fixed to the top of the page to allow the user easy access to all key pages.
 
-A color switch is provided as part of the navbar to allow users to change the colour schem from light to dark.
+A color switch is provided as part of the navbar to allow users to change the colour scheme from light to dark.
 
 <details>
       <summary style="font-weight:bold">Colour Switch Screenshots</summary>
@@ -612,9 +612,10 @@ A color switch is provided as part of the navbar to allow users to change the co
 ![Navbar Light Mode](readme-assets/features/navbar/navbar-light-mode.png)<br>
 
 </details><br>
-The navbar page links have been provided as text only (with the exception of create article and logo). This was an intensional decision. These were tested with icons but feedback indicated this looked to cluttered and was not as intuative. The current page is indicated with an underline as is the hover. Despite slight duplication where one page is visited and another is hovered over this was deemed the best visual and caused no confusion with the test users.
 
-The Navbar has conditional formating to only show links relevent to the user based on their logged in status. It also shows less on smaller screens to not wxtend past available space and impact the sites responsive disign.
+The navbar page links have been provided as text only (with the exception of create article and the logo). This was an intensional decision. These links were tested with icons but feedback indicated this looked to cluttered and was not as intuative. The current page is indicated with an underline as is the hover. Despite slight duplication where one page is visited and another is hovered over this was deemed the best visual and caused no confusion with the test users.
+
+The navbar has conditional formating to only show links relevent to the user based on their logged in status. It also shows less on smaller screens to not extend past available space and impact the sites responsive design.
 
 <details>
       <summary style="font-weight:bold">Not Logged In Screenshots</summary>
