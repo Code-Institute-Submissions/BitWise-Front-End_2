@@ -42,7 +42,7 @@ const SideGrid = () => {
 
   const placeholder = searchProfile ? searchProfile : "Search profiles ...";
   const { sideBarProfiles, loaded } = useSideProfiles(
-    `/profiles/?search=${searchProfile}`
+    `/profiles/?ordering=-followed_count&search=${searchProfile}`
   );
 
   const handleEdit = (profileId) => {
