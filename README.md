@@ -138,6 +138,20 @@ In addition to this the site was run through the following [website](https://ui.
 
 </details>
 
+<details>
+    <summary style="font-weight:bold">Item Not Found</summary>
+
+![Item Not Found](readme-assets/responsive-review/item-not-found.png)
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">404 Page</summary>
+
+![404 Page](readme-assets/responsive-review/404.png)
+
+</details>
+
 # Project Planning
 
 ## Project Scoping
@@ -158,21 +172,6 @@ The developer worked with the client and focus groups consisting of programmers 
 <br>
 
 If you have a LucidChart account, you can also view this Problem Statement [here](https://lucid.app/lucidspark/ddcc77ae-81e5-48bb-a143-1d8d08517e84/edit?page=0_0&invitationId=inv_33957d7f-3414-4f5b-afb7-62686062836a#).
-
----
-
-</details>
-
-<details>
-    <summary style="font-weight:bold">Mind Map</summary>
-
-<br>
-The below image provides an initial mind-map into the features which might be appropriate for the BitWise site to address the problem statement and achieve the user stories.
-
-![Mind Map](readme-assets/planning/mind-map.png)
-<br>
-
-If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/92bb6c34-c508-4ed3-81f9-8e426a018834/edit?viewport_loc=-424%2C-51%2C1937%2C2060%2C0_0&invitationId=inv_e1afcf88-79d6-418d-b020-bca52437b6bf).
 
 ---
 
@@ -528,119 +527,63 @@ After review the following icon was seleted from React-Icons
 
 ## Wireframes
 
-### Skeleton Plane
+You can view the wireframes using this [Figma Link](https://www.figma.com/file/bViM8lmSanrjYBaFzLCzkm/BirWize-%2C?type=whiteboard&node-id=0%3A1&t=VJReX3c3OvMzXxcs-1)
 
-[Skeleton Plane - Figma Link](https://www.figma.com/file/Sbio9RON3TWhozD0Jkmjun/Travel-Planner---Skeleton-Plane?node-id=106-2&t=A0em54x0gFCE78ZA-0)
+<details>
+   <summary style="font-weight:bold">Wireframe Screenshots</summary>
 
-   <details>
-      <summary style="font-weight:bold">Skeleton Screenshots</summary>
-
-Login/Register/Reset Password:<br>
-![Login/Register/Reset Password](readme-assets/wireframe/skeleton/login.png)<br>
+Register:<br>
+![Register](readme-assets/wireframes/register.png)<br>
 
 ---
 
-Home:<br>
-![Home](readme-assets/wireframe/skeleton/home.png)<br>
+Login:<br>
+![Home](readme-assets/wireframes/login.png)<br>
 
 ---
 
-Map:<br>
-![Home](readme-assets/wireframe/skeleton/map.png)<br>
+Home/Feed:<br>
+![Home/Feed](readme-assets/wireframes/home-feed.png)<br>
 
 ---
 
-Country Info:<br>
-![Country Info](readme-assets/wireframe/skeleton/country-info.png)<br>
+Article:<br>
+![Article](readme-assets/wireframes/article.png)<br>
 
 ---
 
-List:<br>
-![List](readme-assets/wireframe/skeleton/list.png)<br>
+Profiles:<br>
+![Profiles](readme-assets/wireframes/profiles.png)<br>
 
 ---
 
-Diary:<br>
-![Diary](readme-assets/wireframe/skeleton/diary.png)<br>
+Profile:<br>
+![Profile](readme-assets/wireframes/profile.png)<br>
 
 ---
 
-Tags:<br>
-![Tags](readme-assets/wireframe/skeleton/tags.png)<br>
+Update Profile:<br>
+![Update Profile](readme-assets/wireframes/update-profile.png)<br>
 
 ---
 
-Site Updates:<br>
-![Site Updates](readme-assets/wireframe/skeleton/site-updates.png)<br>
+Update Password:<br>
+![Update Password](readme-assets/wireframes/update-password.png)<br>
 
 ---
 
-Update:<br>
-![Update](readme-assets/wireframe/skeleton/update.png)<br>
+Article Not Found:<br>
+![Article Not Found](readme-assets/wireframes/article-not-found.png)<br>
 
 ---
 
-Forms:<br>
-![Forms](readme-assets/wireframe/skeleton/forms.png)<br>
-
-   </details>
+Profile Not Found:<br>
+![Profile Not Found](readme-assets/wireframes/profile-not-found.png)<br>
 
 ---
 
-### Surface Plane
-
-[Surface Plane - Figma Link](https://www.figma.com/file/fJL1wMXqAOuVchpzWhpWzF/Travel-Planner---Surface-Plane?node-id=102-1169&t=A0em54x0gFCE78ZA-0)
-
-   <details>
-      <summary style="font-weight:bold">Surface Screenshots</summary>
-
-Login/Register/Reset Password:<br>
-![Login/Register/Reset Password](readme-assets/wireframe/surface-plane/login.png)<br>
-
----
-
-Home:<br>
-![Home](readme-assets/wireframe/surface-plane/home.png)<br>
-
----
-
-Map:<br>
-![Home](readme-assets/wireframe/surface-plane/map.png)<br>
-
----
-
-Country Info:<br>
-![Country Info](readme-assets/wireframe/surface-plane/country-info.png)<br>
-
----
-
-List:<br>
-![List](readme-assets/wireframe/surface-plane/list.png)<br>
-
----
-
-Diary:<br>
-![Diary](readme-assets/wireframe/surface-plane/diary.png)<br>
-
----
-
-Tags:<br>
-![Tags](readme-assets/wireframe/surface-plane/tags.png)<br>
-
----
-
-Site Updates:<br>
-![Site Updates](readme-assets/wireframe/surface-plane/site-updates.png)<br>
-
----
-
-Update:<br>
-![Update](readme-assets/wireframe/surface-plane/update.png)<br>
-
----
-
-Forms:<br>
-![Forms](readme-assets/wireframe/surface-plane/forms.png)<br>
+404 Page<br>
+![404 Page](readme-assets/wireframes/404.png)<br>
 
    </details>
 
@@ -649,182 +592,6 @@ Forms:<br>
 **Note:** The structure and wireframes are only to act as a concept and are subject to change as the website development evolves in collaboration with the client.
 
 ## Features
-
-### **Features planning**
-
-   <details>
-      <summary style="font-weight:bold">Problem Statement</summary>
-   <br>
-
-Following discussions with a focus group the following problem statement was developed alongside potential overarching features to satisfy user expectations.
-
-![Problem Statement](readme-assets/features-planning/problem-statement.png)
-<br>
-If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/7a7db2c4-0ae5-4daf-9919-ac0871afd80f/edit?view_items=-9MgloYgLC6R&invitationId=inv_1dd18ca7-574f-4e19-9df3-fe768b642e93).
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Mind-Map</summary>
-   <br>
-
-The below image provides an initial mind-map into the features which might be appropriate for the travel application based on the problem statement. This will aide in the development of User Stories.
-
-![Mind Map](readme-assets/planning/mind-map.png)
-<br>
-If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/8cd26622-1780-4fc3-85fa-28ced47687a8/edit?viewport_loc=-1468%2C-60%2C4105%2C2018%2C0_0&invitationId=inv_ceff3ba6-bc74-4fe6-ba65-aafecb2c6d31).
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Priority Matrix</summary>
-   <br>
-
-The below maps out the feasibility of the features considered against the user value they provide to help establish the priority they have as part of the build.
-
-![High Level Priority Matrix](readme-assets/features-planning/high-lvl-priority-matrix.png)
-<br>
-![Detailed Priority Matrix](readme-assets/features-planning/detailed-priority-matrix-lg.png)
-<br>
-If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/2023f4b5-b0e3-4be5-b188-562b2ee292d7/edit?viewport_loc=-2222%2C-1006%2C16387%2C8543%2C0_0&invitationId=inv_12794b38-9259-4f4a-bba2-59feacd478f0).
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Process Flow</summary>
-   <br>
-
-The below details the process flow for travel application.
-
-![Process Flow](readme-assets/features-planning/process-flow.png)<br>
-If you have a LucidChart account, you can also view this process flow [here](https://lucid.app/lucidchart/45f9a33d-bf6a-431b-8cb7-6cf56aced5a6/edit?viewport_loc=-279%2C-45%2C4992%2C2589%2CI~k5YlUlNz8V&invitationId=inv_e8867747-9ada-4d1d-9cd3-f40d4cf76206).
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">DataBase ER Diagram</summary>
-   <br>
-
-The below demonstrates the site models and their attributes as well as documenting how they interact.
-
-![DataBase ER Diagram](readme-assets/features-planning/database-er.png)<br>
-If you have a LucidChart account, you can also view this functions flow [here](https://lucid.app/lucidchart/cff13766-7082-47ae-8292-1718c002681d/edit?viewport_loc=-677%2C-74%2C4545%2C2357%2C0_0&invitationId=inv_5e2ae07a-9a26-417e-94da-965ebcb9ac10).
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Agile Methodology</summary>
-   <br>
-
-An Agile methodology was applied to the development and implementation of this project.
-
-The project development was run in multiple iterations/sprints each targeting a number of User Stories.
-
-Each User Story was moved out of a backlog and assigned to the iteration with a priority label (Must Have, Should Have, Could Have, Won't Have).
-In addition to User Stories, bugs and enhancments were also applied within certain iterations.
-
-To manage the Agile iterations I used the projects function within my GitHub account, pulling User Stories into a KanBan Board. (Links to each project iteration detailed in the iteration breakdown below.)
-
-**Note:** It should be noted that the priority label was in relation to it's prioriry within the iteration, not the project as a whole.
-
-   <details>
-      <summary style="font-weight:bold">Iteration 1</summary>
-   <br>
-
-For Iteration 1 the key focus was to target the Site Administration to ensure the platform was operational with a superuser. Test users were set up with the ability to login and out as well as reset passwords.
-
-In additon to this some optional site update User Stories where applied to allow the site owner to detail updates to test users as the site was in development.
-
-For site of the project in GitHub detailing the completed User Stories in Iteration 1 please click [here](https://github.com/users/Joe-Collins-1986/projects/2/views/1).
-
----
-
-   <br>
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Iteration 2</summary>
-   <br>
-
-For Iteration 2 the key focus was to target the country navigation which would provide the platform to later add diary posts and a task manager.
-
-In additon to this some more optional site update User Stories where applied to allow test users to comment on the updates posted by the site owner.
-
-For site of the project in GitHub detailing the completed User Stories in Iteration 2 please click [here](https://github.com/users/Joe-Collins-1986/projects/3/views/1).
-
----
-
-   <br>
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Iteration 3</summary>
-   <br>
-
-Due to other commitments I was unable to conduct a standard iteration.
-
-Therefore, this iteration was used to review existing features and update them with user feedback. It was also used to finalise the site update features which will allow a tracker of future feature development and allow test users a way of feeding back their findings.
-
-For site of the project in GitHub detailing the completed User Stories in Iteration 3 please click [here](https://github.com/users/Joe-Collins-1986/projects/4/views/1).
-
----
-
-   <br>
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Iteration 4</summary>
-   <br>
-
-For Iteration 4 the key focus was to target the site Diary functionality which would allow users to post, update and delete diary entries related to a specific country.
-
-In additon to this some optional profile User Stories where applied to auto generate a profile when a user is set up and allow users to update their profile info where required.
-
-For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/5/views/1).
-
----
-
-   <br>
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Iteration 5</summary>
-   <br>
-
-For Iteration 5 the key focus was to target the To-Do List functionality which would allow users create, update and delete lists as well as assigning tasks to the lists and toggling them from open to closed or deleteing them where required.
-
-For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/6/settings).
-
----
-
-   <br>
-
-   </details>
-
-   <br>
-
----
-
-   </details>
 
 ### **Features breakdown**
 
