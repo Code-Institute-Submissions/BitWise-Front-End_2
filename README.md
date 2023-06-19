@@ -20,7 +20,7 @@
 - [User Experience (UX)](#user-experience-ux)
   - [Website Design](#website-design)
   - [Wireframes]()
-  - [Features]()
+- [Features]()
 - [Further Development](#further-development)
   - [Tidy Up](#tidy-up)
   - [Updates Relient On Backend](#updates-relient-on-backend)
@@ -591,49 +591,78 @@ Profile Not Found:<br>
 
 **Note:** The structure and wireframes are only to act as a concept and are subject to change as the website development evolves in collaboration with the client.
 
-## Features
-
-### **Features breakdown**
+# Site Features
 
 Each section below will detail their specific function.
 
-   <details>
-      <summary style="font-weight:bold">Navbar/Footer Features</summary>
+## NavBar
+
+The navbar has been fixed to the top of the page to allow the user easy access to all key pages.
+
+A color switch is provided as part of the navbar to allow users to change the colour schem from light to dark.
+
+<details>
+      <summary style="font-weight:bold">Colour Switch Screenshots</summary>
    <br>
 
-#### NavBar
+**Dark Mode:**<br>
+![Navbar Dark Mode](readme-assets/features/navbar/navbar-dark-mode.png)<br>
 
-The Navbar has been fixed to allow the user easy access to all key pages. (Some pages are not accessible via the nav bar as they are dependent on selections made via other pages e.g. country info).
+**Light Mode:**<br>
+![Navbar Light Mode](readme-assets/features/navbar/navbar-light-mode.png)<br>
 
-Prior to login the user will see the following Navbar:
-![Navbar Not Logged In](readme-assets/features/nav-bar/nav-bar-lg-no-login.png)<br>
+</details><br>
+The navbar page links have been provided as text only (with the exception of create article and logo). This was an intensional decision. These were tested with icons but feedback indicated this looked to cluttered and was not as intuative. The current page is indicated with an underline as is the hover. Despite slight duplication where one page is visited and another is hovered over this was deemed the best visual and caused no confusion with the test users.
 
-**Note:** Despite seeing the planner the user will not be able to access it until logged in. This was an intentional decision to show non registered users features they could not access to drive curiosity and engourage registration.
+The Navbar has conditional formating to only show links relevent to the user based on their logged in status. It also shows less on smaller screens to not wxtend past available space and impact the sites responsive disign.
 
-After login the user will see the following Navbar:
-![Navbar Logged In](readme-assets/features/nav-bar/nav-bar-lg-login.png)<br>
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshots</summary>
+   <br>
 
-If the user is using a mobile screen they will have an expandable nav menu:<br>
-![Navbar Mobile](readme-assets/features/nav-bar/nav-bar-sm-login.png)<br>
+**Large Screen:**<br>
+![Navbar Not Logged In Large Screen](readme-assets/features/navbar/navbar-lg-logged-out.png)<br>
 
-**Note:** This menu will show the same options to the user, depending on their logged in status, as that of the large screen nav bar.
+**Medium Screen:**<br>
+![Navbar Not Logged In Medium Screen](readme-assets/features/navbar/navbar-md-logged-out.png)<br>
 
-#### Footer
+**Small Screen:**<br>
+![Navbar Not Logged In Small Screen](readme-assets/features/navbar/navbar-sm-logged-out.png)<br>
 
-The Footer has been fixed to allow the user easy access to all social media links.<br>
-![Navbar Mobile](readme-assets/features/footer/footer.png)<br>
-<br>
+**Extra Small Screen:**<br>
+![Navbar Not Logged In Extra Small Screen](readme-assets/features/navbar/navbar-xs-logged-out.png)<br>
+
+**Hamburger Menu:**<br>
+![Hamburger Not Logged In Menu](readme-assets/features/navbar/hamburger-menu-logged-out.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshots</summary>
+   <br>
+
+**Large Screen:**<br>
+![Navbar Logged In Large Screen](readme-assets/features/navbar/navbar-lg-logged-in.png)<br>
+
+**Medium Screen:**<br>
+![Navbar Logged In Medium Screen](readme-assets/features/navbar/navbar-md-logged-in.png)<br>
+
+**Small Screen:**<br>
+![Navbar Logged In Small Screen](readme-assets/features/navbar/navbar-sm-logged-in.png)<br>
+
+**Extra Small Screen:**<br>
+![Navbar Logged In Extra Small Screen](readme-assets/features/navbar/navbar-xs-logged-in.png)<br>
+
+**Hamburger Menu:**<br>
+![Hamburger Logged In Menu](readme-assets/features/navbar/hamburger-menu-logged-in.png)<br>
+
+</details>
 
 ---
 
-   </details>
+## Register
 
-   <details>
-         <summary style="font-weight:bold">Account Management Features</summary>
-   <br>
-   
-   #### Register
-   New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login page when users first access the site (this link will be shown on the Login feature).
+New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login page when users first access the site (this link will be shown on the Login feature).
 
 On valid Registration the user will be taken straight to the home page without having to re-login.
 
@@ -724,8 +753,6 @@ Non logged in users can also select the 'see all updates' button to be taken to 
 <br>
 
 ---
-
-   </details>
 
    <details>
       <summary style="font-weight:bold">Home Features</summary>
