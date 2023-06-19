@@ -11,7 +11,7 @@ import {
   useLanguageFilter,
   useLikedByOwnerFilter,
 } from "../contexts/FilterContext";
-import { HStack, Show, Text } from "@chakra-ui/react";
+import { HStack, Show, Hide, Text } from "@chakra-ui/react";
 import ArticleGrid from "../components/ArticleGrid";
 import { useResetFilters } from "../hooks/useResetFilters";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -52,9 +52,9 @@ const HomePage = (props) => {
         )}
       </HStack>
       {currentUser && (
-        <Show below="md">
+        <Hide above="md">
           <LikedSwitch />
-        </Show>
+        </Hide>
       )}
       <ArticleGrid
         articles={articles}

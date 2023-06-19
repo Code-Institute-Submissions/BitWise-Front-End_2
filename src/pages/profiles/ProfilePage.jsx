@@ -28,6 +28,7 @@ import {
   TabPanel,
   HStack,
   Show,
+  Hide,
 } from "@chakra-ui/react";
 import LanguageList from "../../components/LanguageList";
 import ItemNotFound from "../../components/ItemNotFound";
@@ -92,9 +93,9 @@ const ProfilePage = () => {
                 )}
               </HStack>
               {currentUser && (
-                <Show below="md">
+                <Hide above="md">
                   <LikedSwitch />
-                </Show>
+                </Hide>
               )}
               <ProfileArticles endpoint={endpoint} />
             </TabPanel>
