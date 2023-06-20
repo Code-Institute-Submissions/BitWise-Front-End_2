@@ -18,6 +18,7 @@ import SearchField from "../../components/SearchField";
 import OrderDropdown from "../../components/OrderDropdown";
 import LanguageDropdown from "../../components/LanguageDropdown";
 import LikedSwitch from "../../components/LikedSwitch";
+import RecommendedList from "../../components/RecommendedList";
 
 import {
   Box,
@@ -78,6 +79,7 @@ const ProfilePage = () => {
           <TabList>
             <Tab>Articles</Tab>
             <Tab>Languages</Tab>
+            {currentUser?.profile_id === profile?.id && <Tab>Recommended</Tab>}
           </TabList>
 
           <TabPanels>
@@ -102,6 +104,12 @@ const ProfilePage = () => {
             <TabPanel>
               <LanguageList profile={profile} endpoint={endpointLanguages} />
             </TabPanel>
+
+            {currentUser?.profile_id === profile?.id && (
+              <TabPanel>
+                <RecommendedList {...profile} />
+              </TabPanel>
+            )}
           </TabPanels>
         </Tabs>
       )}
