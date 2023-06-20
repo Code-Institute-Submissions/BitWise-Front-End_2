@@ -30,6 +30,7 @@ import {
   HStack,
   Show,
   Hide,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import LanguageList from "../../components/LanguageList";
 import ItemNotFound from "../../components/ItemNotFound";
@@ -56,6 +57,8 @@ const ProfilePage = () => {
   const resetFilters = useResetFilters();
   const { pathname } = useLocation();
 
+  const fontSize = useBreakpointValue({ base: "xs", sm: "md" });
+
   useEffect(() => {
     resetFilters();
   }, [pathname]);
@@ -75,11 +78,13 @@ const ProfilePage = () => {
       </Box>
 
       {profile && (
-        <Tabs variant="enclosed" colorScheme="purple" p={5}>
+        <Tabs variant="enclosed" colorScheme="purple" pt={5}>
           <TabList>
-            <Tab>Articles</Tab>
-            <Tab>Languages</Tab>
-            {currentUser?.profile_id === profile?.id && <Tab>Recommended</Tab>}
+            <Tab fontSize={fontSize}>Articles</Tab>
+            <Tab fontSize={fontSize}>Languages</Tab>
+            {currentUser?.profile_id === profile?.id && (
+              <Tab fontSize={fontSize}>Recommended</Tab>
+            )}
           </TabList>
 
           <TabPanels>
