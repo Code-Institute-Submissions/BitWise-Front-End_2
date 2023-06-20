@@ -19,7 +19,6 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import LoggedIn from "./components/LoggedIn";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ProfilePasswordEditForm from "./pages/profiles/ProfilePasswordEditForm";
-import RecommendCreateForm from "./pages/recommend/RecommendCreateForm";
 
 import ToastAlert from "./components/ToastAlert";
 
@@ -116,11 +115,6 @@ function App() {
                   }
                 />
               }
-            />
-            <Route
-              exact
-              path="/recommend/:id/"
-              element={<RecommendCreateForm />}
             />
             <Route exact path="/profile/:id" element={<ProfilePage />} />
             <Route

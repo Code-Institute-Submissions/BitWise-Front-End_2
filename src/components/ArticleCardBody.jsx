@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Heading, HStack, Text, Box, Button } from "@chakra-ui/react";
+import {
+  Heading,
+  HStack,
+  Text,
+  Box,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
 import languageOptions from "../constants/languageOptions";
 import truncateContent from "../services/truncateContent";
 import { useColorModeValue } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import useListProfiles from "../hooks/useListProfiles";
+import RecommendedAlert from "./RecommededAlert";
 
 const ArticleCardBody = (props) => {
   const {
@@ -16,6 +25,9 @@ const ArticleCardBody = (props) => {
   } = props;
   const [truncatedContent, setTruncatedContent] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
+
+  const { searchPageProfiles, loaded } = useListProfiles(`/profiles/`);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     if (!articlePage) {
@@ -62,9 +74,12 @@ const ArticleCardBody = (props) => {
       </Link>
       {articlePage && (
         <Box mt={5}>
-          <Link to={`/recommend/${id}`}>
-            <Button>Recommend Article</Button>
-          </Link>
+          <Button onClick={onOpen}>Recommend Article</Button>
+          <RecommendedAlert
+            isOpen={isOpen}
+            onClose={onClose}
+            profiles={searchPageProfiles?.results || []}
+          />
         </Box>
       )}
       {github_link && (
