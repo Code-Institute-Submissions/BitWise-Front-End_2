@@ -35,9 +35,20 @@ const useRecommendCreate = () => {
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
-        setFailToast(
-          `Unable to recommend article (status: ${err.response?.status})`
-        );
+        if (
+          err.response?.data.non_field_errors &&
+          err.response.data.non_field_errors.includes(
+            "The fields article, recommended_to must make a unique set."
+          )
+        ) {
+          setFailToast(
+            "This profile has already had this article recommended."
+          );
+        } else {
+          setFailToast(
+            `Unable to recommend article (status: ${err.response?.status})`
+          );
+        }
       }
     }
   };
