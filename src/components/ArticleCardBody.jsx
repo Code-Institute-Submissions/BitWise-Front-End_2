@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Heading, HStack, Text, Box } from "@chakra-ui/react";
+import { Heading, HStack, Text, Box, Button } from "@chakra-ui/react";
 import languageOptions from "../constants/languageOptions";
 import truncateContent from "../services/truncateContent";
 import { useColorModeValue } from "@chakra-ui/react";
@@ -60,6 +60,13 @@ const ArticleCardBody = (props) => {
           <Text>{articlePage ? article_content : truncatedContent}</Text>
         </Box>
       </Link>
+      {articlePage && (
+        <Box mt={5}>
+          <Link to={`/recommend/${id}`}>
+            <Button>Recommend Article</Button>
+          </Link>
+        </Box>
+      )}
       {github_link && (
         <Box>
           <Heading mt={5} size="sm">
