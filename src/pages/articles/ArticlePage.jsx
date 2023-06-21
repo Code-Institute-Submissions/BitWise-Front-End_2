@@ -185,6 +185,7 @@ const ArticlePage = () => {
                     ? links.results.map((link) => (
                         <ArticleLinkCard
                           key={link.id}
+                          is_owner={is_owner}
                           {...link}
                           setLinks={setLinks}
                         />
