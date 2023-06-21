@@ -92,7 +92,6 @@ const ArticleLinkCreate = (props) => {
                   value={link_url}
                   onChange={handleChange}
                 />
-                <InputRightAddon children=".com" />
               </InputGroup>
 
               {errors.link_url && (

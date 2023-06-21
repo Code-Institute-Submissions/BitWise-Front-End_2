@@ -36,7 +36,7 @@ const useLinkCreate = (article, setLinks, setAddLink) => {
     formData.append("article", parseInt(article_id));
     formData.append("link_title", link_title);
     formData.append("link_brief", link_brief);
-    formData.append("link_url", `https://${link_url}.com`);
+    formData.append("link_url", `https://${link_url}`);
 
     try {
       const { data } = await axiosReq.post("/links/", formData);
