@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 import { useSetSuccessToast, useSetFailToast } from "../contexts/AlertToasts";
-import { useNavigate } from "react-router-dom";
 
-const useArticleDelete = (pk, setArticles) => {
+import { useSetProfileData } from "../contexts/ProfilesDataContext";
+
+const useRecommendDelete = (id) => {
   const [error, setError] = useState(null);
   const setSuccessToast = useSetSuccessToast();
   const setFailToast = useSetFailToast();
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  const setProfileData = useSetProfileData();
 
   const handleDelete = () => {
     setIsOpen(true);
@@ -20,25 +22,27 @@ const useArticleDelete = (pk, setArticles) => {
 
   const handleDeleteConfirmation = async () => {
     try {
-      await axiosRes.delete(`/articles/${pk}/`);
-      if (
-        window.location.pathname === "" ||
-        window.location.pathname === "/" ||
-        window.location.pathname.startsWith("/profile/")
-      ) {
-        setArticles((prevArticles) => ({
-          ...prevArticles,
-          results: prevArticles.results.filter((article) => article.id !== pk),
-        }));
-      } else {
-        navigate("/");
-      }
-      setSuccessToast("Article Deleted");
+      await axiosRes.delete(`/recomendations/remove/${id}/`);
+
+      setProfileData((prevState) => ({
+        ...prevState,
+
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) => ({
+            ...profile,
+            received_recommendations: profile.received_recommendations.filter(
+              (recommendation) => recommendation.id !== id
+            ),
+          })),
+        },
+      }));
+
+      setSuccessToast("Recommendation Removed");
       setIsOpen(false);
     } catch (err) {
       setError(err);
       setFailToast(
-        `Unable to delete article (status: ${err.response?.status})`
+        `Unable to delete recommendation (status: ${err.response?.status})`
       );
       setIsOpen(false);
     }
@@ -53,4 +57,4 @@ const useArticleDelete = (pk, setArticles) => {
   };
 };
 
-export default useArticleDelete;
+export default useRecommendDelete;
