@@ -90,7 +90,7 @@ const ArticlePage = () => {
           <TabPanels>
             <TabPanel>
               <Flex align={"center"} justify={"center"}>
-                <Stack px={10} w="100%">
+                <Stack w="100%">
                   <Flex alignItems={"center"} justifyContent={"center"}>
                     <Heading pb={5} size="lg">
                       Comments
@@ -146,7 +146,7 @@ const ArticlePage = () => {
             </TabPanel>
             <TabPanel>
               <Flex align={"center"} justify={"center"}>
-                <Stack px={10} w="100%">
+                <Stack w="100%">
                   <Flex alignItems={"center"} justifyContent={"center"}>
                     <Heading pb={5} size="lg">
                       Links
