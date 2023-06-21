@@ -1,4 +1,15 @@
-import { Box, Flex, Heading, Text, Stack, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Stack,
+  Spinner,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+} from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
 
@@ -12,16 +23,31 @@ import { useColorModeValue } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import ItemNotFound from "../../components/ItemNotFound";
+import ArticleLinkCard from "../../components/ArticleLinkCard";
+import NoResults from "../../components/NoResults";
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const { article, setArticle, comments, setComments, error, loaded } =
-    useArticle(`/articles/${id}`, `/comments/?article=${id}`);
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const profile_id = currentUser?.profile_id;
   const custLinkColor = useColorModeValue("#805AD5", "#D6BCFA");
+
+  const {
+    article,
+    setArticle,
+    comments,
+    setComments,
+    links,
+    setLinks,
+    error,
+    loaded,
+  } = useArticle(
+    `/articles/${id}`,
+    `/comments/?article=${id}`,
+    `/links/?article=${id}`
+  );
 
   return (
     <Box pb={20}>
@@ -50,60 +76,97 @@ const ArticlePage = () => {
       )}
 
       {loaded && article.results.length > 0 && (
-        <Flex align={"center"} justify={"center"}>
-          <Stack px={10} w="100%">
-            <Flex alignItems={"center"} justifyContent={"center"}>
-              <Heading pb={5} size="lg">
-                Comments
-              </Heading>
-            </Flex>
+        <Tabs variant="enclosed" colorScheme="purple" pt={5}>
+          <TabList>
+            <Tab>Comments</Tab>
+            <Tab>Article Links</Tab>
+          </TabList>
 
-            <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
-              {currentUser ? (
-                comments.results.length ? (
-                  <Heading size="md">Join the conversation!</Heading>
-                ) : (
-                  <Heading size="md">Be the first to comment!</Heading>
-                )
-              ) : (
-                <Link to="/login/">
-                  <Heading as="u" color={custLinkColor} size="md">
-                    Login to comment!
-                  </Heading>
-                </Link>
-              )}
-            </Flex>
+          <TabPanels>
+            <TabPanel>
+              <Flex align={"center"} justify={"center"}>
+                <Stack px={10} w="100%">
+                  <Flex alignItems={"center"} justifyContent={"center"}>
+                    <Heading pb={5} size="lg">
+                      Comments
+                    </Heading>
+                  </Flex>
 
-            {currentUser && (
-              <CommentCreate
-                profile_id={profile_id}
-                profile_image={profile_image}
-                article={id}
-                setArticle={setArticle}
-                setComments={setComments}
-                currentUser={currentUser}
-              />
-            )}
+                  <Flex pb={5} alignItems={"center"} justifyContent={"center"}>
+                    {currentUser ? (
+                      comments.results.length ? (
+                        <Heading size="md">Join the conversation!</Heading>
+                      ) : (
+                        <Heading size="md">Be the first to comment!</Heading>
+                      )
+                    ) : (
+                      <Link to="/login/">
+                        <Heading as="u" color={custLinkColor} size="md">
+                          Login to comment!
+                        </Heading>
+                      </Link>
+                    )}
+                  </Flex>
 
-            {comments.results.length ? (
-              <InfiniteScroll
-                dataLength={comments.results.length}
-                loader={<Spinner />}
-                hasMore={!!comments.next}
-                next={() => fetchMoreData(comments, setComments)}
-              >
-                {comments.results.map((comment) => (
-                  <Comment
-                    key={comment.id}
-                    {...comment}
-                    setArticle={setArticle}
-                    setComments={setComments}
-                  />
-                ))}
-              </InfiniteScroll>
-            ) : null}
-          </Stack>
-        </Flex>
+                  {currentUser && (
+                    <CommentCreate
+                      profile_id={profile_id}
+                      profile_image={profile_image}
+                      article={id}
+                      setArticle={setArticle}
+                      setComments={setComments}
+                      currentUser={currentUser}
+                    />
+                  )}
+
+                  {comments.results.length ? (
+                    <InfiniteScroll
+                      dataLength={comments.results.length}
+                      loader={<Spinner />}
+                      hasMore={!!comments.next}
+                      next={() => fetchMoreData(comments, setComments)}
+                    >
+                      {comments.results.map((comment) => (
+                        <Comment
+                          key={comment.id}
+                          {...comment}
+                          setArticle={setArticle}
+                          setComments={setComments}
+                        />
+                      ))}
+                    </InfiniteScroll>
+                  ) : null}
+                </Stack>
+              </Flex>
+            </TabPanel>
+            <TabPanel>
+              <Flex align={"center"} justify={"center"}>
+                <Stack px={10} w="100%">
+                  <Flex alignItems={"center"} justifyContent={"center"}>
+                    <Heading pb={5} size="lg">
+                      Links
+                    </Heading>
+                  </Flex>
+                  {links.results.length ? (
+                    <Heading size="md">Links Related to this article:</Heading>
+                  ) : (
+                    <NoResults text={"No Links For Article!"} />
+                  )}
+
+                  {links.results.length
+                    ? links.results.map((link) => (
+                        <ArticleLinkCard
+                          key={link.id}
+                          {...link}
+                          setLinks={setLinks}
+                        />
+                      ))
+                    : null}
+                </Stack>
+              </Flex>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       )}
     </Box>
   );
