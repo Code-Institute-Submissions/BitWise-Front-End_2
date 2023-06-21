@@ -11,17 +11,20 @@ const ArticleLinkCard = (props) => {
         <Text whiteSpace="pre-line" mt={3}>
           {link_brief}
         </Text>
-        <a href={link_url} target="_blank">
-          <Button
-            mt={5}
-            justifyContent="start"
-            w="100%"
-            colorScheme="purple"
-            p={5}
-          >
-            {link_url}
-          </Button>
-        </a>
+
+        <Button
+          as="a"
+          href={link_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          mt={5}
+          justifyContent="start"
+          w="100%"
+          colorScheme="purple"
+          p={5}
+        >
+          {link_url}
+        </Button>
       </CardBody>
     </Card>
   );

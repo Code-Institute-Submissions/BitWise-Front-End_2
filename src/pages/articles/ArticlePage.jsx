@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -9,6 +10,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Button,
 } from "@chakra-ui/react";
 
 import ArticleCard from "../../components/ArticleCard";
@@ -25,14 +27,10 @@ import { fetchMoreData } from "../../utils/utils";
 import ItemNotFound from "../../components/ItemNotFound";
 import ArticleLinkCard from "../../components/ArticleLinkCard";
 import NoResults from "../../components/NoResults";
+import ArticleLinkCreate from "../../components/ArticleLinkCreate";
 
 const ArticlePage = () => {
   const { id } = useParams();
-
-  const currentUser = useCurrentUser();
-  const profile_image = currentUser?.profile_image;
-  const profile_id = currentUser?.profile_id;
-  const custLinkColor = useColorModeValue("#805AD5", "#D6BCFA");
 
   const {
     article,
@@ -48,6 +46,13 @@ const ArticlePage = () => {
     `/comments/?article=${id}`,
     `/links/?article=${id}`
   );
+
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const profile_id = currentUser?.profile_id;
+  const custLinkColor = useColorModeValue("#805AD5", "#D6BCFA");
+  const is_owner = article.results[0]?.is_owner;
+  const [addLink, setAddLink] = useState(false);
 
   return (
     <Box pb={20}>
@@ -147,11 +152,34 @@ const ArticlePage = () => {
                       Links
                     </Heading>
                   </Flex>
-                  {links.results.length ? (
-                    <Heading size="md">Links Related to this article:</Heading>
-                  ) : (
-                    <NoResults text={"No Links For Article!"} />
+
+                  {is_owner && (
+                    <Button
+                      w={155}
+                      colorScheme={addLink ? "gray" : "purple"}
+                      mb={5}
+                      onClick={() => setAddLink(!addLink)}
+                    >
+                      {addLink ? "Close" : "Add Link"}
+                    </Button>
                   )}
+
+                  {addLink && (
+                    <ArticleLinkCreate
+                      setAddLink={setAddLink}
+                      article={article}
+                      setLinks={setLinks}
+                    />
+                  )}
+                  <Box pt={10} pb={5}>
+                    {links.results.length ? (
+                      <Heading size="md">
+                        Links Related to this article:
+                      </Heading>
+                    ) : (
+                      <NoResults text={"No Links For Article!"} />
+                    )}
+                  </Box>
 
                   {links.results.length
                     ? links.results.map((link) => (
