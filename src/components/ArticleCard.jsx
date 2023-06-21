@@ -16,7 +16,6 @@ const ArticleCard = (props) => {
     updated_at,
     article_title,
     article_content,
-    github_link,
     like_id,
     primary_language,
     profile_image,
@@ -53,7 +52,6 @@ const ArticleCard = (props) => {
           primary_language={primary_language}
           articlePage={articlePage}
           article_title={article_title}
-          github_link={github_link}
         />
       </CardBody>
       <CardFooter

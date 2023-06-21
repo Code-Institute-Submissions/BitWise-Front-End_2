@@ -15,14 +15,8 @@ import useListProfiles from "../hooks/useListProfiles";
 import RecommendedAlert from "./RecommededAlert";
 
 const ArticleCardBody = (props) => {
-  const {
-    id,
-    article_content,
-    primary_language,
-    article_title,
-    articlePage,
-    github_link,
-  } = props;
+  const { id, article_content, primary_language, article_title, articlePage } =
+    props;
   const [truncatedContent, setTruncatedContent] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
 
@@ -80,18 +74,6 @@ const ArticleCardBody = (props) => {
             onClose={onClose}
             profiles={searchPageProfiles?.results || []}
           />
-        </Box>
-      )}
-      {github_link && (
-        <Box>
-          <Heading mt={5} size="sm">
-            GitHub Link:
-          </Heading>
-          <Text color={custColor} as="u">
-            <a href={github_link} target="_blank" rel="noopener noreferrer">
-              {github_link}
-            </a>
-          </Text>
         </Box>
       )}
     </>

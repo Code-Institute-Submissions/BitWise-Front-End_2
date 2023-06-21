@@ -21,8 +21,7 @@ import { useNavigate } from "react-router-dom";
 const ArticleEditForm = () => {
   const { articleData, errors, handleChange, handleSubmit } = useArticleEdit();
 
-  const { article_title, article_content, primary_language, github_link } =
-    articleData;
+  const { article_title, article_content, primary_language } = articleData;
   const navigate = useNavigate();
 
   return (
@@ -88,24 +87,6 @@ const ArticleEditForm = () => {
               </FormControl>
 
               {errors.primary_language?.map((message, idx) => (
-                <Alert borderRadius={5} key={idx} status="warning">
-                  <AlertIcon />
-                  {message}
-                </Alert>
-              ))}
-
-              <FormControl id="github_link">
-                <FormLabel>GitHub Link</FormLabel>
-                <Input
-                  bg={"blackAlpha.50"}
-                  type="text"
-                  name="github_link"
-                  value={github_link}
-                  onChange={handleChange}
-                />
-              </FormControl>
-
-              {errors.github_link?.map((message, idx) => (
                 <Alert borderRadius={5} key={idx} status="warning">
                   <AlertIcon />
                   {message}

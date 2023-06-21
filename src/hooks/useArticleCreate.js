@@ -13,10 +13,9 @@ const useArticleCreate = () => {
     title: "",
     content: "",
     language: "",
-    github_link: "",
   });
 
-  const { title, content, language, github_link } = articleData;
+  const { title, content, language } = articleData;
 
   const navigate = useNavigate();
 
@@ -34,7 +33,6 @@ const useArticleCreate = () => {
     formData.append("article_title", title);
     formData.append("article_content", content);
     formData.append("primary_language", language);
-    formData.append("github_link", github_link);
 
     try {
       const { data } = await axiosReq.post("/articles/", formData);
@@ -52,7 +50,6 @@ const useArticleCreate = () => {
     title,
     content,
     language,
-    github_link,
     errors,
     handleChange,
     handleSubmit,

@@ -12,11 +12,9 @@ const useArticleEdit = () => {
     article_title: "",
     article_content: "",
     primary_language: "",
-    github_link: "",
   });
 
-  const { article_title, article_content, primary_language, github_link } =
-    articleData;
+  const { article_title, article_content, primary_language } = articleData;
 
   const navigate = useNavigate();
 
@@ -24,20 +22,14 @@ const useArticleEdit = () => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/articles/${id}/`);
-        const {
-          article_title,
-          article_content,
-          primary_language,
-          github_link,
-          is_owner,
-        } = data;
+        const { article_title, article_content, primary_language, is_owner } =
+          data;
 
         if (is_owner) {
           setArticleData({
             article_title,
             article_content,
             primary_language,
-            github_link,
           });
         } else {
           navigate("/");
@@ -64,7 +56,6 @@ const useArticleEdit = () => {
     formData.append("article_title", article_title);
     formData.append("article_content", article_content);
     formData.append("primary_language", primary_language);
-    formData.append("github_link", github_link);
 
     try {
       await axiosReq.put(`/articles/${id}/`, formData);
