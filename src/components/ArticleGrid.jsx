@@ -1,6 +1,6 @@
+import React, { useRef } from "react";
 import ArticleCard from "./ArticleCard";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
 import { fetchMoreData } from "../utils/utils";
 import CardSkeleton from "./CardSkeleton";
@@ -9,6 +9,7 @@ import NoResults from "./NoResults";
 const ArticleGrid = (props) => {
   const { articles, setArticles, loaded, message } = props;
   const skeletons = [1, 2, 3, 4, 5, 6];
+  const containerRef = useRef();
 
   return (
     <>
@@ -18,10 +19,15 @@ const ArticleGrid = (props) => {
             dataLength={articles.results.length}
             loader={<Spinner />}
             hasMore={!!articles.next}
-            next={() => fetchMoreData(articles, setArticles)}
-            scrollThreshold="100px"
+            next={() => fetchMoreData(articles, setArticles, containerRef)}
           >
-            <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
+            <SimpleGrid
+              ref={containerRef}
+              id="article-grid-container"
+              columns={{ sm: 1, md: 2, xl: 3 }}
+              p={5}
+              spacing={5}
+            >
               {articles.results.map((article) => (
                 <ArticleCard
                   key={article.id}
