@@ -23,6 +23,7 @@ const ArticleCreateForm = () => {
     title,
     content,
     errors,
+    isLoading, // Add isLoading from the hook
     handleChange,
     handleSubmit,
     languageOptions,
@@ -104,6 +105,9 @@ const ArticleCreateForm = () => {
                   w="40%"
                   colorScheme={"purple"}
                   variant={"solid"}
+                  isLoading={isLoading}
+                  loadingText="Submitting..."
+                  spinnerPlacement="end"
                 >
                   Submit Article
                 </Button>
@@ -113,6 +117,7 @@ const ArticleCreateForm = () => {
                   colorScheme={"red"}
                   variant={"solid"}
                   onClick={() => navigate(-1)}
+                  disabled={isLoading}
                 >
                   Cancel
                 </Button>

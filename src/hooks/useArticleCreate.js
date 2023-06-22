@@ -16,6 +16,7 @@ const useArticleCreate = () => {
   });
 
   const { title, content, language } = articleData;
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -35,6 +36,7 @@ const useArticleCreate = () => {
     formData.append("primary_language", language);
 
     try {
+      setIsLoading(true);
       const { data } = await axiosReq.post("/articles/", formData);
       navigate(`/article/${data.id}`);
       setSuccessToast("Article Added");
@@ -43,6 +45,8 @@ const useArticleCreate = () => {
         setErrors(err.response?.data);
         setFailToast(`Unable to add article (status: ${err.response?.status})`);
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -51,6 +55,7 @@ const useArticleCreate = () => {
     content,
     language,
     errors,
+    isLoading,
     handleChange,
     handleSubmit,
     languageOptions,
