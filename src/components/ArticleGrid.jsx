@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
@@ -10,6 +10,33 @@ const ArticleGrid = (props) => {
   const { articles, setArticles, loaded, message } = props;
   const skeletons = [1, 2, 3, 4, 5, 6];
   const containerRef = useRef();
+
+  const handleScroll = () => {
+    const container = containerRef.current;
+    if (container) {
+      const containerRect = container.getBoundingClientRect();
+      const scrollOffset =
+        container.scrollHeight - container.scrollTop - containerRect.height;
+      const buffer = 50;
+
+      if (scrollOffset <= buffer && !!articles.next) {
+        fetchMoreData(articles, setArticles, containerRef);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [articles, setArticles]);
 
   return (
     <>
