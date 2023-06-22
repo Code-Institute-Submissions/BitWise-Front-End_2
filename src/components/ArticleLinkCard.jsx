@@ -17,7 +17,9 @@ const ArticleLinkCard = (props) => {
         <Card borderRight="1px" borderBottom="1px">
           <CardBody>
             <Flex justifyContent="space-between">
-              <Heading size="sm">{link_title}</Heading>
+              <Heading width="80%" size="sm">
+                {link_title}
+              </Heading>
               {is_owner && (
                 <UpdateDeleteButton
                   icon={<BsThreeDotsVertical />}
@@ -42,7 +44,7 @@ const ArticleLinkCard = (props) => {
               colorScheme="purple"
               p={5}
             >
-              {link_url}
+              {link_url.length > 25 ? `${link_url.slice(0, 25)}...` : link_url}
             </Button>
           </CardBody>
         </Card>
