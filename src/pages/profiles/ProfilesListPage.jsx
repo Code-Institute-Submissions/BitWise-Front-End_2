@@ -21,6 +21,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CardSkeleton from "../../components/CardSkeleton";
 import NoResults from "../../components/NoResults";
+import { fetchMoreProfileData } from "../../utils/utils";
 
 const ProfilesListPage = (props) => {
   const { message } = props;
@@ -129,7 +130,9 @@ const ProfilesListPage = (props) => {
             dataLength={searchPageProfiles.results.length}
             loader={<Spinner />}
             hasMore={!!searchPageProfiles.next}
-            next={() => fetchMoreData(searchPageProfiles, setProfileData)}
+            next={() =>
+              fetchMoreProfileData(searchPageProfiles, setProfileData)
+            }
           >
             <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
               {searchPageProfiles.results.map((profile) => (
