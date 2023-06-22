@@ -19,6 +19,7 @@ const ArticleGrid = (props) => {
             loader={<Spinner />}
             hasMore={!!articles.next}
             next={() => fetchMoreData(articles, setArticles)}
+            scrollThreshold="100px"
           >
             <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} p={5} spacing={5}>
               {articles.results.map((article) => (
