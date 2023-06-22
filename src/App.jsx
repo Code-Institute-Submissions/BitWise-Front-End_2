@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Grid, GridItem, Show, Box, Card } from "@chakra-ui/react";
 import "./api/axiosDefaults";
 
@@ -25,6 +26,19 @@ import ToastAlert from "./components/ToastAlert";
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+
+  const location = useLocation();
+  const prevLocation = useRef(location);
+
+  useEffect(() => {
+    // Check if the location pathname has changed
+    if (location.pathname !== prevLocation.current.pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Update the previous location
+    prevLocation.current = location;
+  }, [location]);
 
   return (
     <>

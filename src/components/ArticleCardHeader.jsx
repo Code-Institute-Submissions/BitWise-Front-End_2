@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Avatar,
@@ -6,7 +6,6 @@ import {
   Flex,
   Heading,
   Text,
-  useDisclosure,
   Button,
   AlertDialog,
   AlertDialogOverlay,
@@ -41,10 +40,6 @@ const ArticleCardHeader = (props) => {
 
   const { handleDelete, handleDeleteConfirmation, error, isOpen, onClose } =
     useArticleDelete(pk, setArticles);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
 
   return (
     <Flex spacing="4">
