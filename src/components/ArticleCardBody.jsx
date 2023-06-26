@@ -20,7 +20,6 @@ const ArticleCardBody = (props) => {
   const [truncatedContent, setTruncatedContent] = useState("");
   const custColor = useColorModeValue("#805AD5", "#D6BCFA");
 
-  const { searchPageProfiles, loaded } = useListProfiles(`/profiles/`);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
@@ -69,11 +68,7 @@ const ArticleCardBody = (props) => {
       {articlePage && (
         <Box mt={5}>
           <Button onClick={onOpen}>Recommend Article</Button>
-          <RecommendedAlert
-            isOpen={isOpen}
-            onClose={onClose}
-            profiles={searchPageProfiles?.results || []}
-          />
+          <RecommendedAlert isOpen={isOpen} onClose={onClose} />
         </Box>
       )}
     </>

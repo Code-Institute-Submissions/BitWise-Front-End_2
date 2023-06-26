@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
+  Box,
+  InputLeftElement,
+  Input,
+  InputGroup,
   AlertDialog,
   AlertDialogOverlay,
   AlertDialogContent,
@@ -7,16 +11,33 @@ import {
   AlertDialogBody,
   AlertDialogFooter,
   Button,
-  Select,
   FormControl,
   FormLabel,
 } from "@chakra-ui/react";
 import useRecommendCreate from "../hooks/useRecommendCreate";
 
-const RecommendedAlert = ({ isOpen, onClose, profiles }) => {
+import { SlMagnifier } from "react-icons/sl";
+import useListProfiles from "../hooks/useListProfiles";
+
+const RecommendedAlert = ({ isOpen, onClose }) => {
   const cancelRef = React.useRef();
   const { recommended_to, errors, handleChange, handleSubmit } =
     useRecommendCreate();
+
+  const [searchProfile, setSearchProfile] = useState("");
+
+  const { searchPageProfiles, loaded } = useListProfiles(
+    `/profiles/?ordering=-followed_count&search=${searchProfile}`
+  );
+
+  const handleButtonClick = (profileId) => {
+    handleChange({
+      target: {
+        name: "recommended_to",
+        value: profileId,
+      },
+    });
+  };
 
   return (
     <AlertDialog
@@ -25,27 +46,56 @@ const RecommendedAlert = ({ isOpen, onClose, profiles }) => {
       onClose={onClose}
     >
       <AlertDialogOverlay>
-        <form onSubmit={handleSubmit}>
-          <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Recommend Article
-            </AlertDialogHeader>
+        <AlertDialogContent>
+          <AlertDialogHeader fontSize="lg" fontWeight="bold">
+            Recommend Article
+          </AlertDialogHeader>
 
+          <Box px={5}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
+              <FormControl id="searchProfiles">
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <SlMagnifier />
+                  </InputLeftElement>
+                  <Input
+                    type="text"
+                    name="user"
+                    placeholder="placeholder"
+                    value={searchProfile}
+                    onChange={(event) => setSearchProfile(event.target.value)}
+                  />
+                </InputGroup>
+              </FormControl>
+            </form>
+          </Box>
+
+          <form onSubmit={handleSubmit}>
             <AlertDialogBody>
               <FormControl id="recommend">
                 <FormLabel>Recommend to:</FormLabel>
-                <Select
-                  placeholder="Select option"
-                  name="recommended_to"
-                  value={recommended_to}
-                  onChange={handleChange}
-                >
-                  {profiles.map((profile) => (
-                    <option key={profile.id} value={profile.id}>
+                <Box>
+                  {searchPageProfiles?.results.map((profile) => (
+                    <Button
+                      key={profile.id}
+                      onClick={() => handleButtonClick(profile.id)}
+                      mr={2}
+                      mb={2}
+                      variant={
+                        recommended_to === profile.id ? "solid" : "outline"
+                      }
+                      colorScheme={
+                        recommended_to === profile.id ? "purple" : "gray"
+                      }
+                    >
                       {profile.owner}
-                    </option>
+                    </Button>
                   ))}
-                </Select>
+                </Box>
               </FormControl>
             </AlertDialogBody>
 
@@ -62,8 +112,8 @@ const RecommendedAlert = ({ isOpen, onClose, profiles }) => {
                 Submit
               </Button>
             </AlertDialogFooter>
-          </AlertDialogContent>
-        </form>
+          </form>
+        </AlertDialogContent>
       </AlertDialogOverlay>
     </AlertDialog>
   );
