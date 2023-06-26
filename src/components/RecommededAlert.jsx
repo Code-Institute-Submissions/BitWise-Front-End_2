@@ -13,6 +13,9 @@ import {
   Button,
   FormControl,
   FormLabel,
+  Spinner,
+  Flex,
+  Text,
 } from "@chakra-ui/react";
 import useRecommendCreate from "../hooks/useRecommendCreate";
 
@@ -78,24 +81,34 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
             <AlertDialogBody>
               <FormControl id="recommend">
                 <FormLabel>Recommend to:</FormLabel>
-                <Box>
-                  {searchPageProfiles?.results.map((profile) => (
-                    <Button
-                      key={profile.id}
-                      onClick={() => handleButtonClick(profile.id)}
-                      mr={2}
-                      mb={2}
-                      variant={
-                        recommended_to === profile.id ? "solid" : "outline"
-                      }
-                      colorScheme={
-                        recommended_to === profile.id ? "purple" : "gray"
-                      }
-                    >
-                      {profile.owner}
-                    </Button>
-                  ))}
-                </Box>
+
+                {loaded ? (
+                  <Box>
+                    <Flex flexWrap="wrap" justifyContent="space-between">
+                      {searchPageProfiles?.results.map((profile) => (
+                        <Button
+                          key={profile.id}
+                          onClick={() => handleButtonClick(profile.id)}
+                          mr={2}
+                          mb={2}
+                          variant={
+                            recommended_to === profile.id ? "solid" : "outline"
+                          }
+                          colorScheme={
+                            recommended_to === profile.id ? "purple" : "gray"
+                          }
+                        >
+                          {profile.owner}
+                        </Button>
+                      ))}
+                    </Flex>
+                  </Box>
+                ) : (
+                  <Flex py={2}>
+                    <Text pr={2}>Updating...</Text>
+                    <Spinner />
+                  </Flex>
+                )}
               </FormControl>
             </AlertDialogBody>
 
