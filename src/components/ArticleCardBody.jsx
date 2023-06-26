@@ -9,18 +9,17 @@ import {
 } from "@chakra-ui/react";
 import languageOptions from "../constants/languageOptions";
 import truncateContent from "../services/truncateContent";
-import { useColorModeValue } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import useListProfiles from "../hooks/useListProfiles";
 import RecommendedAlert from "./RecommededAlert";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const ArticleCardBody = (props) => {
   const { id, article_content, primary_language, article_title, articlePage } =
     props;
   const [truncatedContent, setTruncatedContent] = useState("");
-  const custColor = useColorModeValue("#805AD5", "#D6BCFA");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     if (!articlePage) {
@@ -67,8 +66,16 @@ const ArticleCardBody = (props) => {
       </Link>
       {articlePage && (
         <Box mt={5}>
-          <Button onClick={onOpen}>Recommend Article</Button>
-          <RecommendedAlert isOpen={isOpen} onClose={onClose} />
+          {currentUser ? (
+            <>
+              <Button onClick={onOpen}>Recommend Article</Button>
+              <RecommendedAlert isOpen={isOpen} onClose={onClose} />
+            </>
+          ) : (
+            <Link to="/login">
+              <Button>Login to recommend</Button>
+            </Link>
+          )}
         </Box>
       )}
     </>
