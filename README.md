@@ -1,4 +1,4 @@
-# TRAVEL APPLICATION
+# BITWISE APPLICATION
 
 ![Readme Front Image](readme-assets/responsive-review/front-image.png)
 
@@ -187,6 +187,36 @@ The below image provides an initial mind-map into the features which might be ap
 <br>
 
 If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/92bb6c34-c508-4ed3-81f9-8e426a018834/edit?viewport_loc=-424%2C-51%2C1937%2C2060%2C0_0&invitationId=inv_e1afcf88-79d6-418d-b020-bca52437b6bf).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Mind Map - Enhancment Feature 1</summary>
+
+<br>
+Following completion of the core functionality an additional mind map was generated to consider the additonal function of allowing users to recommend articles.
+
+![Mind Map Recommended](readme-assets/planning/mind-map-recommend.png)
+<br>
+
+If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/34d434b2-010e-4246-ac39-269c2211bb0e/edit?viewport_loc=-462%2C-256%2C2039%2C2139%2C0_0&invitationId=inv_678e0c52-d0b2-432c-980d-6db61438c1e7).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Mind Map - Enhancment Feature 2</summary>
+
+<br>
+Following completion of the recommended article functionality an additional mind map was generated to consider the additonal function of allowing users to add multiple links to an article.
+
+![Mind Map Links](readme-assets/planning/mind-map-link.png)
+<br>
+
+If you have a LucidChart account, you can also view this Mind-Map [here](https://lucid.app/lucidspark/34d434b2-010e-4246-ac39-269c2211bb0e/edit?viewport_loc=-462%2C-256%2C2039%2C2139%2C0_0&invitationId=inv_678e0c52-d0b2-432c-980d-6db61438c1e7).
 
 ---
 
