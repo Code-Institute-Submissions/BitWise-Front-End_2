@@ -193,7 +193,7 @@ If you have a LucidChart account, you can also view this Mind-Map [here](https:/
 </details>
 
 <details>
-    <summary style="font-weight:bold">Mind Map - Enhancment Feature 1</summary>
+    <summary style="font-weight:bold">Mind Map - Enhancement Feature 1</summary>
 
 <br>
 Following completion of the core functionality an additional mind map was generated to consider the additonal function of allowing users to recommend articles.
@@ -208,7 +208,7 @@ If you have a LucidChart account, you can also view this Mind-Map [here](https:/
 </details>
 
 <details>
-    <summary style="font-weight:bold">Mind Map - Enhancment Feature 2</summary>
+    <summary style="font-weight:bold">Mind Map - Enhancement Feature 2</summary>
 
 <br>
 Following completion of the recommended article functionality an additional mind map was generated to consider the additonal function of allowing users to add multiple links to an article.
@@ -381,6 +381,33 @@ These also breakdown:
 
 </details>
 
+<details>
+    <summary style="font-weight:bold">Recommend Articles</summary>
+
+<br>
+
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/30): As a **user** I can **view all the recommended articles other users have sent to me** so that **I can access them directly from my profile.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/31): As a **user** I can **recommended articles to other users** so that **I can share interesting articles.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/32): As a **user** I can **remove recommendations from my profile** so that **I am left with only articles I am interested in.**
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Article Links</summary>
+
+<br>
+
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/33): As a **user** I can **view all the links related to an article** so that **I can access them directly from the article.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/34): As a **user** I can **add links to an article I wrote** so that **I can provide useful resource to the audience.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/35): As a **user** I can **delete links on an article I wrote** so that **I can remove link I no longer want associated with the article.**
+- [Link](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues/36): As a **user** I can **edit links on an article I wrote** so that **I can fix inaccuracies.**
+
+---
+
+</details>
+
 ## Priority Matrix
 
 The below graphs map out the feasibility of the frontend features considered against the user value they provide to help establish the priority they have as part of the build.
@@ -395,7 +422,7 @@ The below graphs map out the feasibility of the frontend features considered aga
 
 </details>
 
-If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2215%2C904%2C4713%2C2850%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
+If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2166%2C-751%2C3880%2C5038%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
 
 ## Agile Methodology
 
@@ -1324,7 +1351,6 @@ When an administrator reviews the comment they will have the ability to respond 
 
 ## Updates Relient On Backend
 
-- Add a recommended section to the Profile. Users to be able to recommend articles to other users which would appear in their profile next to languages. This would be achieved by creating a model linking the articles to profiles.
 - Add restriction option to the articles which the author could apply. This would restrict users who are not following the author from reading the articles.
 - Add video uploads as well as articles - storing to AWS.
 - Potential for live streaming - would require third party integration with a service such as Wowza, Vimeo, YouTube Live, etc.
