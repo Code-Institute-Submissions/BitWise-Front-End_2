@@ -257,6 +257,8 @@ The visitor should have a clear understanding of what the website purpose is and
 - Ability to filter profiles to meet needs.
 - Can provide profile info including competancy and experiance in programming languages.
 - Readable and aesthetically pleasing on all devices.
+- Able to recommend articles.
+- Can add multiple links to articles.
 
 ---
 
@@ -472,6 +474,21 @@ For Iteration 4 the key focus was to finalise Profile updates with password rese
 - CRUD functionality for languages.
 
 For site of the project in GitHub detailing the completed User Stories in Iteration 4 please click [here](https://github.com/users/Joe-Collins-1986/projects/13).
+
+---
+
+</details>
+
+<details>
+    <summary style="font-weight:bold">Iteration 5</summary>
+<br>
+
+Iteration 5 was added after all the other core functionality was built with the intension of adding functions to enhance the site. The key focus was to add functionality to allow users to recommend articles to each other(and themselves) as well as a funcition to allow users to add multiple links to their articles as opposed to just a single github link:
+
+- CRD functionality for recommendations.
+- CRUD functionality for links.
+
+For site of the project in GitHub detailing the completed User Stories in Iteration 5 please click [here](https://github.com/users/Joe-Collins-1986/projects/16).
 
 ---
 
