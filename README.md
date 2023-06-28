@@ -691,6 +691,8 @@ Dark and Light mode options have been applied to all pages via the Colour Switch
 
 All screenshots detailed in the features section of this Readme file have been taken in Dark Mode.
 
+---
+
 ## Sign Up
 
 Sign up is its own page. It utilizes the the [form validation feature]() to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
@@ -705,6 +707,8 @@ On successfull or failed registration a notification will be generated using the
 
 </details><br>
 
+---
+
 ## Login
 
 Login is its own page. It utilizes the the [form validation feature]() to allow the user to access the profile they created on the sign up page with their username and password. This page is not accessible to logged in users and will redirect them if the user were to the url to try to access it.
@@ -718,6 +722,26 @@ On successfull or failed login a notification will be generated using the [notif
 ![Login](readme-assets/features/login/login.png)<br>
 
 </details><br>
+
+---
+
+## Logout
+
+Logout is a feature that logs the user out when it is selected.
+
+A confirmation popup was considered however due to the fact that there is no real negative impact to the user by logging out this was dismissed and only added to features where the impact would be more substancial.
+
+On loggout the user stays on the same page assuming it is available to logged out users (e.g. feed). If the user is on a page that a logged out user can't access it will redirect to the home page.
+
+<details>
+      <summary style="font-weight:bold">Login Screenshots</summary>
+   <br>
+
+![Login](readme-assets/features/login/login.png)<br>
+
+</details><br>
+
+---
 
 ## NavBar
 
@@ -785,608 +809,223 @@ The navbar has conditional formating to only show links relevent to the user bas
 
 ---
 
-## Register
+## Sidebar
 
-New Users will have the option to Register an account. This page can be accessed either via the Navbar menu or by selecting the Sign Up option presented on the Login page when users first access the site (this link will be shown on the Login feature).
+### Responsive
 
-On valid Registration the user will be taken straight to the home page without having to re-login.
+The Sidebar is a responsive element that only appears on large screens.
 
-![Register Page](readme-assets/features/register/register.png)
-<br>
-
-Django validation checks will be carried out on the registration form as with all future forms referenced in this Readme file.
-
-![Register Form Validation 1](readme-assets/features/register/form-validation.png)
-<br>
-![Register Form Validation 2](readme-assets/features/register/form-wrong-password.png)
-<br>
-
----
-
-#### Login
-
-If the user has a registered account they will be able to login to the site using the login page.
-
-This page will also offer links to sign up and password reset. The password reset function will be covered below.
-
-![Login Page](readme-assets/features/login/login.png)
-<br>
-
-If the user tries to access site areas where login is required they will be directed to the following login page.
-
-![Login Access Required Page](readme-assets/features/login/access-login-required.png)
-<br>
-
-After completing the login they will automatically be redirected to the page they were initially trying to access.
-
-![Login Redirect](readme-assets/features/login/login-redirect.png)
-<br>
-
-As with registration Djago will manage the standard form validation.
-
-![Login Access Required Page](readme-assets/features/login/login-form-validation.png)
-<br>
-
----
-
-#### Password Reset
-
-The user will be given the opportunity to reset their password in case they forget it or want to change it for security purposes. The link to resetting the password is found on the login page.
-
-On this page the user will be asked to enter their email to initiate the process. Standard Django form validation is used for confirming the email.
-
-![Password Reset](readme-assets/features/password-reset/password-reset.png)
-<br>
-
-Once a valid email is input the user will get a confirmation that an email has been sent.
-
-![Password Email Sent](readme-assets/features/password-reset/email-sent.png)
-<br>
-
-The user will then receive an email taking them to a password reset form.
-
-![Password Email Recieved](readme-assets/features/password-reset/email.png)
-<br>
-
-After following the email link the user will be asked to input a password and confirm it. This password will have a Django password validation applied to it to ensure it is secure enough to use.
-
-![Password Reset Form](readme-assets/features/password-reset/new-password-page.png)
-<br>
-
-Following a successful password reset the user will recieve the following confirmation page.
-
-![Password Reset Confirmation](readme-assets/features/password-reset/password-updated.png)
-<br>
-
----
-
-#### Logout
-
-The user can logout of the site by simply selecting the logout option on the Navbar menu.
-
----
-
-#### Summary Site Updates
-
-The client wanted users to be able to see a summary of the most recent site updates at a glance and didn't want this to be restricted to signed in users. The logic for this is that the site updates and site news articles could be a good way of incentivising new users to register.
-
-To this end, the 3 most recent site update posts are always presented at the bottom of the Login, Register, Password Reset and Home pages.
-
-Non logged in users can also select the 'see all updates' button to be taken to a page with all the site updates. However only signed in users will be able to navigate to any one specific site update in order to place comments.
-
-![Site_Updates Summary](readme-assets/features/site-updates-summary/3-site-updates.png)
-<br>
-
----
-
-   <details>
-      <summary style="font-weight:bold">Home Features</summary>
+<details>
+      <summary style="font-weight:bold">Sidebar Small Screen Screenshot</summary>
    <br>
 
-#### Parallax Home Screen
+![Small Screen](readme-assets/features/sidebar/small-screen.png)<br>
 
-To create an engaging initial introduction to the site a Parallax effect was applied to the home page image. However to meet the asthetic requirements of the client this meant removing the inner scroll bar. As a result a downward facing arrow was applied to the screen to direct users to scroll down incase it was not immediately apparent. This arrow was given some simple JS flashing animation to make the page more interesting.
-<br>
+</details>
 
-![Home Parallax](readme-assets/features/home/home.png)
-<br>
-
----
-
-#### Home Planner Introduction
-
-Further down the home page there is a little introduction to some of the features the site offers as part of the planner.
-
-![Home Planner Introduction](readme-assets/features/home/home-planner.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Profile Features</summary>
+<details>
+      <summary style="font-weight:bold">Sidebar Large Screen Screenshot</summary>
    <br>
 
-#### Create Profile
+![Large Screen](readme-assets/features/sidebar/big-screen.png)<br>
 
-On registration a skeleton profile will be automatically generated for each user.
+</details><br>
 
-![Skeleton Profile](readme-assets/features/profile/skeleton-profile.png)
-<br>
+### Sidebar Logged In Avatar
 
----
+The [Logged In Avatar feature](#logged-in-avatar) appears at the top of the sidebar when present for logged in users.
 
-#### Profile Page
+### Load Sidebar Profiles
 
-This page will allow users to view their site details as well as give them an opportunity to note down any travel objectives they may have.
+When the sidebar is loaded it obtains the 10 most followed profiles and displays them in order. These will display with the users profile avatar and will act as links to the users individual profile page.
 
-In addition to this if the user has recorded any countries they wish to visit on the planner then links to these country info pages will be available to the user via their profile page.
+This is followed by a View More... link that directs the user to the profiles page.
 
-![Profile Page](readme-assets/features/profile/profile.png)
-<br>
-
----
-
-#### Update Profile
-
-Users will be able to update their details and travel objectives via the update Profile page.
-
-They can also add an avatar or photo of themselves and update the Profile page background from a list of potential options.
-
-![Update Profile Page](readme-assets/features/profile/update-profile.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Planner Features</summary>
+<details>
+      <summary style="font-weight:bold">Sidebar More Than 10 Profiles Screenshot</summary>
    <br>
 
-#### Map Country Selection
+![More Than 10 Profiles](readme-assets/features/sidebar/more-than-ten-profiles.png)<br>
 
-From the map on the planner page the user can navigate to a country info page relating to that country. From here the user will be able to access a number of other application features which will be detailed below. One of these features will enable the user to mark the country to visited or wish list. Having done this the map will be updated to reflect the wish list and visited countries in different colours.
+</details><br>
 
-![Country Selection Map](readme-assets/features/planner/map.png)
-<br>
+If there are not more than 10 profiles registered on the site the View More... link will not appear.
 
-**Note:** The SVG used to show this map was taken from https://simplemaps.com/resources/svg-world and then tailored to the clients requirements. The client agreed that initial roll out should be tailored to Europe rather than the world.
-
----
-
-#### Map Country Hover
-
-Due to the size of the map it was not aesthetically pleasing to add names to each country via the svg file. However, the client wanted to ensure that users could locate the countries they were looking for and therefore JS was used to add a hover function to the map which would should the country name that the mouse is over. This country name can be seen in the top right corner.
-<br>
-
----
-
-#### Dropdown Country Selection
-
-Due to the fact that many people using this site would be on mobile devices or tablets and would not have hover functionality available to them the client also requested that a dropdown be added in alphabetical order so that users can select the country that way if they wish.
-
-In additon to this if a user has a country marked as 'wish list' or 'visited' additional dropdown fields will appear.
-<br>
-
----
-
-#### Pie Chart
-
-To provide an easy to see visually appealing method of displaying how many countries the user has visited and wishes to visit npm Chart.js was used to present the information in a pie chart.
-
-However, on a small screen test users indicated that this was distracting them from the key focus of the page(navigation) and therefore this is only visible on large screen sizes.
-
-![Pie Chart Hidden](readme-assets/features/planner/map-small.png)
-<br>
-
----
-
-#### Legend
-
-A Bootstrap Modal was used and tailored to the requirement of displaying a legend for mobile devices so as not to take up space from the map.
-
-![Legend Small Screen](readme-assets/features/planner/map-small-legend.png)
-<br>
-
----
-
-#### Country Info Header
-
-To create a interesting and aesthetically pleasing country info page an image (taken from unsplash) and a flag (taken from https://www.iconfinder.com/flag-icons?price=free) was added to each country object.
-
-This was then called dependant on the country pk that was used in the url.
-
-A Back to Map icon was also added. Following user testing the concenses was that the image was intuative enough not to require text, this was also acceptable due to the fact that a user could also select Planner from the Navbar to return to the map.
-
-![Country Info Header](readme-assets/features/planner/country-info-header.png)
-<br>
-
----
-
-#### Country Info
-
-To initially set up the countries with basic information a json was obtained from https://gist.github.com/keeguon/2310008?permalink_comment_id=4255990#gistcomment-4255990.
-
-From here unwanted data/countries were removed and any required additional fields were added. This was then looped through to generate all the required country objects.
-
-![Country Info](readme-assets/features/planner/country-info-info.png)
-<br>
-
----
-
-#### Country Visited
-
-Users can mark the countries they have visited or countries they wish to visit via the form on the Country Info page.
-
-As stated in the map section above this will update the svg map to show the visited and wish list countries. In addition to this any wish list countries will also appear in the users profile page.
-
-![Country Visited](readme-assets/features/planner/country-info-visited.png)
-<br>
-
----
-
-#### To-Do Lists
-
-Users can use this feature to create, update or delete task lists. These lists are not the tasks themselves but rather a list of tasks that the user can add.
-
-![To-Do Lists](readme-assets/features/planner/country-info-lists.png)
-<br>
-![To-Do Lists Add](readme-assets/features/planner/create-list.png)
-<br>
-![To-Do Lists Update](readme-assets/features/planner/update-list.png)
-<br>
-
-After discussions with the client and test users it was decided that the delete function would not require confirmation due to the simplicity of the lists. Therefore it deletes the list immediatly on selection.
-
-To access the list itself to add and manage task items the user can select the list anchor. This will be detailed in the task manager feature section.
-
----
-
-#### Diary Link
-
-Users can access their personal diaries related to the country they are on via the diary link available.
-
-![Diary Link](readme-assets/features/planner/country-info-diary.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Task Manager Features</summary>
+<details>
+      <summary style="font-weight:bold">Sidebar Only 10 Profiles Screenshot</summary>
    <br>
 
-#### Add Tasks
+![Only 10 Profiles](readme-assets/features/sidebar/only-ten-profiles.png)<br>
 
-Users can create tasks within the selected list via the form available to them.
+</details><br>
 
-![Add Tasks](readme-assets/features/task-manager/tasks-added.png)
-<br>
+Whilst the profiles are loading a spinner will display to show the user that the site is obtaining information.
 
----
-
-#### Close Tasks
-
-Once tasks have been completed users can mark them as closed. These will change colour and move them below the open tasks.
-
-![Close Tasks](readme-assets/features/task-manager/closed-tasks.png)
-<br>
-
----
-
-#### Delete Tasks
-
-If a user wishes they can delete a task entirely. As with the lists the test users and client opted for no confirmation for this deletion.
-
-![Delete Tasks](readme-assets/features/task-manager/delete-tasks.png)
-<br>
-
----
-
-#### Re-open Tasks
-
-Users will have the ability to re-open closed tasks if they wish. These tasks will return to their original styling and move back above the closed items.
-
-![Re-open Tasks](readme-assets/features/task-manager/tasks-re-opened.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Diary Features</summary>
+<details>
+      <summary style="font-weight:bold">Sidebar Spinner Screenshot</summary>
    <br>
 
-#### Add Diary Post
+![Spinner](readme-assets/features/sidebar/spinner.png)<br>
 
-Once users have navigated to their specific country diary they will be able to add diary posts via the 'Add Diary Post' button.
+</details><br>
 
-![Diary Page](readme-assets/features/diary/diary.png)
+### Sidebar Profile Search
 
-Each post will allow the user to enter:
+A search bar has been added to the sidebar to allow users to search profiles which may not be present on the oringinal 10 displayed.
 
-- Content: Detailing their travel experiences
-- Image: This is an optional field the user can input if they wish. The image will be resized and stored to the client/site owner's AWS account.
-- Tags: The user can add multiple tags to a post if they wish which can later be used to help filter searches. If no Tag is added a 'NO TAGS' tag will be applied automatically. The user does not have to be case sensitive with the tag enteries as these are all converted to uppercase.
-- Experience: The user can select from a range of experience options. These will display on the post as emojis and can be selected to filter posts to that experience rating. This field is not manadatory and can be left 'Not Rated'.
-
-![Add Diary Post](readme-assets/features/diary/add-diary.png)
-
----
-
-#### Update Diary Post
-
-If the user wishes to amend a post they have made they can select the update diary option.
-
-**Note:** The diary post date will not be effected by this update. Due to the nature of a diary it is more critical to show the date of post over the amendment date.
-
-![Update Diary Post](readme-assets/features/diary/update-diary.png)
-
----
-
-#### Delete Diary Post
-
-If the user wishes to delete a post they are not happy with they can select delete. Unlike the Task Manager this will required a delete confirmation as more detail is added to diary posts and therefore the impact of accidental deletion is higher.
-
-![Delete Diary Post](readme-assets/features/diary/delete-diary.png)
-
----
-
-#### Pagination
-
-Pagination is set to only show 2 posts per page. This was experimented with test users and they felt this was a good amount per page due to the large amount of content that cound be added to each post.
-
-![Diary Pagination](readme-assets/features/diary/diary-pagination.png)
-
----
-
-#### Filter
-
-Users will be able to filter the posts they wish to see using a range of options.
-
-They can type into the search bar and it will return any posts where the content or tags include what they have typed.
-
-![Diary Filter](readme-assets/features/diary/diary-search.png)
-
-The user can select the tags on the post itself to filter to the tag they have selected. Or they can navigate to the tag page via the 'Search Tags' button. This will list out all the tags that have been created and list them in order of their populatity. These can be selected and it will filter the posts to the tag selected.
-
-![Tags Page](readme-assets/features/diary/tags-page.png)
-
-The user can select the experience emoji on the post itself to filter to the experience they have selected.
-
-![Experience Filter](readme-assets/features/diary/diary-exp.png)
-
-The user can refresh the page to remove all filtering via the refresh page button next to the search posts field.
-
-**Note:** The pagination has been built to work on the filtered searches. Therefore, if there are more than 2 returned posts pagination will be applied.
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Site Update Features</summary>
+<details>
+      <summary style="font-weight:bold">Search J Screenshot</summary>
    <br>
 
-#### Site Updates Header
+![Search J](readme-assets/features/sidebar/search-j.png)<br>
 
-When the user navigates to the site updates page the header will return the total number of posts added.
+</details>
 
-![Site Updates Page](readme-assets/features/site-updates/updates-page.png)
-<br>
-
----
-
-#### Site Update Posts
-
-The posts detailed on this screen are added by the site administrator. Users will not be able to add, update or delete any of these posts. However, logged in users will be able to select the post and add comments if they wish. This will be detailed later in this document.
-
-The number of comments users have added to a post is shown at the bottom of the post next to a little comment icon.
-
-![Site Update Post](readme-assets/features/site-updates/site-update-post.png)
-<br>
-
----
-
-#### Site Updates Pagination
-
-Pagination is set to only show 5 posts per page. This was experimented with test users and they felt this was a good amount per page.
-
-![Site Updates Pagination](readme-assets/features/site-updates/pagination.png)
-<br>
-
----
-
-#### Site Updates Filter
-
-The site update posts can be filtered using 2 different methods.
-
-The user can type a string into the search field and the page will return any posts where the title, content or topic contains that string.
-
-![Site Updates Seach Bar](readme-assets/features/site-updates/filter-bar-closed.png)
-<br>
-
-The user can also open the filter tab built with JS to show all the topics with the number of posts assigned to each and select these to filter the posts.
-
-![Site Updates Filter Topic](readme-assets/features/site-updates/filter-bar-open.png)
-<br>
-
-**Note:** The pagination has been built to work on the filterd searches. Therefore, if there are more than 5 returned posts pagination will be applied.
-
----
-
-#### Add Comment To Post
-
-Once a logged in user selects a post they will be directed to a page where they can add comments and view other user comments related to that post.
-
-On a large screen the add comment form is directly on the page. This allows users to enter a title, comment and optionally an image.
-
-![Site Update Large Screen](readme-assets/features/site-updates/site-post-page-lg.png)
-<br>
-
-If the user is using a small screen they can access the add comment form via the 'Add Comment' button.
-
-![Site Update Small Screen](readme-assets/features/site-updates/site-post-page-sm.png)
-<br>
-
-![Site Update Form](readme-assets/features/site-updates/add-comment.png)
-<br>
-
----
-
-#### Comment Linked To User
-
-If a user views a comment that has been added by another user thay will not be able to update or delete it and the update and delete buttons will not appear on the comment for them.
-
-![Comment By Other User](readme-assets/features/site-updates/comment.png)
-<br>
-
-However, if they are the comment owner the update and delete buttons are available.
-
-![Comment By User](readme-assets/features/site-updates/comment-update-delete.png)
-<br>
-
-!**Note:** Once a comment has been added the administrator has the ability to respond to it. This is so that if actions are required based on the comment the administrator can update the site users.
-
----
-
-#### Update Comment
-
-If a user wishes they can update their own comments. This will add an updated field to the comment to show when it was last amended.
-
-![Update Comment](readme-assets/features/site-updates/update-comment.png)
-<br>
-
----
-
-#### Delete Comment
-
-If a user wishes they can delete their own comments. This will take them to a confirmation page to check they do not delete comments in error.
-
-![Delete Comment](readme-assets/features/site-updates/comment-delete.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">CRUD Notifications</summary>
+<details>
+      <summary style="font-weight:bold">Search Joe Screenshot</summary>
    <br>
 
-#### Django Messaging
+![Search Joe](readme-assets/features/sidebar/search-joe.png)<br>
 
-Whenever a user creates, edits or deletes an object in the database they will receive a notification informing them that their action has been successful.
+</details><br>
 
-This notification will only show for 3 seconds so as not to negatively impact the user experience.
+### Sidebar Follow
 
-Success Notification:
+The sidebar profiles will have an icon to the right of the profile name and avatar that will allow a user to follow them if they are logged in.
 
-![Notification](readme-assets/features/notifications/success-notifications.png)
+If the user is not logged in they will get a pop up message telling them to login first.
 
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Error Pages</summary>
+<details>
+      <summary style="font-weight:bold">Login To Follow Screenshot</summary>
    <br>
 
-#### Error Information
+![Login To Follow](readme-assets/features/sidebar/login-to-follow.png)<br>
 
-Users will be provided with tailored pages when they experience errors.
+</details><br>
 
-Page not found:
+If the user is logged in the icon will update to show they are now following the selected profile. This will update the state to show immediatly and will also update the state in the profiles page and individual profile page without the requirement to refresh.
 
-![404](readme-assets/features/error-pages/404.png)
-<br>
-
-Page not permitted:
-
-![403](readme-assets/features/error-pages/403.png)
-<br>
-
-Server Issue:
-
-![500](readme-assets/features/error-pages/500.png)
-<br>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Admin</summary>
+<details>
+      <summary style="font-weight:bold">Follow - Update Profiles Page Screenshot</summary>
    <br>
 
-#### Admin Navbar
+![Follow-Update Profiles Page](readme-assets/features/sidebar/lizzy-followed-profiles.png)<br>
 
-If an Superuser logs in to the site they will be shown an additional option on the navbar directing them to the Django administration area.
+</details>
 
-![Admin Navbar Large Screen](readme-assets/features/admin/admin-nav-large.png)
-<br>
-
-![Admin Navbar Small Screen](readme-assets/features/admin/admin-nav-small.png)
-<br>
-
----
-
-#### Admin Models
-
-As part of the build for this project it has been useful to have access to all the models in the Admin section of the site. Following the clients approval most of these models will be removed leaving only the Site Update models and the Profile model.
-
-These will be used by admin to add site update posts, add new or remove post categories and respond to user comments. The Profile will also allow the administrators to aide users regarding their site details once an appropriate Identification and Verifiication process is agreed.
-
-![Admin Models](readme-assets/features/admin/show-all-admin-models.png)
-<br>
-
----
-
-#### Admin Posts
-
-Admin will be given the task of posting about site updates and news. This will be completed directly from the administaton area.
-
-![Admin Posts](readme-assets/features/admin/admin-posts.png)
-<br>
-
-Summernote was installed to give the admin team more flexibility in how they posted the site updates and the specific fonts were added to the Summernote config. However, on review it was agreed that it would be more consistent to use standard inputs and formatthem using HTML and CSS via the templates.
-
-As a result Summernote was removed from the admin.py files, settings and requirements.txt.
-
----
-
-#### Admin Post Categories
-
-Each site update post will be assigned a category to help users filter results. The admin team will have the ability to add and remove categories if required.
-
-![Admin Post Categories](readme-assets/features/admin/post-catagories.png)
-<br>
-
----
-
-#### Admin Comment Responses
-
-When a user comments on an update it will assign the object a Comment Status of Review Required. This will allow the admin team to filter any comments made by the user and mark them to Reviewed once they have looked them over. These can then be filtered out on future reviews.
-
-To this end a filter has been applied to the 'Comment Status'.
-
-![Admin Filter Comments](readme-assets/features/admin/comments-filtered.png)
-<br>
-
-When an administrator reviews the comment they will have the ability to respond to it. This will them appear in the comment for all to see.
-
-![Admin Comment Response](readme-assets/features/admin/comment-response.png)
-<br>
-
----
-
-   </details>
-
+<details>
+      <summary style="font-weight:bold">Follow - Update Individual Profile Page Screenshot</summary>
    <br>
+
+![Follow-Update Profile Page](readme-assets/features/sidebar/lizzy-followed-profile.png)<br>
+
+</details><br>
+
+If a user selects an already followed profile it will unfollow and update the states in the profiles page and individial profile page accordingly.
+
+<details>
+      <summary style="font-weight:bold">Unfollow - Update Profiles Page Screenshot</summary>
+   <br>
+
+![Unfollow-Update Profiles Page](readme-assets/features/sidebar/lizzy-unfollowed-profiles.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Unfollow - Update Individual Profile Page Screenshot</summary>
+   <br>
+
+![Unfollow-Update Profile Page](readme-assets/features/sidebar/lizzy-unfollowed-profile.png)<br>
+
+</details><br>
+
+When a profile is followed or unfollowed the article pages will update their components. This requires a loading period however it was important to do as it could effect the search criteria being applied. For example this would add the profiles of the folled individual to the feed.
+
+On successfull or failed following attempts a notification will be generated using the [notification feature]().
+
+### Sidebar Profile Edit
+
+If the currently logged in user has their profile displaying in the sidebar they will be given the opportunity to updated their profile information and/or password by selecting the icon next to their name.
+
+<details>
+      <summary style="font-weight:bold">Update Profile Screenshot</summary>
+   <br>
+
+![Update Profile ](readme-assets/features/sidebar/edit-profile.png)<br>
+
+</details><br>
+
+---
+
+## Logged In Avatar
+
+When a user logs in they will be presented with their avatar in the top tef corner of whatever page they are on. This provides a quick way of checking who they are logged in as and a easy way to navigate to their profile as this acts as a link.
+
+On small screens this will appear in the body element of the page. On large screens it will appear at the top of the sidebar.
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshot</summary>
+   <br>
+
+![Not Logged In](readme-assets/features/logged-in-avatar/not-logged-in.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Logged In Large Screenshot</summary>
+   <br>
+
+![Logged In Large](readme-assets/features/logged-in-avatar/logged-in-large.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Logged In Small Screenshot</summary>
+   <br>
+
+![Logged In Small](readme-assets/features/logged-in-avatar/logged-in-small.png)<br>
+
+</details><br>
+
+---
+
+## Article Search Bar
+
+The article search bar is deisgned to help the user quickly and easy retrieve articles where they know the title or name of the author.
+
+### This is applied to the home page.
+
+<details>
+      <summary style="font-weight:bold">Home Article Search Screenshot</summary>
+   <br>
+
+![Home Article Search](readme-assets/features/article-search/home-seach.png)<br>
+
+</details><br>
+
+### This is applied to the feed page.
+
+**Note** In the feed search the same filter is used but the current user does not follow Teddy and no articles have ted in the title so no reulsts are returned. This is because all article searches on the feed page are restricted to those followed by the current user.
+
+<details>
+      <summary style="font-weight:bold">Feed Article Search Screenshot</summary>
+   <br>
+
+![Feed Article Search](readme-assets/features/article-search/feed-search-fail.png)
+
+</details><br>
+
+### This is applied to the article page.
+
+**Note** In the article page all article searches are restricted to those written by the profile owner.
+
+<details>
+      <summary style="font-weight:bold">Article Page Article Search Screenshot</summary>
+   <br>
+
+![Article Page Article Search](readme-assets/features/article-search/article-search.png)
+
+</details><br>
 
 # Further Development
 
