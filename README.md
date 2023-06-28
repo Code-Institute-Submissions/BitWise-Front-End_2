@@ -669,6 +669,56 @@ Profile Not Found:<br>
 
 Each section below will detail their specific function.
 
+## Dark/Light Mode
+
+Dark and Light mode options have been applied to all pages via the Colour Switch in the NavBar.
+
+<details>
+      <summary style="font-weight:bold">Dark Mode Screenshot Example</summary>
+   <br>
+
+![Dark Mode](readme-assets/features/dark-light/dark-mode.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Light Mode Screenshot Example</summary>
+   <br>
+
+![Light Mode](readme-assets/features/dark-light/light-mode.png)<br>
+
+</details><br>
+
+All screenshots detailed in the features section of this Readme file have been taken in Dark Mode.
+
+## Sign Up
+
+Sign up is its own page. It utilizes the the [form validation feature]() to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
+
+On successfull or failed registration a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Sign Up Screenshots</summary>
+   <br>
+
+![Sign Up](readme-assets/features/sign-up/sign-up.png)<br>
+
+</details><br>
+
+## Login
+
+Login is its own page. It utilizes the the [form validation feature]() to allow the user to access the profile they created on the sign up page with their username and password. This page is not accessible to logged in users and will redirect them if the user were to the url to try to access it.
+
+On successfull or failed login a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Login Screenshots</summary>
+   <br>
+
+![Login](readme-assets/features/login/login.png)<br>
+
+</details><br>
+
 ## NavBar
 
 The navbar has been fixed to the top of the page to allow the user easy access to all key pages.
@@ -713,7 +763,7 @@ The navbar has conditional formating to only show links relevent to the user bas
 </details>
 
 <details>
-      <summary style="font-weight:bold">Not Logged In Screenshots</summary>
+      <summary style="font-weight:bold">Logged In Screenshots</summary>
    <br>
 
 **Large Screen:**<br>
