@@ -713,6 +713,8 @@ On successfull or failed registration a notification will be generated using the
 
 Login is its own page. It utilizes the the [form validation feature]() to allow the user to access the profile they created on the sign up page with their username and password. This page is not accessible to logged in users and will redirect them if the user were to the url to try to access it.
 
+If a user is not logged in and tries to access a page which redirects to the login page after logging in they will be taken back to their original page.
+
 On successfull or failed login a notification will be generated using the [notification feature]().
 
 <details>
@@ -1327,9 +1329,9 @@ To demonstrate that profiles and articles are being loaded in an asthetic manner
 
 ---
 
-## Infinate Scroll
+## Infinite Scroll
 
-Inifnate Scroll has been applied to articles, profiles and comments to retrieve more data once all the paginated information viewed.
+Inifinite Scroll has been applied to articles, profiles and comments to retrieve more data once all the paginated information viewed.
 
 Comments have been paginated to 10 rather than the default 20.
 
@@ -1339,13 +1341,13 @@ This has not been applied to all emements because they do not require it.
 - Recommended (pulled as objects within a profile. This may not be the most efficient from a performance perspective and in future I would amend this to call recommendations from their own API endpoint to improve scalability)
 - Links (not realistic for users to list more than 20 links to a article)
 
-In future given more time I would apply skeletons to the infinate scroll loading instead of the spinner.
+In future given more time I would apply skeletons to the infinite scroll loading instead of the spinner.
 
 <details>
-      <summary style="font-weight:bold">Infinate Scroll Screenshot</summary>
+      <summary style="font-weight:bold">Infinite Scroll Screenshot</summary>
    <br>
 
-![Infinate Scroll](readme-assets/features/infinate-scroll/infinate-scroll.png)<br>
+![Infinite Scroll](readme-assets/features/infinate-scroll/infinate-scroll.png)<br>
 
 </details><br>
 
@@ -1363,6 +1365,115 @@ To improve useability of the site an arrow appears when the user scrolls down th
 
 </details><br>
 
+---
+
+## Add Article
+
+When a user select to add an article they will be taken to a form page with the standard [form validation feature]().
+
+Here they will detail the information they wish to populate the article with. This page is responsive and will show a image on the right for large screens.
+
+On successfull or failed article creation a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Add Article Form Screenshot</summary>
+   <br>
+
+![Add Article Form](readme-assets/features/add-article/add-article.png)<br>
+
+</details>
+
+In testing it was identified that if the internet conection was slow a user may try to hit the submit button again. This would result in creating 2 articles. To stop this the button was disbaled during the axios request.
+
+<details>
+      <summary style="font-weight:bold">Disable Submit Screenshot</summary>
+   <br>
+
+![Disable Submit](readme-assets/features/add-article/disable-submit.png)<br>
+
+</details><br>
+
+---
+
+## Edit Article
+
+When a user select to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature]().
+
+On successfull or failed article update a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Edit Article Form Screenshot</summary>
+   <br>
+
+![Edit Article Form](readme-assets/features/edit-article/edit-article.png)<br>
+
+</details>
+
+---
+
+## Article Card
+
+An artivle card was built for re-usability across the different pages. This card provides the information recorded in an article.
+
+### Article Card Header
+
+The card header will detail:
+
+- profile name that created it along with it's avatar.
+- the date it was created.
+- when it was edited (only shows it it was edited).
+- if the current user is the article author it will show a button with edite delete options.
+
+<details>
+      <summary style="font-weight:bold">Artcile Card Header Screenshot</summary>
+   <br>
+
+![Artcile Card Header](readme-assets/features/article-card/article-card-header.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Artcile Card Edit/Delete Screenshot</summary>
+   <br>
+
+![Artcile Card Edit/Delete](readme-assets/features/article-card/edit-delete-button.png)<br>
+
+</details>
+
+### Article Card Body
+
+The card body will detail:
+
+- article title.
+- language if one has been selected along with the language icon.
+- article contect on grid view will truncate, on article page will show in full.
+- recommend button if the user is logged in. This willl activate the [recommend feature]().
+- login to recommend button if user is not logged in. This will navigate to the login page.
+
+<details>
+      <summary style="font-weight:bold">Body In Grid Screenshot</summary>
+   <br>
+
+![Body In Grid](readme-assets/features/article-card/article-in-grid.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Body In Article Page Screenshot</summary>
+   <br>
+
+![Body In Article Page](readme-assets/features/article-card/article-in-article-page.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Login To Recommend Screenshot</summary>
+   <br>
+
+![Login To Recommend](readme-assets/features/article-card/login-to-recommend.png)<br>
+
+</details>
+
 # Further Development
 
 ## Tidy Up
@@ -1373,6 +1484,8 @@ To improve useability of the site an arrow appears when the user scrolls down th
   - simplify context.
   - reform prop drilling that is currently present.
 - Add additional automated testing to front end.
+- Add skeleton to ininite scroll.
+- Move Recommended from profile objects to specified API call for improved performance and better scalability.
 
 ## Updates Relient On Backend
 
