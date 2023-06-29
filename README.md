@@ -697,7 +697,7 @@ All screenshots detailed in the features section of this Readme file have been t
 
 Sign up is its own page. It utilizes the the [form validation feature](#form-validation) to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
 
-On successfull or failed registration a notification will be generated using the [notification feature]().
+On successfull or failed registration a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Sign Up Screenshots</summary>
@@ -715,7 +715,7 @@ Login is its own page. It utilizes the the [form validation feature](#form-valid
 
 If a user is not logged in and tries to access a page which redirects to the login page after logging in they will be taken back to their original page.
 
-On successfull or failed login a notification will be generated using the [notification feature]().
+On successfull or failed login a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Login Screenshots</summary>
@@ -935,7 +935,7 @@ If a user selects an already followed profile it will unfollow and update the st
 
 When a profile is followed or unfollowed the article pages will update their components. This requires a loading period however it was important to do as it could effect the search criteria being applied. For example this would add the profiles of the folled individual to the feed.
 
-On successfull or failed following attempts a notification will be generated using the [notification feature]().
+On successfull or failed following attempts a notification will be generated using the [notification feature](#notifications).
 
 ### Sidebar Profile Edit
 
@@ -1373,7 +1373,7 @@ When a user select to add an article they will be taken to a form page with the 
 
 Here they will detail the information they wish to populate the article with. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature]().
+On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Article Form Screenshot</summary>
@@ -1399,7 +1399,7 @@ In testing it was identified that if the internet conection was slow a user may 
 
 When a user select to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature](#form-validation).
 
-On successfull or failed article update a notification will be generated using the [notification feature]().
+On successfull or failed article update a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Edit Article Form Screenshot</summary>
@@ -1528,7 +1528,7 @@ When an author of the article select the button to delete it a alert pop-up will
 
 The artiles state is then updated to imidiatly remove the article from the grid.
 
-On successfull or failed article deletion a notification will be generated using the [notification feature]().
+On successfull or failed article deletion a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
@@ -1600,7 +1600,7 @@ The user can add a comment and use the button in the bottom right of the entry f
 
 The state of the comments are updated to add a comment immediatly. As is the profile state to update the comment count.
 
-On successfull or failed comment additon a notification will be generated using the [notification feature]().
+On successfull or failed comment additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Comment Entry Field Screenshot</summary>
@@ -1620,7 +1620,7 @@ This field will look like the comment but will allow the user to change the body
 
 The state of the comments are updated to ammend the comment immediatly in it current location.
 
-On successfull or failed comment edit a notification will be generated using the [notification feature]().
+On successfull or failed comment edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Comment Edit Screenshot</summary>
@@ -1640,7 +1640,7 @@ This will not produce a pop-up confirmation as there is little risk assosiated w
 
 The state of the comments are updated to remove the comment immediatly. As is the profile state to update the comment count.
 
-On successfull or failed comment deletion a notification will be generated using the [notification feature]().
+On successfull or failed comment deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
@@ -1695,7 +1695,7 @@ The user can open a add link form by selecting the button and close it by select
 
 The state of the links are updated to add a link immediatly.
 
-On successfull or failed link additon a notification will be generated using the [notification feature]().
+On successfull or failed link additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Link Screenshot</summary>
@@ -1715,7 +1715,7 @@ This field will look like the link addition form but will appear in the position
 
 The state of the links are updated to ammend the link immediatly in it's current location.
 
-On successfull or failed link edit a notification will be generated using the [notification feature]().
+On successfull or failed link edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Link Edit Screenshot</summary>
@@ -1735,7 +1735,7 @@ This will not produce a pop-up confirmation as there is little risk assosiated w
 
 The state of the link are updated to remove the link immediatly.
 
-On successfull or failed link deletion a notification will be generated using the [notification feature]().
+On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
@@ -1811,7 +1811,7 @@ When a user selects edit profile they will be taken to a form page with the stan
 
 Here they will detail the information they wish to populate their profile page including an avatar image. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature]().
+On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Edit Profile Screenshot</summary>
@@ -1827,7 +1827,7 @@ When a user selects update password they will be taken to a form page with the s
 
 Here they will detail their new password and confirm it. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature]().
+On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Update Password Screenshot</summary>
@@ -1890,7 +1890,7 @@ The user can open a add language form by selecting the button and close it by se
 
 The state of the languages are updated to add a language immediatly. As is the profile to show an updated language count.
 
-On successfull or failed language additon a notification will be generated using the [notification feature]().
+On successfull or failed language additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Language Screenshot</summary>
@@ -1910,7 +1910,7 @@ This field will look like the language addition form but will appear in the posi
 
 The state of the languages are updated to ammend the language immediatly in it's current location.
 
-On successfull or failed language edit a notification will be generated using the [notification feature]().
+On successfull or failed language edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Language Edit Screenshot</summary>
@@ -1930,7 +1930,7 @@ This will not produce a pop-up confirmation as there is little risk assosiated w
 
 The state of the languages are updated to remove the language immediatly. As is the profile state which updates the languages count.
 
-On successfull or failed link deletion a notification will be generated using the [notification feature]().
+On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
@@ -1993,9 +1993,9 @@ To recommend an article the logged in user must navigate to the article page and
 
 This will activate a pop-up where a list of upto 20 profiles will appear to send the recommendation to. In addition to the available options the user can type the profile name into the available search bar to locate the specific profile that may not be in the initially provided options.
 
-Duplicate profiles can't be recomended and a [notification feature]() will inform the user trying to make the recommendation that the recipient already has that article in their recommended list.
+Duplicate profiles can't be recomended and a [notification feature](#notifications) will inform the user trying to make the recommendation that the recipient already has that article in their recommended list.
 
-On successfull or failed recommendatons a notification will be generated using the [notification feature]().
+On successfull or failed recommendatons a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Recommended Options Screenshot</summary>
@@ -2033,7 +2033,7 @@ The state of the recommendatons are updated to remove the recommendation immedia
 
 It should be noted that only the recipient of the recommendation can delete it, not the creator (unless they are the same person).
 
-On successfull or failed link deletion a notification will be generated using the [notification feature]().
+On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
@@ -2088,6 +2088,30 @@ Some examples of validation in action (this doesn't cover all potential validati
    <br>
 
 ![Passwords Don't Match](readme-assets/features/form-validation/pass-dont-match.png)<br>
+
+</details><br>
+
+---
+
+## Notifications
+
+On completion of Create, Update, and Delete functionality as well as Login notificatons will be presented to inform the user of the success or failure of their axios request.
+
+The following screenshots are just 2 examples of the notifications in action. These are applied to all hooks in the application.
+
+<details>
+      <summary style="font-weight:bold">Example Success Notification Screenshot</summary>
+   <br>
+
+![Success Notification](readme-assets/features/notifications/success.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Example Fail Notification Screenshot</summary>
+   <br>
+
+![Fail Notification](readme-assets/features/notifications/fail.png)<br>
 
 </details><br>
 
