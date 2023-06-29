@@ -733,14 +733,6 @@ A confirmation popup was considered however due to the fact that there is no rea
 
 On loggout the user stays on the same page assuming it is available to logged out users (e.g. feed). If the user is on a page that a logged out user can't access it will redirect to the home page.
 
-<details>
-      <summary style="font-weight:bold">Login Screenshots</summary>
-   <br>
-
-![Login](readme-assets/features/login/login.png)<br>
-
-</details><br>
-
 ---
 
 ## NavBar
@@ -993,10 +985,12 @@ On small screens this will appear in the body element of the page. On large scre
 
 The article search bar is deisgned to help the user quickly and easy retrieve articles where they know the title or name of the author.
 
+**Note** This filter works in combination with all other article filters.
+
 ### This is applied to the home page.
 
 <details>
-      <summary style="font-weight:bold">Home Article Search Screenshot</summary>
+      <summary style="font-weight:bold">Home Article Search Bar Screenshot</summary>
    <br>
 
 ![Home Article Search](readme-assets/features/article-search/home-seach.png)<br>
@@ -1008,7 +1002,7 @@ The article search bar is deisgned to help the user quickly and easy retrieve ar
 **Note** In the feed search the same filter is used but the current user does not follow Teddy and no articles have ted in the title so no reulsts are returned. This is because all article searches on the feed page are restricted to those followed by the current user.
 
 <details>
-      <summary style="font-weight:bold">Feed Article Search Screenshot</summary>
+      <summary style="font-weight:bold">Feed Article Search Bar Screenshot</summary>
    <br>
 
 ![Feed Article Search](readme-assets/features/article-search/feed-search-fail.png)
@@ -1020,12 +1014,154 @@ The article search bar is deisgned to help the user quickly and easy retrieve ar
 **Note** In the article page all article searches are restricted to those written by the profile owner.
 
 <details>
-      <summary style="font-weight:bold">Article Page Article Search Screenshot</summary>
+      <summary style="font-weight:bold">Article Page Article Search Bar Screenshot</summary>
    <br>
 
 ![Article Page Article Search](readme-assets/features/article-search/article-search.png)
 
 </details><br>
+
+---
+
+## Article Order Dropdown
+
+The article order dropdown is deisgned to help the users order articles by what they are most interested in. The options for ordering are date posted, most liked and most commented.
+
+**Note** This filter works in combination with all other article filters.
+
+### This is applied to the home page.
+
+<details>
+      <summary style="font-weight:bold">Home Article Order Dropdown Screenshot</summary>
+   <br>
+
+![Article Order Dropdown](readme-assets/features/article-order/home-articles-ordered.png)<br>
+
+</details><br>
+
+### This is applied to the feed page.
+
+**Note** In the feed dropdown the same option(commented) is used but in addition to this ordering the articles are restriced to those followed by the user.
+
+<details>
+      <summary style="font-weight:bold">Feed Article Order Dropdown Screenshot</summary>
+   <br>
+
+![Feed Article Order Dropdown](readme-assets/features/article-order/feed-articles-ordered.png)
+
+</details><br>
+
+### This is applied to the article page.
+
+**Note** In the article page dropdown the same option(commented) is used but in addition to this ordering the articles are restriced to those written by the user.
+
+<details>
+      <summary style="font-weight:bold">Article Page Article Order Dropdown Screenshot</summary>
+   <br>
+
+![Article Page Article Order Dropdown](readme-assets/features/article-order/articles-page-articles-ordered.png)
+
+</details><br>
+
+---
+
+## Article Language Dropdown
+
+The article language dropdown is deisgned to help the users search articles written about the selected primary language.
+
+It should be noted that selecting 'no specific language' does not filter to articles where no language was selected but rather where users have selected 'no specific language' from the options when creating the article. This is to ensure this will pull articles that are not specific to a language and not just ones where the user has forgotten or not bothered to select a language.
+
+**Note** This filter works in combination with all other article filters.
+
+### This is applied to the home page.
+
+<details>
+      <summary style="font-weight:bold">Home Article Language Dropdown Screenshot</summary>
+   <br>
+
+![Article Language Dropdown](readme-assets/features/article-language/home-language-dropdown.png)<br>
+
+</details><br>
+
+### This is applied to the feed page.
+
+**Note** In the feed dropdown the same option(python) is used but in addition to this ordering the articles are restriced to those followed by the user.
+
+<details>
+      <summary style="font-weight:bold">Feed Article Language Dropdown Screenshot</summary>
+   <br>
+
+![Feed Article Language Dropdown](readme-assets/features/article-language/feed-language-dropdown.png)
+
+</details><br>
+
+### This is applied to the article page.
+
+**Note** In the article page dropdown the same option(python) is used but in addition to this ordering the articles are restriced to those written by the user.
+
+<details>
+      <summary style="font-weight:bold">Article Page Article Language Dropdown Screenshot</summary>
+   <br>
+
+![Article Page Article Language Dropdown](readme-assets/features/article-language/article-page-language-dropdown.png)
+
+</details><br>
+
+---
+
+## Article Liked Switch
+
+The article liked switch is deisgned to filter the articles to only ones the currently logged in user has liked. All articles will show if the switch is not selected.
+
+If the user is not logged in the switch will not appear.
+
+**Note** This filter works in combination with all other article filters.
+
+### Not Logged In.
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshot</summary>
+   <br>
+
+![Not Logged In](readme-assets/features/liked-switch/not-logged-in.png)<br>
+
+</details><br>
+
+### This is applied to the home page.
+
+<details>
+      <summary style="font-weight:bold">Home Article Liked Switch Screenshot</summary>
+   <br>
+
+![Article Liked Switch](readme-assets/features/liked-switch/home-liked-switch.png)<br>
+
+</details><br>
+
+### This is applied to the feed page.
+
+**Note** On the feed page the liked switch is applied in addition to the articles being restriced to those followed by the user.
+
+<details>
+      <summary style="font-weight:bold">Feed Article Liked Switch Screenshot</summary>
+   <br>
+
+![Feed Article Liked Switch](readme-assets/features/liked-switch/feed-liked-switch.png)
+
+</details><br>
+
+### This is applied to the article page.
+
+**Note** On the artcile page the liked switch is applied in addition to the articles being restriced to those written by the user.
+
+<details>
+      <summary style="font-weight:bold">Article Page Liked Switch Screenshot</summary>
+   <br>
+
+![Article Page Liked Switch](readme-assets/features/liked-switch/article-page-liked-switch.png)
+
+</details><br>
+
+---
 
 # Further Development
 
