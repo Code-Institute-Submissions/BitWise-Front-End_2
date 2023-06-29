@@ -2117,6 +2117,38 @@ The following screenshots are just 2 examples of the notifications in action. Th
 
 ---
 
+## Page Not Found (404)
+
+A 404 page was developed for any urls that do not exist.
+
+This screen navigates the user back to the home page.
+
+<details>
+      <summary style="font-weight:bold">Page Not Found</summary>
+   <br>
+
+![Page Not Found](readme-assets/features/not-found/page-not-found.png)<br>
+
+</details><br>
+
+---
+
+## Items Not Found
+
+A page was developed for any urls that meet the routing criteria but do not house any data.
+
+This screen navigates the user back to the home page.
+
+<details>
+      <summary style="font-weight:bold">Items Not Found</summary>
+   <br>
+
+![Items Not Found](readme-assets/features/not-found/items-not-found.png)<br>
+
+</details><br>
+
+---
+
 # Further Development
 
 ## Tidy Up
