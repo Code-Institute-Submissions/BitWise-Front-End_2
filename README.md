@@ -1153,11 +1153,145 @@ If the user is not logged in the switch will not appear.
 
 **Note** On the artcile page the liked switch is applied in addition to the articles being restriced to those written by the user.
 
+In this example the profile selected is that of the current user therefore no articles in the profile are liked. This is because a user can't like their own articles.
+
 <details>
       <summary style="font-weight:bold">Article Page Liked Switch Screenshot</summary>
    <br>
 
 ![Article Page Liked Switch](readme-assets/features/liked-switch/article-page-liked-switch.png)
+
+</details><br>
+
+---
+
+## Profile Search Bar
+
+The profile search bar is deisgned to help the user quickly and easy search profile where they know the profile name.
+
+**Note** This filter works in combination with all other profile filters.
+
+<details>
+      <summary style="font-weight:bold">Profile Search Bar J Screenshot</summary>
+   <br>
+
+![Profile Search Bar J](readme-assets/features/profiles-searchbar/search-j.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile Search Bar Joe Screenshot</summary>
+   <br>
+
+![Profile Search Bar Joe](readme-assets/features/profiles-searchbar/search-joe.png)
+
+</details><br>
+
+---
+
+## Profile Order Dropdown
+
+The profiles order dropdown is deisgned to help the users order profiles by what they are most interested in. The options for ordering are date joined, articles posted, number of followers and number of languages known.
+
+**Note** This filter works in combination with all other profile filters.
+
+<details>
+      <summary style="font-weight:bold">Porfiles Order Dropdown Screenshot</summary>
+   <br>
+
+![Porfiles Order Dropdown](readme-assets/features/profiles-order-dropdown/profiles-order.png)<br>
+
+</details><br>
+
+---
+
+## Profiles Following Switch
+
+The profiles following switch is deisgned to filter the profiles to only ones the currently logged in user is following. All profiles will show if the switch is not selected.
+
+If the user is not logged in the switch will not appear.
+
+**Note** This filter works in combination with all other profile filters.
+
+### Not Logged In.
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshot</summary>
+   <br>
+
+![Not Logged In](readme-assets/features/followed-switch/not-logged-in.png)<br>
+
+</details><br>
+
+### Following Switch Applied.
+
+<details>
+      <summary style="font-weight:bold">Following Switch Applied Screenshot</summary>
+   <br>
+
+![Following Switch Applied](readme-assets/features/followed-switch/following-switch.png)<br>
+
+</details><br>
+
+---
+
+## Grid
+
+A grid layout has been applied to the articles and the profiles where multiple cards are displayed. This is responsive and will reduce the number of coloumns as the screen size gets smaller.
+
+### Aricles.
+
+This grid is applied to the Home page, Feed Page and Profile page(bottom).
+
+<details>
+      <summary style="font-weight:bold">Large Screenshot</summary>
+   <br>
+
+![Large](readme-assets/features/grid/article-grid-large.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Medium Screenshot</summary>
+   <br>
+
+![Medium](readme-assets/features/grid/article-grid-medium.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Small Screenshot</summary>
+   <br>
+
+![Small](readme-assets/features/grid/article-grid-small.png)<br>
+
+</details><br>
+
+### Profiles.
+
+This grid is applied to the Profiles page.
+
+<details>
+      <summary style="font-weight:bold">Large Screenshot</summary>
+   <br>
+
+![Large](readme-assets/features/grid/profiles-grid-large.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Medium Screenshot</summary>
+   <br>
+
+![Medium](readme-assets/features/grid/profiles-grid-medium.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Small Screenshot</summary>
+   <br>
+
+![Small](readme-assets/features/grid/profiles-grid-small.png)<br>
 
 </details><br>
 
