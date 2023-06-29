@@ -1297,6 +1297,72 @@ This grid is applied to the Profiles page.
 
 ---
 
+## Skeleton
+
+To demonstrate that profiles and articles are being loaded in an asthetic manner skeletons have been applied to show where they will appear and in what format.
+
+<details>
+      <summary style="font-weight:bold">Grid Skeleton Screenshot</summary>
+   <br>
+
+![Grid Skeleton](readme-assets/features/skeleton/skeleton-grid.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Article Page Skeleton Screenshot</summary>
+   <br>
+
+![Article Page Skeleton](readme-assets/features/skeleton/skeleton-article.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile Page Skeleton Screenshot</summary>
+   <br>
+
+![Profile Page Skeleton](readme-assets/features/skeleton/skeleton-profile.png)<br>
+
+</details><br>
+
+---
+
+## Infinate Scroll
+
+Inifnate Scroll has been applied to articles, profiles and comments to retrieve more data once all the paginated information viewed.
+
+Comments have been paginated to 10 rather than the default 20.
+
+This has not been applied to all emements because they do not require it.
+
+- Languages (there is a max of 17 that can be listed)
+- Recommended (pulled as objects within a profile. This may not be the most efficient from a performance perspective and in future I would amend this to call recommendations from their own API endpoint to improve scalability)
+- Links (not realistic for users to list more than 20 links to a article)
+
+In future given more time I would apply skeletons to the infinate scroll loading instead of the spinner.
+
+<details>
+      <summary style="font-weight:bold">Infinate Scroll Screenshot</summary>
+   <br>
+
+![Infinate Scroll](readme-assets/features/infinate-scroll/infinate-scroll.png)<br>
+
+</details><br>
+
+---
+
+## Arrow To Top
+
+To improve useability of the site an arrow appears when the user scrolls down the page. This arrow appears in the bottom right corner and on selection takes the user back to the top of the page they are on.
+
+<details>
+      <summary style="font-weight:bold">Arrow To Top Screenshot</summary>
+   <br>
+
+![Arrow To Top](readme-assets/features/arrow-top/arrow-top.png)<br>
+
+</details><br>
+
 # Further Development
 
 ## Tidy Up
