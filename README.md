@@ -1474,6 +1474,36 @@ The card body will detail:
 
 </details>
 
+### Article Card Footer
+
+The card footer will detail:
+
+- Likes icon:
+  - This will show an outline if the article has not been liked by the current user.
+  - Purple solid icon if the article has been liked by the current user.
+- Likes count.
+- Comment icon:
+  - This will show an outline if it has not been commented on by the current user.
+  - Purple solid icon if the article has been commented on by the current user.
+  - This icon links the user to the article page where they can add comments.
+- Comment count.
+- Profile/Owner icon:
+  - This will show a outline with a plus option if the artcile is by a profile the current user is not following.
+  - This will show a purple solid icon with a minus if the article has been written by a profile that is followed by the current user.
+  - This will show a purple outline icon if the article has been written by the current user.
+  - The icon will like to the article authors profile page.
+- The words next to the icon will be:
+  - profile if the article is not written by the current user
+  - owner if the article is written by the current user
+
+<details>
+      <summary style="font-weight:bold">Footer Screenshot</summary>
+   <br>
+
+![Footer](readme-assets/features/article-card/footer.png)<br>
+
+</details>
+
 # Further Development
 
 ## Tidy Up
