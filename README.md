@@ -1481,6 +1481,8 @@ The card footer will detail:
 - Likes icon:
   - This will show an outline if the article has not been liked by the current user.
   - Purple solid icon if the article has been liked by the current user.
+  - If selected by the author of the article pop-up will say can't like own post.
+  - If selected by not logged in user article pop-up will say login to like post.
 - Likes count.
 - Comment icon:
   - This will show an outline if it has not been commented on by the current user.
@@ -1503,6 +1505,144 @@ The card footer will detail:
 ![Footer](readme-assets/features/article-card/footer.png)<br>
 
 </details>
+
+<details>
+      <summary style="font-weight:bold">Can't Like Own Article Screenshot</summary>
+   <br>
+
+![Can't Like Own Article](readme-assets/features/article-card/cant-like-own.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Login To Like Screenshot</summary>
+   <br>
+
+![Login To Like](readme-assets/features/article-card/login-to-like.png)<br>
+
+</details><br>
+
+## Delete Article
+
+When an author of the article select the button to delete it a alert pop-up will be presented to confirm that they are happy to delete the article.
+
+The artiles state is then updated to imidiatly remove the article from the grid.
+
+On successfull or failed article deletion a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
+   <br>
+
+![Delete Confirmation](readme-assets/features/article-delete/delete-popup.png)<br>
+
+</details>
+
+---
+
+## List Comments
+
+At the bottom of the article page under the comments tab will be a list of comments related to the article. If there are no comments and the user is logged in it will invite the user to be the first to comment.
+
+If the user is not logged in it will ask them to login to add a comment.
+
+<details>
+      <summary style="font-weight:bold">List Comments Screenshot</summary>
+   <br>
+
+![List Comments](readme-assets/features/comments/comments-list.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">No Comments Screenshot</summary>
+   <br>
+
+![No Comments](readme-assets/features/comments/logged-in-no-comments.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshot</summary>
+   <br>
+
+![Not Logged In](readme-assets/features/comments/logged-out.png)<br>
+
+</details><br>
+
+---
+
+## Comment Card
+
+The comment card will detail:
+
+- profile name that created it along with it's avatar.
+- how long ago it was created.
+- if edited it will show how long ago it was edited in replacement of how long ago it was created.
+- if the current user is the comment author it will show a button with edit and delete options.
+- the body of the comment itself.
+
+<details>
+      <summary style="font-weight:bold">Comment Card Screenshot</summary>
+   <br>
+
+![Comment Card](readme-assets/features/comments/comments-list.png)<br>
+
+</details><br>
+
+---
+
+## Add Comment
+
+If the user is logged in a comment entery field will be found at the top of the comments tab on the article page.
+
+The user can add a comment and use the button in the bottom right of the entry field to submit it. It utilizes the [form validation feature]().
+
+The state of the comments are updated to add a comment immediatly. As is the profile state to update the comment count.
+
+On successfull or failed comment additon a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Comment Entry Field Screenshot</summary>
+   <br>
+
+![Comment Entry Field ](readme-assets/features/comments/comment-entry.png)<br>
+
+</details><br>
+
+---
+
+## Edit Comment
+
+If the user is logged in they can edit a comment they have made using the top right button on the comment.
+
+This field will look like the comment but will allow the user to change the body. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+
+The state of the comments are updated to ammend the comment immediatly in it current location.
+
+On successfull or failed comment edit a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Comment Edit Screenshot</summary>
+   <br>
+
+![Comment Edit ](readme-assets/features/comments/comment-edit.png)<br>
+
+</details><br>
+
+---
+
+## Delete Comment
+
+If the user is logged in they can delete a comment they have made using the top right button on the comment.
+
+This will not produce a pop-up confirmation as there is little risk assosiated with deletion of comments.
+
+The state of the comments are updated to remove the comment immediatly. As is the profile state to update the comment count.
+
+On successfull or failed comment deletion a notification will be generated using the [notification feature]().
+
+---
 
 # Further Development
 
