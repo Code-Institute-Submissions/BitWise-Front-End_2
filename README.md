@@ -1594,7 +1594,7 @@ The comment card will detail:
 
 ## Add Comment
 
-If the user is logged in a comment entery field will be found at the top of the comments tab on the article page.
+If the user is logged in a comment entry field will be found at the top of the comments tab on the article page.
 
 The user can add a comment and use the button in the bottom right of the entry field to submit it. It utilizes the [form validation feature]().
 
@@ -1641,6 +1641,201 @@ This will not produce a pop-up confirmation as there is little risk assosiated w
 The state of the comments are updated to remove the comment immediatly. As is the profile state to update the comment count.
 
 On successfull or failed comment deletion a notification will be generated using the [notification feature]().
+
+---
+
+## List Links
+
+At the bottom of the article page under the links tab will be a list of links related to the article. If there are no links it will show a message of no links for article.
+
+If the user is logged in it also present them with an add link button.
+
+<details>
+      <summary style="font-weight:bold">Logged In Screenshot</summary>
+   <br>
+
+![Logged In](readme-assets/features/links/article-owner.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Not Logged In Screenshot</summary>
+   <br>
+
+![Not Logged In](readme-assets/features/links/non-owner.png)<br>
+
+</details><br>
+
+---
+
+## Link Card
+
+The link card will detail:
+
+- link title.
+- a link description if added.
+- if the current user is the link author it will show a button with edit and delete options.
+- the link url truncated if it exceed a set length.
+
+<details>
+      <summary style="font-weight:bold">Link Card Screenshot</summary>
+   <br>
+
+![Link Card](readme-assets/features/links/link-card.png)<br>
+
+</details><br>
+
+---
+
+## Add Link
+
+If the user is logged in a add link button will be found at the top of the links tab on the article page.
+
+The user can open a add link form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature]().
+
+The state of the links are updated to add a link immediatly.
+
+On successfull or failed link additon a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Add Link Screenshot</summary>
+   <br>
+
+![Add Link](readme-assets/features/links/add-link.png)<br>
+
+</details><br>
+
+---
+
+## Edit Link
+
+If the user is logged in they can edit a link they have made using the top right button on the link.
+
+This field will look like the link addition form but will appear in the position of the link being updated and will be pre-populated. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+
+The state of the links are updated to ammend the link immediatly in it's current location.
+
+On successfull or failed link edit a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Link Edit Screenshot</summary>
+   <br>
+
+![Link Edit](readme-assets/features/links/edit-link.png)<br>
+
+</details><br>
+
+---
+
+## Delete Link
+
+If the user is logged in they can delete a link they have added using the top right button on the link.
+
+This will not produce a pop-up confirmation as there is little risk assosiated with deletion of a link.
+
+The state of the link are updated to remove the link immediatly.
+
+On successfull or failed link deletion a notification will be generated using the [notification feature]().
+
+---
+
+## Profile Card
+
+A profile card was built for re-usability across the different pages. This card provides the information related to a profile.
+
+### Profile Card Header
+
+The card header will detail:
+
+- profile name that created it along with it's avatar.
+- if the current user is the profile owner it will show a button with edit profile and update password options.
+- if the current user is not the pofile owner it will show a button to follow or unfollow the profile. This will update the profile state accross the profiles, sidebar and article page immediatly.
+
+<details>
+      <summary style="font-weight:bold">Header Screenshot</summary>
+   <br>
+
+![Header](readme-assets/features/profile/header.png)<br>
+
+</details><br>
+
+### Profile Card Body
+
+The card body will detail:
+
+- a profile bio if one has been added. Otherwise it will show no bio to the user.
+- the bio will be truncated on the grid format but show in full on the profile page.
+
+<details>
+      <summary style="font-weight:bold">Body In Grid Screenshot</summary>
+   <br>
+
+![Body In Grid](readme-assets/features/profile/body-grid.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Body In Profile Page Screenshot</summary>
+   <br>
+
+![Body In Profile Page](readme-assets/features/profile/body-full.png)<br>
+
+</details><br>
+
+### Profile Card Footer
+
+The card footer will detail:
+
+- A count of those the profile is following.
+- A count of those following the profile.
+- A count of article posted by the profile.
+- A count of languages known by the profile.
+
+<details>
+      <summary style="font-weight:bold">Footer Screenshot</summary>
+   <br>
+
+![Footer](readme-assets/features/profile/footer.png)<br>
+
+</details><br>
+
+---
+
+## Edit Profile Or Update Password
+
+If the user is logged in they can edit their profile or update their password using the top right button on the profile card.
+
+### Edit Profile
+
+When a user selects edit profile they will be taken to a form page with the standard [form validation feature]().
+
+Here they will detail the information they wish to populate their profile page including an avatar image. This page is responsive and will show a image on the right for large screens.
+
+On successfull or failed article creation a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Edit Profile Screenshot</summary>
+   <br>
+
+![Edit Profile Form](readme-assets/features/profile/edit-profile.png)<br>
+
+</details><br>
+
+### Update Password
+
+When a user selects update password they will be taken to a form page with the standard [form validation feature]().
+
+Here they will detail their new password and confirm it. This page is responsive and will show a image on the right for large screens.
+
+On successfull or failed article creation a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Update Password Screenshot</summary>
+   <br>
+
+![Update Password Form](readme-assets/features/profile/update-password.png)<br>
+
+</details><br>
 
 ---
 
