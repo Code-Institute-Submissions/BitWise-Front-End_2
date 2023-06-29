@@ -695,7 +695,7 @@ All screenshots detailed in the features section of this Readme file have been t
 
 ## Sign Up
 
-Sign up is its own page. It utilizes the the [form validation feature]() to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
+Sign up is its own page. It utilizes the the [form validation feature](#form-validation) to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
 
 On successfull or failed registration a notification will be generated using the [notification feature]().
 
@@ -711,7 +711,7 @@ On successfull or failed registration a notification will be generated using the
 
 ## Login
 
-Login is its own page. It utilizes the the [form validation feature]() to allow the user to access the profile they created on the sign up page with their username and password. This page is not accessible to logged in users and will redirect them if the user were to the url to try to access it.
+Login is its own page. It utilizes the the [form validation feature](#form-validation) to allow the user to access the profile they created on the sign up page with their username and password. This page is not accessible to logged in users and will redirect them if the user were to the url to try to access it.
 
 If a user is not logged in and tries to access a page which redirects to the login page after logging in they will be taken back to their original page.
 
@@ -1369,7 +1369,7 @@ To improve useability of the site an arrow appears when the user scrolls down th
 
 ## Add Article
 
-When a user select to add an article they will be taken to a form page with the standard [form validation feature]().
+When a user select to add an article they will be taken to a form page with the standard [form validation feature](#form-validation).
 
 Here they will detail the information they wish to populate the article with. This page is responsive and will show a image on the right for large screens.
 
@@ -1397,7 +1397,7 @@ In testing it was identified that if the internet conection was slow a user may 
 
 ## Edit Article
 
-When a user select to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature]().
+When a user select to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature](#form-validation).
 
 On successfull or failed article update a notification will be generated using the [notification feature]().
 
@@ -1447,7 +1447,7 @@ The card body will detail:
 - article title.
 - language if one has been selected along with the language icon.
 - article contect on grid view will truncate, on article page will show in full.
-- recommend button if the user is logged in. This willl activate the [recommend feature]().
+- recommend button if the user is logged in. This willl activate the [add recommendation feature](#add-recommended-article).
 - login to recommend button if user is not logged in. This will navigate to the login page.
 
 <details>
@@ -1596,7 +1596,7 @@ The comment card will detail:
 
 If the user is logged in a comment entry field will be found at the top of the comments tab on the article page.
 
-The user can add a comment and use the button in the bottom right of the entry field to submit it. It utilizes the [form validation feature]().
+The user can add a comment and use the button in the bottom right of the entry field to submit it. It utilizes the [form validation feature](#form-validation).
 
 The state of the comments are updated to add a comment immediatly. As is the profile state to update the comment count.
 
@@ -1616,7 +1616,7 @@ On successfull or failed comment additon a notification will be generated using 
 
 If the user is logged in they can edit a comment they have made using the top right button on the comment.
 
-This field will look like the comment but will allow the user to change the body. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+This field will look like the comment but will allow the user to change the body. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
 The state of the comments are updated to ammend the comment immediatly in it current location.
 
@@ -1691,7 +1691,7 @@ The link card will detail:
 
 If the user is logged in a add link button will be found at the top of the links tab on the article page.
 
-The user can open a add link form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature]().
+The user can open a add link form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
 
 The state of the links are updated to add a link immediatly.
 
@@ -1711,7 +1711,7 @@ On successfull or failed link additon a notification will be generated using the
 
 If the user is logged in they can edit a link they have made using the top right button on the link.
 
-This field will look like the link addition form but will appear in the position of the link being updated and will be pre-populated. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+This field will look like the link addition form but will appear in the position of the link being updated and will be pre-populated. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
 The state of the links are updated to ammend the link immediatly in it's current location.
 
@@ -1807,7 +1807,7 @@ If the user is logged in they can edit their profile or update their password us
 
 ### Edit Profile
 
-When a user selects edit profile they will be taken to a form page with the standard [form validation feature]().
+When a user selects edit profile they will be taken to a form page with the standard [form validation feature](#form-validation).
 
 Here they will detail the information they wish to populate their profile page including an avatar image. This page is responsive and will show a image on the right for large screens.
 
@@ -1823,7 +1823,7 @@ On successfull or failed article creation a notification will be generated using
 
 ### Update Password
 
-When a user selects update password they will be taken to a form page with the standard [form validation feature]().
+When a user selects update password they will be taken to a form page with the standard [form validation feature](#form-validation).
 
 Here they will detail their new password and confirm it. This page is responsive and will show a image on the right for large screens.
 
@@ -1886,7 +1886,7 @@ The language card will detail:
 
 If the user is on their own profile an add language button will be found at the top of the languages tab on the profile page.
 
-The user can open a add language form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature]().
+The user can open a add language form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
 
 The state of the languages are updated to add a language immediatly. As is the profile to show an updated language count.
 
@@ -1906,7 +1906,7 @@ On successfull or failed language additon a notification will be generated using
 
 If the user the profile owner they can edit their language using the top right button on the language card.
 
-This field will look like the language addition form but will appear in the position of the language being updated and will be pre-populated. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+This field will look like the language addition form but will appear in the position of the language being updated and will be pre-populated. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
 The state of the languages are updated to ammend the language immediatly in it's current location.
 
@@ -1917,6 +1917,177 @@ On successfull or failed language edit a notification will be generated using th
    <br>
 
 ![Language Edit](readme-assets/features/languages/language-edit.png)<br>
+
+</details><br>
+
+---
+
+## Delete Language
+
+If the user is the profile owner they can delete their languages using the top right button on the language card.
+
+This will not produce a pop-up confirmation as there is little risk assosiated with deletion of a language.
+
+The state of the languages are updated to remove the language immediatly. As is the profile state which updates the languages count.
+
+On successfull or failed link deletion a notification will be generated using the [notification feature]().
+
+---
+
+## List Recommended Articles
+
+If the current user navigates to their own profile an additional tab will be present for recommended articles. This will not be present on anyone elses profile as it is only for the benifit of the logged in user.
+
+This tab will hold a list or articles that have been recommended to the user by other profiles (or the user themselves).
+
+If there are no recommended articles it will show a message of no articles recommended.
+
+<details>
+      <summary style="font-weight:bold">Recommended List Screenshot</summary>
+   <br>
+
+![Recommended List](readme-assets/features/recommended/recommended-list.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">No Recommendations</summary>
+   <br>
+
+![No Recommendations](readme-assets/features/recommended/no-recommended.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Not Profile Owner</summary>
+   <br>
+
+![Not Profile Owner](readme-assets/features/recommended/no-tab.png)<br>
+
+</details><br>
+
+---
+
+## Recommended Card
+
+The recommended card will detail:
+
+- the article title. This will act as a link to the article page.
+- who the article was recommended by. This will act as a link to their profile.
+- how long ago the article was recommended.
+- if the current user is the profile owner it will show a button in the top right with a delete option. (this will always show as a user can only see this tab for their own profile)
+
+<details>
+      <summary style="font-weight:bold">Recommended Card Screenshot</summary>
+   <br>
+
+![Recommended Card](readme-assets/features/recommended/card.png)<br>
+
+</details><br>
+
+---
+
+## Add Recommended Article
+
+To recommend an article the logged in user must navigate to the article page and go towards the bottom of the article selecting the recommmend article button.
+
+This will activate a pop-up where a list of upto 20 profiles will appear to send the recommendation to. In addition to the available options the user can type the profile name into the available search bar to locate the specific profile that may not be in the initially provided options.
+
+Duplicate profiles can't be recomended and a [notification feature]() will inform the user trying to make the recommendation that the recipient already has that article in their recommended list.
+
+On successfull or failed recommendatons a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Recommended Options Screenshot</summary>
+   <br>
+
+![Recommended Options](readme-assets/features/recommended/recommend-all.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Search Recommended Options Screenshot</summary>
+   <br>
+
+![Search Recommended Options](readme-assets/features/recommended/recommend-search.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Duplicate Article Recommendation Screenshot</summary>
+   <br>
+
+![Duplicate Article Recommendation](readme-assets/features/recommended/already-recieved.png)<br>
+
+</details><br>
+
+---
+
+## Delete Recommendation
+
+If the user is the profile owner they can delete their recieved recommendations using the top right button on the recommendaton card.
+
+This will produce a confirmation pop-up to check the user is happy to remove it from their recommended list.
+
+The state of the recommendatons are updated to remove the recommendation immediatly.
+
+It should be noted that only the recipient of the recommendation can delete it, not the creator (unless they are the same person).
+
+On successfull or failed link deletion a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
+   <br>
+
+![Delete Confirmation](readme-assets/features/recommended/confirmation.png)<br>
+
+</details><br>
+
+---
+
+## Form Validation
+
+All the forms on this site use a validation feature to check the validity of the fields completed. Any mandatory missing field, miss matching passwords, unacceptable entry types will be highlighted back to the user as feedback.
+
+Some examples of validation in action (this doesn't cover all potential validation errors).
+
+<details>
+      <summary style="font-weight:bold">Empty Field Screenshot</summary>
+   <br>
+
+![Empty Field](readme-assets/features/form-validation/empty-field.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Need Both Fields</summary>
+   <br>
+
+![Need Both Fields](readme-assets/features/form-validation/need-both-fields.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Bad Credentials</summary>
+   <br>
+
+![Bad Credentials](readme-assets/features/form-validation/bad%20credientials.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Invalid Entry</summary>
+   <br>
+
+![Invalid Entry](readme-assets/features/form-validation/invalid-entry.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Passwords Don't Match</summary>
+   <br>
+
+![Passwords Don't Match](readme-assets/features/form-validation/pass-dont-match.png)<br>
 
 </details><br>
 

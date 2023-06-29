@@ -84,7 +84,7 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
 
                 {loaded ? (
                   <Box>
-                    <Flex flexWrap="wrap" justifyContent="space-between">
+                    <Flex flexWrap="wrap">
                       {searchPageProfiles?.results.map((profile) => (
                         <Button
                           key={profile.id}
