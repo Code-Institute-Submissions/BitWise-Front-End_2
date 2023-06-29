@@ -799,7 +799,7 @@ The navbar has conditional formating to only show links relevent to the user bas
 **Hamburger Menu:**<br>
 ![Hamburger Logged In Menu](readme-assets/features/navbar/hamburger-menu-logged-in.png)<br>
 
-</details>
+</details><br>
 
 ---
 
@@ -1407,7 +1407,7 @@ On successfull or failed article update a notification will be generated using t
 
 ![Edit Article Form](readme-assets/features/edit-article/edit-article.png)<br>
 
-</details>
+</details><br>
 
 ---
 
@@ -1438,7 +1438,7 @@ The card header will detail:
 
 ![Artcile Card Edit/Delete](readme-assets/features/article-card/edit-delete-button.png)<br>
 
-</details>
+</details><br>
 
 ### Article Card Body
 
@@ -1472,7 +1472,7 @@ The card body will detail:
 
 ![Login To Recommend](readme-assets/features/article-card/login-to-recommend.png)<br>
 
-</details>
+</details><br>
 
 ### Article Card Footer
 
@@ -1536,7 +1536,7 @@ On successfull or failed article deletion a notification will be generated using
 
 ![Delete Confirmation](readme-assets/features/article-delete/delete-popup.png)<br>
 
-</details>
+</details><br>
 
 ---
 
@@ -1834,6 +1834,89 @@ On successfull or failed article creation a notification will be generated using
    <br>
 
 ![Update Password Form](readme-assets/features/profile/update-password.png)<br>
+
+</details><br>
+
+---
+
+## List Languages
+
+At the bottom of the profile page under the languages tab will be a list of languages the profile owner knows. If the owner doesn't know any languages or has not recoreded any it will show a message of no languages for profile owner.
+
+If the user is the profile owner it will also present them with an add language button.
+
+<details>
+      <summary style="font-weight:bold">Profile Owner Screenshot</summary>
+   <br>
+
+![Profile Owner](readme-assets/features/languages/profile-owner-list.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Not Profile Owner Screenshot</summary>
+   <br>
+
+![Not Profile Owner](readme-assets/features/languages/not-owner-list.png)<br>
+
+</details><br>
+
+---
+
+## Language Card
+
+The language card will detail:
+
+- language with appropriate icon.
+- years of experience if it has been added.
+- level of confidence in the language. This will show a confidence bar which is colour coded dependent on confidence level selected.
+- if the current user is the profile owner it will show a button with edit and delete options.
+
+<details>
+      <summary style="font-weight:bold">Language Card Screenshot</summary>
+   <br>
+
+![Language Card](readme-assets/features/languages/language-card.png)<br>
+
+</details><br>
+
+---
+
+## Add Language
+
+If the user is on their own profile an add language button will be found at the top of the languages tab on the profile page.
+
+The user can open a add language form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature]().
+
+The state of the languages are updated to add a language immediatly. As is the profile to show an updated language count.
+
+On successfull or failed language additon a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Add Language Screenshot</summary>
+   <br>
+
+![Add Language](readme-assets/features/languages/add-language.png)<br>
+
+</details><br>
+
+---
+
+## Edit Language
+
+If the user the profile owner they can edit their language using the top right button on the language card.
+
+This field will look like the language addition form but will appear in the position of the language being updated and will be pre-populated. It utilizes the [form validation feature]() and has a cancel button as well as a submission button.
+
+The state of the languages are updated to ammend the language immediatly in it's current location.
+
+On successfull or failed language edit a notification will be generated using the [notification feature]().
+
+<details>
+      <summary style="font-weight:bold">Language Edit Screenshot</summary>
+   <br>
+
+![Language Edit](readme-assets/features/languages/language-edit.png)<br>
 
 </details><br>
 
