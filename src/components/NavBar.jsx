@@ -23,7 +23,9 @@ const NavBar = () => {
   const loggedInLinks = (
     <>
       <Box px={6}>
-        <NavLink to="/feed/">Feed</NavLink>
+        <NavLink to="/feed/" aria-label="Feed">
+          Feed
+        </NavLink>
       </Box>
 
       <Box px={4}>
@@ -31,6 +33,7 @@ const NavBar = () => {
           onClick={() => {
             handleSignOut(setCurrentUser, navigate);
           }}
+          aria-label="Logout"
         >
           Logout
         </Link>
@@ -41,11 +44,15 @@ const NavBar = () => {
   const loggedOutLinks = (
     <>
       <Box px={4}>
-        <NavLink to="/register/">Sign Up</NavLink>
+        <NavLink to="/register/" aria-label="Sign Up">
+          Sign Up
+        </NavLink>
       </Box>
 
       <Box px={4}>
-        <NavLink to="/login/">Login</NavLink>
+        <NavLink to="/login/" aria-label="Login">
+          Login
+        </NavLink>
       </Box>
     </>
   );
@@ -72,7 +79,7 @@ const NavBar = () => {
 
         {currentUser && (
           <Box px={4}>
-            <NavLink to="/article/create/">
+            <NavLink to="/article/create/" aria-label="Add Article">
               <MdPostAdd fontSize="250%" />
               <Show above="sm">Add Article</Show>
             </NavLink>
@@ -83,10 +90,14 @@ const NavBar = () => {
       <HStack pr={"10px"}>
         <Show above="lg">
           <Box px={4}>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" aria-label="Home">
+              Home
+            </NavLink>
           </Box>
           <Box px={4}>
-            <NavLink to="/profiles/">Profiles</NavLink>
+            <NavLink to="/profiles/" aria-label="Profiles">
+              Profiles
+            </NavLink>
           </Box>
 
           {currentUser ? loggedInLinks : loggedOutLinks}
