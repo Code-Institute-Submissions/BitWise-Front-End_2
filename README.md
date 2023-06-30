@@ -19,7 +19,7 @@
   - [Agile Methodology](#agile-methodology)
 - [User Experience (UX)](#user-experience-ux)
   - [Website Design](#website-design)
-  - [Wireframes]()
+  - [Wireframes](#wireframes)
 - [Features](#site-features)
   - [Dark/Light Mode](#darklight-mode)
   - [Sign Up](#sign-up)
@@ -203,9 +203,9 @@ In addition to this the site was run through the following [website](https://ui.
 
 ## Project Scoping
 
-Some aspects of the planning of this site were relient on the API development and are addressed to some degree in some of the inital mindmapping documents.
+Some aspects of the planning of this site were reliant on the API development and are addressed to some degree in some of the initial mindmapping documents.
 
-However, if you wish to see more of the API planning including the Entity Relationship Diagram please visit the Backend Redo [here](https://github.com/Joe-Collins-1986/BitWise-DRF)
+However, if you wish to see more of the API planning including the Entity Relationship Diagram, please visit the Backend Redo [here](https://github.com/Joe-Collins-1986/BitWise-DRF)
 
 <details>
     <summary style="font-weight:bold">Problem Statement</summary>
@@ -243,7 +243,7 @@ If you have a LucidChart account, you can also view this Mind-Map [here](https:/
     <summary style="font-weight:bold">Mind Map - Enhancement Feature 1</summary>
 
 <br>
-Following completion of the core functionality an additional mind map was generated to consider the additonal function of allowing users to recommend articles.
+Following completion of the core functionality an additional mind map was generated to consider the additional function of allowing users to recommend articles.
 
 ![Mind Map Recommended](readme-assets/planning/mind-map-recommend.png)
 <br>
@@ -281,7 +281,7 @@ The client wants a simple and engaging website that is easy to use and will resu
 - Easy to use functionality.
 - Responsive for any device size to encourage mobile use as well as desktop use.
 - Encourages the development of a friendly programming community helping each other through the sharing of knowledge.
-- Provide a base site to later introduce article recomendations, video sharing, streaming, transaction functionality for premium content.
+- Provide a base site to later introduce video sharing, streaming, transaction functionality for premium content.
 
 ---
 
@@ -302,7 +302,7 @@ The visitor should have a clear understanding of what the website purpose is and
 - Ability to filter articles to meet needs.
 - Able to follow profiles.
 - Ability to filter profiles to meet needs.
-- Can provide profile info including competancy and experiance in programming languages.
+- Can provide profile info including competency and experience in programming languages.
 - Readable and aesthetically pleasing on all devices.
 - Able to recommend articles.
 - Can add multiple links to articles.
@@ -467,9 +467,9 @@ The below graphs map out the feasibility of the frontend features considered aga
 
 ---
 
-</details>
-
 If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2166%2C-751%2C3880%2C5038%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
+
+</details>
 
 ## Agile Methodology
 
@@ -557,7 +557,7 @@ For site of the project in GitHub detailing the completed User Stories in Iterat
     <summary style="font-weight:bold">Iteration 5</summary>
 <br>
 
-Iteration 5 was added after all the other core functionality was built with the intension of adding functions to enhance the site. The key focus was to add functionality to allow users to recommend articles to each other(and themselves) as well as a funcition to allow users to add multiple links to their articles as opposed to just a single github link:
+Iteration 5 was added after all the other core functionality was built with the intention of adding functions to enhance the site. The key focus was to add functionality to allow users to recommend articles to each other(and themselves) as well as a funcition to allow users to add multiple links to their articles as opposed to just a single github link:
 
 - CRD functionality for recommendations.
 - CRUD functionality for links.
@@ -580,9 +580,9 @@ After discussions with the client and reviewing the available React styling libr
 <br>
 Client requested the site to be built from shades of grey with a bold purple for emphasising key elements. This consideration was made to not pull focus or negatively impact the readability of the site due to its information nature.
 
-In addition to this the client requested that there be a dark and light mode to better tailor to user preferences and give a codeing aesthetic.
+In addition to this the client requested that there be a dark and light mode to better tailor to user preferences and give a coding aesthetic.
 
-The achieve this look Chakra Theme was applied to allow a switch from light to dark mode. Then a purple theme was interwoven with the standard theme to hightlight key elements and add a dynamic exiciting look to the site.
+To achieve this look Chakra Theme was applied to allow a switch from light to dark mode. Then a purple theme was interwoven with the standard theme to hightlight key elements and add a dynamic exciting look to the site.
 
 The themes utilise the same colors but reverse the shade on the dark mode switch.
 
@@ -744,10 +744,10 @@ All screenshots detailed in the features section of this Readme file have been t
 
 Sign up is its own page. It utilizes the the [form validation feature](#form-validation) to allow the user to gererate a profile with a username and password. This page is not accessible to logged in users and will redirect them if the user were to use the url to try to access it.
 
-On successfull or failed registration a notification will be generated using the [notification feature](#notifications).
+On successful or failed registration a notification will be generated using the [notification feature](#notifications).
 
 <details>
-      <summary style="font-weight:bold">Sign Up Screenshots</summary>
+      <summary style="font-weight:bold">Sign Up Screenshot</summary>
    <br>
 
 ![Sign Up](readme-assets/features/sign-up/sign-up.png)<br>
@@ -762,10 +762,10 @@ Login is its own page. It utilizes the the [form validation feature](#form-valid
 
 If a user is not logged in and tries to access a page which redirects to the login page after logging in they will be taken back to their original page.
 
-On successfull or failed login a notification will be generated using the [notification feature](#notifications).
+On successful or failed login a notification will be generated using the [notification feature](#notifications).
 
 <details>
-      <summary style="font-weight:bold">Login Screenshots</summary>
+      <summary style="font-weight:bold">Login Screenshot</summary>
    <br>
 
 ![Login](readme-assets/features/login/login.png)<br>
@@ -778,7 +778,7 @@ On successfull or failed login a notification will be generated using the [notif
 
 Logout is a feature that logs the user out when it is selected.
 
-A confirmation popup was considered however due to the fact that there is no real negative impact to the user by logging out this was dismissed and only added to features where the impact would be more substancial.
+A confirmation popup was considered however due to the fact that there is no real negative impact to the user by logging out this was dismissed and only added to features where the impact would be more substantial.
 
 On loggout the user stays on the same page assuming it is available to logged out users (e.g. feed). If the user is on a page that a logged out user can't access it will redirect to the home page.
 
@@ -788,7 +788,7 @@ On loggout the user stays on the same page assuming it is available to logged ou
 
 The navbar has been fixed to the top of the page to allow the user easy access to all key pages.
 
-A color switch is provided as part of the navbar to allow users to change the colour scheme from light to dark.
+A colour switch is provided as part of the navbar to allow users to change the colour scheme from light to dark.
 
 <details>
       <summary style="font-weight:bold">Colour Switch Screenshots</summary>
@@ -802,7 +802,7 @@ A color switch is provided as part of the navbar to allow users to change the co
 
 </details><br>
 
-The navbar page links have been provided as text only (with the exception of create article and the logo). This was an intensional decision. These links were tested with icons but feedback indicated this looked to cluttered and was not as intuative. The current page is indicated with an underline as is the hover. Despite slight duplication where one page is visited and another is hovered over this was deemed the best visual and caused no confusion with the test users.
+The navbar page links have been provided as text only (with the exception of create article and the logo). This was an intentional decision. These links were tested with icons but feedback indicated this looked to cluttered and was not as intuative. The current page is indicated with an underline as is the hover. Despite slight duplication where one page is visited and another is hovered over this was deemed the best visual and caused no confusion with the test users.
 
 The navbar has conditional formating to only show links relevent to the user based on their logged in status. It also shows less on smaller screens to not extend past available space and impact the sites responsive design.
 
@@ -857,7 +857,7 @@ The navbar has conditional formating to only show links relevent to the user bas
 The Sidebar is a responsive element that only appears on large screens.
 
 <details>
-      <summary style="font-weight:bold">Sidebar Small Screen Screenshot</summary>
+      <summary style="font-weight:bold">Small Screen Screenshot</summary>
    <br>
 
 ![Small Screen](readme-assets/features/sidebar/small-screen.png)<br>
@@ -865,7 +865,7 @@ The Sidebar is a responsive element that only appears on large screens.
 </details>
 
 <details>
-      <summary style="font-weight:bold">Sidebar Large Screen Screenshot</summary>
+      <summary style="font-weight:bold">Large Screen Screenshot</summary>
    <br>
 
 ![Large Screen](readme-assets/features/sidebar/big-screen.png)<br>
@@ -944,7 +944,7 @@ If the user is not logged in they will get a pop up message telling them to logi
 
 </details><br>
 
-If the user is logged in the icon will update to show they are now following the selected profile. This will update the state to show immediatly and will also update the state in the profiles page and individual profile page without the requirement to refresh.
+If the user is logged in the icon will update to show they are now following the selected profile. This will update the state to show immediately and will also update the state in the profiles page and individual profile page without the requirement to refresh.
 
 <details>
       <summary style="font-weight:bold">Follow - Update Profiles Page Screenshot</summary>
@@ -980,9 +980,9 @@ If a user selects an already followed profile it will unfollow and update the st
 
 </details><br>
 
-When a profile is followed or unfollowed the article pages will update their components. This requires a loading period however it was important to do as it could effect the search criteria being applied. For example this would add the profiles of the folled individual to the feed.
+When a profile is followed or unfollowed the article pages will update their components. This requires a loading period however it was important to do as it could effect the search criteria being applied. For example this would add the profiles of the followed individual to the feed.
 
-On successfull or failed following attempts a notification will be generated using the [notification feature](#notifications).
+On successful or failed following attempts a notification will be generated using the [notification feature](#notifications).
 
 ### Sidebar Profile Edit
 
@@ -1000,7 +1000,7 @@ If the currently logged in user has their profile displaying in the sidebar they
 
 ## Logged In Avatar
 
-When a user logs in they will be presented with their avatar in the top tef corner of whatever page they are on. This provides a quick way of checking who they are logged in as and a easy way to navigate to their profile as this acts as a link.
+When a user logs in they will be presented with their avatar in the top left corner of whatever page they are on. This provides a quick way of checking who they are logged in as and a easy way to navigate to their profile as this acts as a link.
 
 On small screens this will appear in the body element of the page. On large screens it will appear at the top of the sidebar.
 
@@ -1032,7 +1032,7 @@ On small screens this will appear in the body element of the page. On large scre
 
 ## Article Search Bar
 
-The article search bar is deisgned to help the user quickly and easy retrieve articles where they know the title or name of the author.
+The article search bar is designed to help the user quickly and easy retrieve articles where they know the title or name of the author.
 
 **Note** This filter works in combination with all other article filters.
 
@@ -1048,7 +1048,7 @@ The article search bar is deisgned to help the user quickly and easy retrieve ar
 
 ### This is applied to the feed page.
 
-**Note** In the feed search the same filter is used but the current user does not follow Teddy and no articles have ted in the title so no reulsts are returned. This is because all article searches on the feed page are restricted to those followed by the current user.
+**Note** In the feed search the same filter is used but the current user does not follow Teddy and no articles have ted in the title so no results are returned. This is because all article searches on the feed page are restricted to those followed by the current user.
 
 <details>
       <summary style="font-weight:bold">Feed Article Search Bar Screenshot</summary>
@@ -1074,7 +1074,7 @@ The article search bar is deisgned to help the user quickly and easy retrieve ar
 
 ## Article Order Dropdown
 
-The article order dropdown is deisgned to help the users order articles by what they are most interested in. The options for ordering are date posted, most liked and most commented.
+The article order dropdown is designed to help the users order articles by what they are most interested in. The options for ordering are date posted, most liked and most commented.
 
 **Note** This filter works in combination with all other article filters.
 
@@ -1090,7 +1090,7 @@ The article order dropdown is deisgned to help the users order articles by what 
 
 ### This is applied to the feed page.
 
-**Note** In the feed dropdown the same option(commented) is used but in addition to this ordering the articles are restriced to those followed by the user.
+**Note** In the feed dropdown the same option(commented) is used but in addition to this ordering the articles are restricted to those followed by the user.
 
 <details>
       <summary style="font-weight:bold">Feed Article Order Dropdown Screenshot</summary>
@@ -1102,7 +1102,7 @@ The article order dropdown is deisgned to help the users order articles by what 
 
 ### This is applied to the article page.
 
-**Note** In the article page dropdown the same option(commented) is used but in addition to this ordering the articles are restriced to those written by the user.
+**Note** In the article page dropdown the same option(commented) is used but in addition to this ordering the articles are restricted to those written by the user.
 
 <details>
       <summary style="font-weight:bold">Article Page Article Order Dropdown Screenshot</summary>
@@ -1116,7 +1116,7 @@ The article order dropdown is deisgned to help the users order articles by what 
 
 ## Article Language Dropdown
 
-The article language dropdown is deisgned to help the users search articles written about the selected primary language.
+The article language dropdown is designed to help the users search articles written about the selected primary language.
 
 It should be noted that selecting 'no specific language' does not filter to articles where no language was selected but rather where users have selected 'no specific language' from the options when creating the article. This is to ensure this will pull articles that are not specific to a language and not just ones where the user has forgotten or not bothered to select a language.
 
@@ -1134,7 +1134,7 @@ It should be noted that selecting 'no specific language' does not filter to arti
 
 ### This is applied to the feed page.
 
-**Note** In the feed dropdown the same option(python) is used but in addition to this ordering the articles are restriced to those followed by the user.
+**Note** In the feed dropdown the same option(python) is used but in addition to this ordering the articles are restricted to those followed by the user.
 
 <details>
       <summary style="font-weight:bold">Feed Article Language Dropdown Screenshot</summary>
@@ -1146,7 +1146,7 @@ It should be noted that selecting 'no specific language' does not filter to arti
 
 ### This is applied to the article page.
 
-**Note** In the article page dropdown the same option(python) is used but in addition to this ordering the articles are restriced to those written by the user.
+**Note** In the article page dropdown the same option(python) is used but in addition to this ordering the articles are restricted to those written by the user.
 
 <details>
       <summary style="font-weight:bold">Article Page Article Language Dropdown Screenshot</summary>
@@ -1160,7 +1160,7 @@ It should be noted that selecting 'no specific language' does not filter to arti
 
 ## Article Liked Switch
 
-The article liked switch is deisgned to filter the articles to only ones the currently logged in user has liked. All articles will show if the switch is not selected.
+The article liked switch is designed to filter the articles to only ones the currently logged in user has liked. All articles will show if the switch is not selected.
 
 If the user is not logged in the switch will not appear.
 
@@ -1188,7 +1188,7 @@ If the user is not logged in the switch will not appear.
 
 ### This is applied to the feed page.
 
-**Note** On the feed page the liked switch is applied in addition to the articles being restriced to those followed by the user.
+**Note** On the feed page the liked switch is applied in addition to the articles being restricted to those followed by the user.
 
 <details>
       <summary style="font-weight:bold">Feed Article Liked Switch Screenshot</summary>
@@ -1200,7 +1200,7 @@ If the user is not logged in the switch will not appear.
 
 ### This is applied to the article page.
 
-**Note** On the artcile page the liked switch is applied in addition to the articles being restriced to those written by the user.
+**Note** On the artcile page the liked switch is applied in addition to the articles being restricted to those written by the user.
 
 In this example the profile selected is that of the current user therefore no articles in the profile are liked. This is because a user can't like their own articles.
 
@@ -1216,7 +1216,7 @@ In this example the profile selected is that of the current user therefore no ar
 
 ## Profile Search Bar
 
-The profile search bar is deisgned to help the user quickly and easy search profile where they know the profile name.
+The profile search bar is designed to help the user quickly and easily search profile where they know the profile name.
 
 **Note** This filter works in combination with all other profile filters.
 
@@ -1240,7 +1240,7 @@ The profile search bar is deisgned to help the user quickly and easy search prof
 
 ## Profile Order Dropdown
 
-The profiles order dropdown is deisgned to help the users order profiles by what they are most interested in. The options for ordering are date joined, articles posted, number of followers and number of languages known.
+The profiles order dropdown is designed to help the users order profiles by what they are most interested in. The options for ordering are date joined, articles posted, number of followers and number of languages known.
 
 **Note** This filter works in combination with all other profile filters.
 
@@ -1256,7 +1256,7 @@ The profiles order dropdown is deisgned to help the users order profiles by what
 
 ## Profiles Following Switch
 
-The profiles following switch is deisgned to filter the profiles to only ones the currently logged in user is following. All profiles will show if the switch is not selected.
+The profiles following switch is designed to filter the profiles to only ones the currently logged in user is following. All profiles will show if the switch is not selected.
 
 If the user is not logged in the switch will not appear.
 
@@ -1286,7 +1286,7 @@ If the user is not logged in the switch will not appear.
 
 ## Grid
 
-A grid layout has been applied to the articles and the profiles where multiple cards are displayed. This is responsive and will reduce the number of coloumns as the screen size gets smaller.
+A grid layout has been applied to the articles and the profiles where multiple cards are displayed. This is responsive and will reduce the number of columns as the screen size gets smaller.
 
 ### Aricles.
 
@@ -1348,7 +1348,7 @@ This grid is applied to the Profiles page.
 
 ## Skeleton
 
-To demonstrate that profiles and articles are being loaded in an asthetic manner skeletons have been applied to show where they will appear and in what format.
+To demonstrate that profiles and articles are being loaded in an aesthetic manner skeletons have been applied to show where they will appear and in what format.
 
 <details>
       <summary style="font-weight:bold">Grid Skeleton Screenshot</summary>
@@ -1378,7 +1378,7 @@ To demonstrate that profiles and articles are being loaded in an asthetic manner
 
 ## Infinite Scroll
 
-Inifinite Scroll has been applied to articles, profiles and comments to retrieve more data once all the paginated information viewed.
+Inifinite Scroll has been applied to articles, profiles and comments to retrieve more data once all the paginated information has been viewed.
 
 Comments have been paginated to 10 rather than the default 20.
 
@@ -1416,11 +1416,11 @@ To improve useability of the site an arrow appears when the user scrolls down th
 
 ## Add Article
 
-When a user select to add an article they will be taken to a form page with the standard [form validation feature](#form-validation).
+When a user selects to add an article they will be taken to a form page with the standard [form validation feature](#form-validation).
 
 Here they will detail the information they wish to populate the article with. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
+On successful or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Article Form Screenshot</summary>
@@ -1430,7 +1430,7 @@ On successfull or failed article creation a notification will be generated using
 
 </details>
 
-In testing it was identified that if the internet conection was slow a user may try to hit the submit button again. This would result in creating 2 articles. To stop this the button was disbaled during the axios request.
+In testing it was identified that if the internet conection was slow a user may try to hit the submit button again. This would result in creating 2 articles. To stop this the button was disabled during the axios request.
 
 <details>
       <summary style="font-weight:bold">Disable Submit Screenshot</summary>
@@ -1444,9 +1444,9 @@ In testing it was identified that if the internet conection was slow a user may 
 
 ## Edit Article
 
-When a user select to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature](#form-validation).
+When a user selects to edit an article they will be taken to a form page the same as the add article form. The only difference will be that it is pre-populated with article data. As with the add article form it will have the standard [form validation feature](#form-validation).
 
-On successfull or failed article update a notification will be generated using the [notification feature](#notifications).
+On successful or failed article update a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Edit Article Form Screenshot</summary>
@@ -1460,7 +1460,7 @@ On successfull or failed article update a notification will be generated using t
 
 ## Article Card
 
-An artivle card was built for re-usability across the different pages. This card provides the information recorded in an article.
+An article card was built for re-usability across the different pages. This card provides the information recorded in an article.
 
 ### Article Card Header
 
@@ -1468,11 +1468,11 @@ The card header will detail:
 
 - profile name that created it along with it's avatar.
 - the date it was created.
-- when it was edited (only shows it it was edited).
-- if the current user is the article author it will show a button with edite delete options.
+- when it was edited (only shows if it was edited).
+- if the current user is the article author it will show a button with edit delete options.
 
 <details>
-      <summary style="font-weight:bold">Artcile Card Header Screenshot</summary>
+      <summary style="font-weight:bold">Article Card Header Screenshot</summary>
    <br>
 
 ![Artcile Card Header](readme-assets/features/article-card/article-card-header.png)<br>
@@ -1493,8 +1493,8 @@ The card body will detail:
 
 - article title.
 - language if one has been selected along with the language icon.
-- article contect on grid view will truncate, on article page will show in full.
-- recommend button if the user is logged in. This willl activate the [add recommendation feature](#add-recommended-article).
+- article content on grid view will truncate, on article page will show in full.
+- recommend button if the user is logged in. This will activate the [add recommendation feature](#add-recommended-article).
 - login to recommend button if user is not logged in. This will navigate to the login page.
 
 <details>
@@ -1537,7 +1537,7 @@ The card footer will detail:
   - This icon links the user to the article page where they can add comments.
 - Comment count.
 - Profile/Owner icon:
-  - This will show a outline with a plus option if the artcile is by a profile the current user is not following.
+  - This will show a outline with a plus option if the article is by a profile the current user is not following.
   - This will show a purple solid icon with a minus if the article has been written by a profile that is followed by the current user.
   - This will show a purple outline icon if the article has been written by the current user.
   - The icon will like to the article authors profile page.
@@ -1571,11 +1571,11 @@ The card footer will detail:
 
 ## Delete Article
 
-When an author of the article select the button to delete it a alert pop-up will be presented to confirm that they are happy to delete the article.
+When an author of the article selects the button to delete it a alert pop-up will be presented to confirm that they are happy to delete the article.
 
-The artiles state is then updated to imidiatly remove the article from the grid.
+The articles state is then updated to immediately remove the article from the grid.
 
-On successfull or failed article deletion a notification will be generated using the [notification feature](#notifications).
+On successful or failed article deletion a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
@@ -1645,9 +1645,9 @@ If the user is logged in a comment entry field will be found at the top of the c
 
 The user can add a comment and use the button in the bottom right of the entry field to submit it. It utilizes the [form validation feature](#form-validation).
 
-The state of the comments are updated to add a comment immediatly. As is the profile state to update the comment count.
+The state of the comments are updated to add a comment immediately. As is the profile state to update the comment count.
 
-On successfull or failed comment additon a notification will be generated using the [notification feature](#notifications).
+On successful or failed comment additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Comment Entry Field Screenshot</summary>
@@ -1665,9 +1665,9 @@ If the user is logged in they can edit a comment they have made using the top ri
 
 This field will look like the comment but will allow the user to change the body. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
-The state of the comments are updated to ammend the comment immediatly in it current location.
+The state of the comments are updated to amend the comment immediately in it current location.
 
-On successfull or failed comment edit a notification will be generated using the [notification feature](#notifications).
+On successful or failed comment edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Comment Edit Screenshot</summary>
@@ -1683,11 +1683,11 @@ On successfull or failed comment edit a notification will be generated using the
 
 If the user is logged in they can delete a comment they have made using the top right button on the comment.
 
-This will not produce a pop-up confirmation as there is little risk assosiated with deletion of comments.
+This will not produce a pop-up confirmation as there is little risk associated with deletion of comments.
 
-The state of the comments are updated to remove the comment immediatly. As is the profile state to update the comment count.
+The state of the comments are updated to remove the comment immediately. As is the profile state to update the comment count.
 
-On successfull or failed comment deletion a notification will be generated using the [notification feature](#notifications).
+On successful or failed comment deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
@@ -1722,7 +1722,7 @@ The link card will detail:
 - link title.
 - a link description if added.
 - if the current user is the link author it will show a button with edit and delete options.
-- the link url truncated if it exceed a set length.
+- the link url truncated if it exceeds a set length.
 
 <details>
       <summary style="font-weight:bold">Link Card Screenshot</summary>
@@ -1738,11 +1738,11 @@ The link card will detail:
 
 If the user is logged in a add link button will be found at the top of the links tab on the article page.
 
-The user can open a add link form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
+The user can open an add link form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
 
-The state of the links are updated to add a link immediatly.
+The state of the links are updated to add a link immediately.
 
-On successfull or failed link additon a notification will be generated using the [notification feature](#notifications).
+On successful or failed link additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Link Screenshot</summary>
@@ -1760,9 +1760,9 @@ If the user is logged in they can edit a link they have made using the top right
 
 This field will look like the link addition form but will appear in the position of the link being updated and will be pre-populated. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
-The state of the links are updated to ammend the link immediatly in it's current location.
+The state of the links are updated to amend the link immediately in it's current location.
 
-On successfull or failed link edit a notification will be generated using the [notification feature](#notifications).
+On successful or failed link edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Link Edit Screenshot</summary>
@@ -1778,11 +1778,11 @@ On successfull or failed link edit a notification will be generated using the [n
 
 If the user is logged in they can delete a link they have added using the top right button on the link.
 
-This will not produce a pop-up confirmation as there is little risk assosiated with deletion of a link.
+This will not produce a pop-up confirmation as there is little risk associated with deletion of a link.
 
-The state of the link are updated to remove the link immediatly.
+The state of the link are updated to remove the link immediately.
 
-On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
+On successful or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
@@ -1796,7 +1796,7 @@ The card header will detail:
 
 - profile name that created it along with it's avatar.
 - if the current user is the profile owner it will show a button with edit profile and update password options.
-- if the current user is not the pofile owner it will show a button to follow or unfollow the profile. This will update the profile state accross the profiles, sidebar and article page immediatly.
+- if the current user is not the profile owner it will show a button to follow or unfollow the profile. This will update the profile state across the profiles, sidebar and article page immediately.
 
 <details>
       <summary style="font-weight:bold">Header Screenshot</summary>
@@ -1858,7 +1858,7 @@ When a user selects edit profile they will be taken to a form page with the stan
 
 Here they will detail the information they wish to populate their profile page including an avatar image. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
+On successful or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Edit Profile Screenshot</summary>
@@ -1874,7 +1874,7 @@ When a user selects update password they will be taken to a form page with the s
 
 Here they will detail their new password and confirm it. This page is responsive and will show a image on the right for large screens.
 
-On successfull or failed article creation a notification will be generated using the [notification feature](#notifications).
+On successful or failed article creation a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Update Password Screenshot</summary>
@@ -1888,7 +1888,7 @@ On successfull or failed article creation a notification will be generated using
 
 ## List Languages
 
-At the bottom of the profile page under the languages tab will be a list of languages the profile owner knows. If the owner doesn't know any languages or has not recoreded any it will show a message of no languages for profile owner.
+At the bottom of the profile page under the languages tab will be a list of languages the profile owner knows. If the owner doesn't know any languages or has not recorded any it will show a message of no languages for profile owner.
 
 If the user is the profile owner it will also present them with an add language button.
 
@@ -1933,11 +1933,11 @@ The language card will detail:
 
 If the user is on their own profile an add language button will be found at the top of the languages tab on the profile page.
 
-The user can open a add language form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
+The user can open an add language form by selecting the button and close it by selecting it again. This form utilizes the [form validation feature](#form-validation).
 
-The state of the languages are updated to add a language immediatly. As is the profile to show an updated language count.
+The state of the languages are updated to add a language immediately. As is the profile to show an updated language count.
 
-On successfull or failed language additon a notification will be generated using the [notification feature](#notifications).
+On successful or failed language additon a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Add Language Screenshot</summary>
@@ -1951,13 +1951,13 @@ On successfull or failed language additon a notification will be generated using
 
 ## Edit Language
 
-If the user the profile owner they can edit their language using the top right button on the language card.
+If the user is the profile owner they can edit their language using the top right button on the language card.
 
 This field will look like the language addition form but will appear in the position of the language being updated and will be pre-populated. It utilizes the [form validation feature](#form-validation) and has a cancel button as well as a submission button.
 
-The state of the languages are updated to ammend the language immediatly in it's current location.
+The state of the languages are updated to amend the language immediately in it's current location.
 
-On successfull or failed language edit a notification will be generated using the [notification feature](#notifications).
+On successful or failed language edit a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Language Edit Screenshot</summary>
@@ -1973,19 +1973,19 @@ On successfull or failed language edit a notification will be generated using th
 
 If the user is the profile owner they can delete their languages using the top right button on the language card.
 
-This will not produce a pop-up confirmation as there is little risk assosiated with deletion of a language.
+This will not produce a pop-up confirmation as there is little risk associated with deletion of a language.
 
-The state of the languages are updated to remove the language immediatly. As is the profile state which updates the languages count.
+The state of the languages are updated to remove the language immediately. As is the profile state which updates the languages count.
 
-On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
+On successful or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 ---
 
 ## List Recommended Articles
 
-If the current user navigates to their own profile an additional tab will be present for recommended articles. This will not be present on anyone elses profile as it is only for the benifit of the logged in user.
+If the current user navigates to their own profile an additional tab will be present for recommended articles. This will not be present on anyone elses profile as it is only for the benefit of the logged in user.
 
-This tab will hold a list or articles that have been recommended to the user by other profiles (or the user themselves).
+This tab will hold a list of articles that have been recommended to the user by other profiles (or the user themselves).
 
 If there are no recommended articles it will show a message of no articles recommended.
 
@@ -2042,7 +2042,7 @@ This will activate a pop-up where a list of upto 20 profiles will appear to send
 
 Duplicate profiles can't be recomended and a [notification feature](#notifications) will inform the user trying to make the recommendation that the recipient already has that article in their recommended list.
 
-On successfull or failed recommendatons a notification will be generated using the [notification feature](#notifications).
+On successful or failed recommendatons a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Recommended Options Screenshot</summary>
@@ -2064,7 +2064,7 @@ On successfull or failed recommendatons a notification will be generated using t
       <summary style="font-weight:bold">Duplicate Article Recommendation Screenshot</summary>
    <br>
 
-![Duplicate Article Recommendation](readme-assets/features/recommended/already-recieved.png)<br>
+![Duplicate Article Recommendation](readme-assets/features/recommended/already-received.png)<br>
 
 </details><br>
 
@@ -2072,15 +2072,15 @@ On successfull or failed recommendatons a notification will be generated using t
 
 ## Delete Recommendation
 
-If the user is the profile owner they can delete their recieved recommendations using the top right button on the recommendaton card.
+If the user is the profile owner they can delete their received recommendations using the top right button on the recommendaton card.
 
 This will produce a confirmation pop-up to check the user is happy to remove it from their recommended list.
 
-The state of the recommendatons are updated to remove the recommendation immediatly.
+The state of the recommendatons are updated to remove the recommendation immediately.
 
 It should be noted that only the recipient of the recommendation can delete it, not the creator (unless they are the same person).
 
-On successfull or failed link deletion a notification will be generated using the [notification feature](#notifications).
+On successful or failed link deletion a notification will be generated using the [notification feature](#notifications).
 
 <details>
       <summary style="font-weight:bold">Delete Confirmation Screenshot</summary>
@@ -2200,16 +2200,16 @@ This screen navigates the user back to the home page.
 
 ## Tidy Up
 
-- Given more time I would ensure that were possibe hooks and components were consilidated for file reduction.
+- Given more time I would ensure that were possibe hooks and components where consolidated for file reduction.
 - Introduce ReactQuery to:
-  - manage manage and cache data for better performance.
+  - manage and cache data for better performance.
   - simplify context.
   - reform prop drilling that is currently present.
 - Add additional automated testing to front end.
-- Add skeleton to ininite scroll.
+- Add skeleton to infinite scroll.
 - Move Recommended from profile objects to specified API call for improved performance and better scalability.
 
-## Updates Relient On Backend
+## Updates Reliant On Backend
 
 - Add restriction option to the articles which the author could apply. This would restrict users who are not following the author from reading the articles.
 - Add video uploads as well as articles - storing to AWS.

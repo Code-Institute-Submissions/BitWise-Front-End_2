@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BiLike, BiChat, BiUserPlus, BiUserCircle } from "react-icons/bi";
 import { MdMarkChatRead } from "react-icons/md";
-MdMarkChatRead;
 import { AiFillLike } from "react-icons/ai";
 import { FaUserMinus } from "react-icons/fa";
 import {
