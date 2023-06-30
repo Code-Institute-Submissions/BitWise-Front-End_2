@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Text,
   Box,
@@ -16,18 +17,16 @@ import {
   PopoverHeader,
   PopoverBody,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import useSideProfiles from "../hooks/useSideProfiles";
 import { SlMagnifier } from "react-icons/sl";
 import { BiUserPlus, BiUserMinus } from "react-icons/bi";
 import { useColorModeValue } from "@chakra-ui/react";
 import LoggedIn from "./LoggedIn";
-import { Link } from "react-router-dom";
 import useFollowProfile from "../hooks/useFollowProfile";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import NoResults from "./NoResults";
-
 import { useNavigate } from "react-router-dom";
 import UpdateDeleteButton from "./UpdateDeleteButton";
 
@@ -73,6 +72,7 @@ const SideGrid = () => {
                 placeholder={placeholder}
                 value={searchProfile}
                 onChange={(event) => setSearchProfile(event.target.value)}
+                aria-label="Search profiles"
               />
             </InputGroup>
           </FormControl>
@@ -117,17 +117,21 @@ const SideGrid = () => {
                   <Button
                     onClick={() => handleUnFollow(profile)}
                     bg={custColor}
+                    aria-label="Unfollow"
                   >
                     <BiUserMinus color={iconCustColor} fontSize="100%" />
                   </Button>
                 ) : currentUser ? (
-                  <Button onClick={() => handleFollow(profile)}>
+                  <Button
+                    onClick={() => handleFollow(profile)}
+                    aria-label="Follow"
+                  >
                     <BiUserPlus fontSize="100%" />
                   </Button>
                 ) : (
                   <Popover placement="top">
                     <PopoverTrigger>
-                      <Button>
+                      <Button aria-label="Follow">
                         <BiUserPlus fontSize="100%" />
                       </Button>
                     </PopoverTrigger>
