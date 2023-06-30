@@ -55,7 +55,7 @@ const LoginPage = () => {
         setSuccessToast("Welcome to BitWise. You are now logged in!");
       })
       .catch((err) => {
-        console.log(err);
+        // add console log to for dev testing if neccessary
         setErrors(err.response?.data);
         setFailToast(`Unable to login (status: ${err.response?.status})`);
       });

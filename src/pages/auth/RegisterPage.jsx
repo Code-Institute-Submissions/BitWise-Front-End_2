@@ -52,14 +52,14 @@ const RegisterPage = () => {
     axios
       .post("dj-rest-auth/registration/", signUpData)
       .then((response) => {
-        console.log(response.data);
+        // add console log to for dev testing if neccessary
         navigate("/login/");
         setSuccessToast(
           "Your profile has been set up. Login using your newly registered details!"
         );
       })
       .catch((err) => {
-        console.log(err);
+        // add console log to for dev testing if neccessary
         setErrors(err.response?.data);
         setFailToast(`Unable to register (status: ${err.response?.status})`);
       });

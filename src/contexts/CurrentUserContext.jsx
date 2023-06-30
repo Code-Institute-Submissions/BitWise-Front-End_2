@@ -14,12 +14,13 @@ export const CurrentUserProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const handleMount = () => {
-    axiosRes.get("dj-rest-auth/user/")
+    axiosRes
+      .get("dj-rest-auth/user/")
       .then((response) => {
         setCurrentUser(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // add console log to for dev testing if neccessary
       });
   };
 
@@ -47,7 +48,7 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(error);
       }
     );
-  
+
     axiosRes.interceptors.response.use(
       (response) => response,
       async (error) => {

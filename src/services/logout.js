@@ -8,7 +8,7 @@ const handleSignOut = (setCurrentUser, navigate) => {
       navigate("/");
     })
     .catch((err) => {
-      console.log(err);
+      // add console log to for dev testing if neccessary
     });
 };
 

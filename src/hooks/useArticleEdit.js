@@ -35,7 +35,7 @@ const useArticleEdit = () => {
           navigate("/");
         }
       } catch (err) {
-        console.log(err);
+        // add console log to for dev testing if neccessary
       }
     };
 
@@ -62,7 +62,7 @@ const useArticleEdit = () => {
       navigate(`/article/${id}`);
       setSuccessToast("Article Updated");
     } catch (err) {
-      console.log(err);
+      // add console log to for dev testing if neccessary
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
