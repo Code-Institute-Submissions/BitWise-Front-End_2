@@ -51,7 +51,9 @@ const ArticleLinkEdit = (props) => {
           >
             <Heading size="md">Update Link: {link_title}</Heading>
             <FormControl mt={5} id="link_brief">
-              <FormLabel>Update Info About Link</FormLabel>
+              <FormLabel htmlFor="updated_link_brief">
+                Update Info About Link
+              </FormLabel>
 
               <Textarea
                 rows={4}
@@ -59,6 +61,7 @@ const ArticleLinkEdit = (props) => {
                 name="updated_link_brief"
                 value={updated_link_brief}
                 onChange={handleChange}
+                aria-label="Update Info About Link"
               />
 
               {errors.link_brief && (
@@ -70,7 +73,9 @@ const ArticleLinkEdit = (props) => {
             </FormControl>
 
             <FormControl mt={5} id="link_url">
-              <FormLabel>Provide Info About Link</FormLabel>
+              <FormLabel htmlFor="updated_link_url">
+                Provide Info About Link
+              </FormLabel>
 
               <InputGroup>
                 <Input
@@ -79,6 +84,7 @@ const ArticleLinkEdit = (props) => {
                   name="updated_link_url"
                   value={updated_link_url}
                   onChange={handleChange}
+                  aria-label="Provide Info About Link"
                 />
               </InputGroup>
 
@@ -91,10 +97,14 @@ const ArticleLinkEdit = (props) => {
             </FormControl>
 
             <Flex mt={2} justifyContent={"end"}>
-              <Button mr={1} onClick={() => setShowEditLink(false)}>
+              <Button
+                mr={1}
+                onClick={() => setShowEditLink(false)}
+                aria-label="Cancel"
+              >
                 <RxCross2 />
               </Button>
-              <Button type="submit">
+              <Button type="submit" aria-label="Update">
                 <RiMailSendLine />
               </Button>
             </Flex>

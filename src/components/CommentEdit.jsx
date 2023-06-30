@@ -44,10 +44,13 @@ const CommentEdit = (props) => {
           ))}
 
           <Flex justifyContent="flex-end">
-            <Button mr={1} onClick={() => setShowEditComment(false)}>
+            <Button
+              onClick={() => setShowEditComment(false)}
+              aria-label="Cancel editing comment"
+            >
               <RxCross2 />
             </Button>
-            <Button type="submit">
+            <Button type="submit" aria-label="Submit edited comment">
               <FiSend />
             </Button>
           </Flex>

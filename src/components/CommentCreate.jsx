@@ -36,6 +36,7 @@ const CommentCreate = (props) => {
                 placeholder="Enter comment here..."
                 value={body}
                 onChange={handleChange}
+                aria-label="Comment form"
               />
               {errors.body?.map((message, idx) => (
                 <Alert mt={2} borderRadius={5} key={idx} status="warning">
