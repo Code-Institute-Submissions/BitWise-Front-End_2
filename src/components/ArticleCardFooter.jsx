@@ -52,7 +52,12 @@ const ArticleCardFooter = (props) => {
       {is_owner ? (
         <Popover placement="top">
           <PopoverTrigger>
-            <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
+            <Button
+              flex="1"
+              variant="ghost"
+              leftIcon={<BiLike />}
+              aria-label="Likes"
+            >
               <Show above="sm">
                 <Text fontSize="sm">Likes</Text>
               </Show>
@@ -71,6 +76,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<AiFillLike color={custColor} />}
           onClick={handleUnlike}
+          aria-label="Unlike"
         >
           <Show above="sm">
             <Text fontSize="sm">Likes</Text>
@@ -83,6 +89,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<BiLike />}
           onClick={handleLike}
+          aria-label="Like"
         >
           <Show above="sm">
             <Text fontSize="sm">Likes</Text>
@@ -92,7 +99,12 @@ const ArticleCardFooter = (props) => {
       ) : (
         <Popover placement="top">
           <PopoverTrigger>
-            <Button flex="1" variant="ghost" leftIcon={<BiLike />}>
+            <Button
+              flex="1"
+              variant="ghost"
+              leftIcon={<BiLike />}
+              aria-label="Likes"
+            >
               <Show above="sm">
                 <Text fontSize="sm">Likes</Text>
               </Show>
@@ -107,7 +119,7 @@ const ArticleCardFooter = (props) => {
         </Popover>
       )}
 
-      <Link to={`/article/${id}`}>
+      <Link to={`/article/${id}`} aria-label="View comments">
         <Button
           flex="1"
           variant="ghost"
@@ -118,6 +130,7 @@ const ArticleCardFooter = (props) => {
               <BiChat />
             )
           }
+          aria-label="Comments"
         >
           <Show above="sm">
             <Text fontSize="sm">Comments</Text>
@@ -134,6 +147,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<BiUserCircle color={custColor} />}
           onClick={handleProfileClick}
+          aria-label="View owner profile"
         >
           <Text fontSize="sm">Owner</Text>
         </Button>
@@ -145,6 +159,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<FaUserMinus color={custColor} />}
           onClick={handleProfileClick}
+          aria-label="Unfollow user"
         >
           <Text fontSize="sm">Profile</Text>
         </Button>
@@ -156,6 +171,7 @@ const ArticleCardFooter = (props) => {
           variant="ghost"
           leftIcon={<BiUserPlus />}
           onClick={handleProfileClick}
+          aria-label="Follow user"
         >
           <Text fontSize="sm">Profile</Text>
         </Button>

@@ -10,8 +10,6 @@ import {
   AlertIcon,
   Input,
   InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
   Textarea,
   Heading,
 } from "@chakra-ui/react";

@@ -43,6 +43,7 @@ const ArticleLinkCard = (props) => {
               w="100%"
               colorScheme="purple"
               p={5}
+              aria-label="Visit Link"
             >
               {link_url.length > 25 ? `${link_url.slice(0, 25)}...` : link_url}
             </Button>

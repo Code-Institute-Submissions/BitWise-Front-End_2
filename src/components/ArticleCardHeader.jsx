@@ -44,7 +44,7 @@ const ArticleCardHeader = (props) => {
   return (
     <Flex spacing="4">
       <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-        <Link to={`/profile/${profile_id}`}>
+        <Link to={`/profile/${profile_id}`} aria-label="View Profile">
           <Avatar name={owner} bg={"purple.500"} src={profile_image} />
         </Link>
         <Box>
@@ -76,13 +76,18 @@ const ArticleCardHeader = (props) => {
               Are you sure you want to delete this article?
             </AlertDialogBody>
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
+              <Button
+                ref={cancelRef}
+                onClick={onClose}
+                aria-label="Cancel Delete"
+              >
                 Cancel
               </Button>
               <Button
                 colorScheme="red"
                 onClick={handleDeleteConfirmation}
                 ml={3}
+                aria-label="Confirm Delete"
               >
                 Delete
               </Button>

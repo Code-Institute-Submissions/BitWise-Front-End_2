@@ -30,7 +30,7 @@ const ArticleCardBody = (props) => {
 
   return (
     <>
-      <Link to={`/article/${id}`}>
+      <Link to={`/article/${id}`} aria-label="Go to article page">
         <Heading mb={5} size="lg">
           {article_title}
         </Heading>
@@ -68,11 +68,13 @@ const ArticleCardBody = (props) => {
         <Box mt={5}>
           {currentUser ? (
             <>
-              <Button onClick={onOpen}>Recommend Article</Button>
+              <Button onClick={onOpen} aria-label="Recommend Article">
+                Recommend Article
+              </Button>
               <RecommendedAlert isOpen={isOpen} onClose={onClose} />
             </>
           ) : (
-            <Link to="/login">
+            <Link to="/login" aria-label="Login to recommend">
               <Button>Login to recommend</Button>
             </Link>
           )}

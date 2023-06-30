@@ -11,7 +11,6 @@ import {
   Input,
   InputGroup,
   InputLeftAddon,
-  InputRightAddon,
   Textarea,
 } from "@chakra-ui/react";
 import useLinkCreate from "../hooks/useLinkCreate";
@@ -44,13 +43,14 @@ const ArticleLinkCreate = (props) => {
             w="100%"
           >
             <FormControl id="link_title">
-              <FormLabel>Link Title</FormLabel>
+              <FormLabel htmlFor="link_title">Link Title</FormLabel>
 
               <Input
                 type="text"
                 name="link_title"
                 value={link_title}
                 onChange={handleChange}
+                aria-label="Link Title"
               />
 
               {errors.link_title && (
@@ -62,14 +62,16 @@ const ArticleLinkCreate = (props) => {
             </FormControl>
 
             <FormControl mt={5} id="link_brief">
-              <FormLabel>Provide Info About Link</FormLabel>
+              <FormLabel htmlFor="link_brief">
+                Provide Info About Link
+              </FormLabel>
 
               <Textarea
                 rows={4}
-                type="text-area"
                 name="link_brief"
                 value={link_brief}
                 onChange={handleChange}
+                aria-label="Link Brief"
               />
 
               {errors.link_brief && (
@@ -81,7 +83,7 @@ const ArticleLinkCreate = (props) => {
             </FormControl>
 
             <FormControl mt={5} id="link_url">
-              <FormLabel>Provide Info About Link</FormLabel>
+              <FormLabel htmlFor="link_url">Link URL</FormLabel>
 
               <InputGroup>
                 <InputLeftAddon children="https://" />
@@ -91,6 +93,7 @@ const ArticleLinkCreate = (props) => {
                   name="link_url"
                   value={link_url}
                   onChange={handleChange}
+                  aria-label="Link URL"
                 />
               </InputGroup>
 
@@ -102,11 +105,15 @@ const ArticleLinkCreate = (props) => {
               )}
             </FormControl>
 
-            <Flex mt={2} justifyContent={"end"}>
-              <Button mr={1} onClick={() => setAddLink(false)}>
+            <Flex mt={2} justifyContent="end">
+              <Button
+                mr={1}
+                onClick={() => setAddLink(false)}
+                aria-label="Cancel"
+              >
                 <RxCross2 />
               </Button>
-              <Button type="submit">
+              <Button type="submit" aria-label="Submit">
                 <RiMailSendLine />
               </Button>
             </Flex>
