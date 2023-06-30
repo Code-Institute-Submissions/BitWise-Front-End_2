@@ -41,8 +41,8 @@ const HomePage = (props) => {
 
   return (
     <>
-      <SearchField />
-      <HStack>
+      <SearchField aria-label="Search articles" />
+      <HStack aria-label="Filter options">
         <OrderDropdown />
         <LanguageDropdown />
         {currentUser && (

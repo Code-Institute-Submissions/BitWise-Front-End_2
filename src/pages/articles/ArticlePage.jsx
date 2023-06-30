@@ -82,7 +82,7 @@ const ArticlePage = () => {
 
       {loaded && article.results.length > 0 && (
         <Tabs variant="enclosed" colorScheme="purple" pt={5}>
-          <TabList>
+          <TabList aria-label="Article tabs">
             <Tab>Comments</Tab>
             <Tab>Article Links</Tab>
           </TabList>

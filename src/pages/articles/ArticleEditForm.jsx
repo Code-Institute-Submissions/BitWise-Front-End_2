@@ -33,13 +33,14 @@ const ArticleEditForm = () => {
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="title">
-                <FormLabel>Title</FormLabel>
+                <FormLabel htmlFor="title">Title</FormLabel>
                 <Input
                   bg={"blackAlpha.50"}
                   type="text"
                   name="article_title"
                   value={article_title}
                   onChange={handleChange}
+                  aria-label="Title"
                 />
               </FormControl>
 
@@ -51,7 +52,7 @@ const ArticleEditForm = () => {
               ))}
 
               <FormControl id="content">
-                <FormLabel>Content</FormLabel>
+                <FormLabel htmlFor="content">Content</FormLabel>
                 <Textarea
                   bg={"blackAlpha.50"}
                   rows={10}
@@ -59,6 +60,7 @@ const ArticleEditForm = () => {
                   name="article_content"
                   value={article_content}
                   onChange={handleChange}
+                  aria-label="Content"
                 />
               </FormControl>
 
@@ -70,13 +72,14 @@ const ArticleEditForm = () => {
               ))}
 
               <FormControl id="language">
-                <FormLabel>Language</FormLabel>
+                <FormLabel htmlFor="language">Language</FormLabel>
                 <Select
                   bg={"blackAlpha.50"}
                   placeholder="Select option"
                   value={primary_language}
                   name="primary_language"
                   onChange={handleChange}
+                  aria-label="Language"
                 >
                   {languageOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -99,6 +102,7 @@ const ArticleEditForm = () => {
                   w="40%"
                   colorScheme={"purple"}
                   variant={"solid"}
+                  aria-label="Submit Article"
                 >
                   Submit Article
                 </Button>
@@ -108,6 +112,7 @@ const ArticleEditForm = () => {
                   colorScheme={"red"}
                   variant={"solid"}
                   onClick={() => navigate(-1)}
+                  aria-label="Cancel"
                 >
                   Cancel
                 </Button>
@@ -126,6 +131,7 @@ const ArticleEditForm = () => {
             src={
               "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
             }
+            aria-label="Login Image"
           />
         </Flex>
       </Show>

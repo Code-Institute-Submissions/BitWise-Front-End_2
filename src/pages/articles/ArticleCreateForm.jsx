@@ -40,13 +40,14 @@ const ArticleCreateForm = () => {
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="title">
-                <FormLabel>Title</FormLabel>
+                <FormLabel htmlFor="title">Title</FormLabel>
                 <Input
                   bg={"blackAlpha.50"}
                   type="text"
                   name="title"
                   value={title}
                   onChange={handleChange}
+                  aria-label="Title"
                 />
               </FormControl>
 
@@ -58,7 +59,7 @@ const ArticleCreateForm = () => {
               ))}
 
               <FormControl id="content">
-                <FormLabel>Content</FormLabel>
+                <FormLabel htmlFor="content">Content</FormLabel>
                 <Textarea
                   bg={"blackAlpha.50"}
                   rows={10}
@@ -66,6 +67,7 @@ const ArticleCreateForm = () => {
                   name="content"
                   value={content}
                   onChange={handleChange}
+                  aria-label="Content"
                 />
               </FormControl>
 
@@ -77,12 +79,13 @@ const ArticleCreateForm = () => {
               ))}
 
               <FormControl id="language">
-                <FormLabel>Language</FormLabel>
+                <FormLabel htmlFor="language">Language</FormLabel>
                 <Select
                   bg={"blackAlpha.50"}
                   placeholder="Select option"
                   name="language"
                   onChange={handleChange}
+                  aria-label="Language"
                 >
                   {languageOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -108,6 +111,7 @@ const ArticleCreateForm = () => {
                   isLoading={isLoading}
                   loadingText="Submitting..."
                   spinnerPlacement="end"
+                  aria-label="Submit Article"
                 >
                   Submit Article
                 </Button>
@@ -118,6 +122,7 @@ const ArticleCreateForm = () => {
                   variant={"solid"}
                   onClick={() => navigate(-1)}
                   disabled={isLoading}
+                  aria-label="Cancel"
                 >
                   Cancel
                 </Button>
