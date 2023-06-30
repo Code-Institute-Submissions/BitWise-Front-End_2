@@ -35,20 +35,27 @@ const ProfileEditForm = () => {
   const { bio, image } = profileData;
 
   return (
-    <Stack minH={"calc(100vh - 100px)"} direction={"row"}>
+    <Stack
+      minH={"calc(100vh - 100px)"}
+      direction={"row"}
+      aria-label="Profile Edit Form"
+    >
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"}>
-          <Heading fontSize={"2xl"}>Edit Your Profile</Heading>
+          <Heading fontSize={"2xl"} aria-label="Edit Profile">
+            Edit Your Profile
+          </Heading>
 
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="username">
-                <FormLabel>Username</FormLabel>
+                <FormLabel htmlFor="username">Username</FormLabel>
                 <Input
                   type="text"
                   name="username"
                   value={username}
                   onChange={handleUsernameChange}
+                  aria-label="Username"
                 />
               </FormControl>
 
@@ -62,7 +69,12 @@ const ProfileEditForm = () => {
               <FormControl id="image" isInvalid={Boolean(error?.image)}>
                 {image && (
                   <Box my={5}>
-                    <Image w="100%" borderRadius="20" src={image} />
+                    <Image
+                      w="100%"
+                      borderRadius="20"
+                      src={image}
+                      alt="Profile Image"
+                    />
                   </Box>
                 )}
 
@@ -76,6 +88,7 @@ const ProfileEditForm = () => {
                   ref={imageFile}
                   accept="image/*"
                   onChange={handleChange}
+                  aria-label="Profile Image"
                 />
               </FormControl>
 
@@ -87,7 +100,7 @@ const ProfileEditForm = () => {
               ))}
 
               <FormControl id="bio">
-                <FormLabel>Bio</FormLabel>
+                <FormLabel htmlFor="bio">Bio</FormLabel>
                 <Textarea
                   bg={"blackAlpha.50"}
                   rows={10}
@@ -95,6 +108,7 @@ const ProfileEditForm = () => {
                   name="bio"
                   value={bio}
                   onChange={handleChange}
+                  aria-label="Bio"
                 />
               </FormControl>
 
@@ -111,6 +125,7 @@ const ProfileEditForm = () => {
                   w="40%"
                   colorScheme={"purple"}
                   variant={"solid"}
+                  aria-label="Submit Updates Button"
                 >
                   Submit Updates
                 </Button>
@@ -120,6 +135,7 @@ const ProfileEditForm = () => {
                   colorScheme={"red"}
                   variant={"solid"}
                   onClick={() => navigate(-1)}
+                  aria-label="Cancel Button"
                 >
                   Cancel
                 </Button>
@@ -138,6 +154,7 @@ const ProfileEditForm = () => {
             src={
               "https://images.unsplash.com/photo-1573643808568-4a3c26f3a06b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
             }
+            aria-label="Profile Side Image"
           />
         </Flex>
       </Show>

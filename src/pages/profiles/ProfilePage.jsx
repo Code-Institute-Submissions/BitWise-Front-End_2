@@ -65,7 +65,7 @@ const ProfilePage = () => {
 
   return (
     <Box>
-      <Box p={5}>
+      <Box p={5} aria-label="Profile Card">
         {loaded ? (
           profile ? (
             <ProfileCard {...profile} main />
@@ -78,18 +78,29 @@ const ProfilePage = () => {
       </Box>
 
       {profile && (
-        <Tabs variant="enclosed" colorScheme="purple" pt={5}>
+        <Tabs
+          variant="enclosed"
+          colorScheme="purple"
+          pt={5}
+          aria-label="Profile Tabs"
+        >
           <TabList>
-            <Tab fontSize={fontSize}>Articles</Tab>
-            <Tab fontSize={fontSize}>Languages</Tab>
+            <Tab fontSize={fontSize} aria-label="Articles Tab">
+              Articles
+            </Tab>
+            <Tab fontSize={fontSize} aria-label="Languages Tab">
+              Languages
+            </Tab>
             {currentUser?.profile_id === profile?.id && (
-              <Tab fontSize={fontSize}>Recommended</Tab>
+              <Tab fontSize={fontSize} aria-label="Recommended Tab">
+                Recommended
+              </Tab>
             )}
           </TabList>
 
           <TabPanels>
             <TabPanel>
-              <SearchField />
+              <SearchField aria-label="Search Field" />
               <HStack>
                 <OrderDropdown />
                 <LanguageDropdown />
@@ -107,7 +118,11 @@ const ProfilePage = () => {
               <ProfileArticles endpoint={endpoint} />
             </TabPanel>
             <TabPanel>
-              <LanguageList profile={profile} endpoint={endpointLanguages} />
+              <LanguageList
+                profile={profile}
+                endpoint={endpointLanguages}
+                aria-label="Language List"
+              />
             </TabPanel>
 
             {currentUser?.profile_id === profile?.id && (

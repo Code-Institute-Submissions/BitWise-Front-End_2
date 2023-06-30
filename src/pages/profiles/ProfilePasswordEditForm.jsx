@@ -29,12 +29,13 @@ const ProfilePasswordEditForm = () => {
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="new_password1">
-                <FormLabel>New Password</FormLabel>
+                <FormLabel htmlFor="new_password1">New Password</FormLabel>
                 <Input
                   type="password"
                   name="new_password1"
                   value={new_password1}
                   onChange={handleChange}
+                  aria-label="New Password"
                 />
               </FormControl>
 
@@ -46,12 +47,15 @@ const ProfilePasswordEditForm = () => {
               ))}
 
               <FormControl id="new_password2">
-                <FormLabel>Confirm New Password</FormLabel>
+                <FormLabel htmlFor="new_password2">
+                  Confirm New Password
+                </FormLabel>
                 <Input
                   type="password"
                   name="new_password2"
                   value={new_password2}
                   onChange={handleChange}
+                  aria-label="Confirm New Password"
                 />
               </FormControl>
 
@@ -68,6 +72,7 @@ const ProfilePasswordEditForm = () => {
                   w="40%"
                   colorScheme={"purple"}
                   variant={"solid"}
+                  aria-label="Submit Updates"
                 >
                   Submit Updates
                 </Button>
@@ -77,6 +82,7 @@ const ProfilePasswordEditForm = () => {
                   colorScheme={"red"}
                   variant={"solid"}
                   onClick={() => navigate(-1)}
+                  aria-label="Cancel"
                 >
                   Cancel
                 </Button>

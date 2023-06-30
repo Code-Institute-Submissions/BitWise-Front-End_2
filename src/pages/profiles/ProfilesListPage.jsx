@@ -69,6 +69,7 @@ const ProfilesListPage = (props) => {
               placeholder={placeholder}
               value={searchProfiles}
               onChange={(event) => setSearchProfiles(event.target.value)}
+              aria-label="Search Profiles"
             />
           </InputGroup>
         </FormControl>
@@ -86,6 +87,7 @@ const ProfilesListPage = (props) => {
                 placeholder="Date Joined"
                 onChange={handleProfilesOrderChange}
                 value={orderProfiles}
+                aria-label="Order Profiles"
               >
                 <option value="-article_count">
                   {isSmallScreen ? "Articles" : "Most Articles"}
@@ -116,6 +118,7 @@ const ProfilesListPage = (props) => {
                     colorScheme="purple"
                     onChange={handleProfilesRestrictedChange}
                     isChecked={restricedProfiles === currentUser?.profile_id}
+                    aria-label="Restricted to Followed Profiles"
                   />
                 </Flex>
               </FormControl>
