@@ -99,12 +99,13 @@ const RegisterPage = () => {
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="username">
-                <FormLabel>Username</FormLabel>
+                <FormLabel htmlFor="username">Username</FormLabel>
                 <Input
                   type="text"
                   name="username"
                   value={username}
                   onChange={handleChange}
+                  aria-label="Username"
                 />
               </FormControl>
 
@@ -116,12 +117,13 @@ const RegisterPage = () => {
               ))}
 
               <FormControl id="password1">
-                <FormLabel>Password</FormLabel>
+                <FormLabel htmlFor="password1">Password</FormLabel>
                 <Input
                   type="password"
                   name="password1"
                   value={password1}
                   onChange={handleChange}
+                  aria-label="Password"
                 />
               </FormControl>
 
@@ -133,12 +135,13 @@ const RegisterPage = () => {
               ))}
 
               <FormControl id="password2">
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel htmlFor="password2">Confirm Password</FormLabel>
                 <Input
                   type="password"
                   name="password2"
                   value={password2}
                   onChange={handleChange}
+                  aria-label="Confirm Password"
                 />
               </FormControl>
 

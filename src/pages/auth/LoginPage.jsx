@@ -83,12 +83,13 @@ const LoginPage = () => {
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <FormControl id="username">
-                <FormLabel>Username</FormLabel>
+                <FormLabel htmlFor="username">Username</FormLabel>
                 <Input
                   type="text"
                   name="username"
                   value={username}
                   onChange={handleChange}
+                  aria-label="Username"
                 />
               </FormControl>
 
@@ -100,12 +101,13 @@ const LoginPage = () => {
               ))}
 
               <FormControl id="password">
-                <FormLabel>Password</FormLabel>
+                <FormLabel htmlFor="password">Password</FormLabel>
                 <Input
                   type="password"
                   name="password"
                   value={password}
                   onChange={handleChange}
+                  aria-label="Password"
                 />
               </FormControl>
 
