@@ -19,6 +19,7 @@ const ErrorPage = () => {
       overflow="hidden"
       variant="outline"
       m={{ base: "20px", md: "50px" }}
+      aria-label="Error Card"
     >
       <Image
         objectFit="cover"
@@ -26,13 +27,16 @@ const ErrorPage = () => {
         maxH={{ base: "100%", md: "100%" }}
         src={errorImage}
         alt="404 image"
+        aria-label="Error Image"
       />
 
       <Stack>
         <CardBody>
-          <Heading size="md">Page Not Found</Heading>
+          <Heading size="md" aria-label="Page Not Found Heading">
+            Page Not Found
+          </Heading>
 
-          <Text py="2">
+          <Text py="2" aria-label="Error Message">
             Looks like the page you're seeking decided to step away for a quick
             coffee break. It's probably enjoying a delightful cup of Java while
             we frantically search for it. We'll bring it back from the coffee
@@ -41,7 +45,7 @@ const ErrorPage = () => {
         </CardBody>
 
         <CardFooter>
-          <Link to="/">
+          <Link to="/" aria-label="Back to Home Link">
             <Button variant="solid" colorScheme="purple">
               Back to Home
             </Button>
