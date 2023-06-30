@@ -1998,7 +1998,7 @@ If there are no recommended articles it will show a message of no articles recom
 </details>
 
 <details>
-      <summary style="font-weight:bold">No Recommendations</summary>
+      <summary style="font-weight:bold">No Recommendations Screenshot</summary>
    <br>
 
 ![No Recommendations](readme-assets/features/recommended/no-recommended.png)<br>
@@ -2006,7 +2006,7 @@ If there are no recommended articles it will show a message of no articles recom
 </details>
 
 <details>
-      <summary style="font-weight:bold">Not Profile Owner</summary>
+      <summary style="font-weight:bold">Not Profile Owner Screenshot</summary>
    <br>
 
 ![Not Profile Owner](readme-assets/features/recommended/no-tab.png)<br>
@@ -2107,7 +2107,7 @@ Some examples of validation in action (this doesn't cover all potential validati
 </details>
 
 <details>
-      <summary style="font-weight:bold">Need Both Fields</summary>
+      <summary style="font-weight:bold">Need Both Fields Screenshot</summary>
    <br>
 
 ![Need Both Fields](readme-assets/features/form-validation/need-both-fields.png)<br>
@@ -2115,7 +2115,7 @@ Some examples of validation in action (this doesn't cover all potential validati
 </details>
 
 <details>
-      <summary style="font-weight:bold">Bad Credentials</summary>
+      <summary style="font-weight:bold">Bad Credentials Screenshot</summary>
    <br>
 
 ![Bad Credentials](readme-assets/features/form-validation/bad%20credientials.png)<br>
@@ -2123,7 +2123,7 @@ Some examples of validation in action (this doesn't cover all potential validati
 </details>
 
 <details>
-      <summary style="font-weight:bold">Invalid Entry</summary>
+      <summary style="font-weight:bold">Invalid Entry Screenshot</summary>
    <br>
 
 ![Invalid Entry](readme-assets/features/form-validation/invalid-entry.png)<br>
@@ -2131,7 +2131,7 @@ Some examples of validation in action (this doesn't cover all potential validati
 </details>
 
 <details>
-      <summary style="font-weight:bold">Passwords Don't Match</summary>
+      <summary style="font-weight:bold">Passwords Don't Match Screenshot</summary>
    <br>
 
 ![Passwords Don't Match](readme-assets/features/form-validation/pass-dont-match.png)<br>
@@ -2171,7 +2171,7 @@ A 404 page was developed for any urls that do not exist.
 This screen navigates the user back to the home page.
 
 <details>
-      <summary style="font-weight:bold">Page Not Found</summary>
+      <summary style="font-weight:bold">Page Not Found Screenshot</summary>
    <br>
 
 ![Page Not Found](readme-assets/features/not-found/page-not-found.png)<br>
@@ -2187,7 +2187,7 @@ A page was developed for any urls that meet the routing criteria but do not hous
 This screen navigates the user back to the home page.
 
 <details>
-      <summary style="font-weight:bold">Items Not Found</summary>
+      <summary style="font-weight:bold">Items Not Found Screenshot</summary>
    <br>
 
 ![Items Not Found](readme-assets/features/not-found/items-not-found.png)<br>
