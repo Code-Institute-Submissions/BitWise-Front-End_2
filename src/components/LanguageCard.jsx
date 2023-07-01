@@ -84,11 +84,23 @@ const LanguageCard = (props) => {
               Confidence ({confidence}/100):
             </Heading>
             {confidence > 70 ? (
-              <Progress colorScheme="green" value={confidence} />
+              <Progress
+                colorScheme="green"
+                value={confidence}
+                aria-label="High Confidence"
+              />
             ) : confidence > 50 ? (
-              <Progress colorScheme="yellow" value={confidence} />
+              <Progress
+                colorScheme="yellow"
+                value={confidence}
+                aria-label="Medium Confidence"
+              />
             ) : (
-              <Progress colorScheme="red" value={confidence} />
+              <Progress
+                colorScheme="red"
+                value={confidence}
+                aria-label="Low Confidence"
+              />
             )}
           </CardBody>
         </Card>

@@ -66,7 +66,7 @@ const LanguageEdit = (props) => {
               {language} Update
             </Heading>
             <FormControl mt={5} id="languageConfidence">
-              <FormLabel>Confidence</FormLabel>
+              <FormLabel htmlFor="languageConfidence">Confidence</FormLabel>
 
               <Flex>
                 <NumberInput
@@ -79,6 +79,7 @@ const LanguageEdit = (props) => {
                       target: { name: "languageConfidence", value },
                     })
                   }
+                  aria-label="Confidence"
                 >
                   <NumberInputField />
                   <NumberInputStepper>
@@ -97,6 +98,7 @@ const LanguageEdit = (props) => {
                       target: { name: "languageConfidence", value },
                     })
                   }
+                  aria-label="Confidence"
                 >
                   <SliderTrack>
                     <SliderFilledTrack />
@@ -117,7 +119,9 @@ const LanguageEdit = (props) => {
             </FormControl>
 
             <FormControl mt={5} id="date">
-              <FormLabel>Used Language Since</FormLabel>
+              <FormLabel htmlFor="languageUsed_since">
+                Used Language Since
+              </FormLabel>
               <Input
                 placeholder="Select Date"
                 size="md"
@@ -125,6 +129,7 @@ const LanguageEdit = (props) => {
                 name="languageUsed_since"
                 value={languageUsed_since}
                 onChange={handleChange}
+                aria-label="Used Language Since"
               />
             </FormControl>
 
@@ -132,7 +137,7 @@ const LanguageEdit = (props) => {
               <Button mr={1} onClick={() => setShowEditLanguage(false)}>
                 <RxCross2 />
               </Button>
-              <Button type="submit">
+              <Button type="submit" aria-label="Submit Language Edit">
                 <RiMailSendLine />
               </Button>
             </Flex>

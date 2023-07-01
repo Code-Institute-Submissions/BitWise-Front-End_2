@@ -23,17 +23,17 @@ const HamburgerMenu = () => {
   const loggedInLinks = (
     <>
       <NavLink to="/feed/">
-        <MenuItem>Feed</MenuItem>
+        <MenuItem aria-label="Feed">Feed</MenuItem>
       </NavLink>
       <NavLink to={`/profile/${currentUser?.profile_id}`}>
-        <MenuItem>My Profile</MenuItem>
+        <MenuItem aria-label="My Profile">My Profile</MenuItem>
       </NavLink>
       <Link
         onClick={() => {
           handleSignOut(setCurrentUser, navigate);
         }}
       >
-        <MenuItem>Logout</MenuItem>
+        <MenuItem aria-label="Logout">Logout</MenuItem>
       </Link>
     </>
   );
@@ -41,10 +41,10 @@ const HamburgerMenu = () => {
   const loggedOutLinks = (
     <>
       <NavLink to="/register/">
-        <MenuItem>Sign Up</MenuItem>
+        <MenuItem aria-label="Sign Up">Sign Up</MenuItem>
       </NavLink>
       <NavLink to="/login/">
-        <MenuItem>Login</MenuItem>
+        <MenuItem aria-label="Login">Login</MenuItem>
       </NavLink>
     </>
   );
@@ -60,15 +60,16 @@ const HamburgerMenu = () => {
             as={Button}
             fontSize="1.7rem"
             h="50px"
+            aria-label="Toggle Menu"
           >
             {isOpen ? <AiOutlineClose /> : <GiHamburgerMenu />}
           </MenuButton>
           <MenuList color={custFontColor} w="100vw" mt="2" className="nav">
             <NavLink to="/">
-              <MenuItem>Home</MenuItem>
+              <MenuItem aria-label="Home">Home</MenuItem>
             </NavLink>
             <NavLink to="/profiles/">
-              <MenuItem>Profiles</MenuItem>
+              <MenuItem aria-label="Profiles">Profiles</MenuItem>
             </NavLink>
             {currentUser ? loggedInLinks : loggedOutLinks}
           </MenuList>

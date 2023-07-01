@@ -22,7 +22,9 @@ const ItemNotFound = (props) => {
       </CardBody>
       <CardFooter>
         <Link to="/">
-          <Button colorScheme="purple">Back Home</Button>
+          <Button colorScheme="purple" aria-label="Back Home">
+            Back Home
+          </Button>
         </Link>
       </CardFooter>
     </Card>

@@ -57,9 +57,14 @@ const LanguageCreate = (props) => {
                 placeholder="Select option"
                 name="language"
                 onChange={handleChange}
+                aria-label="Select Language"
               >
                 {languageOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    aria-label={option.label}
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -89,6 +94,7 @@ const LanguageCreate = (props) => {
                   onChange={(value) =>
                     handleChange({ target: { name: "confidence", value } })
                   }
+                  aria-label="Confidence Number Input"
                 >
                   <NumberInputField />
                   <NumberInputStepper>
@@ -105,6 +111,7 @@ const LanguageCreate = (props) => {
                   onChange={(value) =>
                     handleChange({ target: { name: "confidence", value } })
                   }
+                  aria-label="Confidence Slider"
                 >
                   <SliderTrack>
                     <SliderFilledTrack />
@@ -133,14 +140,19 @@ const LanguageCreate = (props) => {
                 name="used_since"
                 value={used_since}
                 onChange={handleChange}
+                aria-label="Used Language Since Input"
               />
             </FormControl>
 
             <Flex mt={2} justifyContent={"end"}>
-              <Button mr={1} onClick={() => setAddLanguage(false)}>
+              <Button
+                mr={1}
+                onClick={() => setAddLanguage(false)}
+                aria-label="Cancel Button"
+              >
                 <RxCross2 />
               </Button>
-              <Button type="submit">
+              <Button type="submit" aria-label="Submit Button">
                 <RiMailSendLine />
               </Button>
             </Flex>

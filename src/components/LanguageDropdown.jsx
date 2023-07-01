@@ -28,9 +28,14 @@ const LanguageDropdown = () => {
             placeholder={isSmallScreen ? "All" : "All Languages"}
             onChange={handleLanguageChange}
             value={languageFilter}
+            aria-label="Select Language Filter"
           >
             {languageOptions.map((option) => (
-              <option key={option.value} value={option.value}>
+              <option
+                key={option.value}
+                value={option.value}
+                aria-label={option.label}
+              >
                 {option.label}
               </option>
             ))}

@@ -22,6 +22,7 @@ const LanguageList = (props) => {
           colorScheme={addLanguage ? "gray" : "purple"}
           mb={5}
           onClick={() => setAddLanguage(!addLanguage)}
+          aria-label={addLanguage ? "Close" : "Add Language"}
         >
           {addLanguage ? "Close" : "Add Language"}
         </Button>
@@ -47,7 +48,7 @@ const LanguageList = (props) => {
           <NoResults text={"No Languages Recorded by this profile!"} />
         )
       ) : (
-        <Spinner />
+        <Spinner aria-label="Loading languages" />
       )}
     </>
   );
