@@ -32,6 +32,7 @@ const SearchField = () => {
               placeholder={placeholder}
               value={searchFilter}
               onChange={(event) => setSearchFilter(event.target.value)}
+              aria-label="Search articles"
             />
           </InputGroup>
         </FormControl>
