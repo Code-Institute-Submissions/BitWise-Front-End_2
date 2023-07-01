@@ -14,6 +14,7 @@ const LoggedIn = () => {
               name={currentUser.username}
               bg={"purple.500"}
               src={currentUser.profile_image}
+              alt={currentUser.username}
             />
           </Link>
           <Heading pl={2} size="md">

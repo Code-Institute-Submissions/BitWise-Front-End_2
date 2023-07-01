@@ -77,19 +77,24 @@ const ProfileCard = (props) => {
               handleEdit={() => handleEdit(id)}
               handlePasswordUpdate={() => handlePasswordUpdate(id)}
               profileUpdate
+              aria-label="Update or Delete Profile"
             />
           ) : following_id ? (
-            <Button onClick={() => handleUnFollow(props)} bg={custColor}>
+            <Button
+              onClick={() => handleUnFollow(props)}
+              bg={custColor}
+              aria-label="Unfollow"
+            >
               <BiUserMinus color={iconCustColor} fontSize="100%" />
             </Button>
           ) : currentUser ? (
-            <Button onClick={() => handleFollow(props)}>
+            <Button onClick={() => handleFollow(props)} aria-label="Follow">
               <BiUserPlus fontSize="100%" />
             </Button>
           ) : (
             <Popover placement="top">
               <PopoverTrigger>
-                <Button>
+                <Button aria-label="Follow">
                   <BiUserPlus fontSize="100%" />
                 </Button>
               </PopoverTrigger>

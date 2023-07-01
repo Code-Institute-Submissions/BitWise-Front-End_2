@@ -97,6 +97,11 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
                           colorScheme={
                             recommended_to === profile.id ? "purple" : "gray"
                           }
+                          aria-label={
+                            recommended_to === profile.id
+                              ? "Selected Profile"
+                              : "Profile"
+                          }
                         >
                           {profile.owner}
                         </Button>
@@ -121,6 +126,7 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
                 type="submit"
                 onClick={onClose}
                 ml={3}
+                aria-label="Submit"
               >
                 Submit
               </Button>

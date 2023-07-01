@@ -24,6 +24,7 @@ const OrderDropdown = () => {
             placeholder={isSmallScreen ? "Posted" : "Date Posted"}
             onChange={handleOrderChange}
             value={orderFilter}
+            aria-label="Select Order"
           >
             <option value="-likes_count">
               {isSmallScreen ? "Liked" : "Most Liked"}

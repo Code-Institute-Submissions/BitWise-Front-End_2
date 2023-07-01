@@ -43,6 +43,7 @@ const RecommendedCard = (props) => {
             bg={custColor}
             color={custColorText}
             onClick={handleDelete}
+            aria-label="Delete Recommendation"
           >
             <AlertDialog
               isOpen={isOpen}
@@ -71,6 +72,7 @@ const RecommendedCard = (props) => {
                       colorScheme="red"
                       onClick={handleDeleteConfirmation}
                       ml={3}
+                      aria-label="Confirm Delete"
                     >
                       Delete
                     </Button>
