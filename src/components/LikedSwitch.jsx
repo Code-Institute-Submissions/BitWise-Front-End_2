@@ -36,6 +36,7 @@ const LikedSwitch = () => {
                 colorScheme="purple"
                 onChange={handleSwitchChange}
                 isChecked={likedByUserSwitch === currentUser?.profile_id}
+                aria-label={likedByUserSwitch ? "You Liked" : "All"}
               />
             </Flex>
           </FormControl>
