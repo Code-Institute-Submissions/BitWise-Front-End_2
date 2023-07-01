@@ -27,6 +27,7 @@ const UpdateDeleteButton = (props) => {
       <MenuButton
         as={Button}
         _expanded={{ bg: custColor, color: custColorText }}
+        aria-label={`Options for ${target}`}
       >
         {icon}
       </MenuButton>
@@ -37,17 +38,17 @@ const UpdateDeleteButton = (props) => {
           left: "auto",
         }}
       >
-        <MenuItem onClick={handleEdit} aria-label="edit">
+        <MenuItem onClick={handleEdit} aria-label={`Edit ${target}`}>
           <BiEdit />
           <span>&nbsp;&nbsp;</span>Edit {target}
         </MenuItem>
         {profileUpdate ? (
-          <MenuItem onClick={handlePasswordUpdate} aria-label="update password">
+          <MenuItem onClick={handlePasswordUpdate} aria-label="Update password">
             <RiLockPasswordLine />
             <span>&nbsp;&nbsp;</span>Update Password
           </MenuItem>
         ) : (
-          <MenuItem onClick={handleDelete} aria-label="delete">
+          <MenuItem onClick={handleDelete} aria-label={`Delete ${target}`}>
             <BiTrash />
             <span>&nbsp;&nbsp;</span>Delete {target}
           </MenuItem>
