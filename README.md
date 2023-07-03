@@ -80,9 +80,9 @@
   - [Further Testing](#further-testing)
   - [Development Bugs](#development-bugs)
   - [Key Learns](#key-learns)
-- [Deployment](#)
-  - [Deployment Document]()
-- [Credits]()
+- [Deployment](#deployment)
+  - [Deployment Document](#deployment)
+- [Credits](#credits)
   - [Development Resources]()
   - [Media and Content Resources]()
   - [Acknowledgements]()
@@ -2373,7 +2373,7 @@ As I spent more time on this project I developed my understanding of a range of 
 
 Deployment doumentation found [here](DEPLOYMENT.md).
 
-   <br>
+<br>
 
 # Credits
 
@@ -2381,16 +2381,36 @@ Deployment doumentation found [here](DEPLOYMENT.md).
 
 The following sources acted as guidance for understanding.
 
-- [Dennis Ivy](https://www.youtube.com/@DennisIvy) – Youtube Instructor – Helped develop basic Django functionality knowledge.
+- [Code Institute](https://codeinstitute.net/). The fundemental understanding I obtained for building React applications was obtained from the CI Moments Course. This acted as a basic structure for my course with a few elements being being utilised directly. Specifically:
+  - axiosDefault.js (altered axios.defaults.baseURL)
+  - CurrentUserContext (slight variations in code)
+  - The fetchMoreData and TimeStamp Management features in Utils (**note** the fetchMoreProfileData function within this file was not covered by Code Institute and is unique to this site)
+
+It should be noted that although some small extracts were utilized form the CI course I was careful to ensure I fully understood them before applying them to the site.
+
+- [Giraffe Acadamy](https://www.youtube.com/watch?v=ABQLwlE8MUA) – Youtube Instructor – Helped with React fundementals.
+- [React Documentation](https://react.dev/) - Documentation to undertand React functionality and capabilities.
+- [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hcnIeryurNMMcGBHp7AYlP) – Youtube Instructor – Helped with Chakra UI functinoality.
+- [Arpan Neupane](https://www.youtube.com/watch?v=FvsvHzcwOmQ&t=201s) – Youtube Instructor – Helped with Vercel deployment steps.
 - Code Institute Slack Community Support – Aided in the testing of the project and discussions regarding issues and features.
 - Code Institute Tutor Support – Code Institute for queries on issues I required clarification on.
 - Stack Overflow used for generalised queries during development.
 
 ## Media and Content Resources
 
-- Images - See Website Design Imagery for links to the image/icon sites used within this project [here](#website-design).
+The images used where taken from unsplash:
+
+- [Add Article](https://unsplash.com/photos/npxXWgQ33ZQ)
+- [Update Profile](https://unsplash.com/photos/IcclLmLQuw8)
+- [Password Reset](https://unsplash.com/photos/3wPJxh-piRw)
+
+The icons for this project were taken from React-Icons:
+
+- [React-Icons](https://react-icons.github.io/react-icons/)
 
 # Article Content
+
+To produce coding article content on the site to give a better visual experience to the testers and future users Chat GPT was used to generate programming articles about a range of topics.
 
 ## Acknowledgements
 
