@@ -42,6 +42,10 @@ Add CSS Validation Testing
 
 Prettier was used throughout this project to ensure the appropriate JS Lint standards were met.
 
+In future I would transition to use of ESLint to allow more specialized config.
+
+I then passed this through an online JS Lint to ensure the standards were being applied as expected.
+
 ---
 
 ## Jest Unit Testing

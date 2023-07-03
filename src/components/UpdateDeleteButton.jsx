@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { BiTrash, BiEdit } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
+import styles from "../styles/UpdateDeleteButton.module.css";
 
 const UpdateDeleteButton = (props) => {
   const {
@@ -31,13 +32,7 @@ const UpdateDeleteButton = (props) => {
       >
         {icon}
       </MenuButton>
-      <MenuList
-        style={{
-          position: "absolute",
-          right: "-50px",
-          left: "auto",
-        }}
-      >
+      <MenuList className={styles.ButtonPopup}>
         <MenuItem onClick={handleEdit} aria-label={`Edit ${target}`}>
           <BiEdit />
           <span>&nbsp;&nbsp;</span>Edit {target}
