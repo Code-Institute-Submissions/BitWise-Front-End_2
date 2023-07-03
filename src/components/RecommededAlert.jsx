@@ -16,6 +16,7 @@ import {
   Spinner,
   Flex,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import useRecommendCreate from "../hooks/useRecommendCreate";
 
@@ -60,7 +61,7 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
                 event.preventDefault();
               }}
             >
-              <FormControl id="searchProfiles">
+              <FormControl id="user">
                 <InputGroup>
                   <InputLeftElement pointerEvents="none">
                     <SlMagnifier />
@@ -79,42 +80,42 @@ const RecommendedAlert = ({ isOpen, onClose }) => {
 
           <form onSubmit={handleSubmit}>
             <AlertDialogBody>
-              <FormControl id="recommend">
-                <FormLabel>Recommend to:</FormLabel>
+              <Heading my={5} fontSize="lg">
+                Recommend to:
+              </Heading>
 
-                {loaded ? (
-                  <Box>
-                    <Flex flexWrap="wrap">
-                      {searchPageProfiles?.results.map((profile) => (
-                        <Button
-                          key={profile.id}
-                          onClick={() => handleButtonClick(profile.id)}
-                          mr={2}
-                          mb={2}
-                          variant={
-                            recommended_to === profile.id ? "solid" : "outline"
-                          }
-                          colorScheme={
-                            recommended_to === profile.id ? "purple" : "gray"
-                          }
-                          aria-label={
-                            recommended_to === profile.id
-                              ? "Selected Profile"
-                              : "Profile"
-                          }
-                        >
-                          {profile.owner}
-                        </Button>
-                      ))}
-                    </Flex>
-                  </Box>
-                ) : (
-                  <Flex py={2}>
-                    <Text pr={2}>Updating...</Text>
-                    <Spinner />
+              {loaded ? (
+                <Box>
+                  <Flex flexWrap="wrap">
+                    {searchPageProfiles?.results.map((profile) => (
+                      <Button
+                        key={profile.id}
+                        onClick={() => handleButtonClick(profile.id)}
+                        mr={2}
+                        mb={2}
+                        variant={
+                          recommended_to === profile.id ? "solid" : "outline"
+                        }
+                        colorScheme={
+                          recommended_to === profile.id ? "purple" : "gray"
+                        }
+                        aria-label={
+                          recommended_to === profile.id
+                            ? "Selected Profile"
+                            : "Profile"
+                        }
+                      >
+                        {profile.owner}
+                      </Button>
+                    ))}
                   </Flex>
-                )}
-              </FormControl>
+                </Box>
+              ) : (
+                <Flex py={2}>
+                  <Text pr={2}>Updating...</Text>
+                  <Spinner />
+                </Flex>
+              )}
             </AlertDialogBody>
 
             <AlertDialogFooter>

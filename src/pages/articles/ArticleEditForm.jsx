@@ -51,8 +51,8 @@ const ArticleEditForm = () => {
                 </Alert>
               ))}
 
-              <FormControl id="content">
-                <FormLabel htmlFor="content">Content</FormLabel>
+              <FormControl id="article_content">
+                <FormLabel htmlFor="article_content">Content</FormLabel>
                 <Textarea
                   bg={"blackAlpha.50"}
                   rows={10}
@@ -71,8 +71,8 @@ const ArticleEditForm = () => {
                 </Alert>
               ))}
 
-              <FormControl id="language">
-                <FormLabel htmlFor="language">Language</FormLabel>
+              <FormControl id="primary_language">
+                <FormLabel htmlFor="primary_language">Language</FormLabel>
                 <Select
                   bg={"blackAlpha.50"}
                   placeholder="Select option"

@@ -50,7 +50,7 @@ const ArticleLinkEdit = (props) => {
             w="100%"
           >
             <Heading size="md">Update Link: {link_title}</Heading>
-            <FormControl mt={5} id="link_brief">
+            <FormControl mt={5} id="updated_link_brief">
               <FormLabel htmlFor="updated_link_brief">
                 Update Info About Link
               </FormLabel>
@@ -72,7 +72,7 @@ const ArticleLinkEdit = (props) => {
               )}
             </FormControl>
 
-            <FormControl mt={5} id="link_url">
+            <FormControl mt={5} id="updated_link_url">
               <FormLabel htmlFor="updated_link_url">
                 Provide Info About Link
               </FormLabel>

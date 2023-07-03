@@ -7,6 +7,7 @@ Back to Readme [here](README.md)
 - [HTML Validation Testing](#html-validation-testing)
 - [CSS Validation Testing](#css-validation-testing)
 - [JS Validation Testing](#js-validation-testing)
+- [Devtools - Issue Review](#devtools---issue-review)
 - [Jest Unit Testing](#python-validation-testing)
 - [Lighthouse Testing](#lighthouse-testing)
 - [User Testing](#user-testing)
@@ -51,6 +52,22 @@ I then passed this through an online JS Lint to ensure the standards were being 
 ## Jest Unit Testing
 
 Add Jest Unit Testing
+
+---
+
+## Devtools - Issue Review
+
+The devtool was used for evaluating the a number of aspects of the site including the Iuues Log.
+
+Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and where left due to time constraints. Given longer these would each be investigated more thouroughly and applied if appropriate.
+
+<details>
+      <summary style="font-weight:bold">Devtools - Issue Review</summary>
+   <br>
+
+![Devtools - Issue Review](readme-assets/testing/dev-tools.png)<br>
+
+</details><br>
 
 ---
 

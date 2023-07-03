@@ -27,7 +27,7 @@ const LikedSwitch = () => {
             event.preventDefault();
           }}
         >
-          <FormControl>
+          <FormControl id="liked-by-user">
             <Flex alignItems="center">
               <FormLabel htmlFor="liked-by-user" mb="0" mr={2}>
                 {likedByUserSwitch ? "You Liked" : "All"}

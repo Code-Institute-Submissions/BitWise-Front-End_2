@@ -66,7 +66,7 @@ const ProfileEditForm = () => {
                 </Alert>
               ))}
 
-              <FormControl id="image" isInvalid={Boolean(error?.image)}>
+              <FormControl id="image-upload" isInvalid={Boolean(error?.image)}>
                 {image && (
                   <Box my={5}>
                     <Image

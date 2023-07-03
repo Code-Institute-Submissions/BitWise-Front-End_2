@@ -109,7 +109,7 @@ const ProfilesListPage = (props) => {
                 event.preventDefault();
               }}
             >
-              <FormControl>
+              <FormControl id="restrictedProfilesFilter">
                 <Flex alignItems="center" flexWrap="wrap" ml={2}>
                   <FormLabel my="0" htmlFor="restrictedProfilesFilter">
                     {restricedProfiles ? "Following" : "All"}
