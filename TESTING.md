@@ -35,7 +35,29 @@ Only info points highlighted. No errors or warnings identified.
 
 ## CSS Validation Testing
 
-Add CSS Validation Testing
+In previous projects I built sites using extensive CSS. In this project I aimed to minimise my use of CSS and attempt to utilise component libraries (in this case Chakra UI).
+
+As a result of this there were only 2 CSS files created to test.
+
+<details>
+      <summary style="font-weight:bold">index.css</summary>
+   <br>
+
+![index.css-pt1](readme-assets/testing/css/css-validation.png)<br>
+
+![index.css-pt2](readme-assets/testing/css/css-validation-2.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">UpdateDeleteButton.module.css</summary>
+   <br>
+
+![UpdateDeleteButton.module.css-pt1](readme-assets/testing/css/css-validation-module.png)<br>
+
+![UpdateDeleteButton.module.css-pt2](readme-assets/testing/css/css-validation-module-2.png)<br>
+
+</details><br>
 
 ---
 
