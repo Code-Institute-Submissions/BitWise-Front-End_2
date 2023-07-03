@@ -75,11 +75,11 @@
   - [Languages Used](#languages-used)
   - [Libraries Used](#libraries-used)
   - [Developer Tools](#developer-tools)
-- [Testing]()
-  - [Testing Document]()
-  - [Further Testing]()
-  - [Development Bugs]()
-  - [Key Learns]()
+- [Testing](#testing)
+  - [Testing Document](#testing-document)
+  - [Further Testing](#further-testing)
+  - [Development Bugs](#development-bugs)
+  - [Key Learns](#key-learns)
 - [Deployment]()
   - [Deployment Document]()
 - [Credits]()
@@ -2269,213 +2269,103 @@ Testing documentation found [here](TESTING.md).
 
 ## Development Bugs
 
-   <details>
-      <summary style="font-weight:bold">BT Email</summary>
-   <br>
-   
-   On testing of the website it was identified that due to BT's strict spam policies users with a BT email address did not always receive their reset password emails.
+Throughout this project very few bugs were encountered.
 
-If this site was to be push commercially BT have a contact for businesses to register with them and allow emails to be sent without restriction.
+Those that did generally fell into the following categories and were addressed at the end of each component build:
 
-All other email proviers tested received reset password emails without issue.
+- Syntax issues
+- Optional chaining operator (failing to add ?)
+- Failing to pass appropriate props
 
----
+To view the resolotion of these in more detail review the [commit history](https://github.com/Joe-Collins-1986/BitWise-Front-End/commits/main) where they are documented.
 
-   </details>
+In addition to the more standard bugs the following issues were also encoutered:
 
-   <details>
-      <summary style="font-weight:bold">Parallax Effect On Home Screen</summary>
-   <br>
+### Language Names:
 
-On testing it was identified by multiple users accross a range of devices that the parallax image on the home page was not loading correctly.
+When using the language names to filter the articles it was identified that the ++ and # in C++ and C# were not being interpreted.
 
-![Parallax Bug](readme-assets/testing/bugs/parallax-bug.jpg)
+To resolve this they were assigned the names C Sharp and C Plus Plus and when mapping through them re-assinged the names C++ and C#.
 
-On reviewing the Lighthouse score for this it became apparent that this was due to the image size and resolution. To resolve this issue the image was converted to a webp format.
+To review the code of how this bug was resolved refer to commit [78393fc](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/78393fc7e9ac35a13696c6800d341e07353688c9)
 
-Users confirmed this resolved the issue and Lighthouse gave good performance scores to confirm.
+### Delete Article Navigation:
 
-![Parallax Bug](readme-assets/testing/bugs/parallax-fix.png)
+Testing identified there was an issue with article deletion. When an article was deleted it would require different navigation dependant on the current URL the user was on.
 
-**Note:** There was one instance where the image still failed to load correctly. This was run on a mac using Parallels to validate a microsoft machine usage in Edge. However, on request 2 users ran the website on seperate microsoft machines using Edge and no issue occured.
+If the user was on the Home page, Profile Page of Feed Page then the user should remain on the page and the article should be removed from the state. However, if the user is on the Article page then the site is required to navigate away from the page as it no longer holds content. This was updated to navigate to the home page.
 
----
+To review the code of how this bug was resolved refer to commit [e7e7fc1](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/e7e7fc1)
 
-   </details>
+### Years Experience:
 
-   <details>
-      <summary style="font-weight:bold">Image Orientation</summary>
-   <br>
+When the profile detailed the years of experience that the profile owner had it was identified that the back end provided the text "Less than a year" for anythong under one year of experience.
 
-In development it was identified that certain images were rotating when they where uploaded to the AWS account.
+The front end was built to follow the years of experience with either "years of experience" or "year of experience"
 
-![Img Rotation Bug](readme-assets/testing/bugs/picture-orientation-bug.jpg)
+This did not align to the api output. Therefore this was changed to state "years of experience" for anything over one, "year of experience" for one, and "of experience" for less than one.
 
-To resolve this issue I updated the settings.py to manage the image orientation:
+To review the code of how this bug was resolved refer to commit [ace0df2](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/ace0df2)
 
-      DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = False
+### Double Switch:
 
-![Img Rotation Fix](readme-assets/testing/bugs/picture-orientation-fix.png)
+It was identified that when using Chakra if an element is assigned Show above="md" and another element with Show below="md" they were both appearing at the same time on the md breakpoint.
 
----
+This was identified in responsive review testing as the Liked switch and Followed switch appeared twice on an ipad view.
 
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Line Break</summary>
-   <br>
-   
-   In development when reviewing the site update posts it became apparent that line breaks were not being implemented into the posts.
-
-![Line Break Entry Bug](readme-assets/testing/bugs/line-break-add-bug.png)
-
+<details>
+      <summary style="font-weight:bold">Double Switch</summary>
    <br>
 
-![Line Break View Bug](readme-assets/testing/bugs/line-break-bug.png)
+![Double Switch](readme-assets/testing/bugs/double-switch.png)<br>
 
-To resolve this a |linebreaksbr was added to the required fields. This was implemented accross the entire site:
+</details>
 
-      <p class="text-center">{{ update.content|linebreaksbr }}</p>
+To review the code of how this bug was resolved refer to commit [1a06b08](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/1a06b08)
 
-![Line Break View Fix](readme-assets/testing/bugs/line-break-fix.png)
+### .com Removal:
 
-   <br>
+When the link create form was initially built it pre-fixed the url entry with https:// amd suffixed the url with .com.
 
----
+This caused issues as many links the test users attemped to add did not end in .com. As a result this was removed.
 
-   </details>
+To review the code of how this bug was resolved refer to commit [c6c6ffa](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/c6c6ffa)
 
-   <details>
-      <summary style="font-weight:bold">Tags Duplication</summary>
-   <br>
-   
-   In testing it was identified that tags were case sensitive and that this was causing duplication of the same tags.
+### Infinite Scroll Reset:
 
-![Tags On Posts Bug](readme-assets/testing/bugs/tags-on-posts-bug.png)
+When testing the infinite scroll if kept returning to the top of the screen when additional articles were fetched. This only occured for articles, not for profiles or comments.
 
-   <br>
+On investigation it was identified that this was due to a useEffect that had been built into the article header to ensure that on url change the page reverted to the top. This was never intended to be added to the article component and was moved out and into the App.jsx.
 
-![Tags Page Bug](readme-assets/testing/bugs/tags-page-bug.png)
+This resolved the infinite scroll bug.
 
-   <br>
+To review the code of how this bug was resolved refer to commit [2818849](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/2818849)
 
-To resolve this issue I converted the tags to uppercase where the exclude duplication code could take effect for these instances:
+### Recommend Options:
 
-      def form_valid(self, form):
-         country = get_object_or_404(Country, pk=self.kwargs['pk'])
-         form.instance.author = self.request.user
-         form.instance.country = country
+When the Recommend pop-up was created to allow users to select profiles to recommend articles to it was identified that if the profiles were not on the initially fetched list of names there was no way to select them.
 
-         tag_names = form.cleaned_data.get('tags')
-         if tag_names:
-            for i, tag_name in enumerate(tag_names):
-                  tag, created = Tag.objects.get_or_create(name=tag_name.upper())
-                  tag_names[i] = tag.name
+As a result a search bar was added to allow users to search any profiles.
 
-         response = super().form_valid(form)
-
-         tags = form.instance.tags.all()
-         if not tags.exists():
-            no_tags = Tag.objects.get_or_create(name='NO TAGS')[0]
-            form.instance.tags.add(no_tags)
-
-         return response
-
-![Tags On Posts Fix](readme-assets/testing/bugs/tags-on-posts-fix.png)
-
-   <br>
-
-![Tags Page Fix](readme-assets/testing/bugs/tags-page-fix.png)
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Pagination</summary>
-   <br>
-   
-   In testing it was identified that when pagination was used on a filtered page it would reset the filter. This is because it was assigned its own value to the end of the URL which was being used to define the filter criteria.
-
-To resolve i added a variable (search_query) into the view to get the value of the search criteria (q) and then passed this back to the template as context.
-
-This variable could then be applied to the end of the pagination href to navigate back and forth but retain the search criteria:
-
-      <a class="page-link" href="?page={{ diary_posts.next_page_number }}&q={{search_query}}" aria-label="Next Page">
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Filter By Topic</summary>
-   <br>
-   
-   In testing it was identified that when filtering by topic in the Site Updates the spacing in the topic names was causing HTML validation errors:
-
-![Filter By Topic Bug](readme-assets/testing/bugs/filter-by-topic-bug.png)
-
-To resolve this I applied |urlencode to remove URL spacing.
-
-      <a href="{% url 'all-admin-updates' %}?q={{ topic.topic_catagory|urlencode }}" aria-label="filter to topic selected">{{ topic }}</a>
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Admin CORS Console Errors</summary>
-   <br>
-   
-   When using the Django Admin pages it was identified that CORS errors were being displayed on the console. This was due to the CORS policy I had set on my AWS account.
-
-I updated the policy and this removed the errors.
-
----
-
-   </details>
-
-   <details>
-      <summary style="font-weight:bold">Long Username</summary>
-   <br>
-   
-   During final testing it was identified that is a user used a extremely long username it would negatively impact the formatting for the home page, comments and profile.
-
-![Long Username Bug](readme-assets/testing/bugs/long-username-home-bug.jpeg)
-
-A long term solution to this issue would be to override the Django User model to restrict the username character allowance. However, at this stage in the delopment I did not want to impact the existing models. As a result I insead updated the CSS with word-wrap: break-word. This stopped long usernames exceeding their containers.
-
-Home Update:
-
-![Long Username Home Fix](readme-assets/testing/bugs/long-username-home-fix.png)
-
-Profile Update:
-
-![Long Username Profile Fix](readme-assets/testing/bugs/long-username-profile-fix.png)
-
-Comment Update:
-
-![Long Username Comment Fix](readme-assets/testing/bugs/long-username-comment-fix.png)
-
----
-
-   </details>
+To review the code of how this bug was resolved refer to commit [b845814](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/b845814)
 
 ## Key Learns
 
-This project proved to be by far the most challenging and exciting project I have completed. Django did not come naturally to me and my understanding needed to be developed and enhanced by a number of really great online resources (see credits).
+1. Reusability
 
-I had an almost endless list of things I learned from this project ranging from basic Django functionality to implementation strategies.
+The primary key learn I took from this project was planning for the re-usability of components and hooks.
 
-Below list some of the key factors I would try to improve upon for my next project.
+Due to my inexperience at the start of this project I was not as efficient as I could have been when building re-usable assets. In this project I reworked a number of files to streamline the application but this was a challange due to the initial build.
 
-- As I developed my Django knowledge, I became more capable of writing smaller blocks of more efficient code. Given more time I would revisit earlier blocks of code to refine them further and improve their readability.
-- At times in this project, I showed an inconsistency of methods used to achieve the same tasks. Although these methods worked as expected, I would aim to be more consistent in future.
-- Throughout the project I gained a better understanding of class-based views vs function views. I frequently used class-based views where in some instances the development might have been better served and simplified using function-based views.
-- In some of my code, especially the earlier functions I tried to achieve too many things with a single function. In future I would use the html blocks to write more concise, tailored, and reusable code.
-- I need to be more efficient with the use of CSS. In future projects I will look to break the required components down into reusable elements for styling.
+In future I will spend more time considering this in the inital planning stages.
 
-   <br>
+2. Build Consistancy
+
+As I was becomming familiar with the React Library I tested a number of build methods to find which I was more comfortable with such as try/catch vs then/catch axios requests. As a result there are some inconsistancies in the build where I would look to update given more time.
+
+3. General Knowledge
+
+As I spent more time on this project I developed my understanding of a range of concepts such as how to apply separation of concerns, appropriate file structures and the use of React features/libraries such as Controllers, JQuery, Caching, etc, which I would like to further enhance this site with in the future.
 
 # Deployment
 
@@ -2489,13 +2379,9 @@ Deployment doumentation found [here](DEPLOYMENT.md).
 
 ## Development Resources
 
-The following sources acted as guidance for understanding. No code was taken directly for use in this project:
+The following sources acted as guidance for understanding.
 
 - [Dennis Ivy](https://www.youtube.com/@DennisIvy) – Youtube Instructor – Helped develop basic Django functionality knowledge.
-- [Corey Schafer](https://www.youtube.com/@coreyms) – Youtube Instructor – Helped develop basic Django functionality knowledge.
-- [thenewboston](https://www.youtube.com/@thenewboston) – Youtube Instructor – Helped develop basic Django functionality knowledge.
-- [B Learning Club](https://www.youtube.com/watch?v=zwBKm8xp9V0&t=6s) – Youtube tutorial video – Helped develop understanding of Django taggit usability.
-- [developedbyed](https://www.youtube.com/watch?v=Nt70Ld0dJCM) - Youtube tutorial video – How to build Parallax image effect.
 - Code Institute Slack Community Support – Aided in the testing of the project and discussions regarding issues and features.
 - Code Institute Tutor Support – Code Institute for queries on issues I required clarification on.
 - Stack Overflow used for generalised queries during development.
@@ -2503,8 +2389,8 @@ The following sources acted as guidance for understanding. No code was taken dir
 ## Media and Content Resources
 
 - Images - See Website Design Imagery for links to the image/icon sites used within this project [here](#website-design).
-- Map SVG – The original SVG map was taken and tailored from the following source [here](https://simplemaps.com/resources/svg-world).
-- Countries JSON – The JSON used to populate the Country Info was taken from [here](https://gist.github.com/keeguon/2310008?permalink_comment_id=4255990#gistcomment-4255990).
+
+# Article Content
 
 ## Acknowledgements
 

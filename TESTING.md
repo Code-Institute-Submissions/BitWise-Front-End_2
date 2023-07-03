@@ -7,8 +7,9 @@ Back to Readme [here](README.md)
 - [HTML Validation Testing](#html-validation-testing)
 - [CSS Validation Testing](#css-validation-testing)
 - [JS Validation Testing](#js-validation-testing)
+- [NPM Audit](#npm-audit)
 - [Devtools - Issue Review](#devtools---issue-review)
-- [Jest Unit Testing](#python-validation-testing)
+- [Jest Unit Testing](#jest-unit-testing)
 - [Lighthouse Testing](#lighthouse-testing)
 - [User Testing](#user-testing)
 - [User Story Acceptance Criteria](#user-story-acceptance-criteria)
@@ -65,9 +66,35 @@ As a result of this there were only 2 CSS files created to test.
 
 Prettier was used throughout this project to ensure the appropriate JS Lint standards were met.
 
+<details>
+      <summary style="font-weight:bold">Problems Review</summary>
+   <br>
+
+![Problems Review](readme-assets/testing/js-validation.png)<br>
+
+</details>
+
 In future I would transition to use of ESLint to allow more specialized config.
 
 I then passed this through an online JS Lint to ensure the standards were being applied as expected.
+
+---
+
+## NPM Audit
+
+On completion of the build an npm audit was run.
+
+npm audit fix was then run to reduce the vulnerabilities removing all high and critical warnings leaving only 4 moderate warnings.
+
+After review these were deemed acceptable and left.
+
+<details>
+      <summary style="font-weight:bold">npm audit</summary>
+   <br>
+
+![npm audit](readme-assets/testing/npm-audit.png)<br>
+
+</details>
 
 ---
 
@@ -79,9 +106,9 @@ Add Jest Unit Testing
 
 ## Devtools - Issue Review
 
-The devtool was used for evaluating the a number of aspects of the site including the Iuues Log.
+The devtool was used for evaluating the a number of aspects of the site including the Issues Log.
 
-Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and where left due to time constraints. Given longer these would each be investigated more thouroughly and applied if appropriate.
+Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and where left due to time constraints. Given longer these would each be investigated more thouroughly and changes applied if appropriate.
 
 <details>
       <summary style="font-weight:bold">Devtools - Issue Review</summary>
@@ -695,6 +722,10 @@ Each feature detailed on the README.md file has been manaully tested thoroughly 
 
 ## User Story Acceptance Criteria
 
-Add User Story Acceptance Criteria
+All User Stories created for the front end were documented in GitHub.
+
+Each of these User Stories was assigned acceptance critera which was achieved prior to marking them to complete.
+
+To review the User Stories and the acceptance criteria slect the appropriate User Story you wish to view from the issues log [here](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues?q=is%3Aissue+is%3Aclosed)
 
 ---
