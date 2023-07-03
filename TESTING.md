@@ -18,7 +18,17 @@ Back to Readme [here](README.md)
 
 ## HTML Validation Testing
 
-Add HTML Validation Testing
+Due to this being a React appication there is only one html page which calls the other JSX components.
+
+Only info points highlighted. No errors or warnings identified.
+
+<details>
+      <summary style="font-weight:bold">HTML Validation</summary>
+   <br>
+
+![HTML Validation](readme-assets/testing/html-validation.png)<br>
+
+</details><br>
 
 ---
 
@@ -30,7 +40,7 @@ Add CSS Validation Testing
 
 ## JS Validation Testing
 
-Add JS Validation Testing
+Prettier was used throughout this project to ensure the appropriate JS Lint standards were met.
 
 ---
 
@@ -42,7 +52,73 @@ Add Jest Unit Testing
 
 ## Lighthouse Testing
 
-Add Lighthouse Testing
+Lighthouse scores were taken to ensure that the accessability, SEO, performance and best practices achieved to a high level. Each page achieved 90+ scores on all of the 4 catagories.
+
+It was noted that the SEO score was 100% in dev but dropped slightly in the live env due to the Vite set up of the main.jsx being called by the index.html. This was deemed acceptable as it still achieved a green score, however given more time I would investigate this further to resolve the issue.
+
+<details>
+      <summary style="font-weight:bold">Sign Up</summary>
+   <br>
+
+![Sign Up](readme-assets/testing/lighthouse/sign-up.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Sign In</summary>
+   <br>
+
+![Sign In](readme-assets/testing/lighthouse/login.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Home</summary>
+   <br>
+
+![Home](readme-assets/testing/lighthouse/home.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Feed</summary>
+   <br>
+
+![Feed](readme-assets/testing/lighthouse/feed.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Create Article</summary>
+   <br>
+
+![Create Article](readme-assets/testing/lighthouse/create-article.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Edit Article</summary>
+   <br>
+
+![Edit Article](readme-assets/testing/html-validation.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profile</summary>
+   <br>
+
+![Profile](readme-assets/testing/lighthouse/profile.png)<br>
+
+</details>
+
+<details>
+      <summary style="font-weight:bold">Profiles</summary>
+   <br>
+
+![Profiles](readme-assets/testing/lighthouse/profiles.png)<br>
+
+</details><br>
 
 ---
 
