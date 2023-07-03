@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useNavigate } from "react-router-dom";
+import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -31,18 +32,21 @@ export const CurrentUserProvider = ({ children }) => {
   useMemo(() => {
     axiosReq.interceptors.request.use(
       async (config) => {
-        try {
-          await axios.post("/dj-rest-auth/token/refresh/");
-          return config;
-        } catch (error) {
-          setCurrentUser((prevCurrentUser) => {
-            if (prevCurrentUser) {
-              navigate("/login");
-            }
-            return null;
-          });
-          return config;
+        if (shouldRefreshToken()) {
+          try {
+            await axios.post("/dj-rest-auth/token/refresh/");
+          } catch (error) {
+            setCurrentUser((prevCurrentUser) => {
+              if (prevCurrentUser) {
+                navigate("/login");
+              }
+              return null;
+            });
+            return config;
+          }
         }
+        removeTokenTimestamp();
+        return config;
       },
       (error) => {
         return Promise.reject(error);
@@ -55,16 +59,16 @@ export const CurrentUserProvider = ({ children }) => {
         if (error.response?.status === 401) {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
-            return await axios(error.config);
-          } catch (error_1) {
+          } catch (error) {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 navigate("/login");
               }
               return null;
             });
-            throw error_1;
+            removeTokenTimestamp();
           }
+          return axios(err.config);
         }
         return Promise.reject(error);
       }

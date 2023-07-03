@@ -20,6 +20,7 @@ import {
   useSetSuccessToast,
   useSetFailToast,
 } from "../../contexts/AlertToasts";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const LoginPage = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -51,6 +52,7 @@ const LoginPage = () => {
       .post("dj-rest-auth/login/", loginData)
       .then((response) => {
         setCurrentUser(response.data.user);
+        setTokenTimestamp(response.data);
         navigate(-1);
         setSuccessToast("Welcome to BitWise. You are now logged in!");
       })

@@ -1,10 +1,12 @@
 import axios from "axios";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const handleSignOut = (setCurrentUser, navigate) => {
   axios
     .post("dj-rest-auth/logout/")
     .then((response) => {
       setCurrentUser(null);
+      removeTokenTimestamp();
       navigate("/");
     })
     .catch((err) => {
