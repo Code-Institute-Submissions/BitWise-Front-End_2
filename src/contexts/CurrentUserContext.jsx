@@ -68,7 +68,7 @@ export const CurrentUserProvider = ({ children }) => {
             });
             removeTokenTimestamp();
           }
-          return axios(err.config);
+          return axios(error.config);
         }
         return Promise.reject(error);
       }
