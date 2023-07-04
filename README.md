@@ -689,6 +689,12 @@ After review the following icon was seleted from React-Icons
 
 </details>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ## Wireframes
 
 You can view the wireframes using this [Figma Link](https://www.figma.com/file/bViM8lmSanrjYBaFzLCzkm/BirWize-%2C?type=whiteboard&node-id=0%3A1&t=VJReX3c3OvMzXxcs-1)
@@ -2540,6 +2546,12 @@ This screen navigates the user back to the home page.
 - Add skeleton to infinite scroll.
 - Move Recommended from profile objects to specified API call for improved performance and better scalability.
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ## Updates Reliant On Backend
 
 - Add restriction option to the articles which the author could apply. This would restrict users who are not following the author from reading the articles.
@@ -2609,6 +2621,12 @@ Testing documentation found [here](TESTING.md).
 - Viewed on a variety of devices using Web Developer Tools as well as several live desktop, iPad and mobile devices.
 - Each page tested by developer and friends to ensure functionality worked as expected.
 - Issued to Slack community to review and provide feedback on.
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ## Development Bugs
 
@@ -2691,6 +2709,12 @@ When the Recommend pop-up was created to allow users to select profiles to recom
 As a result a search bar was added to allow users to search any profiles.
 
 To review the code of how this bug was resolved refer to commit [b845814](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/b845814)
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ## Key Learns
 
