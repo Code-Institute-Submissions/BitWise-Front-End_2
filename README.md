@@ -2613,7 +2613,7 @@ This screen navigates the user back to the home page.
 
 ## Testing Document
 
-Testing documentation found [here](TESTING.md).
+Testing documentation found [here](./TESTING.md).
 
 ## Further Testing
 
@@ -2744,7 +2744,7 @@ As I spent more time on this project I developed my understanding of a range of 
 
 ## Deployment Document
 
-Deployment doumentation found [here](DEPLOYMENT.md).
+Deployment doumentation found [here](./DEPLOYMENT.md).
 
 <br>
 
