@@ -281,6 +281,12 @@ If you have a LucidChart account, you can also view this Mind-Map [here](https:/
 
 </details>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ## Website Objectives
 
 <details>
@@ -322,6 +328,12 @@ The visitor should have a clear understanding of what the website purpose is and
 ---
 
 </details>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ## User Stories
 
@@ -467,6 +479,12 @@ These also breakdown:
 
 </details>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ## Priority Matrix
 
 The below graphs map out the feasibility of the frontend features considered against the user value they provide to help establish the priority they have as part of the build.
@@ -482,6 +500,12 @@ The below graphs map out the feasibility of the frontend features considered aga
 If you have a LucidChart account, you can also view this priority matrix [here](https://lucid.app/lucidspark/406a3984-0347-45eb-8e45-a5e3f08144ba/edit?viewport_loc=-2166%2C-751%2C3880%2C5038%2C0_0&invitationId=inv_cb50c34a-94ea-4124-99fa-ac9da55318a3).
 
 </details>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ## Agile Methodology
 
