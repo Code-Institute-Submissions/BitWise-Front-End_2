@@ -107,6 +107,12 @@ This website has been designed to provide programmers of all experience levels a
 
 Following discussions with the client this site will initially be tailored to written articles with the potential to expand to video uploads, live streaming, and purchasable tutorials at a later date.
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 # Responsive Review
 
 ## Am I Responsive?
@@ -198,6 +204,12 @@ In addition to this the site was run through the following [website](https://ui.
 ![404 Page](readme-assets/responsive-review/404.png)
 
 </details>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 # Project Planning
 
@@ -568,6 +580,12 @@ For site of the project in GitHub detailing the completed User Stories in Iterat
 
 </details>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 # User Experience (UX)
 
 ## Website Design
@@ -623,6 +641,7 @@ The images used where taken from unsplash:
 - [Add Article](https://unsplash.com/photos/npxXWgQ33ZQ)
 - [Update Profile](https://unsplash.com/photos/IcclLmLQuw8)
 - [Password Reset](https://unsplash.com/photos/3wPJxh-piRw)
+- [404 Page](https://unsplash.com/photos/JJPqavJBy_k)
 
 The icons for this project were taken from React-Icons:
 
@@ -712,6 +731,12 @@ Profile Not Found:<br>
 
 **Note:** The structure and wireframes are only to act as a concept and are subject to change as the website development evolves in collaboration with the client.
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 # Site Features
 
 Each section below will detail their specific function.
@@ -738,6 +763,12 @@ Dark and Light mode options have been applied to all pages via the Colour Switch
 
 All screenshots detailed in the features section of this Readme file have been taken in Dark Mode.
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Sign Up
@@ -753,6 +784,12 @@ On successful or failed registration a notification will be generated using the 
 ![Sign Up](readme-assets/features/sign-up/sign-up.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -772,6 +809,12 @@ On successful or failed login a notification will be generated using the [notifi
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Logout
@@ -781,6 +824,12 @@ Logout is a feature that logs the user out when it is selected.
 A confirmation popup was considered however due to the fact that there is no real negative impact to the user by logging out this was dismissed and only added to features where the impact would be more substantial.
 
 On loggout the user stays on the same page assuming it is available to logged out users (e.g. feed). If the user is on a page that a logged out user can't access it will redirect to the home page.
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -847,6 +896,12 @@ The navbar has conditional formating to only show links relevent to the user bas
 ![Hamburger Logged In Menu](readme-assets/features/navbar/hamburger-menu-logged-in.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -996,6 +1051,12 @@ If the currently logged in user has their profile displaying in the sidebar they
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Logged In Avatar
@@ -1027,6 +1088,12 @@ On small screens this will appear in the body element of the page. On large scre
 ![Logged In Small](readme-assets/features/logged-in-avatar/logged-in-small.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1070,6 +1137,12 @@ The article search bar is designed to help the user quickly and easy retrieve ar
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Article Order Dropdown
@@ -1111,6 +1184,12 @@ The article order dropdown is designed to help the users order articles by what 
 ![Article Page Article Order Dropdown](readme-assets/features/article-order/articles-page-articles-ordered.png)
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1155,6 +1234,12 @@ It should be noted that selecting 'no specific language' does not filter to arti
 ![Article Page Article Language Dropdown](readme-assets/features/article-language/article-page-language-dropdown.png)
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1212,6 +1297,12 @@ In this example the profile selected is that of the current user therefore no ar
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Profile Search Bar
@@ -1236,6 +1327,12 @@ The profile search bar is designed to help the user quickly and easily search pr
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Profile Order Dropdown
@@ -1251,6 +1348,12 @@ The profiles order dropdown is designed to help the users order profiles by what
 ![Porfiles Order Dropdown](readme-assets/features/profiles-order-dropdown/profiles-order.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1281,6 +1384,12 @@ If the user is not logged in the switch will not appear.
 ![Following Switch Applied](readme-assets/features/followed-switch/following-switch.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1344,6 +1453,12 @@ This grid is applied to the Profiles page.
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Skeleton
@@ -1374,6 +1489,12 @@ To demonstrate that profiles and articles are being loaded in an aesthetic manne
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Infinite Scroll
@@ -1398,6 +1519,12 @@ In future given more time I would apply skeletons to the infinite scroll loading
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Arrow To Top
@@ -1411,6 +1538,12 @@ To improve useability of the site an arrow appears when the user scrolls down th
 ![Arrow To Top](readme-assets/features/arrow-top/arrow-top.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1440,6 +1573,12 @@ In testing it was identified that if the internet conection was slow a user may 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Edit Article
@@ -1455,6 +1594,12 @@ On successful or failed article update a notification will be generated using th
 ![Edit Article Form](readme-assets/features/edit-article/edit-article.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1569,6 +1714,12 @@ The card footer will detail:
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ## Delete Article
 
 When an author of the article selects the button to delete it a alert pop-up will be presented to confirm that they are happy to delete the article.
@@ -1584,6 +1735,12 @@ On successful or failed article deletion a notification will be generated using 
 ![Delete Confirmation](readme-assets/features/article-delete/delete-popup.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1617,6 +1774,12 @@ If the user is not logged in it will ask them to login to add a comment.
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Comment Card
@@ -1636,6 +1799,12 @@ The comment card will detail:
 ![Comment Card](readme-assets/features/comments/comments-list.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1657,6 +1826,12 @@ On successful or failed comment additon a notification will be generated using t
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Edit Comment
@@ -1677,6 +1852,12 @@ On successful or failed comment edit a notification will be generated using the 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Delete Comment
@@ -1688,6 +1869,12 @@ This will not produce a pop-up confirmation as there is little risk associated w
 The state of the comments are updated to remove the comment immediately. As is the profile state to update the comment count.
 
 On successful or failed comment deletion a notification will be generated using the [notification feature](#notifications).
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1713,6 +1900,12 @@ If the user is logged in it also present them with an add link button.
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Link Card
@@ -1731,6 +1924,12 @@ The link card will detail:
 ![Link Card](readme-assets/features/links/link-card.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1752,6 +1951,12 @@ On successful or failed link additon a notification will be generated using the 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Edit Link
@@ -1772,6 +1977,12 @@ On successful or failed link edit a notification will be generated using the [no
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Delete Link
@@ -1783,6 +1994,12 @@ This will not produce a pop-up confirmation as there is little risk associated w
 The state of the link are updated to remove the link immediately.
 
 On successful or failed link deletion a notification will be generated using the [notification feature](#notifications).
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1846,6 +2063,12 @@ The card footer will detail:
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Edit Profile Or Update Password
@@ -1884,6 +2107,12 @@ On successful or failed article creation a notification will be generated using 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## List Languages
@@ -1908,6 +2137,12 @@ If the user is the profile owner it will also present them with an add language 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Language Card
@@ -1926,6 +2161,12 @@ The language card will detail:
 ![Language Card](readme-assets/features/languages/language-card.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -1947,6 +2188,12 @@ On successful or failed language additon a notification will be generated using 
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Edit Language
@@ -1967,6 +2214,12 @@ On successful or failed language edit a notification will be generated using the
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Delete Language
@@ -1978,6 +2231,12 @@ This will not produce a pop-up confirmation as there is little risk associated w
 The state of the languages are updated to remove the language immediately. As is the profile state which updates the languages count.
 
 On successful or failed link deletion a notification will be generated using the [notification feature](#notifications).
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -2013,6 +2272,12 @@ If there are no recommended articles it will show a message of no articles recom
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Recommended Card
@@ -2031,6 +2296,12 @@ The recommended card will detail:
 ![Recommended Card](readme-assets/features/recommended/card.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -2068,6 +2339,12 @@ On successful or failed recommendatons a notification will be generated using th
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Delete Recommendation
@@ -2089,6 +2366,12 @@ On successful or failed link deletion a notification will be generated using the
 ![Delete Confirmation](readme-assets/features/recommended/confirmation.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -2138,6 +2421,12 @@ Some examples of validation in action (this doesn't cover all potential validati
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Notifications
@@ -2162,6 +2451,12 @@ The following screenshots are just 2 examples of the notifications in action. Th
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Page Not Found (404)
@@ -2178,6 +2473,12 @@ This screen navigates the user back to the home page.
 
 </details><br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 ---
 
 ## Items Not Found
@@ -2193,6 +2494,12 @@ This screen navigates the user back to the home page.
 ![Items Not Found](readme-assets/features/not-found/items-not-found.png)<br>
 
 </details><br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 ---
 
@@ -2216,7 +2523,13 @@ This screen navigates the user back to the home page.
 - Potential for live streaming - would require third party integration with a service such as Wowza, Vimeo, YouTube Live, etc.
 - Add a payment method so authors can make restricted content for purchase only.
 
-   <br>
+<br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 # Technologies Used
 
@@ -2252,7 +2565,13 @@ This screen navigates the user back to the home page.
 | Heroku              | Hosting platform for deploying API sites.                                             |
 | Vercel              | Hosting platform for deploying websites.                                              |
 
-   <br>
+<br>
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 # Testing
 
@@ -2367,6 +2686,12 @@ As I was becomming familiar with the React Library I tested a number of build me
 
 As I spent more time on this project I developed my understanding of a range of concepts such as how to apply separation of concerns, appropriate file structures and the use of React features/libraries such as Controllers, JQuery, Caching, etc, which I would like to further enhance this site with in the future.
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 # Deployment
 
 ## Deployment Document
@@ -2375,13 +2700,19 @@ Deployment doumentation found [here](DEPLOYMENT.md).
 
 <br>
 
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
+
 # Credits
 
 ## Development Resources
 
 The following sources acted as guidance for understanding.
 
-- [Code Institute](https://codeinstitute.net/). The fundemental understanding I obtained for building React applications was obtained from the CI Moments Course. This acted as a basic structure for my course with a few elements being being utilised directly. Specifically:
+- [Code Institute](https://codeinstitute.net/). The fundemental understanding I obtained for building React applications was obtained from the CI Moments Course. This acted as a basic structure for my project with a few elements being being utilised directly. Specifically:
   - axiosDefault.js (altered axios.defaults.baseURL)
   - CurrentUserContext (slight variations in code)
   - The fetchMoreData and TimeStamp Management features in Utils (**note** the fetchMoreProfileData function within this file was not covered by Code Institute and is unique to this site)
@@ -2403,10 +2734,17 @@ The images used where taken from unsplash:
 - [Add Article](https://unsplash.com/photos/npxXWgQ33ZQ)
 - [Update Profile](https://unsplash.com/photos/IcclLmLQuw8)
 - [Password Reset](https://unsplash.com/photos/3wPJxh-piRw)
+- [404 Page](https://unsplash.com/photos/JJPqavJBy_k)
 
 The icons for this project were taken from React-Icons:
 
 - [React-Icons](https://react-icons.github.io/react-icons/)
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
 
 # Article Content
 
@@ -2417,3 +2755,9 @@ To produce coding article content on the site to give a better visual experience
 - Thank to my Mentor (Spencer Barriball) for his feedback and guidance.
 - To all my friends and family that have taken the time to test this site and listen to me rant.
 - The Code Institute Slack community for helping with any and all queries.
+
+<div style="text-align: center; padding-top: 20px;">
+
+[&#9650; Back to TOC](#table-of-contents)
+
+</div>
