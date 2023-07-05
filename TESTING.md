@@ -20,7 +20,7 @@ Back to Readme [here](README.md)
 
 ## HTML Validation Testing
 
-Due to this being a React appication there is only one html page which calls the other JSX components.
+Due to this being a React application there is only one html page which calls the other JSX components.
 
 Only info points highlighted. No errors or warnings identified.
 
@@ -118,7 +118,7 @@ As a result Vitest was used in it's place. This integrated far better with the i
 
 ## Devtools - Issue Review
 
-The devtool was used for evaluating the a number of aspects of the site including the Issues Log.
+The devtool was used for evaluating the number of aspects of the site including the Issues Log.
 
 Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and were left due to time constraints. Given longer these would each be investigated more thoroughly and changes applied if appropriate.
 
@@ -738,6 +738,6 @@ All User Stories created for the front end were documented in GitHub.
 
 Each of these User Stories was assigned acceptance critera which was achieved prior to marking them to complete.
 
-To review the User Stories and the acceptance criteria slect the appropriate User Story you wish to view from the issues log [here](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues?q=is%3Aissue+is%3Aclosed)
+To review the User Stories and the acceptance criteria select the appropriate User Story you wish to view from the issues log [here](https://github.com/Joe-Collins-1986/BitWise-Front-End/issues?q=is%3Aissue+is%3Aclosed).
 
 ---
