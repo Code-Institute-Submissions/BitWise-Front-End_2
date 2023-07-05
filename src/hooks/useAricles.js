@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { axiosReq } from "../api/axiosDefaults";
 import { CanceledError } from "axios";
 import { useArticleFollow } from "../contexts/ArticleFollowUpdate";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const useArticles = (endpoint) => {
   const [articles, setArticles] = useState({ results: [] });
@@ -9,6 +10,7 @@ const useArticles = (endpoint) => {
   const [error, setError] = useState("");
 
   const articleFollow = useArticleFollow();
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -31,7 +33,7 @@ const useArticles = (endpoint) => {
     getArticles();
 
     return () => controller.abort();
-  }, [endpoint, articleFollow]);
+  }, [endpoint, articleFollow, currentUser]);
 
   return { articles, setArticles, error, loaded };
 };
