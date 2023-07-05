@@ -83,9 +83,9 @@
 - [Deployment](#deployment)
   - [Deployment Document](#deployment)
 - [Credits](#credits)
-  - [Development Resources]()
-  - [Media and Content Resources]()
-  - [Acknowledgements]()
+  - [Development Resources](#development-resources)
+  - [Media and Content Resources](#media-and-content-resources)
+  - [Acknowledgements](#acknowledgements)
 
 <br>
 

@@ -9,7 +9,7 @@ Back to Readme [here](README.md)
 - [JS Validation Testing](#js-validation-testing)
 - [NPM Audit](#npm-audit)
 - [Devtools - Issue Review](#devtools---issue-review)
-- [Jest Unit Testing](#jest-unit-testing)
+- [Vitest Unit Testing](#vitest-unit-testing)
 - [Lighthouse Testing](#lighthouse-testing)
 - [User Testing](#user-testing)
 - [User Story Acceptance Criteria](#user-story-acceptance-criteria)
@@ -84,9 +84,7 @@ I then passed this through an online JS Lint to ensure the standards were being 
 
 On completion of the build an npm audit was run.
 
-npm audit fix was then run to reduce the vulnerabilities removing all high and critical warnings leaving only 4 moderate warnings.
-
-After review these were deemed acceptable and left.
+npm audit fix was then run which removed all outstanding vulnerabilites.
 
 <details>
       <summary style="font-weight:bold">npm audit</summary>
@@ -98,9 +96,23 @@ After review these were deemed acceptable and left.
 
 ---
 
-## Jest Unit Testing
+## Vitest Unit Testing
 
-Add Jest Unit Testing
+Due to the time applied to the build of this project and the high number of features implemented I did not have the time to build out rubust front end unit testing as was achieved in the back end.
+
+I did however run a number of simple unit tests to ensure my understanding of the set up requirements and the mocking practices.
+
+Initially it was intended to use Jest for unit testing the React application. However, due to the build being done with Vite this would have required a significant amount of additional installations effectively eliminating the benefits of building with Vite in the first place. It also resulted in significantly more vulnerabilities being generated as was identified with an npm audit.
+
+As a result Vitest was used in it's place. This integrated far better with the inital Vite setup.
+
+<details>
+      <summary style="font-weight:bold">Vitest Summary</summary>
+   <br>
+
+![Vitest Summary](readme-assets/testing/vitest.png)<br>
+
+</details>
 
 ---
 
