@@ -2638,7 +2638,7 @@ Those that did generally fell into the following categories and were addressed a
 - Optional chaining operator (failing to add ?)
 - Failing to pass appropriate props
 
-To view the resolotion of these in more detail review the [commit history](https://github.com/Joe-Collins-1986/BitWise-Front-End/commits/main) where they are documented.
+To view the resolution of these in more detail review the [commit history](https://github.com/Joe-Collins-1986/BitWise-Front-End/commits/main) where they are documented.
 
 In addition to the more standard bugs the following issues were also encoutered:
 
@@ -2646,13 +2646,13 @@ In addition to the more standard bugs the following issues were also encoutered:
 
 When using the language names to filter the articles it was identified that the ++ and # in C++ and C# were not being interpreted.
 
-To resolve this they were assigned the names C Sharp and C Plus Plus and when mapping through them re-assinged the names C++ and C#.
+To resolve this they were assigned the names C Sharp and C Plus Plus and when mapping through them re-assigned the names C++ and C#.
 
 To review the code of how this bug was resolved refer to commit [78393fc](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/78393fc7e9ac35a13696c6800d341e07353688c9)
 
 ### Delete Article Navigation:
 
-Testing identified there was an issue with article deletion. When an article was deleted it would require different navigation dependant on the current URL the user was on.
+Testing identified there was an issue with article deletion. When an article was deleted it would require different navigation dependent on the current URL the user was on.
 
 If the user was on the Home page, Profile Page of Feed Page then the user should remain on the page and the article should be removed from the state. However, if the user is on the Article page then the site is required to navigate away from the page as it no longer holds content. This was updated to navigate to the home page.
 
@@ -2688,13 +2688,13 @@ To review the code of how this bug was resolved refer to commit [1a06b08](https:
 
 When the link create form was initially built it pre-fixed the url entry with https:// amd suffixed the url with .com.
 
-This caused issues as many links the test users attemped to add did not end in .com. As a result this was removed.
+This caused issues as many links the test users attempted to add did not end in .com. As a result this was removed.
 
 To review the code of how this bug was resolved refer to commit [c6c6ffa](https://github.com/Joe-Collins-1986/BitWise-Front-End/commit/c6c6ffa)
 
 ### Infinite Scroll Reset:
 
-When testing the infinite scroll if kept returning to the top of the screen when additional articles were fetched. This only occured for articles, not for profiles or comments.
+When testing the infinite scroll it kept returning to the top of the screen when additional articles were fetched. This only occured for articles, not for profiles or comments.
 
 On investigation it was identified that this was due to a useEffect that had been built into the article header to ensure that on url change the page reverted to the top. This was never intended to be added to the article component and was moved out and into the App.jsx.
 
@@ -2728,7 +2728,7 @@ In future I will spend more time considering this in the inital planning stages.
 
 2. Build Consistancy
 
-As I was becomming familiar with the React Library I tested a number of build methods to find which I was more comfortable with such as try/catch vs then/catch axios requests. As a result there are some inconsistancies in the build where I would look to update given more time.
+As I was becomming familiar with the React Library I tested a number of build methods to find which I was more comfortable with such as try/catch vs then/catch axios requests. As a result there are some inconsistencies in the build which I would look to update given more time.
 
 3. General Knowledge
 

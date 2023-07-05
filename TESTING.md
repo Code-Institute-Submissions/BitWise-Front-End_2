@@ -108,7 +108,7 @@ Add Jest Unit Testing
 
 The devtool was used for evaluating the a number of aspects of the site including the Issues Log.
 
-Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and where left due to time constraints. Given longer these would each be investigated more thouroughly and changes applied if appropriate.
+Each page was evaluated and no Page Errors or Breaking Changes were idendified. There were a few possible improvements highlighted but these did not have any functional impact and were left due to time constraints. Given longer these would each be investigated more thoroughly and changes applied if appropriate.
 
 <details>
       <summary style="font-weight:bold">Devtools - Issue Review</summary>

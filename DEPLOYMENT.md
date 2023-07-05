@@ -21,9 +21,9 @@ Please note this project was developed with Vite rather than Create React App. T
 
 ## Hosting Site
 
-Due to this React application being built with Vite it proved a challange to host it on Heroku which was not one of its prefered hosting sites which can be found [here](https://vitejs.dev/guide/static-deploy.html).
+Due to this React application being built with Vite it proved a challenge to host it on Heroku which was not one of its prefered hosting sites which can be found [here](https://vitejs.dev/guide/static-deploy.html).
 
-As a result Vercel was choosen to host the site.
+As a result Vercel was chosen to host the site.
 
 ## Fork Repository
 
@@ -33,7 +33,7 @@ As a result Vercel was choosen to host the site.
 
 ## Workspace
 
-1. Open your prefered workspace (Visual Studio Code, etc...).
+1. Open your preferred workspace (Visual Studio Code, etc...).
 
 Following instructions are for Visual Studio Code:
 
