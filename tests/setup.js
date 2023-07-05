@@ -4,7 +4,15 @@ import matchers from "@testing-library/jest-dom/matchers";
 import { setupServer } from "msw/node";
 import { handlers } from "../src/mocks/handlers";
 
-// extends Vitest's expect method with methods from react-testing-library
+global.window.matchMedia =
+  global.window.matchMedia ||
+  function () {
+    return {
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
+
 expect.extend(matchers);
 
 const server = setupServer(...handlers);
