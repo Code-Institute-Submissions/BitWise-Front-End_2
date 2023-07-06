@@ -25,6 +25,7 @@ const ProfileEditForm = () => {
     imageFile,
     error,
     loaded,
+    imagePreview,
     handleChange,
     handleUsernameChange,
     handleSubmit,
@@ -67,16 +68,16 @@ const ProfileEditForm = () => {
               ))}
 
               <FormControl id="image-upload" isInvalid={Boolean(error?.image)}>
-                {image && (
+                {imagePreview || image ? (
                   <Box my={5}>
                     <Image
                       w="100%"
                       borderRadius="20"
-                      src={image}
+                      src={imagePreview || image}
                       alt="Profile Image"
                     />
                   </Box>
-                )}
+                ) : null}
 
                 <FormLabel htmlFor="image-upload">Profile Image</FormLabel>
 
@@ -87,7 +88,11 @@ const ProfileEditForm = () => {
                   id="image-upload"
                   ref={imageFile}
                   accept="image/*"
-                  onChange={handleChange}
+                  onChange={(event) => {
+                    handleChange({
+                      target: { name: "image", files: event.target.files },
+                    });
+                  }}
                   aria-label="Profile Image"
                 />
               </FormControl>

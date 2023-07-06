@@ -22,6 +22,7 @@ const useProfileEdit = () => {
   });
 
   const [username, setUsername] = useState("");
+  const [imagePreview, setImagePreview] = useState(null);
 
   const { bio, image } = profileData;
 
@@ -65,10 +66,16 @@ const useProfileEdit = () => {
   }, [currentUser, navigate, id]);
 
   const handleChange = (event) => {
-    setProfileData({
-      ...profileData,
-      [event.target.name]: event.target.value,
-    });
+    if (event.target.name === "image") {
+      if (event.target.files[0]) {
+        setImagePreview(URL.createObjectURL(event.target.files[0]));
+      }
+    } else {
+      setProfileData({
+        ...profileData,
+        [event.target.name]: event.target.value,
+      });
+    }
   };
 
   const handleUsernameChange = (event) => {
@@ -103,6 +110,9 @@ const useProfileEdit = () => {
             : prevCurrentUser.username,
       }));
 
+      if (imagePreview) URL.revokeObjectURL(imagePreview);
+      setImagePreview(null);
+
       navigate(`/profile/${id}/`);
       setSuccessToast("Profile Updated");
     } catch (err) {
@@ -119,6 +129,7 @@ const useProfileEdit = () => {
     imageFile,
     error,
     loaded,
+    imagePreview,
     handleChange,
     handleUsernameChange,
     handleSubmit,
