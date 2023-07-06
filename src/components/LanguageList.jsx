@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useLanguages from "../hooks/useLanguages";
-import { Spinner, Text, Button } from "@chakra-ui/react";
+import { Spinner, Button } from "@chakra-ui/react";
 import LanguageCard from "./LanguageCard";
 import LanguageCreate from "./LanguageCreate";
 import { useParams } from "react-router-dom";

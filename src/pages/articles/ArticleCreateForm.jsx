@@ -23,7 +23,7 @@ const ArticleCreateForm = () => {
     title,
     content,
     errors,
-    isLoading, // Add isLoading from the hook
+    isLoading,
     handleChange,
     handleSubmit,
     languageOptions,

@@ -6,7 +6,6 @@ import ArticleCardFooter from "./ArticleCardFooter";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { useColorModeValue } from "@chakra-ui/react";
 
-import { Link } from "react-router-dom";
 const ArticleCard = (props) => {
   const {
     is_owner,
