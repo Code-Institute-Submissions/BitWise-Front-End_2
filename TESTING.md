@@ -78,6 +78,8 @@ In future I would transition to use of ESLint to allow more specialized config.
 
 I then passed this through an online JS Lint to ensure the standards were being applied as expected.
 
+**Note** It should be noted that throughout the hooks within this React project I stored the errors in state variables. These are not always used but were left intentionally for any future debug processes or to allow them to be built into future functionality.
+
 ---
 
 ## NPM Audit
